@@ -12,13 +12,13 @@
   {title:'Фестиваль Фудтраков',copy:'Создаём свой фудтрак и готовим угощения всей командой.',photo:'festival-fudtrakov.webp',caption:'Фудтраки / готовим вместе'}
  ];
  const eventCard=surface.querySelector('.event-caption'),polaroid=surface.querySelector('.event-polaroid');
- const contextImages=events.map(e=>{const image=new Image();image.src='green-version/assets/'+e.photo;return image});
+ const contextImages=events.map(e=>{const image=new Image();image.src='official-brand/assets/'+e.photo;return image});
  function syncEvent(i){const e=events[i];surface.querySelectorAll('.event-project-link').forEach(link=>{link.href="https://catalystrussia.ru/teambuilding/vse-programmy/"+programSlugs[i]+"/";link.setAttribute("aria-label","Подробнее о программе "+e.title)});eventCard.querySelector('h3').textContent=e.title;eventCard.querySelector('p').textContent=e.copy;polaroid.querySelector('img').src=contextImages[i].src;polaroid.querySelector('img').alt=e.caption;polaroid.querySelector('figcaption').textContent=e.caption;}
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');let index=0,timer,visible=true,request=0,touch=null,suppressClick=false;
  let transitions=[];
  const pieces=[img,polaroid,eventCard,surface.querySelector('.mini-folder'),...surface.querySelectorAll('.seal,.hero-sticker')].filter(Boolean);
  function cancelTransition(){transitions.forEach(a=>a.cancel());transitions=[];}
- const images=slides.map(s=>{const image=new Image();image.src='green-version/assets/'+s[0];return image});
+ const images=slides.map(s=>{const image=new Image();image.src='official-brand/assets/'+s[0];return image});
  surface.dataset.slide='0';
  function stop(){clearInterval(timer);request++;cancelTransition();img.classList.remove('slide-changing')}
  async function show(next){
