@@ -145,25 +145,7 @@
 .collage-v2[data-slide="3"]:not([data-slide="0"]) .event-caption{left:-15px;top:31px;width:220px;height:128px;bottom:auto}
 .collage-v2[data-slide="3"]:not([data-slide="0"]) .event-polaroid{left:412px;top:-103px;width:184px;height:164px;bottom:auto}
 }
-@media(max-width:1100px){
-.hero:has(.collage-v2[data-slide="1"]:not([data-slide="0"])){height:1138px;min-height:1138px}
-.collage-v2[data-slide="1"]:not([data-slide="0"]){position:absolute;left:20px;right:auto;top:613px;bottom:auto;margin:0;width:350px;min-width:350px;max-width:350px;height:527px;min-height:527px;max-height:527px}
-.collage-v2[data-slide="1"]:not([data-slide="0"]) .team.hero-slide{width:533.016px;height:467px;min-width:0;left:-80px;top:73px;bottom:auto}
-.collage-v2[data-slide="1"]:not([data-slide="0"]) .event-caption{left:0px;top:162px;width:164px;height:112px;padding:12px;bottom:auto}
-.collage-v2[data-slide="1"]:not([data-slide="0"]) .event-polaroid{left:0px;top:0px;width:150px;height:146px;bottom:auto}
-.hero:has(.collage-v2[data-slide="2"]:not([data-slide="0"])){height:1173px;min-height:1173px}
-.collage-v2[data-slide="2"]:not([data-slide="0"]){position:absolute;left:0px;right:auto;top:613px;bottom:auto;margin:0;width:366px;min-width:366px;max-width:366px;height:543px;min-height:543px;max-height:543px}
-.collage-v2[data-slide="2"]:not([data-slide="0"]) .team.hero-slide{width:295.663px;height:489px;min-width:0;left:32px;top:107px;bottom:auto}
-.collage-v2[data-slide="2"]:not([data-slide="0"]) .event-caption{left:6px;top:55px;width:164px;height:112px;padding:12px;bottom:auto}
-.collage-v2[data-slide="2"]:not([data-slide="0"]) .event-polaroid{left:204px;top:0px;width:150px;height:158px;bottom:auto}
-.hero:has(.collage-v2[data-slide="3"]:not([data-slide="0"])){height:1060px;min-height:1060px}
-.collage-v2[data-slide="3"]:not([data-slide="0"]){position:absolute;left:20px;right:auto;top:613px;bottom:auto;margin:0;width:350px;min-width:350px;max-width:350px;height:447px;min-height:447px;max-height:447px}
-.collage-v2[data-slide="3"]:not([data-slide="0"]) .team.hero-slide{width:410.392px;height:361px;min-width:0;left:-30px;top:106px;bottom:auto}
-.collage-v2[data-slide="3"]:not([data-slide="0"]) .event-caption{left:0px;top:0px;width:164px;height:137px;padding:12px;bottom:auto}
-.collage-v2[data-slide="3"]:not([data-slide="0"]) .event-polaroid{left:180px;top:0px;width:150px;height:146px;bottom:auto}
-.collage-v2[data-slide]:not([data-slide="0"]) .event-polaroid img{height:110px}
-.collage-v2[data-slide]:not([data-slide="0"]) .event-polaroid figcaption{font-size:10px}
-}
+
 .collage-v2 .event-caption,.collage-v2 .event-polaroid{pointer-events:auto}
 .event-project-link{position:absolute;inset:0;border-radius:inherit;z-index:10;display:block}
 .event-project-link:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
@@ -313,3 +295,123 @@ body .mega-promo>a.promo-button:focus-visible{background:#f7b500;color:#141414}
 .search-is-open .header-proto,
 .mobile-menu-open .header-proto{background:transparent}
 .header-proto .primary-line{background:#fff}
+
+/* Mobile review: compact toolbar, contained promotion and explicit title lines. */
+.hero-title-line{white-space:nowrap}
+@media(max-width:1100px){
+ .hero-copy{container-type:inline-size}
+ .hero h1{font-size:min(56px,9.2cqw);line-height:1.06}
+ .mobile-sheet .mobile-sheet-head{align-items:center;gap:8px;padding:12px 16px}
+ .mobile-sheet .mobile-sheet-head strong{flex:1 1 0;min-width:0;width:auto}
+ .mobile-sheet .mobile-sheet-head button{flex:0 0 38px}
+ .mobile-sheet .mobile-category-title{display:flex;width:100%;max-width:100%;padding:8px 0;gap:10px;font-size:16px}
+ .mobile-sheet .mobile-category-title>span{flex:1 1 auto;min-width:0;white-space:nowrap}
+ .mobile-sheet .mobile-category-title>.ui-icon{flex:0 0 16px}
+ .mobile-sheet .mega-promo{box-sizing:border-box;width:auto;max-width:100%;min-width:0;margin:88px 0 16px;padding:22px 20px;transform:none}
+ .mobile-sheet .mega-promo .folder-photos{left:16px;right:16px;top:-65px}
+ .mobile-sheet .mega-promo .folder-photos img{height:85px;max-width:67%}
+ .mobile-sheet .mega-promo h4{font-size:32px;line-height:1.05;white-space:normal;margin:18px 0}
+ .mobile-sheet .mega-promo .booking-highlight{width:100%;box-sizing:border-box;white-space:normal;padding:12px;font-size:13px;line-height:1.35}
+ .mobile-sheet .mega-promo>a.promo-button{width:100%;box-sizing:border-box;white-space:normal;font-size:14px;line-height:1.3;padding:14px 10px}
+ .mobile-sheet-body{min-width:0;overflow-x:clip}
+ /* The first visible card starts exactly 26px after the statistics. */
+ .hero .collage-v2[data-slide],.hero .collage-v2[data-slide]:not([data-slide="0"]){width:min(100%,350px);min-width:0;max-width:350px;height:520px;min-height:520px;max-height:520px;flex:0 0 520px;margin:26px 0 0;inset:auto;align-self:center}
+ .hero .collage-v2[data-slide] .event-polaroid{left:auto;right:0;top:0;bottom:auto;width:44%;height:auto;min-height:146px}
+ .hero .collage-v2[data-slide] .event-polaroid img{height:110px;width:100%;object-fit:cover}
+ .hero .collage-v2[data-slide] .event-polaroid figcaption{font-size:10px!important;line-height:1.2}
+ .hero .collage-v2[data-slide] .event-caption{left:0;right:auto;top:0;bottom:auto;width:50%;height:auto;min-height:112px;padding:12px}
+ .hero .collage-v2[data-slide] .event-caption h3{font-size:19px!important}
+ .hero .collage-v2[data-slide="0"] .event-caption{top:165px}
+ .hero .collage-v2[data-slide="1"] .event-polaroid{left:0;right:auto}
+ .hero .collage-v2[data-slide="1"] .event-caption{top:162px}
+ .hero .collage-v2[data-slide="2"] .event-caption{top:55px}
+ .hero .collage-v2[data-slide] .team.hero-slide{width:100%;min-width:0;max-width:100%;height:auto;left:0;right:auto;top:auto;bottom:0;object-fit:contain;filter:none}
+ .hero .collage-v2[data-slide="2"] .team.hero-slide{width:auto;height:370px;max-width:100%;left:50%;transform:translateX(-50%)}
+ /* Shorter canvases remove empty space while preserving each object's proportions. */
+ .hero .collage-v2[data-slide="0"]{height:480px;min-height:480px;max-height:480px;flex-basis:480px}
+ .hero .collage-v2[data-slide="3"]:not([data-slide="0"]){height:460px;min-height:460px;max-height:460px;flex-basis:460px}
+}
+@media(max-width:760px){
+ .header-proto .primary-line{min-height:56px;padding:8px 10px;gap:8px}
+ .header-proto .primary-line>.mobile-trigger{width:34px;height:34px;flex-basis:34px}
+ .header-proto .primary-line>.brand img{width:32px;height:36px}
+}
+
+/* Keep the seasonal folder within its column, including the desktop dropdown. */
+.mega-promo{min-width:0;max-width:100%;box-sizing:border-box;transform:none}
+.mega-promo .booking-highlight{box-sizing:border-box;max-width:100%;white-space:normal}
+.mega-promo>a.promo-button{box-sizing:border-box;max-width:100%;white-space:normal}
+
+/* Mobile navigation follows the compact logo corner radius. */
+@media(max-width:760px){
+ .header-proto .primary-line{border-radius:16px}
+ .mobile-sheet{border-radius:16px}
+}
+
+@media(max-width:760px){.hero .hero-copy>.stats strong{font-family:Roboto,Arial,sans-serif!important;font-weight:500!important}}
+
+/* Approved mobile compositions: Figma 11:56, 1:29, 1:31, 1:33.
+   Coordinates use the 326px content canvas; typography remains readable. */
+@media(max-width:760px){
+ .hero .hero-copy>.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start;margin:28px 0 0}
+ .hero .hero-copy>.stats>div{min-width:0;gap:4px}
+ .hero .hero-copy>.stats strong{font-family:Roboto,Arial,sans-serif!important;font-weight:600!important;font-size:28px;line-height:1.2;letter-spacing:.56px;white-space:nowrap}
+ .hero .hero-copy>.stats span{font-size:11px;font-weight:400;line-height:1.2}
+ .hero .collage-v2[data-slide],.hero .collage-v2[data-slide]:not([data-slide="0"]){container-type:inline-size;width:100%;max-width:326px;min-width:0;height:auto;min-height:0;max-height:none;flex:0 0 auto;margin:26px 0 0;aspect-ratio:326/419}
+ .hero .collage-v2[data-slide="1"]{aspect-ratio:326/525}
+ .hero .collage-v2[data-slide="2"]{aspect-ratio:326/560}
+ .hero .collage-v2[data-slide="3"]:not([data-slide="0"]){aspect-ratio:326/447;height:auto;min-height:0;max-height:none;flex-basis:auto}
+ .hero .collage-v2[data-slide] .event-caption{width:50.3%;min-height:0;height:auto;padding:12px;z-index:5}
+ .hero .collage-v2[data-slide] .event-caption>span{font-size:8px;line-height:1.2;border:0;padding:0}
+ .hero .collage-v2[data-slide] .event-caption h3{font-size:21px!important;line-height:1.2;margin:7px 0}
+ .hero .collage-v2[data-slide="0"] .event-caption h3{font-size:19px!important}
+ .hero .collage-v2[data-slide] .event-caption p{font-size:11px;line-height:1.2;margin:0}
+ .hero .collage-v2[data-slide] .event-polaroid{width:46.01%;height:auto;min-height:0;padding:6px 6px 10px;top:0;left:auto;right:0;z-index:5}
+ .hero .collage-v2[data-slide] .event-polaroid img{height:110px;object-fit:cover}
+ .hero .collage-v2[data-slide] .team.hero-slide{min-width:0;max-width:none;height:auto;bottom:auto;right:auto;transform:none;z-index:2}
+ .hero .collage-v2[data-slide="0"] .event-polaroid{width:53.68%}
+ .hero .collage-v2[data-slide="0"] .event-caption{top:50.31cqw;width:50%}
+ .hero .collage-v2[data-slide="0"] .team.hero-slide{width:114.27%;left:-3.99%;top:66.26cqw}
+ .hero .collage-v2[data-slide="1"] .event-polaroid{left:0;right:auto}
+ .hero .collage-v2[data-slide="1"] .event-caption{top:49.69cqw}
+ .hero .collage-v2[data-slide="1"] .team.hero-slide{width:163.5%;left:-24.54%;top:22.39cqw}
+ .hero .collage-v2[data-slide="2"] .event-polaroid{left:56.44%;right:auto}
+ .hero .collage-v2[data-slide="2"] .event-caption{left:-4.29%;top:16.87cqw}
+ .hero .collage-v2[data-slide="2"] .team.hero-slide{width:90.69%;height:auto;left:3.68%;top:32.82cqw;transform:none}
+ .hero .collage-v2[data-slide="3"] .event-polaroid{left:55.21%;right:auto}
+ .hero .collage-v2[data-slide="3"] .event-caption{top:0}
+ .hero .collage-v2[data-slide="3"] .team.hero-slide{width:125.89%;left:-9.2%;top:32.52cqw}
+}
+
+/* Remove legacy fixed screen heights; cards use the Figma vertical rhythm. */
+@media(max-width:760px){
+ .hero .hero-body{padding-bottom:0}
+ .hero .collage-v2[data-slide] .event-caption{display:flex;flex-direction:column;gap:7px}
+ .hero .collage-v2[data-slide] .event-caption h3{margin:0}
+ .hero .collage-v2[data-slide] .event-polaroid figcaption{margin-top:8px}
+ .hero .collage-v2[data-slide="1"] .event-polaroid{width:46.01%}
+ .hero .collage-v2[data-slide="1"] .event-caption{top:max(162px,49.69cqw)}
+}
+
+/* Megapolis mobile — exact 366px Figma stage, node 3:60. */
+@media(max-width:760px){
+ .hero .collage-v2[data-slide="1"]:not([data-slide="0"]){width:calc(100% + 40px);max-width:366px;aspect-ratio:366/525;align-self:center;overflow:visible}
+ .hero .collage-v2[data-slide="1"] .event-polaroid{box-sizing:border-box;left:20px;right:auto;top:0;width:150px;height:146px;min-height:146px;display:flex;flex-direction:column;gap:8px;padding:6px 6px 10px}
+ .hero .collage-v2[data-slide="1"] .event-polaroid img{height:110px;min-height:110px;width:138px;flex:none}
+ .hero .collage-v2[data-slide="1"] .event-polaroid figcaption{font:700 10px/12px Roboto,Arial,sans-serif!important;margin:0;width:138px;white-space:nowrap}
+ .hero .collage-v2[data-slide="1"] .event-caption{box-sizing:border-box;left:20px;top:162px;width:164px;height:112px;min-height:112px;gap:7px;padding:12px}
+ .hero .collage-v2[data-slide="1"] .event-caption h3{font:700 21px/25.2px Roboto,Arial,sans-serif!important;margin:0}
+ .hero .collage-v2[data-slide="1"] .event-caption>span{font:400 8px/9.6px Roboto,Arial,sans-serif;letter-spacing:0;padding:0}
+ .hero .collage-v2[data-slide="1"] .event-caption p{font:400 11px/13.2px Roboto,Arial,sans-serif;margin:0}
+ .hero .collage-v2[data-slide="1"] .team.hero-slide{width:145.6328%;height:auto;left:-16.3934%;top:19.9454cqw;bottom:auto}
+}
+
+/* Shared mobile photo-card spacing across all four slides. */
+@media(max-width:760px){
+ .hero .collage-v2[data-slide] .event-polaroid{
+  display:flex;flex-direction:column;gap:8px;
+  padding:6px 6px 10px;box-sizing:border-box;
+ }
+ .hero .collage-v2[data-slide] .event-polaroid img{display:block;flex:none}
+ .hero .collage-v2[data-slide] .event-polaroid figcaption{margin:0;padding:0}
+}
