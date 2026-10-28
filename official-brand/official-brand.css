@@ -207,3 +207,7 @@ button,.button,.cta,.hero-actions>.button,.primary-line>.cta,
   translate:none;
  }
 }
+
+/* Keep the brand and dash together instead of leaving a dash on its own line. */
+.hero h1 .hero-brand-name{white-space:nowrap;color:inherit}
+.hero h1 .hero-brand-name::after{content:none}
