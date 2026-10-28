@@ -1,0 +1,209 @@
+/* Variant 6: official website palette and type, 2026-10-28. */
+@font-face{font-family:TTCommonsPro;src:url('business-assets--TT_Commons_Pro_Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:TTCommonsPro;src:url('business-assets--TT_Commons_Pro_ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+@font-face{font-family:Roboto;src:url('business-assets--roboto-cyrillic.woff2') format('woff2');font-weight:400 700;font-display:swap;unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:Roboto;src:url('business-assets--roboto-latin.woff2') format('woff2');font-weight:400 700;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{--blue:#0ABA59;--milk:#FFFFFF;--yellow:#F7B500;--ink:#141414;--folder-surface:#E3F7EA;--green:#0ABA59;--green-d:#14A548;--green-l:#E3F7EA;--mint:#D9F3E2;--muted:#6B6F76;--line:#E6E8EB;--soft:#F4F5F7}
+html body{font-family:Roboto,Arial,sans-serif;font-size:16px;line-height:1.5}
+h1,h2,h3,h4,h5,h6,button,.button,.cta,summary,.primary-line>nav,.mega-category,.mega-links,.mobile-row,.stats strong,.company-title,.mini-folder strong,.project-photo>span,.seal-copy{font-family:TTCommonsPro,Roboto,Arial,sans-serif!important;font-weight:700}
+h2{font-weight:800;letter-spacing:-.01em}
+.hero h1{font-family:TTCommonsPro,Roboto,Arial,sans-serif;font-size:clamp(46px,4.1vw,68px);line-height:1.08;letter-spacing:-.01em;font-weight:700}
+.mini-folder strong,.mega-promo h4,.about-folder h4{font-weight:700;line-height:1.1}
+.hero .intro{font:400 16px/1.5 Roboto,Arial,sans-serif}
+.hero-actions>.button{font-family:TTCommonsPro,Arial,sans-serif;font-size:16px;font-weight:700}
+.primary-line>.cta{font-family:TTCommonsPro,Arial,sans-serif;font-weight:700}
+@media(max-width:1100px){.hero h1{font-size:clamp(34px,6.6vw,60px)}}
+@media(max-width:760px){.hero h1{font-size:clamp(34px,9.5vw,48px);line-height:1.08}.hero-actions>.button{font-size:16px}.mini-folder strong{font-weight:700;line-height:1.1}}
+
+/* Review adjustments — 28 October 2026. */
+.hero h1{line-height:.9}
+.mini-folder strong{line-height:1}
+/* Roboto Medium provides a true lighter UI weight; TT is available in 700/800. */
+button,.button,.cta,.hero-actions>.button,.primary-line>.cta,
+.primary-line>nav,.primary-line>nav>a,.primary-line summary,
+.mega-category,.mega-links,.mobile-row,.catalog-all-button,.catalog-directory-link,
+.mega-promo>a.promo-button,.about-folder>a.promo-button{
+ font-family:Roboto,Arial,sans-serif!important;font-weight:500!important;
+}
+.primary-line>nav>a,.primary-line summary{font-size:14px}
+.primary-line>nav{gap:6px}
+.mega-head p,.mega-results>p,.mobile-description,.company-facts,.company-facts li,.company-detail p{
+ font-family:Roboto,Arial,sans-serif!important;font-weight:400!important;
+}
+/* Adjust only the outer header plate; keep original rounded menu controls. */
+.primary-line{border-radius:16px}
+.primary-line .mega-panel,.mobile-sheet{border-radius:16px}
+.mega-results h4 .mega-all-category,.company-detail .company-title{
+ padding:0;margin-left:0;border-radius:0;background:transparent;color:var(--ink)!important;
+}
+.mega-results h4 .mega-all-category:hover,.mega-results h4 .mega-all-category:focus-visible,
+.company-detail .company-title:hover,.company-detail .company-title:focus-visible{
+ background:transparent;color:var(--green)!important;
+}
+.category-link-arrow{color:var(--ink);background:transparent}
+.mega-results h4 .mega-all-category:hover .category-link-arrow,
+.mega-results h4 .mega-all-category:focus-visible .category-link-arrow,
+.company-detail .company-title:hover .category-link-arrow,
+.company-detail .company-title:focus-visible .category-link-arrow{
+ color:var(--green);background:transparent;
+}
+.primary-line>.cta{position:relative;overflow:visible}
+.primary-line>.cta::before{
+ content:"";position:absolute;pointer-events:none;width:80px;height:55px;right:15px;rotate:75deg;top:26px;
+ background:url("business-assets--cta-hand-arrow.svg") center/contain no-repeat;
+}
+@media(max-width:760px){.hero h1{line-height:.9}.mini-folder strong{line-height:1}}
+
+/* Program cutouts replace the team portrait and the small rotating card. */
+.collage-v2 .team.hero-slide{filter:none;object-fit:contain;object-position:center bottom;animation:none;transition:opacity .25s ease;bottom:32px}
+.collage-v2 .team.hero-slide.slide-changing{opacity:0}
+.primary-line>.cta,.hero-actions>.button{font-family:Roboto,Arial,sans-serif!important;font-size:14px!important;font-weight:500!important;line-height:1.3}
+@media(max-width:480px){.collage-v2 .team.hero-slide{width:100%;left:0}}
+@media(prefers-reduced-motion:reduce){.collage-v2 .team.hero-slide{transition:none}}
+
+/* Refined Figma cutouts: bottom-aligned photos, decoration in the upper corners. */
+.collage-v2{touch-action:pan-y;isolation:isolate}
+.collage-v2 .team.hero-slide{width:116%;left:-8%;height:92%;max-height:none;bottom:-18px;object-fit:contain;object-position:center bottom;z-index:2;transform:none;user-select:none;-webkit-user-drag:none}
+.collage-v2[data-slide="0"] .team.hero-slide{width:126%;left:-13%}
+.collage-v2 .mini-folder{top:8px;right:4px;left:auto;width:136px;height:158px;padding:12px;z-index:5;transform:rotate(7deg)}
+.collage-v2 .mini-folder strong{font-size:21px;line-height:1}
+.collage-v2 .mini-folder>span,.collage-v2 .mini-folder small{font-size:10px}
+.collage-v2 .seal{top:8px;left:12px;right:auto;bottom:auto;width:84px;height:84px;margin:0;z-index:5}
+.collage-v2 .sticker-popper{left:4px;top:122px;width:68px;height:68px;z-index:5}
+.collage-v2 .sticker-highfive{right:4px;top:190px;width:70px;height:70px;z-index:5}
+.collage-v2 .hero-ink,.collage-v2 .team-doodle{display:none}
+@media(min-width:1101px){.hero-body{padding-bottom:0}.collage-v2{align-self:stretch;margin-bottom:0}}
+@media(max-width:1100px){
+ .collage-v2{height:560px}
+ .collage-v2 .team.hero-slide{height:90%;bottom:-18px}
+ .collage-v2 .mini-folder{right:24px;top:8px}
+ .collage-v2 .seal{left:24px;top:8px}
+ .collage-v2 .sticker-popper{left:16px;top:130px}
+ .collage-v2 .sticker-highfive{right:18px;top:190px}
+}
+@media(max-width:480px){
+ .collage-v2{height:470px}
+ .collage-v2 .mini-folder{width:112px;height:140px;right:16px}
+ .collage-v2 .mini-folder strong{font-size:17px}
+ .collage-v2 .seal{width:70px;height:70px;left:16px}
+ .collage-v2 .sticker-popper{width:54px;height:54px;top:112px;left:10px}
+ .collage-v2 .sticker-highfive{width:54px;height:54px;right:12px;top:166px}
+ .collage-v2 .team.hero-slide{height:82%;width:120%;left:-10%;bottom:-12px}
+ .collage-v2[data-slide="0"] .team.hero-slide{width:142%;left:-21%}
+}
+
+/* Wider intro and larger companion stickers. */
+.hero .intro{max-width:455px}
+.collage-v2 .team.hero-slide{background:transparent}
+.collage-v2 .seal{width:110px;height:110px}
+.collage-v2 .sticker-popper{width:90px;height:90px;top:142px}
+.collage-v2 .sticker-highfive{width:94px;height:94px;top:194px}
+@media(max-width:480px){
+ .collage-v2 .seal{width:90px;height:90px}
+ .collage-v2 .sticker-popper{width:72px;height:72px;top:120px}
+ .collage-v2 .sticker-highfive{width:76px;height:76px;top:168px}
+}
+
+.collage-v2 .mini-folder{width:160px}
+
+/* Each photograph has its own composition, context photo and event note. */
+.collage-v2 .team.hero-slide{height:auto;max-height:none;width:var(--photo-width);left:var(--photo-left);bottom:var(--photo-bottom);object-fit:contain}
+.collage-v2[data-slide="0"]{--photo-width:146%;--photo-left:-23%;--photo-bottom:-32px;--seal-x:10%;--seal-y:41%;--pop-x:73%;--pop-y:28%;--hands-x:70%;--hands-y:69%;--pol-x:2%;--pol-y:8%}
+.collage-v2[data-slide="1"]{--photo-width:112%;--photo-left:-6%;--photo-bottom:-40px;--seal-x:12%;--seal-y:47%;--pop-x:57%;--pop-y:12%;--hands-x:80%;--hands-y:57%;--pol-x:0%;--pol-y:10%}
+.collage-v2[data-slide="2"]{--photo-width:90%;--photo-left:10%;--photo-bottom:-150px;--seal-x:60%;--seal-y:16%;--pop-x:24%;--pop-y:43%;--hands-x:76%;--hands-y:65%;--pol-x:0%;--pol-y:12%}
+.collage-v2[data-slide="3"]{--photo-width:125%;--photo-left:-12%;--photo-bottom:-120px;--seal-x:8%;--seal-y:40%;--pop-x:59%;--pop-y:18%;--hands-x:80%;--hands-y:61%;--pol-x:0%;--pol-y:7%}
+.collage-v2 .seal{left:var(--seal-x);top:var(--seal-y);right:auto;bottom:auto}
+.collage-v2 .sticker-popper{left:var(--pop-x);top:var(--pop-y);right:auto;bottom:auto}
+.collage-v2 .sticker-highfive{left:var(--hands-x);top:var(--hands-y);right:auto;bottom:auto}
+.collage-v2 .mini-folder{right:-8px;top:-12px;z-index:4}
+.event-polaroid{position:absolute;left:var(--pol-x);top:var(--pol-y);width:210px;margin:0;padding:10px 10px 14px;background:var(--milk);color:var(--ink);transform:rotate(-11deg);box-shadow:0 8px 16px #14141422;z-index:1;pointer-events:none}
+.event-polaroid img{display:block;width:100%;height:140px;object-fit:cover}
+.event-polaroid figcaption{font:700 15px/1.15 TTCommonsPro,Arial,sans-serif;margin-top:10px}
+.event-caption{position:absolute;bottom:16px;left:4%;width:252px;padding:15px 18px 22px;background:var(--green-l);color:var(--ink);z-index:6;transform:rotate(-4deg);box-shadow:3px 5px 12px #14141420;clip-path:polygon(0 0,100% 0,100% 96%,96% 100%,92% 96%,88% 100%,84% 96%,80% 100%,76% 96%,72% 100%,68% 96%,64% 100%,60% 96%,56% 100%,52% 96%,48% 100%,44% 96%,40% 100%,36% 96%,32% 100%,28% 96%,24% 100%,20% 96%,16% 100%,12% 96%,8% 100%,4% 96%,0 100%);pointer-events:none}
+.event-caption>span{display:block;font:400 10px/1.3 Roboto,Arial,sans-serif;letter-spacing:.06em;border-bottom:1px dashed #14a54866;padding-bottom:7px}
+.event-caption h3{font:700 25px/1 TTCommonsPro,Arial,sans-serif;margin:9px 0 7px}
+.event-caption p{font:400 13px/1.35 Roboto,Arial,sans-serif;margin:0}
+@media(max-width:1100px){.event-polaroid{width:195px}.event-polaroid img{height:130px}.collage-v2 .mini-folder{right:22px;top:0}}
+@media(max-width:480px){
+ .collage-v2[data-slide="0"]{--photo-width:165%;--photo-left:-32%;--photo-bottom:0px;--seal-x:7%;--seal-y:45%;--pop-x:70%;--pop-y:36%;--hands-x:78%;--hands-y:68%}
+ .collage-v2[data-slide="1"]{--photo-width:132%;--photo-left:-16%;--photo-bottom:-15px;--seal-y:48%;--pop-y:28%;--hands-x:78%}
+ .collage-v2[data-slide="2"]{--photo-width:108%;--photo-left:0%;--photo-bottom:-145px;--seal-x:57%;--seal-y:33%;--pop-x:20%;--pop-y:52%;--hands-x:76%}
+ .collage-v2[data-slide="3"]{--photo-width:142%;--photo-left:-21%;--photo-bottom:-65px;--seal-y:42%;--pop-y:35%;--hands-x:78%}
+ .event-polaroid{width:156px;left:12px;top:18px;padding:7px 7px 12px}.event-polaroid img{height:106px}.event-polaroid figcaption{font-size:12px}
+ .event-caption{width:210px;left:18px;bottom:12px;padding:12px 14px 18px}.event-caption h3{font-size:22px}.event-caption p{font-size:12px}
+ .collage-v2 .mini-folder{right:16px;top:0}
+}
+.collage-v2[data-slide] .team.hero-slide{width:var(--photo-width);left:var(--photo-left);height:auto;bottom:var(--photo-bottom)}
+
+/* First slide: desktop composition adjusted by Екатерина in DevTools. */
+@media(min-width:1101px){
+ .collage-v2[data-slide="0"]{
+  --photo-width:146%;--photo-left:-23%;--photo-bottom:-32px;
+  --seal-x:212px;--seal-y:-2px;
+  --pop-x:374px;--pop-y:28%;
+  --hands-x:530px;--hands-y:410px;
+  --pol-x:33px;--pol-y:20px;
+ }
+ .collage-v2[data-slide="0"] .mini-folder{right:-8px;top:18px;z-index:1}
+ .collage-v2[data-slide="0"] .event-polaroid{rotate:15deg;transform:rotate(-11deg);width:210px;z-index:1}
+}
+
+/* First-slide polaroid: explicit approved values at every viewport. */
+.collage-v2[data-slide="0"] .event-polaroid{
+ left:33px;
+ top:20px;
+ rotate:15deg;
+ transform:rotate(-11deg);
+ width:210px;
+ z-index:1;
+}
+
+/* Approved placement of the first event caption. */
+.collage-v2[data-slide="0"] .event-caption{
+ bottom:279px;left:-16%;width:252px;padding:15px 18px 22px;z-index:2;
+}
+.event-caption>span{text-transform:none;letter-spacing:normal}
+
+/* First slide: approved mobile composition. */
+@media(max-width:760px){
+ .collage-v2[data-slide="0"] .mini-folder{display:none}
+ .collage-v2[data-slide="0"] .event-polaroid{
+  left:153px;top:0;rotate:15deg;transform:rotate(-11deg);width:210px;z-index:1;
+ }
+ .collage-v2[data-slide="0"] .event-caption{
+  bottom:259px;left:4%;width:252px;padding:15px 18px 22px;z-index:2;
+ }
+ .collage-v2[data-slide="0"] .sticker-popper{left:-11px;top:40px;right:auto;bottom:auto}
+ .collage-v2[data-slide="0"] .seal{left:90px;top:-20px;right:auto;bottom:auto}
+ .collage-v2[data-slide="0"] .sticker-highfive{left:230px;top:68%;right:auto;bottom:auto}
+}
+
+/* Keep the approved phone composition on tablet rather than stretching the cutout. */
+@media(max-width:1100px){
+ .collage-v2{width:430px;max-width:none;height:470px;min-height:470px;flex-shrink:0;margin:0;align-self:center;overflow:visible}
+ .collage-v2[data-slide="0"]{--photo-width:165%;--photo-left:-32%;--photo-bottom:0px}
+ .collage-v2[data-slide="0"] .mini-folder{display:none}
+ .collage-v2[data-slide="0"] .event-polaroid{left:153px;top:0;rotate:15deg;transform:rotate(-11deg);width:210px;z-index:1}
+ .collage-v2[data-slide="0"] .event-caption{bottom:259px;left:4%;width:252px;padding:15px 18px 22px;z-index:2}
+ .collage-v2[data-slide="0"] .sticker-popper{left:-11px;top:40px;right:auto;bottom:auto;width:72px;height:72px}
+ .collage-v2[data-slide="0"] .seal{left:90px;top:-20px;right:auto;bottom:auto;width:90px;height:90px}
+ .collage-v2[data-slide="0"] .sticker-highfive{left:230px;top:68%;right:auto;bottom:auto;width:76px;height:76px}
+}
+
+/* Keep the requested phone heading scale without narrowing tablet copy or stacking its buttons. */
+@media(max-width:760px){.hero h1{font-size:clamp(34px,8.8vw,48px);line-height:.9}}
+
+/* Desktop collage is a fixed artboard anchored beside the text column. */
+@media(min-width:1101px){
+ .collage-v2{
+  position:absolute;
+  width:620px;min-width:620px;max-width:620px;
+  height:620px;min-height:620px;max-height:none;
+  left:max(684px,calc((100% - 1280px)/2 + 660px));
+  right:auto;top:auto;bottom:0;
+  margin:0;flex-shrink:0;overflow:visible;
+ }
+ .collage-v2 .seal,.collage-v2 .hero-sticker,.collage-v2 .mini-folder svg{
+  translate:none;
+ }
+}

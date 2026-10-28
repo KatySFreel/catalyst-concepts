@@ -1,0 +1,93 @@
+/* Approved sticker pack: isolated decoration; existing layout is untouched. */
+.collage-v2 .seal,.hero-sticker{background-image:url('business-assets--hero-stickers.png');background-size:300% 100%;background-repeat:no-repeat;pointer-events:none;translate:var(--motion-x,0px) var(--motion-y,0px)}
+.collage-v2 .seal{background-color:transparent;clip-path:none;background-position:0 0;padding:0;filter:none;transform:rotate(4deg);z-index:1}
+.collage-v2 .seal .seal-copy{visibility:hidden}
+.hero-sticker{position:absolute;width:84px;height:84px;z-index:1}
+.sticker-popper{background-position:50% 0;left:-12px;top:205px;transform:rotate(-8deg)}
+.sticker-highfive{background-position:100% 0;right:-5px;top:188px;transform:rotate(7deg)}
+.collage-v2 .spark{display:none}
+@media(min-width:1101px) and (max-width:1200px){.hero-sticker{width:60px;height:60px}.sticker-popper{left:0;top:170px}.sticker-highfive{right:0;top:160px}}
+@media(max-width:1100px){.hero-sticker{width:64px;height:64px}.sticker-popper{left:calc(50% - 94px);top:80px}.sticker-highfive{right:calc(50% - 94px);top:80px}.collage-v2 .seal{width:76px;height:76px;left:calc(50% - 38px);top:12px}.team-doodle{top:12px}}
+@media(max-width:760px){.sticker-popper{left:calc(50% - 80px);top:28px}.sticker-highfive{right:calc(50% - 80px);top:28px}.collage-v2 .seal{top:108px;width:72px;height:72px;left:calc(50% - 36px)}}
+@media(prefers-reduced-motion:reduce){.hero-sticker{translate:none}}
+
+@media(min-width:1101px){.hero-sticker{width:64px;height:64px}.sticker-popper{left:calc(50% - 76px);top:0}.sticker-highfive{left:calc(50% + 12px);right:auto;top:0}}
+
+.hero{--sticker-ink:#f7b500}
+
+/* Spread the approved stickers around the photo, following the hero reference. */
+.hero-ink{position:absolute;pointer-events:none;z-index:3;fill:none;stroke:var(--sticker-ink,#d9f3e2);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;translate:var(--motion-x,0px) var(--motion-y,0px)}
+.ink-paper{width:44px;height:46px;left:29%;top:8px}
+.ink-seal{width:42px;height:50px;left:63%;top:150px}
+.ink-side{width:44px;height:42px;right:-12px;top:355px}
+.ink-arrow{width:88px;height:76px;left:-72px;top:330px}
+.collage-v2 .team-doodle{display:none}
+@media(min-width:1101px){
+.collage-v2 .seal{width:140px;height:140px;left:calc(50% - 70px);top:34px}
+.hero-sticker{width:104px;height:104px;z-index:3}
+.sticker-popper{left:-65px;top:240px;transform:rotate(-8deg)}
+.sticker-highfive{left:auto;right:-37px;top:164px;transform:rotate(7deg)}
+}
+@media(min-width:1101px) and (max-width:1200px){
+.collage-v2 .seal{width:100px;height:100px;top:25px;left:calc(50% - 50px)}
+.hero-sticker{width:76px;height:76px}.sticker-popper{left:-36px;top:235px}.sticker-highfive{right:-15px;top:130px}
+.ink-paper{width:28px;left:30%;top:0}.ink-seal{top:130px;width:26px}.ink-arrow{left:-30px;top:325px;width:55px}.ink-side{right:0;top:320px;width:28px}
+}
+@media(max-width:1100px){
+.ink-paper{left:26%;top:0;width:26px;height:30px}.ink-seal{left:64%;top:20px;width:24px;height:30px}.ink-side{display:none}.ink-arrow{left:16px;top:155px;width:42px;height:40px}
+.sticker-popper{left:calc(50% - 96px);top:92px}.sticker-highfive{right:calc(50% - 96px);top:92px}
+}
+@media(max-width:760px){
+.sticker-popper{left:calc(50% - 88px);top:24px}.sticker-highfive{right:calc(50% - 88px);top:24px}
+.ink-paper{left:20px;top:32px}.ink-seal{left:auto;right:18px;top:30px}.ink-arrow{left:13px;top:235px;width:30px;height:35px}
+}
+@media(prefers-reduced-motion:reduce){.hero-ink{translate:none}}
+
+@media(min-width:1101px){.sticker-highfive{top:90px;right:-45px}.ink-seal{top:115px}.sticker-popper{left:-80px}}
+@media(min-width:1101px) and (max-width:1200px){.sticker-highfive{top:80px;right:-18px}.sticker-popper{left:-40px}.ink-seal{top:100px}}
+
+@media(min-width:1201px){.sticker-highfive{right:-94px;top:96px}.ink-side{right:-70px;top:340px}}
+.hero-copy{position:relative}.ink-title{left:-28px;top:145px;width:25px;height:38px}.ink-title-top{left:48%;top:12px;width:30px;height:24px}
+@media(max-width:1100px){.ink-title{left:-17px;top:100px;width:16px}.ink-title-top{display:none}}
+
+/* Exact sprite windows avoid clipping the first sticker or leaking its neighbour. */
+.collage-v2 .seal{background-size:285% 100%;background-position:0 0;overflow:visible}
+.sticker-popper{background-size:342% 100%;background-position:50.8% 0}
+.collage-v2 .mini-folder svg{display:none}
+.collage-v2{isolation:isolate}.collage-v2 .team{z-index:4}.collage-v2 .mini-folder{z-index:1}.sticker-highfive{z-index:2}
+@media(min-width:1101px){.collage-v2 .seal{left:calc(50% - 58px)}.ink-arrow{left:-125px;top:335px}.sticker-highfive{right:-22px;top:130px}}
+@media(min-width:1101px) and (max-width:1200px){.collage-v2 .seal{left:calc(50% - 40px)}.ink-arrow{left:-70px;top:325px}.sticker-highfive{right:0;top:112px}}
+@media(max-width:1100px){.collage-v2 .seal{margin-left:8px}.sticker-highfive{right:max(10px,calc(50% - 290px));top:165px}.ink-arrow{left:0;top:145px}}
+@media(max-width:760px){.sticker-highfive{right:5px;top:185px}.ink-arrow{top:207px;left:0}}
+.mega-promo .promo-doodle{display:none}
+.mega-promo::after{content:"";position:absolute;width:90px;height:90px;right:-12px;bottom:-37px;background:url('business-assets--sticker-arrow.png') center/contain no-repeat;pointer-events:none;z-index:4}
+.clients{max-width:var(--content);padding-left:0;padding-right:0}
+.client-logos:hover .logo-track{animation-play-state:running}
+.client-logos img{transition:filter .2s,opacity .2s}.client-logos img:hover{filter:grayscale(0);opacity:1}
+@media(max-width:1100px){.clients{max-width:720px;margin-left:auto;margin-right:auto;padding-left:24px;padding-right:24px;box-sizing:content-box}.clients p{margin-left:0;margin-right:0}}
+@media(max-width:768px){.clients{max-width:none;margin:0;padding-left:24px;padding-right:24px;box-sizing:border-box}}
+
+.mega-promo::after{background: url("business-assets--sticker-arrow.png") center/contain no-repeat!important;width:90px!important;height:90px!important;right:-12px!important;bottom:-37px!important;top:auto!important;left:auto!important;transform:none!important;clip-path:none!important;border:0!important}
+
+.mega-promo::after{bottom:-58px!important;right:-12px!important}
+
+/* Folder contents sit behind both the cover and its tab. */
+.mega-promo{isolation:isolate;background:transparent!important}
+.mega-promo>.folder-front{position:absolute;inset:0;z-index:1;border-radius:inherit;background:var(--folder-surface);pointer-events:none}
+.mega-promo>.folder-photos{z-index:0}
+.mega-promo::before{z-index:2}
+.mega-promo>small,.mega-promo>h4,.mega-promo>p,.mega-promo>a{position:relative;z-index:3}
+.mega-promo::after{bottom:-67px!important}
+@media(min-width:761px){.collage-v2 .mini-folder{top:25px}}
+@media(min-width:1101px){
+ .ink-paper{width:44px;height:46px;left:19%;top:8px}
+ .ink-seal{width:42px;height:48px;left:60%;top:95px}
+ .collage-v2 .seal{left:calc(50% - 115px);top:24px}
+}
+
+@media(min-width:1101px){.sticker-highfive{right:-48px;top:75px}}
+
+/* Mobile overlays must never render in the desktop navigation layout. */
+@media(min-width:1101px){.mobile-sheet,.mobile-dim{display:none!important}body.mobile-menu-open{overflow:auto}}
+
+@media(max-width:760px){.hero .stats>div{gap:0}.hero .stats>div>span{margin:0}}
