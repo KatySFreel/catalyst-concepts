@@ -1,0 +1,10 @@
+(()=>{
+const arrow='<svg class="ui-icon link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg>';
+function decorate(){document.querySelectorAll('.mega-promo:not(.promo-experiment)').forEach((card,index)=>{
+const kind=card.closest('[data-kind]')?.dataset.kind;const type=kind==='corporate'?'ticket':kind==='newyear'?'calendar':'envelope';
+card.classList.add('promo-experiment','promo-'+type);
+const ornament=`<svg class="ny-ornament" viewBox="0 0 48 64" aria-hidden="true"><path d="M24 0v14m-6 8v-6h12v6" fill="none" stroke="#11743e" stroke-width="2"/><circle cx="24" cy="40" r="19" fill="#ffdf4a"/><path d="M6 38c9 7 27 7 36 0M11 51c8-5 18-5 26 0" fill="none" stroke="#11743e" stroke-width="2"/></svg>`;
+card.innerHTML=`<div class="experiment-top">${type==='calendar'?'<span class="calendar-rings" aria-hidden="true"></span>':''}<span class="experiment-kicker">Новый год</span><h4>2027</h4><p>Для вашей команды</p>${type==='calendar'?ornament:''}</div><img class="experiment-photo" src="assets/${type==='envelope'?'ny-guests':type==='ticket'?'ny-medium':'ny-large'}.webp" alt="Новогодний корпоратив"><div class="experiment-booking">Ранняя бронь до 31 октября<br><strong>Без предоплаты</strong></div><a class="experiment-button" href="https://catalystrussia.ru/novogodnij-korporativ/">Смотреть предложение <svg class="offer-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></a>`;
+const offers=card.parentElement.querySelector('.monthly-offers');if(offers){offers.innerHTML='Посмотреть акции '+arrow;offers.classList.add('experiment-offers')}
+})}decorate();new MutationObserver(decorate).observe(document.body,{childList:true,subtree:true});
+})();

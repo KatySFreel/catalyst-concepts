@@ -1,0 +1,43 @@
+/* Compact event cards on the shared page container. */
+body>#s5{width:calc(100% - 112px);max-width:1280px;margin:96px auto 0;background:none;color:#141414;border-radius:0;overflow:visible}
+#s5 .corporate-inner{padding:0;max-width:none}
+#s5 .corporate-heading{display:block;margin:0 0 32px}
+#s5 .corporate-heading h2{max-width:1100px;margin:0 0 18px}
+#s5 .corporate-heading p:first-child{font:400 16px/1.5 Roboto,Arial,sans-serif;max-width:720px;margin:0;color:#53574f}
+#s5 .corporate-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;padding:16px 6px 12px;align-items:stretch}
+#s5 .corporate-grid article{position:relative;isolation:isolate;display:flex;flex-direction:column;gap:0;min-height:0;margin:0;padding:28px;border:0;border-radius:18px;background:var(--section-green,#0aba59);color:#fff;transform:none;overflow:hidden}
+#s5 .corporate-grid article:nth-child(2){background:#e3f7ea;color:#141414}
+#s5 .corporate-grid article:nth-child(3){background:#ffdf4a;color:#141414}
+#s5 .corporate-grid article:before,#s5 .corporate-grid article:after{content:none}
+#s5 .corporate-grid article:first-child:before{content:none}
+#s5 .corporate-perforation{position:absolute;top:16px;left:28px;right:28px;display:flex;justify-content:space-between;pointer-events:none}
+#s5 .corporate-perforation i{display:block;width:6px;height:6px;flex:0 0 6px;border-radius:2px;background:#fff}
+#s5 .corporate-grid article:first-child{padding-top:36px}
+#s5 .corporate-grid article:nth-child(2){clip-path:polygon(0 0,100% 0,100% calc(100% - 26px),calc(100% - 44px) 100%,0 100%)}
+#s5 .corporate-grid article:nth-child(2):after{content:"";position:absolute;inset:auto 0 0 auto;width:44px;height:26px;background:#0aba59;clip-path:polygon(0 0,100% 0,0 100%);border-radius:3px 0 0 0;transform:none}
+#s5 .corporate-grid article{transform:translate(var(--card-x,0px),var(--card-y,0px)) rotate(var(--card-turn,-2deg));transform-origin:50% 65%}
+#s5 .corporate-grid article:nth-child(2){--card-turn:2deg}
+#s5 .corporate-grid article:nth-child(3){--card-turn:-1.5deg}
+#s5 .corporate-grid h3{font:700 32px/1.06 Roboto,Arial,sans-serif;letter-spacing:-.015em;color:inherit;margin:0 0 16px;max-width:300px;min-height:0}
+#s5 .corporate-grid p{font:400 16px/1.5 Roboto,Arial,sans-serif;color:inherit;margin:0;max-width:350px}
+#s5 .corporate-card-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:20px;margin-top:auto}
+#s5 .corporate-note-art{display:block;position:static;order:2;width:138px;height:138px;object-fit:contain;flex:0 0 138px;margin:0;color:inherit;align-self:auto}
+#s5 .corporate-grid article:nth-child(n+2) .corporate-note-art{color:#0aba59}
+#s5 .corporate-grid a{color:inherit;display:inline-flex;align-items:center;font:500 14px/1.4 Roboto,Arial,sans-serif;border:0;padding:12px 0;margin:0;text-decoration:none;max-width:190px}
+#s5 .corporate-grid a:after{content:none}
+#s5 .corporate-grid a:hover{opacity:.75;text-decoration:none}
+#s5 .corporate-grid a>span,#s5 .corporate-grid a>.ui-icon{display:none}
+#s5 .corporate-bottom{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px 40px;align-items:center;margin-top:32px}
+#s5 .corporate-bottom>div:first-child p{font:400 16px/1.5 Roboto,Arial,sans-serif;max-width:720px;margin:0;color:#53574f}
+#s5 .corporate-actions{display:contents}
+#s5 .corporate-actions>a{grid-column:1;font:500 16px/1.4 Roboto,Arial,sans-serif;color:#141414;justify-self:start}
+#s5 .corporate-actions button{grid-column:2;grid-row:1 / span 2;border-radius:999px;min-height:54px;padding:17px 26px;background:#0aba59;color:#fff;font:500 16px/1.35 Roboto,Arial,sans-serif;white-space:nowrap;transform:none}
+#s5 .corporate-actions button:hover{background:#ffdf4a;color:#141414}
+#s5 a:focus-visible,#s5 button:focus-visible{outline:3px solid currentColor;outline-offset:5px}
+@media(max-width:1100px){body>#s5{width:calc(100% - 64px);margin-top:72px}#s5 .corporate-grid{gap:20px}#s5 .corporate-grid article{padding:24px}#s5 .corporate-grid h3{font-size:28px;min-height:0}#s5 .corporate-note-art{width:106px;height:106px;flex-basis:106px}#s5 .corporate-grid a{font-size:13px}#s5 .corporate-card-foot{gap:4px}}
+@media(max-width:800px) and (min-width:701px){#s5 .corporate-grid article{padding:20px}#s5 .corporate-card-foot{flex-wrap:wrap}#s5 .corporate-note-art{order:0;width:80px;height:80px;margin-left:auto}#s5 .corporate-card-foot a{flex-basis:100%;max-width:none}#s5 .corporate-grid h3{font-size:26px}}
+@media(max-width:700px){body>#s5{width:calc(100% - 32px);margin-top:56px}#s5 .corporate-heading{margin-bottom:24px}#s5 .corporate-heading h2{margin-bottom:16px}#s5 .corporate-grid{grid-template-columns:1fr;gap:28px}#s5 .corporate-grid article{padding:24px}#s5 .corporate-grid h3{font-size:28px;min-height:0;max-width:270px;margin-bottom:12px}#s5 .corporate-note-art{width:124px;height:124px;flex-basis:124px}#s5 .corporate-card-foot{padding-top:16px;gap:12px}#s5 .corporate-grid a{font-size:14px}#s5 .corporate-bottom{display:flex;flex-direction:column;align-items:stretch;margin-top:24px;gap:20px}#s5 .corporate-actions{display:flex;flex-direction:column;align-items:stretch;gap:20px;margin:0}#s5 .corporate-actions>a{font-size:15px}#s5 .corporate-actions button{white-space:normal;width:100%}}
+/* Reset inherited collage offsets so every row uses the page container. */
+#s5 .corporate-inner{width:100%;margin:0}
+#s5 .corporate-grid article:nth-child(2):after{top:auto;left:auto;right:0;bottom:0;transform:none}
+#s5 .corporate-grid article:first-child{background:#0aba59}

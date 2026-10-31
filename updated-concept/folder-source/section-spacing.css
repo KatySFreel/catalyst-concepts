@@ -1,0 +1,14 @@
+/* One shared rhythm between the main page sections. Internal layouts stay independent. */
+:root{--section-gap:120px}
+body>.clients,body>.newyear,body>#catalog,body>.team-included,body>.corporate-events{margin-top:var(--section-gap);margin-bottom:0;padding-top:0!important;padding-bottom:0!important}
+body>#catalog,body>.team-included,body>.corporate-events{display:flow-root}
+body>.catalog-download-banner{margin-top:var(--section-gap);margin-bottom:0}
+body>.clients p{margin-top:0;margin-bottom:0}
+body>.corporate-events{margin-bottom:var(--section-gap)}
+@media(max-width:1100px){:root{--section-gap:88px}}
+@media(max-width:700px){:root{--section-gap:64px}}
+
+/* Client logos belong to the opening screen. */
+body>.clients{margin-top:56px}
+@media(max-width:1100px){body>.clients{margin-top:36px}}
+@media(max-width:600px){body>.clients{margin-top:28px}}

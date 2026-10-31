@@ -1,0 +1,111 @@
+/* Lower sections share the cover's type, green, yellow and smooth paper surfaces.
+   Explicit section roots keep these rules out of the header, hero and dialogs. */
+body>.newyear,body>#catalog,body>.team-included{
+ width:calc(100% - 112px);max-width:1280px;margin-top:96px;
+}
+body>:is(.newyear,#catalog,.catalog-download-banner,.team-included,.corporate-events){
+ --section-green:#0aba59;--section-yellow:#ffdf4a;--section-paper:#f3f2ed;
+ color:#141414;font-family:Roboto,Arial,sans-serif;
+}
+body>:is(.newyear,#catalog,.catalog-download-banner,.team-included,.corporate-events) h2{
+ font-family:Roboto,Arial,sans-serif!important;font-weight:700;
+ font-size:clamp(36px,4.1vw,60px);line-height:1.02;letter-spacing:-.02em;
+}
+/* A light seasonal opening; green type and the same yellow pen accent as the hero. */
+body>.newyear .ny-banner{background:var(--section-paper);border-radius:24px;padding:40px;gap:32px;margin-bottom:40px;box-shadow:none}
+body>.newyear .ny-banner h2{color:#141414}
+body>.newyear .ny-title-year{color:#141414}
+body>.newyear .ny-title-team{color:#141414}
+body>.newyear .ny-booking{color:#141414}
+body>.newyear .ny-booking strong{background:var(--section-yellow);color:#141414;border-radius:6px}
+body>.newyear .ny-banner-description{color:#141414}
+body>.newyear .ny-banner-link{background:var(--section-green);color:#fff;border-radius:999px;font:500 16px/1.35 Roboto,Arial,sans-serif;padding:16px 24px;min-height:52px}
+body>.newyear .ny-paper,body>.newyear .ny-tab{background:var(--section-paper);color:#141414}
+body>.newyear .ny-paper{border-radius:0 18px 18px 18px;box-shadow:none;padding:22px}
+body>.newyear .ny-photo{border-radius:12px;overflow:hidden;transform:none}
+body>.newyear .ny-photo img{border-radius:12px}
+body>.newyear .ny-paper h3{font-size:30px;line-height:1.06;letter-spacing:-.015em}
+body>.newyear .ny-featured .ny-tab{background:var(--section-yellow);color:#141414}
+body>.newyear .ny-hit{background:var(--section-yellow);color:#141414;box-shadow:none}
+body>.newyear .ny-actions .ny-primary{background:var(--section-green);color:#fff;border-radius:999px;min-height:52px;font:500 15px/1.3 Roboto,Arial,sans-serif}
+body>.newyear .ny-actions .ny-secondary{color:#141414;font:400 14px/1.4 Roboto,Arial,sans-serif}
+body>.newyear .ny-actions .ny-primary:hover,body>.newyear .ny-banner-link:hover{background:var(--section-yellow);color:#141414}
+/* Photographs lead the catalogue; category controls repeat the cover's pill buttons. */
+body>#catalog .catalog-heading{margin-bottom:32px}
+body>#catalog .catalog-heading h2{max-width:850px}
+body>#catalog .catalog-filters{gap:10px}
+body>#catalog .catalog-filters button{border-radius:999px;background:var(--section-paper);color:#141414;border:1px solid transparent;font:500 15px/1.3 Roboto,Arial,sans-serif;padding:12px 18px}
+body>#catalog .catalog-filters button[aria-pressed="true"]{background:var(--section-yellow);color:#141414;border-color:transparent}
+body>#catalog .catalog-filters button:hover{border-color:#0aba59}
+body>#catalog .catalog-card{border-radius:18px;box-shadow:none}
+body>#catalog .catalog-category-card{background:var(--section-paper)}
+body>#catalog .catalog-help{background:var(--section-paper);border-radius:18px;border:0;box-shadow:none;padding:28px;gap:24px}
+body>#catalog .catalog-help h3{font-size:32px;line-height:1.06}
+body>#catalog .catalog-help button{background:var(--section-green);color:#fff;border-radius:999px;min-height:52px;font:500 15px/1.3 Roboto,Arial,sans-serif;padding:16px 24px}
+/* The catalogue is the second large green plane, echoing the opening screen. */
+body>.catalog-download-approved{width:calc(100% - 32px);max-width:1392px;margin-top:96px;background:var(--section-green);color:#fff;border-radius:24px;padding:48px 56px;overflow:hidden}
+body>.catalog-download-approved h2,body>.catalog-download-approved .download-underlined{color:#fff}
+body>.catalog-download-approved .download-copy p{color:#fff}
+body>.catalog-download-approved .download-underlined{background:none}
+body>.catalog-download-approved .download-underlined svg{stroke:var(--section-yellow)}
+body>.catalog-download-approved .download-copy button{background:var(--section-yellow);color:#141414;min-height:54px;border-radius:999px;font:500 16px/1.35 Roboto,Arial,sans-serif}
+body>.catalog-download-approved:hover .download-copy button{background:#fff;color:#141414}
+body>.catalog-download-approved .download-doodle path{stroke:var(--section-yellow)}
+body>.catalog-download-approved .download-preview-circle{background:transparent}
+/* An editorial service list balanced by a warm, flat paper panel. */
+body>.team-included h2{max-width:900px;margin-bottom:40px}
+body>.team-included .team-included-columns{gap:48px}
+body>.team-included .team-included-label{font-size:28px;line-height:1.1}
+body>.team-included .team-included-result>.team-included-label{background:var(--section-paper)}
+body>.team-included .team-included-paper{background:var(--section-paper);border-radius:0 18px 18px 18px}
+body>.team-included .team-included-paper li{border-color:#dcdcd5}
+body>.team-included .included-service-icon{color:#0aba59}
+/* Keep the event photo in its own frame: no dark overlay over the entire section. */
+body>.corporate-events{width:calc(100% - 32px);max-width:1392px;margin-top:96px;margin-bottom:80px;background:var(--section-paper);color:#141414;border-radius:24px}
+body>.corporate-events::before{content:none}
+body>.corporate-events .corporate-inner{padding:48px 40px}
+body>.corporate-events .corporate-heading{gap:48px;margin-bottom:32px;align-items:start}
+body>.corporate-events .corporate-heading h2,body>.corporate-events .corporate-heading p{color:#141414}
+body>.corporate-events .corporate-photo{display:block;width:100%;height:300px;object-fit:cover;object-position:center 48%;border:8px solid #fff;border-radius:18px;margin-bottom:36px}
+body>.corporate-events .corporate-grid{gap:32px}
+body>.corporate-events .corporate-grid article{margin:0;padding:24px 0 0;border-top:1px solid #c9cdc6;background:none;border-radius:0}
+body>.corporate-events .corporate-grid article::before,body>.corporate-events .corporate-grid article::after{content:none}
+body>.corporate-events .corporate-grid h3{font-size:32px;line-height:1.06}
+body>.corporate-events .corporate-grid a{border:0;padding-top:8px;color:#0aba59}
+body>.corporate-events .corporate-actions>a{color:#141414}
+body>.corporate-events .corporate-actions button{background:var(--section-green);color:#fff;min-height:54px;font:500 16px/1.35 Roboto,Arial,sans-serif}
+body>.corporate-events .corporate-actions button:hover,body>#catalog .catalog-help button:hover{background:var(--section-yellow);color:#141414}
+@media(max-width:1100px){
+ body>.newyear,body>#catalog,body>.team-included{width:calc(100% - 48px);margin-top:72px}
+ body>.newyear .ny-banner{padding:32px;gap:24px}
+ body>.catalog-download-approved,body>.corporate-events{margin-top:72px}
+ body>.catalog-download-approved{padding:36px 32px}
+ body>.corporate-events .corporate-inner{padding:36px 32px}
+ body>.corporate-events .corporate-heading{gap:28px}
+ body>.team-included .team-included-columns{gap:28px}
+ body>.corporate-events .corporate-photo{height:260px}
+}
+@media(max-width:700px){
+ body>.newyear,body>#catalog,body>.team-included{width:calc(100% - 32px);margin-top:56px}
+ body>:is(.newyear,#catalog,.catalog-download-banner,.team-included,.corporate-events) h2{font-size:36px;line-height:1.04}
+ body>.newyear .ny-banner{padding:24px 22px;gap:22px;margin-bottom:32px}
+ body>.newyear .ny-paper{padding:20px}
+ body>.newyear .ny-paper h3{font-size:28px}
+ body>#catalog .catalog-heading{margin-bottom:24px}
+ body>#catalog .catalog-filters{gap:8px}
+ body>#catalog .catalog-filters button{font-size:14px;padding:11px 15px}
+ body>#catalog .catalog-help{padding:24px 20px}
+ body>.catalog-download-approved,body>.corporate-events{width:calc(100% - 24px);margin-top:56px;border-radius:22px}
+ body>.catalog-download-approved{padding:28px 22px 0}
+ body>.catalog-download-approved .download-copy button{font-size:15px;padding-left:18px;padding-right:18px;max-width:100%;white-space:normal}
+ body>.team-included h2{margin-bottom:28px}
+ body>.team-included .team-included-label{font-size:25px}
+ body>.team-included .team-included-result>.team-included-label{font-size:22px}
+ body>.corporate-events .corporate-inner{padding:28px 22px}
+ body>.corporate-events .corporate-heading{grid-template-columns:1fr;gap:22px}
+ body>.corporate-events .corporate-photo{height:210px;border-width:5px;margin-bottom:28px}
+ body>.corporate-events .corporate-grid{grid-template-columns:1fr;gap:28px}
+ body>.corporate-events .corporate-grid h3{font-size:28px}
+ body>.corporate-events .corporate-actions{align-items:stretch}
+ body>.corporate-events{margin-bottom:48px}
+}

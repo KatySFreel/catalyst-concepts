@@ -1,0 +1,41 @@
+/* User-provided individual PNG stickers, used without image processing. */
+.hero .collage-v2 .seal,
+.hero .collage-v2 .hero-sticker {
+ background-repeat:no-repeat;
+ background-size:contain;
+ background-position:center;
+ background-color:transparent;
+}
+.hero .collage-v2 .seal,
+.hero .collage-v2[data-slide="0"] .seal {background-image:url('assets/user-stickers/movement.png')}
+.hero .collage-v2[data-slide="1"] .seal {background-image:url('assets/user-stickers/roller.png')}
+.hero .collage-v2[data-slide="2"] .seal {background-image:url('assets/user-stickers/together.png')}
+.hero .collage-v2[data-slide="3"] .seal {background-image:url('assets/user-stickers/toaster.png')}
+.hero .collage-v2[data-slide="4"] .seal {background-image:url('assets/user-stickers/ideas.png')}
+.hero .collage-v2 .sticker-popper {background-image:url('assets/user-stickers/radio.png')}
+.hero .collage-v2 .sticker-highfive {background-image:url('assets/user-stickers/magnet.png')}
+.mega-promo::after {background-image:url('assets/user-stickers/pinwheel.png')!important}
+
+/* Seasonal illustrations follow the supplied sticker pack. */
+#new-year .ny-title-year{color:#141414}
+#new-year img.ny-banner-art{object-fit:contain;object-position:top right;transform:none}
+#new-year img.ny-ornament{object-fit:contain;object-position:center;vertical-align:middle}
+#new-year img.ny-mobile-ornaments{object-fit:contain;object-position:top right;top:14px;height:100px}
+
+/* Keep every ornament separate, including its white paper border. */
+#new-year .ny-banner-side .ny-separated-baubles{
+ display:flex;align-items:flex-start;justify-content:flex-end;gap:16px;
+ width:190px;height:115px;transform:none;
+}
+#new-year .ny-separated-baubles img{display:block;flex:0 0 48px;width:48px;height:70px;object-fit:contain}
+#new-year .ny-separated-baubles img:nth-child(2){margin-top:38px}
+#new-year .ny-separated-baubles img:nth-child(3){flex-basis:38px;width:38px;height:56px;margin-top:12px}
+#catalog .catalog-category-card img.category-illustration{object-fit:contain;object-position:center;padding:10px;box-sizing:border-box}
+@media(max-width:760px){
+ #new-year .ny-banner-side .ny-separated-baubles{display:none}
+ #new-year .ny-mobile-ornaments.ny-separated-baubles{display:flex;align-items:flex-start;gap:12px;top:18px;right:16px;width:86px;height:115px}
+ #new-year .ny-mobile-ornaments.ny-separated-baubles img{flex:0 0 37px;width:37px;height:53px}
+ #new-year .ny-mobile-ornaments.ny-separated-baubles img:nth-child(2){margin-top:48px}
+ #new-year .ny-mobile-ornaments.ny-separated-baubles img:nth-child(3){display:none}
+ #catalog .catalog-category-card img.category-illustration{padding:3px}
+}

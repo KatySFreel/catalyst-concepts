@@ -1,0 +1,37 @@
+/* Replace the legacy entrance, which retained translate after finishing. */
+.hero-copy,.collage .team,.collage .project-photo,.collage .mini-folder,.collage .seal{animation:none}
+@keyframes page-rise{
+ from{opacity:0;translate:0 24px}
+ to{opacity:1;translate:0 0}
+}
+@keyframes page-photo{
+ from{opacity:0;translate:0 64px;scale:.96}
+ to{opacity:1;translate:0 0;scale:1}
+}
+@keyframes page-paper{
+ from{opacity:0;translate:0 30px;scale:.94}
+ 75%{opacity:1;translate:0 -3px;scale:1.015}
+ to{opacity:1;translate:0 0;scale:1}
+}
+/* Scale leaves sticker translations free for live parallax. */
+@keyframes page-sticker{
+ from{opacity:0;scale:.5}
+ 65%{opacity:1;scale:1.12}
+ 82%{scale:.97}
+ to{opacity:1;scale:1}
+}
+@media(prefers-reduced-motion:no-preference){
+ .page-enter .header-proto{animation:page-rise .6s cubic-bezier(.22,1,.36,1) backwards}
+ .page-enter .hero-copy>.eyebrow{animation:page-rise .6s .08s cubic-bezier(.22,1,.36,1) backwards}
+ .page-enter .hero h1{animation:page-rise .75s .16s cubic-bezier(.22,1,.36,1) backwards}
+ .page-enter .hero .intro{animation:page-rise .65s .27s cubic-bezier(.22,1,.36,1) backwards}
+ .page-enter .hero-actions{animation:page-rise .65s .36s cubic-bezier(.22,1,.36,1) backwards}
+ .page-enter .hero .stats{animation:page-rise .65s .44s cubic-bezier(.22,1,.36,1) backwards}
+ .page-enter .collage .team{animation:page-photo .85s .18s cubic-bezier(.22,1,.36,1) backwards}
+ .page-enter .event-polaroid{animation:page-paper .7s .36s cubic-bezier(.22,.75,.25,1) backwards}
+ .page-enter .event-caption{animation:page-paper .7s .48s cubic-bezier(.22,.75,.25,1) backwards}
+ .page-enter .collage .mini-folder{animation:page-paper .7s .42s cubic-bezier(.22,.75,.25,1) backwards}
+ .page-enter .collage .seal{animation:page-sticker .55s .62s ease-out backwards}
+ .page-enter .sticker-popper{animation:page-sticker .55s .7s ease-out backwards}
+ .page-enter .sticker-highfive{animation:page-sticker .55s .78s ease-out backwards}
+}

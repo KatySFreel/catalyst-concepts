@@ -1,0 +1,38 @@
+/* User-supplied paper texture. Geometry remains in figma-positions.css. */
+:root{--paper-yellow:#FFF0B5}
+.collage-v2 .mini-folder,
+.collage-v2 .event-caption{
+ clip-path:none;
+ background-image:linear-gradient(#ffffff55,#ffffff55),url('assets/paper-texture.png')!important;
+ background-size:auto,240px auto;
+ background-repeat:repeat;
+ background-blend-mode:soft-light,multiply;
+}
+.collage-v2 .mini-folder{background-color:var(--paper-yellow)}
+.collage-v2 .event-caption{background-color:var(--green-l)}
+.collage-v2 .event-polaroid{background-color:var(--milk);background-image:none!important}
+/* Release the entrance animation after it finishes so it cannot override parallax. */
+.collage-v2 .seal{animation-fill-mode:backwards}
+/* Restore subtle movement without modifying the approved layout or rotations. */
+.collage-v2[data-slide] .seal,
+.collage-v2[data-slide] .hero-sticker{
+ translate:var(--motion-x,0px) var(--motion-y,0px);
+}
+@media(prefers-reduced-motion:reduce){
+ .collage-v2[data-slide] .seal,.collage-v2[data-slide] .hero-sticker{translate:none}
+}
+
+/* Primary cost action and New Year promotion actions. */
+.hero-actions>.button.yellow,
+.mega-promo>a.promo-button{
+ background:#141414;color:#FFFFFF;border-color:#141414;
+}
+.hero-actions>.button.yellow:hover,.hero-actions>.button.yellow:focus-visible,
+.mega-promo>a.promo-button:hover,.mega-promo>a.promo-button:focus-visible{
+ background:var(--yellow);color:var(--ink);border-color:var(--yellow);
+}
+
+/* Only the photo card and program description are links. */
+.collage-v2 .event-polaroid,.collage-v2 .event-caption{pointer-events:auto}
+.event-project-link{position:absolute;inset:0;z-index:1;display:block;cursor:pointer}
+.event-project-link:focus-visible{outline:3px solid var(--yellow);outline-offset:-3px}

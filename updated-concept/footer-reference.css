@@ -1,0 +1,35 @@
+/* Reference composition, using the existing brand palette and typography. */
+body>#prototype-footer.continuation-block{width:calc(100% - 32px);max-width:1392px;margin:96px auto 16px;padding:48px 40px 0;background:#ffdf4a;color:#141414;border-radius:24px;overflow:hidden}
+#prototype-footer .continuation-inner{display:grid;grid-template-columns:minmax(240px,1.05fr) minmax(0,2fr);gap:40px 56px;width:100%;max-width:none;margin:0}
+#prototype-footer .footer-proto-cta{display:flex;flex-direction:column;gap:22px;padding:0;border:0}
+#prototype-footer h2{font:700 32px/1.06 Roboto,Arial,sans-serif!important;letter-spacing:-.015em;margin:0 0 14px}
+#prototype-footer .footer-proto-cta p{font:400 15px/1.5 Roboto,Arial,sans-serif;color:#141414;margin:0;max-width:340px}
+#prototype-footer .contact-proto-messengers{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-start;align-items:center;margin:0}
+#prototype-footer .cta{border:0;border-radius:999px;background:#0aba59;color:#fff;padding:15px 23px;font:500 15px/1.35 Roboto,Arial,sans-serif;min-height:50px}
+#prototype-footer .contact-proto-messengers .secondary{background:transparent;color:#141414;padding:0;min-height:0}
+#prototype-footer .contact-proto-messengers button{flex-basis:100%;max-width:170px;order:-1}
+#prototype-footer .footer-proto-nav{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin:0}
+#prototype-footer .ftr-h{font:700 18px/1.1 Roboto,Arial,sans-serif;margin:0 0 18px}
+#prototype-footer li{font:400 13px/1.45 Roboto,Arial,sans-serif;color:#141414;margin:0 0 10px}
+#prototype-footer a{text-decoration:none;color:inherit}
+#prototype-footer a:hover{color:#141414;text-decoration:underline;text-underline-offset:3px}
+#prototype-footer .cta:hover{background:#141414;color:#fff;text-decoration:none}
+#prototype-footer .footer-proto-bottom{grid-column:1/-1;display:grid;grid-template-columns:1.05fr 2fr;gap:56px;border:0;padding:0}
+#prototype-footer h3{font:700 20px/1.15 Roboto,Arial,sans-serif;margin:0 0 12px}
+#prototype-footer .footer-proto-bottom .cta{background:transparent;color:#141414;padding:0;min-height:0;font:400 13px/1.4 Roboto,Arial,sans-serif;border-radius:0}
+#prototype-footer .footer-proto-bottom .cta:hover{text-decoration:underline}
+#prototype-footer .footer-social-links{gap:10px 22px;font:400 13px/1.5 Roboto,Arial,sans-serif}
+#prototype-footer .footer-proto-legal{grid-column:1/-1;border:0;padding:0;gap:8px 24px;color:#424128;font:400 11px/1.4 Roboto,Arial,sans-serif}
+#prototype-footer .footer-event-line{grid-column:1/-1;width:calc(100% + 80px);max-width:none;height:104px;margin:0 -40px;display:block;object-fit:cover;object-position:center bottom;opacity:.65}
+#prototype-footer a:focus-visible,#prototype-footer button:focus-visible{outline:2px solid #141414;outline-offset:4px}
+@media(max-width:1100px){body>#prototype-footer.continuation-block{padding:36px 32px 0;margin-top:72px}#prototype-footer .continuation-inner{grid-template-columns:1fr;gap:32px}#prototype-footer .footer-proto-cta{display:grid;grid-template-columns:1fr 1fr;gap:32px}#prototype-footer .footer-proto-nav{gap:28px}#prototype-footer .footer-proto-bottom{grid-template-columns:1fr 1fr;gap:32px}#prototype-footer .footer-event-line{width:calc(100% + 64px);margin:0 -32px}}
+@media(max-width:700px){body>#prototype-footer.continuation-block{width:calc(100% - 24px);padding:28px 22px 0;margin-top:56px;border-radius:24px}#prototype-footer .footer-proto-cta{display:flex;gap:20px}#prototype-footer h2{font-size:28px!important}#prototype-footer .footer-proto-nav{grid-template-columns:1fr 1fr;gap:24px 18px}#prototype-footer .footer-proto-bottom{grid-template-columns:1fr;gap:24px}#prototype-footer .footer-proto-legal{flex-direction:column;gap:8px}#prototype-footer .footer-event-line{width:calc(100% + 44px);margin:0 -22px;height:82px}#prototype-footer .contact-proto-messengers button{flex-basis:auto;order:0}#prototype-footer .ftr-h{font-size:18px}}
+/* Dark footer requested by the art director. */
+body>#prototype-footer.continuation-block{background:#141414;color:#fff}
+#prototype-footer .footer-proto-cta p,#prototype-footer li,#prototype-footer .contact-proto-messengers .secondary,#prototype-footer .footer-proto-bottom .cta{color:#fff}
+#prototype-footer .footer-proto-legal{color:#b8bcb6}
+#prototype-footer a:hover{color:#ffdf4a}
+#prototype-footer .cta:hover{background:#ffdf4a;color:#141414}
+#prototype-footer .footer-proto-bottom .cta:hover{background:transparent;color:#ffdf4a}
+#prototype-footer .footer-event-line{filter:invert(1);opacity:.6}
+#prototype-footer a:focus-visible,#prototype-footer button:focus-visible{outline-color:#ffdf4a}

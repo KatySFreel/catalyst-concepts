@@ -1,0 +1,48 @@
+/* Switch navigation before the desktop links outgrow the header. */
+@media(min-width:761px) and (max-width:1100px){
+ .primary-line{min-height:64px;padding:10px 14px;gap:10px;flex-wrap:wrap}
+ .primary-line>nav,.primary-line>.cta{display:none!important}
+ .primary-line>.brand{margin-right:auto;flex:0 0 40px}
+ .primary-line>.brand img{width:40px;height:44px}
+ .primary-line>.search-toggle,.primary-line>.messenger,.primary-line>.mobile-trigger{width:38px;height:38px;flex:0 0 38px}
+ .primary-line>.mobile-trigger{display:grid;place-items:center;background:transparent;border:1px solid #0aba592b;border-radius:50%;color:var(--blue)}
+ .mobile-menu-open .primary-line>.mobile-trigger{background:var(--green-l)}
+ .mobile-catalog-entry{display:block;flex:0 0 100%;padding:12px;border:0;border-radius:999px;background:var(--green-l);color:var(--ink);font-size:14px}
+ body.mobile-menu-open{overflow:hidden}
+ .mobile-menu-open .mobile-dim{display:block;position:fixed;inset:0;z-index:9;background:#14141466}
+ .mobile-sheet{position:fixed;inset:auto 24px auto 24px;margin:0;width:calc(100% - 48px);height:auto;min-height:0;max-width:none;border:0;border-radius:26px;background:var(--milk);z-index:20;overflow:auto;padding:12px 0 18px}
+ .mobile-sheet[open]{display:block}
+ .mobile-sheet-body{padding:8px 16px 18px}
+ .mobile-sheet .mobile-contact{display:none}
+ .mobile-sheet-head{padding:8px 16px 12px}
+ .mobile-sheet .mobile-row[data-kind=programs]{background:var(--green-l);border-radius:999px;padding:16px;margin-bottom:8px}
+ .mobile-sheet .mobile-season{margin:85px 8px 20px}
+ .mobile-sheet-head{align-items:center}
+ .mobile-sheet-head strong{flex:1}
+ .mobile-category-title{padding:8px;gap:9px}
+ .mobile-cards .mega-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .mobile-sheet .mega-links .photo-link img{height:auto;aspect-ratio:1.65}
+ .search-is-open .mobile-catalog-entry{display:none}
+ .search-is-open .inline-search{order:8;flex:0 0 100%}
+ .primary-line>#header-search{padding:20px 16px;max-height:70vh}
+ .mv-cols{display:block}
+ .mv-foot{display:block}
+ .mv-gbtn{display:block;text-align:center;margin-top:15px}
+}
+
+/* Align tablet copy to the page gutter, keeping its readable width. */
+@media(min-width:761px) and (max-width:1100px){
+ .hero-copy{margin-left:0;margin-right:0;text-align:left;align-self:flex-start}
+ .hero-body>.stats{margin-left:0;margin-right:0;align-self:flex-start}
+}
+
+/* Keep the quote action beside compact navigation while the row has room. */
+@media(min-width:620px) and (max-width:1100px){
+ .primary-line>.cta{display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 auto;white-space:nowrap;font-size:14px;padding:13px 16px}
+}
+.mobile-quote-action{display:none}
+@media(max-width:619px){
+ .primary-line>.cta{display:none!important}
+ .mobile-sheet>.mobile-quote-action{display:flex;align-items:center;justify-content:center;margin:8px 16px 4px;padding:15px 18px;border-radius:999px;background:var(--green);color:var(--milk);font-size:14px;text-align:center}
+ .mobile-sheet>.mobile-quote-action:hover,.mobile-sheet>.mobile-quote-action:focus-visible{background:var(--yellow);color:var(--ink)}
+}

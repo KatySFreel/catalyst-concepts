@@ -1,0 +1,137 @@
+/* Restore the concept's hand-drawn accents and centre each complete scene. */
+/* Higher specificity overrides the navigation's scoped decoration reset. */
+#header .primary-line>.cta{position:relative;overflow:visible}
+#header .primary-line>.cta::before{content:""!important;display:block!important;position:absolute;pointer-events:none;top:32px;right:15px;width:80px;height:55px;background:url('assets/cta-hand-arrow.svg') center/contain no-repeat;rotate:75deg;z-index:2}
+.hero h1 #hero-changing-title{position:relative;margin-bottom:12px}
+.hero h1 #hero-changing-title::after{content:""!important;display:block!important;position:absolute;left:0;bottom:-21px;width:100%;height:18px;background:url('assets/hero-underline.svg') center/100% 100% no-repeat;border-radius:0;transform:none;pointer-events:none}
+/* One distinct sticker for each of the five programmes. */
+.hero .collage-v2[data-slide] .seal{display:block!important;width:116px;height:116px;left:var(--accent-x,280px);top:var(--accent-y,20px);right:auto;bottom:auto;z-index:8;transform:rotate(4deg)}
+.collage-v2[data-slide="0"] .seal{background-image:url('assets/sticker-finish.svg');background-size:contain;background-position:center}
+.collage-v2[data-slide="1"] .seal{background-image:url('assets/hero-stickers.png');background-size:300% 100%;background-position:100% 0}
+.collage-v2[data-slide="2"] .seal{background-image:url('assets/hero-stickers.png');background-size:285% 100%;background-position:0 0}
+.collage-v2[data-slide="3"] .seal{background-image:url('assets/hero-stickers.png');background-size:342% 100%;background-position:50.8% 0}
+.collage-v2[data-slide="4"] .seal{background-image:url('assets/sticker-pizza.svg');background-size:contain;background-position:center}
+@media(min-width:1101px){
+ .hero .collage-v2[data-slide]{top:var(--scene-top,0px);bottom:auto;left:var(--scene-left,50%);translate:none;scale:var(--scene-scale,.9);transform-origin:0 0}
+ .collage-v2[data-slide] .event-polaroid{width:236px}
+ .collage-v2[data-slide] .event-polaroid img{height:158px}
+ .collage-v2[data-slide="0"]{--accent-x:295px;--accent-y:8px}
+ .collage-v2[data-slide="1"]{--accent-x:350px;--accent-y:15px}
+ .collage-v2[data-slide="2"]{--accent-x:490px;--accent-y:8px}
+ .collage-v2[data-slide="2"] .team.hero-slide{width:400px;height:662px;left:245px;top:0}
+ .collage-v2[data-slide="3"]{--accent-x:365px;--accent-y:15px}
+ .collage-v2[data-slide="4"]{--accent-x:320px;--accent-y:8px}
+}
+@media(max-width:1100px){
+ .hero .collage-v2[data-slide] .seal{width:94px;height:94px;left:290px;top:10px}
+ .collage-v2[data-slide="2"] .seal{left:300px;top:64px}
+ .hero-slider-stage{height:410px}
+}
+@media(max-width:760px){
+ .hero h1 #hero-changing-title::after{height:14px;bottom:-17px}
+}
+/* Compact navigation: a single centre line and equal logo/control heights. */
+@media(max-width:1100px){
+ #header .primary-line{height:auto;min-height:59px;padding:6px 12px;align-items:center;gap:8px}
+ #header .primary-line>.brand{display:flex;align-items:center;justify-content:center;align-self:center;flex:0 0 44px!important;width:44px!important;height:48px;margin-top:0;margin-bottom:0;padding:0!important}
+ #header .primary-line>.brand img{display:block;width:44px!important;height:48px!important;object-fit:contain}
+ #header .primary-line>.messenger,#header .primary-line>.mobile-trigger,#header .primary-line>.search-toggle{box-sizing:border-box;align-self:center;width:48px!important;height:48px!important;min-width:48px!important;max-width:48px!important;min-height:48px!important;max-height:48px!important;flex:0 0 48px!important;aspect-ratio:1;border-radius:50%;padding:0!important;display:grid;place-items:center;margin-top:0;margin-bottom:0}
+ #header .primary-line>.messenger svg{width:26px;height:26px}
+ #header .primary-line>.mobile-trigger svg{width:24px;height:24px}
+}
+
+/* The text types inside a fixed-width span; the underline never animates. */
+.hero h1 #hero-changing-title{width:8.6em;max-width:100%;height:1.02em;min-height:1.02em;vertical-align:top}
+/* The imported menu scope must not clip the binding at the card edge. */
+#header .promo-stack>.promo-experiment.promo-calendar,
+.mobile-sheet .promo-stack>.promo-experiment.promo-calendar{overflow:visible!important;clip-path:none}
+#header .promo-stack:has(>.promo-calendar),
+.mobile-sheet .promo-stack:has(>.promo-calendar){padding-top:0!important;overflow:visible}
+/* Secondary navigation highlights through colour and rotating chevrons. */
+#header .primary-line>nav>.mega-menu:not([data-kind="programs"])>summary,
+#header .primary-line>nav>a{background:transparent;transition:color .18s ease}
+#header .primary-line>nav>.mega-menu:not([data-kind="programs"])>summary:is(:hover,:focus-visible),
+#header .primary-line>nav>.mega-menu:not([data-kind="programs"])[open]>summary,
+#header .primary-line>nav>a:is(:hover,:focus-visible){background:transparent;color:#0aba59;text-decoration:none}
+#header .primary-line>nav>.mega-menu:not([data-kind="programs"])>summary::after{transform:rotate(90deg)!important;transition:transform .18s ease}
+#header .primary-line>nav>.mega-menu:not([data-kind="programs"])>summary:is(:hover,:focus-visible)::after,
+#header .primary-line>nav>.mega-menu:not([data-kind="programs"])[open]>summary::after{transform:rotate(-90deg)!important}
+@media(prefers-reduced-motion:reduce){
+ #header .primary-line>nav>.mega-menu:not([data-kind="programs"])>summary,
+ #header .primary-line>nav>.mega-menu:not([data-kind="programs"])>summary::after,
+ #header .primary-line>nav>a{transition:none}
+}
+/* Separate the mobile icon circles; imported desktop spacing used negative margins. */
+@media(max-width:1100px){
+ #header .primary-line{column-gap:10px!important}
+ #header .primary-line>.messenger,
+ #header .primary-line>.mobile-trigger,
+ #header .primary-line>.search-toggle{margin-left:0!important;margin-right:0!important}
+}
+
+/* Exact binding from the folder concept; suppress the legacy CSS loops. */
+:is(#header,.mobile-sheet) .promo-calendar .calendar-rings::before,
+:is(#header,.mobile-sheet) .promo-calendar .calendar-rings::after{content:none!important;display:none!important}
+:is(#header,.mobile-sheet) .promo-calendar .calendar-rings{position:absolute;left:0;right:0;top:-30px;height:44px;pointer-events:none}
+:is(#header,.mobile-sheet) .promo-calendar .calendar-rings svg{position:absolute;top:0;width:24px;height:40px;overflow:visible}
+:is(#header,.mobile-sheet) .promo-calendar .calendar-rings svg:first-child{left:24px}
+:is(#header,.mobile-sheet) .promo-calendar .calendar-rings svg:last-child{right:24px}
+
+/* Tablet CTA matches the icon controls; explicit sizing survives scoped imports. */
+@media(min-width:620px) and (max-width:1100px){
+ #header .primary-line>.cta{display:inline-flex!important;align-items:center;justify-content:center;align-self:center;box-sizing:border-box;height:48px;min-height:48px!important;padding:0 18px!important;font:500 14px/20px Roboto,Arial,sans-serif!important;flex:0 0 auto;white-space:nowrap;border-radius:999px}
+ #header .primary-line>.cta::before{top:calc(100% - 12px)}
+}
+/* Keep the desktop cover compact while retaining room around the composition. */
+@media(min-width:1101px){
+ body main>.hero{min-height:652px;height:calc(clamp(620px,calc(100svh - var(--header-height,130px) - 80px),690px) + 32px)}
+ html body>.clients{margin-top:24px}
+}
+/* Tighter desktop navigation and client logos closer to the cover. */
+@media(min-width:1101px){
+ #header .primary-line>nav{gap:4px!important;justify-content:flex-start!important}
+ #header .primary-line>nav>a,
+ #header .primary-line>nav>.mega-menu:not([data-kind="programs"])>summary{padding-left:12px!important;padding-right:12px!important}
+ html body>.clients{margin-top:24px;padding-top:0!important}
+}
+
+/* Give the desktop copy a little more air above, aligned with the artwork. */
+@media(min-width:1101px){.hero .hero-copy{padding-top:36px}}
+/* Enlarge city, tower, foodtruck and pizza cutouts independently of companion cards. */
+@media(min-width:1101px){
+ .hero .collage-v2[data-slide="1"] .team.hero-slide,
+ .hero .collage-v2[data-slide="2"] .team.hero-slide,
+ .hero .collage-v2[data-slide="3"] .team.hero-slide,
+ .hero .collage-v2[data-slide="4"] .team.hero-slide{transform:scale(1.1);transform-origin:center center}
+}
+/* Use an available medium weight for the headline statistics. */
+.hero .stats strong{font-family:Roboto,Arial,sans-serif!important;font-weight:500!important}
+
+/* Fill the viewport for every phase of the seamless logo loop. */
+html body>.clients .client-logos{display:block;min-width:0;overflow:hidden}
+html body>.clients .logo-track{display:flex;width:max-content;gap:0}
+html body>.clients .logo-set{box-sizing:border-box;min-width:var(--logo-cycle-width,0px);flex-shrink:0;justify-content:space-around}
+@media(prefers-reduced-motion:reduce){
+ html body>.clients .client-logos{overflow-x:auto}
+ html body>.clients .logo-set{padding-right:0}
+}
+
+/* Requested colours and shared page guides for lower sections. */
+#new-year .ny-featured .ny-tab{background:#0aba59!important;color:#fff!important}
+#new-year .ny-featured .ny-tab::after{background:#0aba59!important}
+#catalog-download.catalog-download-approved{background:#141414!important;color:#fff}
+#catalog-download .download-preview-circle{background:transparent}
+#catalog-download .download-copy button{background:#fff;color:#141414}
+#catalog-download .download-copy button svg{width:20px;height:20px;stroke-width:1.8;flex-shrink:0}
+#catalog-download:hover .download-copy button{background:#ffdf4a;color:#141414}
+#s5 .corporate-inner{box-sizing:border-box;width:min(1280px,calc(100vw - 48px));max-width:100%;margin-inline:auto;padding:56px 0}
+#s5 .corporate-heading,#s5 .corporate-photo,#s5 .corporate-grid,#s5 .corporate-actions{width:100%;margin-left:0;margin-right:0}
+@media(max-width:1100px){#s5 .corporate-inner{padding-block:40px}}
+@media(max-width:600px){#s5 .corporate-inner{width:calc(100vw - 30px);padding-block:32px}}
+/* Shared desktop size for section headings. */
+@media(min-width:1101px){
+ html body h2{font-size:3.4vw!important}
+}
+/* Calendar promo typography. */
+:is(#header,.mobile-sheet) .promo-calendar .experiment-top h4{font-size:32px!important}
+:is(#header,.mobile-sheet) .promo-calendar .experiment-kicker{color:#141414!important}

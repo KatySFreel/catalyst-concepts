@@ -1,0 +1,101 @@
+/* Keep the document width stable while dropdowns lock scrolling. */
+html{scrollbar-gutter:stable}
+.header-proto .utility-contacts,.header-proto .utility-contacts a,.header-proto .utility-contacts span{color:#fff!important}
+.hero .eyebrow{font-size:19px;margin-bottom:24px}
+.header-proto .primary-line .inline-search{height:48px;min-height:48px;align-self:center;padding:0 18px;gap:14px;align-items:center;box-sizing:border-box}
+.header-proto .inline-search input{height:100%;min-height:0;margin:0;padding:0;line-height:normal;border:0;border-radius:0;background:transparent;box-shadow:none;outline:none}
+.header-proto .inline-search>.ui-icon{flex:none;width:20px;height:20px;margin:0}
+.hero{border-radius:0}
+.hero-slider-stage{display:contents}
+.collage-v2[data-slide]{scale:.85;transform-origin:center bottom}
+@media(max-width:1100px){
+ .hero .eyebrow{font-size:17px;margin-bottom:20px}
+ .hero-body{gap:24px}
+ .hero-copy{padding-bottom:0}
+ .hero-slider-stage{display:block;position:relative;width:100%;height:var(--scaled-slider-height,420px);flex:none}
+ .hero-slider-stage .collage-v2[data-slide]{position:absolute;left:50%;top:0;right:auto;bottom:auto;margin:0;translate:-50% 0;scale:.82;transform-origin:center top}
+ .hero-body>.hero-actions{display:flex;width:100%;max-width:650px;margin:0 auto;gap:12px}
+ .hero .stats{margin:32px auto 0;max-width:650px;width:calc(100% - 48px);padding:0;justify-content:space-between}
+}
+@media(max-width:760px){.hero .eyebrow{font-size:16px}.hero-body>.hero-actions{flex-direction:column}.hero-body>.hero-actions>.button{width:100%;min-height:52px}.hero .stats{gap:16px}.hero .stats>div{flex-direction:column;align-items:flex-start;gap:6px}}
+/* Explicit spacing also applies when the source mobile token is unavailable. */
+.mobile-sheet.mobile-navigation .mobile-search-entry{
+ display:flex!important;align-items:center;justify-content:space-between;
+ box-sizing:border-box;width:100%;min-height:48px;padding:14px 16px!important;
+ gap:16px;font:400 16px/20px Roboto,Arial,sans-serif!important;text-align:left;
+}
+.mobile-sheet.mobile-navigation .mobile-search-entry svg{display:block;flex:0 0 20px;width:20px;height:20px;margin:0}
+
+.collage-v2 .mini-folder>span{text-transform:none;letter-spacing:normal}
+.collage-v2[data-slide] .mini-folder{height:auto;min-height:0;padding:12px 12px 14px}
+.collage-v2 .mini-folder small{margin-bottom:0}
+/* Smaller agency label above the main heading. */
+.hero .eyebrow{font-size:16px}
+@media(max-width:1100px){.hero .eyebrow{font-size:15px}}
+@media(max-width:760px){.hero .eyebrow{font-size:14px}}
+/* Rounded lower cover corners remain visible before scrolling. */
+.hero{border-radius:0 0 36px 36px;clip-path:inset(0 var(--hero-inset,0px) 0 round var(--hero-corner,0px) var(--hero-corner,0px) 36px 36px)}
+@media(max-width:760px){.hero{border-bottom-left-radius:24px;border-bottom-right-radius:24px;clip-path:inset(0 var(--hero-inset,0px) 0 round var(--hero-corner,0px) var(--hero-corner,0px) 24px 24px)}}
+/* Foodtruck: stronger cutout edge and less overlap with the description. */
+.collage-v2[data-slide="3"] .team.hero-slide{
+ filter:drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff);
+ z-index:2;
+}
+@media(min-width:1101px){
+ .collage-v2[data-slide="3"] .mini-folder{top:115px;left:538px;z-index:1}
+ .collage-v2[data-slide="3"] .event-caption{left:-90px}
+}
+@media(max-width:1100px){
+ .collage-v2[data-slide="3"] .event-caption{left:0}
+}
+/* A cut-paper border follows the alpha silhouette without changing the photo. */
+.collage-v2[data-slide="3"] .team.hero-slide{filter:url(#foodtruck-paper-edge)}
+@media(min-width:1101px){
+ .collage-v2[data-slide="3"]{translate:48px 0}
+ .collage-v2[data-slide="3"] .event-caption{top:405px}
+}
+@media(max-width:1100px){.collage-v2[data-slide="3"] .event-caption{top:48px}}
+/* Phone composition: cutouts without the companion photo cards. */
+@media(max-width:760px){
+ .collage-v2[data-slide] .event-polaroid{display:none!important}
+ .hero h1{font-size:clamp(36px,10.25vw,66px);line-height:1;letter-spacing:-.015em}
+}
+/* Keep statistic captions clear of the animated lower cover corners. */
+@media(max-width:1100px){
+ .hero{padding-bottom:44px!important}
+ .hero .stats{position:relative;top:auto;bottom:auto;flex-shrink:0}
+}
+@media(max-width:760px){
+ .hero .stats{width:calc(100% - 64px);gap:14px}
+ .hero .stats span{line-height:1.35}
+}
+/* One stable mobile stage fits the actual artwork, including the tall tower. */
+@media(max-width:1100px){
+ .hero-slider-stage{height:380px;width:calc(100% + 48px);margin-left:-24px;overflow:hidden;flex-shrink:0}
+ .hero-slider-stage .collage-v2[data-slide]{top:var(--mobile-scene-top,0px);scale:var(--mobile-scene-scale,.82)}
+ .hero .hero-copy .intro{margin-bottom:0!important}
+ .hero-body{row-gap:20px}
+}
+.hero h1.rotating-headline{font-size:clamp(48px,4.4vw,64px);line-height:1.02;white-space:normal}
+.hero h1 #hero-changing-title{display:inline-block;min-height:1.02em;white-space:nowrap;color:inherit;background:none;padding:0;border-radius:0}
+.hero h1 #hero-changing-title::after{content:none!important}
+@media(max-width:1100px){.hero h1.rotating-headline{font-size:clamp(38px,6.4vw,60px)}}
+@media(max-width:760px){.hero h1.rotating-headline{font-size:clamp(32px,9.2vw,52px);line-height:1.02}.hero .eyebrow{max-width:290px}}
+.headline-mobile-break{display:none}
+@media(max-width:760px){.headline-mobile-break{display:initial}.headline-desktop-break{display:none}}
+/* Keep the foodtruck photo caption above the foreground cutout. */
+@media(min-width:1101px){.collage-v2[data-slide="3"] .event-polaroid{top:18px}}
+/* Fifth scene: the team and their giant pizza, in the shared collage language. */
+@media(min-width:1101px){
+ .collage-v2[data-slide="4"]{width:752px;min-width:752px;max-width:752px;height:620px;min-height:620px;left:max(670px,calc((100% - 1340px)/2 + 676px))}
+ .collage-v2[data-slide="4"] .team.hero-slide{left:-15px;top:125px;bottom:auto;width:770px;height:513px;z-index:2}
+ .collage-v2[data-slide="4"] .event-polaroid{left:35px;top:0;width:210px;transform:rotate(-8deg);z-index:1}
+ .collage-v2[data-slide="4"] .mini-folder{left:530px;right:auto;top:60px;z-index:1}
+ .collage-v2[data-slide="4"] .event-caption{left:-75px;top:390px;bottom:auto;width:252px;z-index:3}
+}
+@media(max-width:1100px){
+ .collage-v2[data-slide="4"]{width:430px;min-width:430px;max-width:430px;height:420px;min-height:420px}
+ .collage-v2[data-slide="4"] .team.hero-slide{left:-35px;top:65px;bottom:auto;width:500px;height:333px;z-index:2}
+ .collage-v2[data-slide="4"] .event-caption{left:18px;top:0;bottom:auto;width:210px;z-index:3}
+ .collage-v2[data-slide="4"] .event-polaroid,.collage-v2[data-slide="4"] .mini-folder{display:none}
+}
