@@ -1,0 +1,113 @@
+/* One navigation cue across the agency facts and destination cards. */
+html body #trust-numbers .trust-arrow {
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  background: #141414;
+  color: #fff;
+  transition: background-color .2s ease, color .2s ease;
+}
+html body #trust-numbers .trust-arrow svg {
+  position: static;
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  transform: none;
+}
+html body #trust-numbers .trust-arrow svg path {
+  stroke-dasharray: none;
+  stroke-dashoffset: 0;
+  animation: none;
+}
+html body #trust-numbers a:hover .trust-arrow,
+html body #trust-numbers a:focus-visible .trust-arrow { background: #fff; color: #141414; }
+html body #trust-numbers .number-origin-link,
+html body #trust-numbers .number-origin-link:hover { background: transparent; color: #fff; }
+html body #trust-numbers .number-programs-link p { padding-right: 52px; }
+html body #trust-numbers .number-programs-link > .trust-arrow {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+html body #trust-numbers .numbers-reviews-title { flex-wrap: wrap; }
+html body #trust-numbers .numbers-reviews-title > a {
+  align-items: center;
+  gap: 10px;
+}
+html body #trust-numbers .numbers-reviews-title > a::after { display: none; }
+
+
+
+html body #trust-numbers .trust-route { position: relative; }
+html body #trust-numbers .trust-route > .trust-route-label {
+  padding-right: 56px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+html body #trust-numbers .trust-route > .trust-arrow {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+@media (max-width: 1000px) {
+  html body #trust-numbers .number-programs-link { gap: 12px; }
+  html body #trust-numbers .number-programs-link p { padding-right: 0; }
+  html body #trust-numbers .number-programs-link > .trust-arrow {
+    position: static;
+    align-self: flex-end;
+    margin-top: auto;
+  }
+  html body #trust-numbers .numbers-reviews-title { flex-wrap: wrap; }
+}
+@media (max-width: 700px) {
+  
+  
+  html body #trust-numbers .trust-route { gap: 16px; }
+  html body #trust-numbers .trust-route > .trust-route-label { padding-right: 0; min-height: 0; }
+  html body #trust-numbers .trust-route > .trust-arrow { position: static; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html body #trust-numbers .trust-arrow { transition: none; }
+}
+
+/* Reuse the catalogue chevron and the compact rating layout. */
+html body #trust-numbers .numbers-reviews-title > a { min-height: 44px; }
+html body #trust-numbers .numbers-reviews-title > a > svg.review-chevron {
+  width: 20px; height: 20px; position: static; flex: none;
+}
+html body #trust-numbers .numbers-ratings > a,
+html body #trust-numbers .numbers-ratings > a:hover,
+html body #trust-numbers .numbers-ratings > a:focus-visible {
+  transform: none;
+  box-shadow: none;
+  transition: color .2s ease;
+}
+html body #trust-numbers .numbers-ratings > a > svg.review-chevron {
+  width: 20px; height: 20px; grid-column: 3; grid-row: 2;
+  position: static; justify-self: end;
+}
+html body #trust-numbers .number-origin-link {
+  position: absolute; inset: 0; z-index: 2;
+  display: block; width: auto; height: auto;
+  border-radius: inherit;
+}
+html body #trust-numbers .number-origin-link > .trust-arrow {
+  position: absolute; right: 18px; bottom: 22px;
+}
+@media (max-width: 1000px) and (min-width: 701px) {
+  html body #trust-numbers .number-origin-caption { padding-bottom: 70px; }
+  html body #trust-numbers .number-origin-link > .trust-arrow { right: 12px; bottom: 18px; }
+}
+@media (max-width: 700px) {
+  html body #trust-numbers .numbers-ratings > a > svg.review-chevron {
+    grid-column: 2; grid-row: 3; width: 16px; height: 16px;
+  }
+  html body #trust-numbers .number-origin-link > .trust-arrow { right: 22px; bottom: 24px; }
+}

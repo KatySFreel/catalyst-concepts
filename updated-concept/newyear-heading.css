@@ -1,0 +1,32 @@
+html body #new-year .ny-heading.ny-banner{background:transparent!important;border-radius:0!important;padding:0!important;min-height:0;box-shadow:none;align-items:center}
+html body #new-year :is(.ny-mobile-ornaments,.ny-banner-art,.ny-ornament){display:none!important}
+html body #new-year .ny-banner-side{display:block;align-self:center;margin:0;padding:0;min-height:0}
+html body #new-year .ny-banner-action{align-items:center;margin:0;padding:0}
+html body #new-year .ny-banner-description{margin:0}
+html body #new-year .ny-heading h2{margin:0!important}
+@media(min-width:701px){
+ html body #new-year .ny-heading.ny-banner{display:flex;justify-content:space-between;gap:32px}
+ html body #new-year .ny-banner-copy{flex:1;min-width:0}
+ html body #new-year .ny-banner-side{flex:0 1 46%}
+ html body #new-year .ny-banner-action{display:flex;flex-direction:row;gap:20px}
+ html body #new-year .ny-banner-description{flex:1}
+ html body #new-year .ny-banner-link{flex:none;white-space:nowrap}
+}
+@media(min-width:701px) and (max-width:1100px){
+ html body #new-year .ny-banner-action{flex-direction:column;align-items:flex-start}
+}
+
+/* Highlight the company New Year package with the established brand green. */
+html body #new-year .ny-featured .ny-paper{background:#0aba59!important;color:#fff!important}
+html body #new-year .ny-featured .ny-paper :is(h3,p,li,.ny-price,.ny-price strong,.ny-price span,.ny-mobile-summary,.ny-package-details>summary,.ny-secondary){color:#fff!important}
+html body #new-year .ny-featured .ny-secondary:hover{color:#ffdf4a!important}
+html body #new-year .ny-featured .ny-tab,
+html body #new-year .ny-featured .ny-tab::before,
+html body #new-year .ny-featured .ny-tab::after{background:#0aba59!important;color:#fff!important}
+
+@media(min-width:701px){html body>.newyear .ny-grid{gap:24px!important}}
+
+html body #new-year .ny-featured .ny-actions .ny-primary{background:#141414;color:#fff}
+html body #new-year .ny-featured .ny-actions .ny-primary:hover{background:#ffdf4a;color:#141414}
+html body #new-year .ny-featured .ny-includes li::before{background:#141414}
+html body #new-year .ny-featured .ny-package-details>summary::after{color:#fff}

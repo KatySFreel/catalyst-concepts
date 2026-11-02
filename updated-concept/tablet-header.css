@@ -10,7 +10,7 @@
  .mobile-catalog-entry{display:block;flex:0 0 100%;padding:12px;border:0;border-radius:999px;background:var(--green-l);color:var(--ink);font-size:14px}
  body.mobile-menu-open{overflow:hidden}
  .mobile-menu-open .mobile-dim{display:block;position:fixed;inset:0;z-index:9;background:#14141466}
- .mobile-sheet{position:fixed;inset:auto 24px auto 24px;margin:0;width:calc(100% - 48px);height:auto;min-height:0;max-width:none;border:0;border-radius:26px;background:var(--milk);z-index:20;overflow:auto;padding:12px 0 18px}
+ .mobile-sheet{position:fixed;inset:auto 24px auto 24px;margin:0;width:calc(100% - 48px);height:auto;min-height:0;max-width:none;border:0;border-radius:36px;background:var(--milk);z-index:20;overflow:auto;padding:12px 0 18px}
  .mobile-sheet[open]{display:block}
  .mobile-sheet-body{padding:8px 16px 18px}
  .mobile-sheet .mobile-contact{display:none}

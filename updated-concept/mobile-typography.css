@@ -1,0 +1,42 @@
+/* Mobile type scale. Desktop styling stays with the individual components. */
+@media(max-width:700px){
+ html body:not(#mobile-type-exception) main>.hero h1{font-size:32px!important;line-height:1.08!important;letter-spacing:-.02em}
+ html body:not(#mobile-type-exception)>section h2,
+ html body:not(#mobile-type-exception)>footer h2{font-size:28px!important;line-height:1.14!important;letter-spacing:-.02em}
+ html body:not(#mobile-type-exception)>section h3,
+ html body:not(#mobile-type-exception)>footer h3{font-size:20px!important;line-height:1.2!important;letter-spacing:-.01em}
+ html body:not(#mobile-type-exception)>section :is(p,li),
+ html body:not(#mobile-type-exception)>footer :is(p,li),
+ html body:not(#mobile-type-exception) main>.hero .intro{font-size:14px!important;line-height:1.5!important}
+ html body:not(#mobile-type-exception)>section :is(button,.button,.cta),
+ html body:not(#mobile-type-exception) main>.hero .button{font-size:14px!important;line-height:1.3!important}
+ html body:not(#mobile-type-exception) #s9 .question summary{font-size:16px!important;line-height:1.35!important;padding:20px 48px 20px 20px}
+ html body:not(#mobile-type-exception) #s9 .question p{padding-inline:0}
+ html body:not(#mobile-type-exception) #s9 .question{border-radius:24px!important}
+ html body:not(#mobile-type-exception) #s9 .chips a{font-size:14px!important;line-height:1.4!important}
+ html body:not(#mobile-type-exception) #s7 .director-editorial-heading h2{font-size:14px!important;line-height:1.4!important;letter-spacing:0}
+ html body:not(#mobile-type-exception) #s6 .portfolio-heading{gap:12px;margin-bottom:24px}
+ html body:not(#mobile-type-exception) #s6 .portfolio-heading .portfolio-controls{gap:6px}
+ html body:not(#mobile-type-exception) #s6 .portfolio-heading .portfolio-controls button{width:36px;height:36px}
+ html body:not(#mobile-type-exception) #contact-dialog h2{font-size:24px!important;line-height:1.2!important}
+ html body:not(#mobile-type-exception) #contact-dialog .cf-question{font-size:20px!important;line-height:1.25!important}
+ html body:not(#mobile-type-exception) #contact-dialog :is(.cf-intro,.cf-field>span,.cf-channels legend,.cf-primary){font-size:14px!important}
+ html body:not(#mobile-type-exception) #contact-dialog :is(input:not([type=checkbox]):not([type=radio]),textarea){font-size:16px!important}
+ html body:not(#mobile-type-exception) #portfolio-dialog h2{font-size:24px!important;line-height:1.2!important}
+ html body:not(#mobile-type-exception) #portfolio-dialog p{font-size:14px!important;line-height:1.5!important}
+}
+@media(max-width:700px){
+ html body:not(#mobile-type-exception) #new-year .ny-title-label{font-size:28px!important;line-height:1.15!important}
+ html body:not(#mobile-type-exception) #new-year .ny-title-year{font-size:40px!important;line-height:1.05!important}
+ html body:not(#mobile-type-exception) #new-year .ny-title-team{font-size:20px!important;line-height:1.2!important}
+ html body:not(#mobile-type-exception) #new-year .ny-price strong{font-size:24px!important}
+ html body:not(#mobile-type-exception) #included li span{font-size:14px!important;line-height:1.5!important}
+ html body:not(#mobile-type-exception) #s7 .director-quote,
+ html body:not(#mobile-type-exception) #s7 .director-quote span{font-size:24px!important;line-height:1.25!important}
+ html body:not(#mobile-type-exception) #s7 h2{font-size:14px!important;line-height:1.4!important}
+ html body:not(#mobile-type-exception) #recommend .recommend-reviews-tile span{font-size:18px!important;line-height:1.25!important}
+ html body:not(#mobile-type-exception) #recommend .awards-names span{font-size:16px!important}
+ html body:not(#mobile-type-exception) #recommend .rating-grid strong{font-size:40px!important}
+ html body:not(#mobile-type-exception) #s10 .contact-folder-body h2{font-size:28px!important;line-height:1.14!important}
+ html body:not(#mobile-type-exception) #s10 .contact-idea-note{font-size:22px!important;line-height:1.15!important}
+}

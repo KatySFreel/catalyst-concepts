@@ -3,7 +3,7 @@
  const hero=document.querySelector('.hero'),img=hero?.querySelector('.hero-slide');if(!img)return;
  const surface=hero.querySelector('.collage-v2');
  const editingFirstSlide=false; // Automatic rotation and swiping enabled after composition review.
- const slides=[['hero-race.svg','Болид программы Формула-1'],['hero-city.svg','Город, построенный участниками программы Мегаполис'],['hero-tower.svg','Конструкция программы WOW Башня'],['hero-foodtruck-new.png','Оформленный участниками фудтрак'],['hero-pizza.png','Команда с огромной пиццей программы WOW Пицца']];
+ const slides=[['figma-20261102/hero-race.png','Болид программы Формула-1'],['figma-hero-slides/city.png','Город, построенный участниками программы Мегаполис'],['figma-hero-slides/tower.png','Конструкция программы WOW Башня'],['figma-hero-slides/foodtruck.png','Оформленный участниками фудтрак'],['figma-hero-slides/pizza.png','Команда с огромной пиццей программы WOW Пицца']];
  const programSlugs=['formula-1','gorodskaya-strojka','wow-bashnya','festival-fudtrakov','wow-pizza'];
  const events=[
   {title:'Формула-1',copy:'Строим свой болид и выходим на командный заезд.',photo:'formula-1.webp',caption:'Формула-1 / командный заезд'},
@@ -28,10 +28,11 @@
   function type(){phrase.textContent=text.slice(0,++count);if(count<text.length)typingTimer=setTimeout(type,55)}
   erase();
  }
- function syncEvent(i){typeHeadline(phrases[i]);const e=events[i];surface.querySelectorAll('.event-project-link').forEach(link=>{link.href="https://catalystrussia.ru/teambuilding/vse-programmy/"+programSlugs[i]+"/";link.setAttribute("aria-label","Подробнее о программе "+e.title)});eventCard.querySelector('h3').textContent=e.title;eventCard.querySelector('p').textContent=e.copy;polaroid.querySelector('img').src=contextImages[i].src;polaroid.querySelector('img').alt=e.caption;polaroid.querySelector('figcaption').textContent=e.caption;}
+ const stickerFiles=['figma-20261102/hero-stickers.png','figma-hero-slides/stickers-city.png','figma-hero-slides/stickers-tower.png','figma-hero-slides/stickers.png','figma-hero-slides/stickers-pizza.png'];
+ function syncEvent(i){surface.querySelectorAll('.figma-race-sticker img').forEach(el=>el.src='assets/'+stickerFiles[i]);typeHeadline(phrases[i]);const e=events[i];surface.querySelectorAll('.event-project-link').forEach(link=>{link.href="https://catalystrussia.ru/teambuilding/vse-programmy/"+programSlugs[i]+"/";link.setAttribute("aria-label","Подробнее о программе "+e.title)});eventCard.querySelector('h3').textContent=e.title;eventCard.querySelector('p').textContent=e.copy;polaroid.querySelector('img').src=contextImages[i].src;polaroid.querySelector('img').alt=e.caption;polaroid.querySelector('figcaption').textContent=e.caption;}
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');let index=0,timer,visible=true,request=0,touch=null,suppressClick=false;
  let transitions=[];
- const pieces=[img,polaroid,eventCard,surface.querySelector('.mini-folder'),...surface.querySelectorAll('.seal,.hero-sticker')].filter(Boolean);
+ const pieces=[img,polaroid,eventCard,surface.querySelector('.mini-folder'),...surface.querySelectorAll('.seal,.hero-sticker,.figma-race-sticker')].filter(Boolean);
  function cancelTransition(){transitions.forEach(a=>a.cancel());transitions=[];}
  const images=slides.map(s=>{const image=new Image();image.src='assets/'+s[0];return image});
  surface.dataset.slide='0';
@@ -67,18 +68,20 @@
  surface.addEventListener('pointerup',e=>{if(!touch||touch.id!==e.pointerId)return;const dx=e.clientX-touch.x,dy=e.clientY-touch.y;touch=null;start();suppressClick=Math.abs(dx)>10||Math.abs(dy)>10;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.3)show((index+(dx<0?1:-1)+slides.length)%slides.length)});
  surface.addEventListener('click',e=>{if(suppressClick){e.preventDefault();suppressClick=false}});
  surface.addEventListener('dragstart',e=>e.preventDefault());
+ surface.tabIndex=0;surface.setAttribute('role','region');surface.setAttribute('aria-roledescription','карусель');
+ surface.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();stop();show((index+(e.key==='ArrowRight'?1:-1)+slides.length)%slides.length)});
  surface.addEventListener('pointercancel',()=>{touch=null;start()});
  surface.addEventListener('focusin',stop);surface.addEventListener('focusout',()=>setTimeout(start,0));
  document.addEventListener('visibilitychange',start);reduced.addEventListener('change',()=>{reset();start()});
  new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;start()},{threshold:.05}).observe(hero);
  // Different depth and direction for each sticker; keep the approved anchor positions.
- const items=[...surface.querySelectorAll('.seal,.hero-sticker')].map(el=>({
+ const items=[...surface.querySelectorAll('.seal,.hero-sticker,.figma-race-sticker')].map(el=>({
   el,...(el.matches('.seal')?{depthX:1.35,depthY:1.1}:
-   el.matches('.sticker-popper')?{depthX:-1,depthY:-1.4}:{depthX:.65,depthY:-.8})
- }));let frame=0,x=0,y=0;
- function draw(){frame=0;items.forEach(({el,depthX,depthY})=>{el.style.setProperty('--motion-x',(x*depthX).toFixed(2)+'px');el.style.setProperty('--motion-y',(y*depthY).toFixed(2)+'px')})}
- function reset(){x=y=0;draw()}
+   el.matches('.sticker-popper,.figma-race-star')?{depthX:-1,depthY:-.7}:{depthX:.65,depthY:1})
+ }));let frame=0,x=0,y=0,scrollY=0;
+ function draw(){frame=0;items.forEach(({el,depthX,depthY})=>{el.style.setProperty('--motion-x',(x*depthX).toFixed(2)+'px');el.style.setProperty('--motion-y',((y+scrollY)*depthY).toFixed(2)+'px')})}
+ function reset(){x=y=0;if(reduced.matches)scrollY=0;draw()}
  hero.addEventListener('pointermove',e=>{if(reduced.matches||e.pointerType!=='mouse')return;const r=hero.getBoundingClientRect();x=((e.clientX-r.left)/r.width-.5)*8;y=((e.clientY-r.top)/r.height-.5)*6;if(!frame)frame=requestAnimationFrame(draw)});
  hero.addEventListener('pointerleave',reset);
- window.addEventListener('scroll',()=>{if(reduced.matches||!visible)return;x=0;y=Math.max(-3,Math.min(3,-hero.getBoundingClientRect().top/120));if(!frame)frame=requestAnimationFrame(draw)},{passive:true});
+ window.addEventListener('scroll',()=>{if(reduced.matches||!visible)return;scrollY=Math.max(-24,Math.min(24,-hero.getBoundingClientRect().top*.065));if(!frame)frame=requestAnimationFrame(draw)},{passive:true});
 })();

@@ -1,0 +1,53 @@
+/* Keep each service and its explanation together, using the existing spacing. */
+html body #included .team-included-service > .team-included-label { margin-bottom: 24px; }
+html body #included .team-included-list {
+  display: grid;
+  gap: 24px;
+  margin: 0;
+}
+html body #included .team-included-list > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px;
+  padding: 0;
+}
+html body #included .team-included-list dt {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+html body #included .team-included-list dd {
+  margin: 0;
+  padding-left: 36px;
+}
+html body #included .included-tips {
+  gap: 8px 24px;
+  margin-top: 24px;
+}
+html body #included .included-tip-trigger {
+  min-height: 44px;
+  gap: 8px;
+}
+html body #included .included-tip-trigger > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e3f3e9;
+  color: #141414;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  transition: background-color .2s ease;
+}
+html body #included .included-tip-trigger:hover > span,
+html body #included .included-tip-trigger:focus-visible > span {
+  background: #ffdf4a;
+}
+@media (prefers-reduced-motion: reduce) {
+  html body #included .included-tip-trigger > span { transition: none; }
+}
+

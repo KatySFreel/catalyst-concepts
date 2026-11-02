@@ -1,0 +1,104 @@
+/* Compact preview and a collapse control scoped to the expanded article. */
+body>#s8 .seo-copy:not(.expanded){max-height:380px}
+body>#s8 .seo-toggle-dock{min-height:72px;padding-top:12px}
+body>#s8 .seo-toggle{margin-top:0}
+body>#s8 .seo-toggle.is-pinned{position:fixed;z-index:80;margin:0;box-shadow:0 4px 20px #1414141a}
+@media(max-width:700px){body>#s8 .seo-copy:not(.expanded){max-height:300px}body>#s8 .seo-toggle.is-pinned{max-width:calc(100vw - 112px)!important}}
+
+#s9 .faq-more{display:none}
+@media(max-width:700px){
+  #s9:not(.faq-expanded) .faq-extra{display:none}
+  #s9:not(.faq-expanded) .faq-columns>div:not(:has(.question:not(.faq-extra))){display:none}
+  #s9 .faq-more:not([hidden]){display:inline-flex;align-items:center;justify-content:center;margin-top:20px;padding:14px 24px;border:0;border-radius:999px;background:#0aba59;color:#fff;font:inherit;font-weight:600;cursor:pointer}
+  #s9 .chips{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:10px;max-width:100%;padding-bottom:8px;overscroll-behavior-x:contain}
+  #s9 .chips>a{flex:0 0 auto;width:auto;max-width:none;white-space:nowrap}
+}
+
+@media(max-width:700px){html body>#s8 .seo-toc{display:none!important}}
+
+/* Six priority questions on every screen size. */
+html body #s9:not(.faq-expanded) .faq-extra{display:none}
+html body #s9 .question summary{font-weight:500!important}
+html body #s9 .faq-more:not([hidden]){display:flex;align-items:center;justify-content:center;margin:24px auto 0;padding:14px 28px;border:0;border-radius:999px;background:#0aba59;color:#fff;font:inherit;font-weight:500;cursor:pointer;min-height:48px}
+html body #s9 .faq-more[hidden]{display:none}
+
+html body #s9 .question{box-sizing:border-box;background:#f3f2ed;transition:background-color .28s ease}
+@media(prefers-reduced-motion:reduce){html body #s9 .question{transition:none}}
+
+@media(min-width:701px){
+ html body #s8 .seo-layout{grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+ html body #s8 .seo-toc{grid-column:1 / 4}
+ html body #s8 .seo-main{grid-column:4 / 13;min-width:0}
+}
+
+@media(min-width:701px){html body #s9 .faq-columns{column-gap:24px;row-gap:24px}}
+
+html body #s8 .seo-toc{border:0;padding-left:0;gap:4px}
+html body #s8 .seo-toc a{display:block;padding:10px 14px;border-radius:20px;color:#646761;text-decoration:none;transition:background-color .22s ease,color .22s ease}
+html body #s8 .seo-toc a[aria-current="location"]{background:#f3f2ed;color:#141414}
+html body #s8 .seo-toc a:hover{background:#e3f3e9;color:#141414}
+html body #s8 .seo-copy a{color:inherit;text-decoration:none;transition:color .22s ease}
+html body #s8 .seo-copy a:hover{color:#078b43}
+html body #s8 :is(.seo-toc,.seo-copy) a:focus-visible{outline:2px solid #0aba59;outline-offset:3px;border-radius:8px}
+@media(prefers-reduced-motion:reduce){html body #s8 :is(.seo-toc,.seo-copy) a{transition:none}}
+
+/* Secondary action for the extended article. */
+html body #s8 .seo-toggle{background:#f3f2ed!important;color:#141414!important;font-weight:500;box-shadow:none;transition:background-color .22s ease}
+html body #s8 .seo-toggle:hover{background:#e7e6df!important;color:#141414!important}
+html body #s8 .seo-toggle:focus-visible{outline:2px solid #0aba59;outline-offset:3px}
+
+html body #s8 .seo-toggle{background:#fff!important;color:#141414!important;border:1px solid #d7dbd4!important}
+html body #s8 .seo-toggle:hover{background:#f3f2ed!important;border-color:#bfc5bc!important}
+html body #s8 .seo-copy p a{color:#286b43}
+html body #s8 .seo-copy p a:hover{color:#079447}
+
+/* The article and its navigation are only visible on request. */
+
+
+
+html body #s8 .seo-copy.expanded{max-height:none;overflow:visible}
+html body #s8 .seo-topic+ .seo-topic{margin-top:40px}
+html body #s8 .seo-topic h3{scroll-margin-top:calc(var(--header-height,92px) + 32px);margin-bottom:16px}
+html body #s8 .seo-topic ul{padding-left:22px;margin:0 0 20px}
+html body #s8 .seo-topic li{margin-bottom:12px;line-height:1.6}
+html body #s8 .seo-copy :is(p,li) a{color:#286b43;text-decoration:none;transition:color .22s ease}
+html body #s8 .seo-copy :is(p,li) a:hover{color:#079447}
+@media(min-width:701px){html body #s8.seo-expanded .seo-toc{position:sticky;top:calc(var(--header-height,92px) + 20px);max-height:calc(100dvh - var(--header-height,92px) - 40px);overflow-y:auto;align-self:start;overscroll-behavior:contain}}
+
+html body #s8 .seo-toggle{background:#fff!important;color:#141414!important;border:1px solid #d7dbd4!important}
+html body #s8 .seo-toggle:hover{background:#f3f2ed!important;border-color:#bfc5bc!important}
+html body #s8 .seo-copy p a{color:#286b43}
+html body #s8 .seo-copy p a:hover{color:#079447}
+
+html body #s8 .seo-copy:not(.expanded){display:block;max-height:380px;overflow:hidden}
+html body #s8 .seo-copy h3{scroll-margin-top:calc(var(--header-height,92px) + 32px)}
+html body #s8 .seo-category-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 24px;list-style:none;padding:0;margin:20px 0 32px}
+html body #s8 .seo-category-links li{margin:0;line-height:1.5}
+html body #s8 .seo-category-links a{display:block;padding:8px 0}
+@media(min-width:701px){html body #s8 .seo-toc{max-height:calc(100dvh - var(--header-height,92px) - 40px);overflow-y:auto;align-self:start}}
+@media(max-width:700px){html body #s8 .seo-copy:not(.expanded){max-height:300px}html body #s8 .seo-category-links{grid-template-columns:1fr;gap:8px}}
+
+html body #s8 .seo-toc{gap:2px}
+html body #s8 .seo-toc a{padding:6px 14px;line-height:1.35;border-radius:16px}
+
+/* Approved compact introduction; the full article stays in the document. */
+html body #s8>.continuation-inner>h2{font-size:32px!important;line-height:1.2!important;margin:0 0 20px}
+html body #s8 .seo-intro{font-size:18px;line-height:1.6;margin:0;max-width:1100px}
+html body #s8:not(.seo-expanded) .seo-toc,
+html body #s8:not(.seo-expanded) .seo-copy{display:none!important}
+html body #s8:not(.seo-expanded) .seo-layout{display:block;margin-top:24px}
+html body #s8:not(.seo-expanded) .seo-toggle-dock{padding:0;min-height:0}
+html body #s8.seo-expanded .seo-intro{display:none}
+html body #s8 .seo-toggle{min-height:48px;padding:12px 24px;font-size:16px;line-height:1.35}
+@media(max-width:700px){
+ html body #s8>.continuation-inner>h2{font-size:24px!important;margin-bottom:16px}
+ html body #s8 .seo-intro{font-size:14px;line-height:1.6}
+ html body #s8 .seo-intro br{display:none}
+ html body #s8:not(.seo-expanded) .seo-layout{margin-top:20px}
+}
+
+/* One compact information area: company introduction followed by FAQ. */
+html body>#s9.continuation-block{margin-top:40px!important}
+html body #s9>.continuation-inner>h2{font-size:24px!important;line-height:1.25!important;margin-bottom:20px}
+html body #s9 .faq-columns{margin-top:0}
+@media(max-width:700px){html body>#s9.continuation-block{margin-top:32px!important}html body #s9>.continuation-inner>h2{font-size:20px!important;margin-bottom:16px}}

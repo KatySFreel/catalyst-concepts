@@ -35,7 +35,7 @@ html{scrollbar-gutter:stable}
 @media(max-width:760px){.hero .eyebrow{font-size:14px}}
 /* Rounded lower cover corners remain visible before scrolling. */
 .hero{border-radius:0 0 36px 36px;clip-path:inset(0 var(--hero-inset,0px) 0 round var(--hero-corner,0px) var(--hero-corner,0px) 36px 36px)}
-@media(max-width:760px){.hero{border-bottom-left-radius:24px;border-bottom-right-radius:24px;clip-path:inset(0 var(--hero-inset,0px) 0 round var(--hero-corner,0px) var(--hero-corner,0px) 24px 24px)}}
+@media(max-width:760px){.hero{border-bottom-left-radius:32px;border-bottom-right-radius:32px;clip-path:inset(0 var(--hero-inset,0px) 0 round var(--hero-corner,0px) var(--hero-corner,0px) 24px 24px)}}
 /* Foodtruck: stronger cutout edge and less overlap with the description. */
 .collage-v2[data-slide="3"] .team.hero-slide{
  filter:drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff);

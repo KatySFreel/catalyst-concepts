@@ -1,0 +1,3 @@
+html body .action-black{background:#141414!important;color:#fff!important;border-color:#141414!important;transition:background-color .22s ease,color .22s ease,border-color .22s ease}
+html body .action-black:hover{background:#ffdf4a!important;color:#141414!important;border-color:#ffdf4a!important}
+html body .action-black:focus-visible{outline:2px solid #0aba59;outline-offset:4px}

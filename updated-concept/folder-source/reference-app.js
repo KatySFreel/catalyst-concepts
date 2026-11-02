@@ -86,7 +86,7 @@ const about=document.querySelector('.about-layout');about.querySelectorAll('.lin
 const mobileTrigger=document.createElement('button');mobileTrigger.className='mobile-trigger';mobileTrigger.type='button';mobileTrigger.setAttribute('aria-label','Открыть меню');mobileTrigger.setAttribute('aria-expanded','false');mobileTrigger.innerHTML=iconSVG('<path d="M4 7h16M4 12h16M4 17h16"/>');primary.append(mobileTrigger);
 const mobileSheet=document.createElement('dialog');mobileSheet.className='mobile-sheet';mobileSheet.innerHTML='<div class="mobile-sheet-head"><button class="mobile-back" aria-label="Назад"></button><strong>Меню</strong><button class="mobile-close" aria-label="Закрыть меню"></button></div><div class="mobile-sheet-body"></div>';document.body.append(mobileSheet);const mobileQuoteAction=document.querySelector('.primary-line>.cta').cloneNode(true);mobileQuoteAction.className='mobile-quote-action';mobileQuoteAction.removeAttribute('id');mobileSheet.append(mobileQuoteAction);const mobileBody=mobileSheet.querySelector('.mobile-sheet-body');let mobileLevel='root',mobileKind='programs';
 mobileSheet.querySelector('.mobile-close').innerHTML=iconSVG('<path d="m6 6 12 12M18 6 6 18"/>');mobileSheet.querySelector('.mobile-back').innerHTML=iconSVG('<path d="m14 5-7 7 7 7"/>');
-const mobileNames={programs:'Каталог программ',corporate:'Корпоративы под ключ',newyear:'Новый год 2027',about:'О компании'};
+const mobileNames={programs:'Каталог программ',corporate:'Корпоративы',newyear:'Новый год 2027',about:'О компании'};
 function mobileRoot(){mobileLevel='root';mobileSheet.querySelector('strong').textContent='Меню';mobileSheet.querySelector('.mobile-back').hidden=true;mobileBody.innerHTML='<button class="mobile-search-entry">Найти программу или раздел '+iconSVG('<circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/>')+'</button>'+Object.entries(mobileNames).map(([key,label])=>`<button class="mobile-row" data-kind="${key}">${label}${iconSVG('<path d="m9 5 7 7-7 7"/>')}</button>`).join('')+'<a class="mobile-row" href="https://catalystrussia.ru/cases/">Портфолио</a><div class="mobile-contact"><a href="tel:+79911501001">+7 991 150-10-01</a><p>Москва, МО · выезды по России<br>Ежедневно 8:00–22:00</p><a class="button yellow" href="https://catalystrussia.ru/#contacts">Получить КП за 10 минут</a></div>'}
 function mobileCategories(kind){mobileKind=kind;mobileLevel='categories';mobileSheet.querySelector('strong').textContent=mobileNames[kind];mobileSheet.querySelector('.mobile-back').hidden=false;if(kind==='about'){mobileBody.innerHTML='<a class="mobile-row" href="https://catalystrussia.ru/about/">О нас</a><a class="mobile-row" href="https://catalystrussia.ru/#contacts">Контакты</a>'+about.querySelector('.about-folder').outerHTML;return}mobileBody.innerHTML=menuData[kind].map((cat,i)=>`<button class="mobile-row" data-category="${i}">${kind==='programs'?'<span class="category-icon">'+iconSVG(categoryPaths[i])+'</span>':''}<span>${cat.title}</span>${iconSVG('<path d="m9 5 7 7-7 7"/>')}</button>`).join('')}
 function mobilePrograms(index){mobileLevel='programs';const data=menuData[mobileKind][index];mobileSheet.querySelector('strong').textContent=data.title;mobileBody.innerHTML='<p class="mobile-description"></p><div class="mobile-cards"></div>';mobileBody.querySelector('p').textContent=data.desc;const holder=document.createElement('div');holder.dataset.kind=mobileKind;holder.innerHTML='<div class="mega-links"></div>';data.items.forEach(([name,url])=>{const a=document.createElement('a');a.href=url;a.textContent=name;holder.firstChild.append(a)});decorateCards(holder);mobileBody.querySelector('.mobile-cards').append(holder);const all=document.createElement('a');all.className='mobile-category-title';all.href=data.all;all.setAttribute('aria-label',data.title+' — все программы категории');const title=document.createElement('span');title.textContent=data.title;all.append(title);all.insertAdjacentHTML('beforeend',iconSVG('<path d="M7 17 17 7M7 7h10v10"/>'));mobileSheet.querySelector('.mobile-sheet-head strong').replaceChildren(all)}
@@ -148,7 +148,7 @@ for(const kind of ['programs','corporate']){
 }
 
 // Right-hand menu content has its own grid: assistance cannot size category tracks.
-for(const kind of ['programs','corporate','newyear']){
+for(const kind of ['programs','newyear','corporate']){
  const menu=document.querySelector('.mega-menu[data-kind="'+kind+'"]'),layout=menu.querySelector('.mega-layout');
  let help=layout.querySelector('.menu-assistance');
  if(!help){help=document.createElement('div');help.className='menu-assistance';help.innerHTML='<p>Не знаете, что выбрать? Подберём праздник для вашей команды.</p>';const link=menu.querySelector('.menu-help');if(link)help.append(link)}
@@ -167,7 +167,7 @@ const companyPanel=about.closest('.mega-panel');companyPanel.querySelector('.meg
 const beforeCompanyCategories=mobileCategories;mobileCategories=function(kind){if(kind!=='about')return beforeCompanyCategories(kind);mobileKind=kind;mobileLevel='categories';mobileSheet.dataset.level='categories';mobileSheet.querySelector('.mobile-sheet-head strong').textContent='О компании';mobileSheet.querySelector('.mobile-back').hidden=false;mobileBody.innerHTML=companyMarkup()};
 
 // One independent assistance row below the three menu columns.
-for(const kind of ['programs','corporate','newyear']){
+for(const kind of ['programs','newyear','corporate']){
  const menu=document.querySelector('.mega-menu[data-kind="'+kind+'"]'),layout=menu.querySelector('.mega-layout');
  layout.append(layout.querySelector('.menu-assistance'));
  const footer=menu.querySelector('.mega-footer');if(footer)layout.querySelector('.mega-categories').append(footer);
@@ -182,7 +182,7 @@ function fitDropdowns(){document.querySelectorAll('.mega-menu[open]>.mega-panel'
 menus.forEach(menu=>menu.addEventListener('toggle',()=>{if(menu.open)requestAnimationFrame(fitDropdowns)}));addEventListener('resize',fitDropdowns);addEventListener('scroll',fitDropdowns,{passive:true});
 
 // Help fills the space below cards and the seasonal folder, independently of the sidebar.
-for(const kind of ['programs','corporate','newyear']){
+for(const kind of ['programs','newyear','corporate']){
  const menu=document.querySelector('.mega-menu[data-kind="'+kind+'"]');
  menu.querySelector('.menu-content').append(menu.querySelector('.menu-assistance'));
  const link=menu.querySelector('.catalog-all-button');if(link){link.classList.add('catalog-directory-link');link.querySelector('svg')?.setAttribute('aria-hidden','true')}
@@ -191,7 +191,7 @@ function alignFullCompany(){const panel=aboutMenu.querySelector('.mega-panel');p
 aboutMenu.addEventListener('toggle',alignFullCompany);addEventListener('resize',alignFullCompany);alignFullCompany();
 
 // Quiet assistance alongside the menu heading, without a separate panel.
-for(const kind of ['programs','corporate','newyear']){
+for(const kind of ['programs','newyear','corporate']){
  const menu=document.querySelector('.mega-menu[data-kind="'+kind+'"]'),help=menu.querySelector('.menu-assistance');
  if(help){help.classList.add('menu-assistance-inline');menu.querySelector('.mega-head').append(help)}
 }

@@ -32,6 +32,7 @@ function renderCatalog(query=''){
  const action=document.createElement('span');action.className='category-banner-action';action.textContent='Смотреть подборку';
  copy.append(kicker,heading,description);
  const link=document.createElement('a');link.className='catalog-more';link.href=category?.all||'https://catalystrussia.ru/timbilding/';link.setAttribute('aria-label',label);link.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg>';
+ action.append(link.querySelector('svg'));
  card.insertAdjacentHTML('afterbegin',categoryIllustration(selectedCategory));card.append(copy,action,link);grid.append(card);
  }
  grid.dataset.count=grid.children.length;

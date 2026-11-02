@@ -1,0 +1,111 @@
+/* Large event photographs with the site's paper-folder caption. */
+body>#s6 .trust-cases{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px!important}
+body>#s6 .trust-cases article{display:flex;justify-content:flex-end;min-height:580px;padding:280px 24px 24px;position:relative;overflow:hidden;border-radius:32px!important;background:#e5e7e1}
+body>#s6 .trust-cases article:before{display:none}
+body>#s6 .case-photo{position:absolute;inset:0;margin:0;border:0;border-radius:0;aspect-ratio:auto;z-index:-1}
+body>#s6 .case-photo img{border-radius:0;width:100%;height:100%;object-fit:cover}
+body>#s6 .case-folder{position:relative;width:100%;margin:0;isolation:isolate}
+body>#s6 .case-folder-tab{height:36px;max-width:calc(100% - 36px);padding:8px 20px;font-size:13px;font-weight:500;border-radius:20px 0 0 0;background:#f3f2ed;display:table}
+body>#s6 .case-folder-tab:after{width:30px;mask:none;clip-path:polygon(0 0,10% 0,25% 4%,40% 17%,75% 83%,88% 96%,100% 100%,0 100%)}
+body>#s6 .case-body{display:block;background:#f3f2ed;border-radius:0 24px 24px 24px;padding:22px 24px}
+body>#s6 .case-body h3{font-size:28px;line-height:1.1;min-height:0;margin:0 0 12px}
+body>#s6 .case-body p{font-size:15px;line-height:1.4;margin:0 0 12px;max-width:500px}
+body>#s6 .case-body .case-numbers{font-size:14px!important;margin:0 0 10px;color:#60655f}
+body>#s6 .case-body a{display:inline-flex;font-size:14px;line-height:1.4;color:#141414;padding:0;margin:2px 0 0;text-decoration:none;font-weight:500}
+body>#s6 .case-body a:hover{color:#009a49;text-decoration:none}
+body>#s6 .case-client-wordmark{position:absolute;top:28px;left:28px;font:700 italic 42px/1 Roboto,Arial,sans-serif;color:white;letter-spacing:-2px;text-shadow:0 1px 8px #0005}
+@media(min-width:1600px){body>#s6 .trust-cases article{min-height:660px;padding-top:340px}}
+@media(max-width:1100px){body>#s6 .trust-cases article{min-height:550px;padding:250px 16px 16px}body>#s6 .case-body{padding:20px}body>#s6 .case-body h3{font-size:25px}}
+@media(max-width:700px){body>#s6 .trust-cases{grid-template-columns:1fr;gap:24px!important}body>#s6 .trust-cases article{min-height:520px;padding:240px 12px 12px;border-radius:24px!important}body>#s6 .case-body{padding:20px;border-radius:0 20px 20px 20px}body>#s6 .case-body h3{font-size:24px}body>#s6 .case-folder-tab{padding:8px 16px;font-size:12px}body>#s6 .case-client-wordmark{top:24px;left:24px;font-size:36px}}
+/* Original client marks sit directly on the folder, without a separate tile. */
+body>#s6 .trust-cases article{min-height:530px;padding-top:330px}
+body>#s6 .case-body{display:grid;grid-template-columns:130px minmax(0,1fr);align-items:center;gap:24px;min-height:150px}
+body>#s6 .case-client-logo{width:100%;max-height:96px;object-fit:contain;mix-blend-mode:multiply}
+body>#s6 .case-client-name{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+body>#s6 .case-copy p{font-size:17px;line-height:1.4;margin-bottom:16px}
+body>#s6 .case-copy a{gap:8px}
+@media(min-width:1600px){body>#s6 .trust-cases article{min-height:600px;padding-top:390px}body>#s6 .case-body{grid-template-columns:150px minmax(0,1fr)}}
+@media(max-width:1100px){body>#s6 .case-body{grid-template-columns:95px minmax(0,1fr);gap:16px}body>#s6 .case-copy p{font-size:15px}}
+@media(max-width:700px){body>#s6 .trust-cases article{min-height:470px;padding-top:270px}body>#s6 .case-body{grid-template-columns:85px minmax(0,1fr);gap:16px;padding:18px 16px}body>#s6 .case-client-logo{max-height:80px}body>#s6 .case-copy p{font-size:15px}}
+/* One horizontal row; native scrolling also supports touch and trackpads. */
+body>#s6 .trust-cases{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:24px!important;padding:0 0 4px;overscroll-behavior-x:contain}
+#s6 .trust-cases::-webkit-scrollbar{display:none}
+body>#s6 .trust-cases article{flex:0 0 calc((100% - 24px)/2);box-sizing:border-box;scroll-snap-align:start;padding:330px 24px 24px;min-height:560px}
+body>#s6 .case-client-logo{position:absolute;top:24px;left:24px;width:130px;height:86px;max-height:none;object-fit:contain;mix-blend-mode:normal;filter:drop-shadow(0 2px 8px #ffffff90)}
+body>#s6 .case-body{display:block;min-height:156px;padding:24px 92px 24px 24px}
+body>#s6 .case-copy p{font-size:17px;margin:0;line-height:1.4}
+body>#s6 .case-open{position:absolute;right:42px;bottom:44px;display:grid;place-items:center;width:56px;height:56px;border:0;background:#ffdf4a;color:#141414;cursor:pointer;transition:background .2s,scale .2s}
+#s6 .case-open svg{width:26px;height:26px}
+body>#s6 .case-open:hover{background:#ffe96f;}
+#s6 .portfolio-controls{display:flex;align-items:center;justify-content:flex-end;gap:16px;margin-top:20px}
+#s6 .portfolio-controls button{display:grid;place-items:center;width:48px;height:48px;background:#f3f2ed;color:#141414;font-size:24px;border:0;cursor:pointer}
+#s6 .portfolio-controls button:hover:not(:disabled){background:#ffdf4a}
+#s6 .portfolio-controls button:disabled{opacity:.3;cursor:default}
+#s6 .portfolio-status{font-size:14px;color:#60655f;min-width:65px;text-align:center}
+#portfolio-dialog{width:min(1020px,calc(100% - 32px));max-height:90dvh;border:0;border-radius:32px;padding:24px;background:#f3f2ed;color:#141414;overflow:auto}
+#portfolio-dialog::backdrop{background:#141414b3}
+#portfolio-dialog .portfolio-close{position:sticky;top:0;float:right;width:44px;height:44px;font-size:28px;background:#ffdf4a;border:0;z-index:1}
+#portfolio-dialog .portfolio-detail-photo{display:block;width:100%;max-height:58dvh;object-fit:contain;border-radius:24px;margin:16px 0 24px}
+#portfolio-dialog h2{font-size:28px;margin:0 60px 12px 0}
+#portfolio-dialog p{font-size:18px;line-height:1.5;margin:0}
+@media(max-width:1100px){body>#s6 .case-copy p{font-size:16px}body>#s6 .case-body{padding:20px 76px 20px 20px}body>#s6 .case-open{width:48px;height:48px;right:36px;bottom:40px}}
+@media(max-width:700px){body>#s6 .trust-cases{gap:16px!important}body>#s6 .trust-cases article{flex-basis:94%;min-height:500px;padding:280px 12px 12px}body>#s6 .case-client-logo{width:105px;height:70px;top:20px;left:20px}body>#s6 .case-body{padding:20px 68px 20px 18px;min-height:170px}body>#s6 .case-copy p{font-size:15px}body>#s6 .case-open{right:24px;bottom:28px;width:44px;height:44px}#portfolio-dialog{padding:20px;border-radius:24px}#portfolio-dialog h2{font-size:24px}#portfolio-dialog p{font-size:16px}}
+@media(prefers-reduced-motion:reduce){body>#s6 .case-open{transition:none}}
+
+/* Navigation above the photographs; client logos return to the paper folder. */
+#s6 .portfolio-controls{margin:20px 0 20px;gap:12px}
+body>#s6 .trust-cases{margin-top:0}
+body>#s6 .case-client-logo{position:static;width:112px;height:84px;max-height:84px;filter:none;mix-blend-mode:multiply}
+body>#s6 .case-body{display:grid;grid-template-columns:112px minmax(0,1fr);gap:22px;align-items:center;padding:24px 88px 24px 24px}
+@media(max-width:1100px){body>#s6 .case-body{grid-template-columns:85px minmax(0,1fr);gap:16px;padding:20px 72px 20px 20px}body>#s6 .case-client-logo{width:85px;height:70px}}
+@media(max-width:700px){#s6 .portfolio-controls{margin:16px 0}body>#s6 .case-body{grid-template-columns:75px minmax(0,1fr);gap:14px;padding:20px 18px 64px;min-height:190px}body>#s6 .case-client-logo{width:75px;height:64px}}
+
+/* Heading and carousel navigation share one row. */
+body>#s6 .portfolio-heading{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:28px}
+body>#s6 .portfolio-heading h2{flex:1;min-width:0;margin:0!important}
+body>#s6 .portfolio-heading .portfolio-controls{flex:none;margin:0;gap:12px}
+@media(max-width:700px){body>#s6 .portfolio-heading{gap:16px;margin-bottom:20px}body>#s6 .portfolio-heading .portfolio-controls{gap:8px}body>#s6 .portfolio-heading .portfolio-controls button{width:40px;height:40px}}
+
+/* Mobile case: photograph above a compact, full-width folder caption. */
+@media(max-width:700px){
+ body>#s6 .trust-cases{align-items:flex-start}
+ body>#s6 .trust-cases article{min-height:0;padding:0;justify-content:flex-start;background:transparent}
+ body>#s6 .case-photo{position:relative;inset:auto;z-index:0;width:100%;aspect-ratio:1.35;flex:none;overflow:hidden;border-radius:24px 24px 0 0}
+ body>#s6 .case-photo img{display:block}
+ body>#s6 .case-folder{margin-top:-36px;z-index:1}
+ body>#s6 .case-folder-tab{height:36px}
+ body>#s6 .case-body{min-height:0;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:16px 20px 20px;border-radius:0 24px 24px 24px}
+ body>#s6 .case-client-logo{width:100px;height:32px;max-height:32px;object-position:left center}
+ body>#s6 .case-copy{width:100%}
+ body>#s6 .case-copy p{font-size:15px;line-height:1.4;margin:0}
+ body>#s6 .trust-cases article{container-type:inline-size}
+ body>#s6 .case-open{z-index:2;top:calc(100cqw / 1.35 + 32px);bottom:auto;right:18px;transform:translateY(-50%);margin-top:0;width:36px;height:36px}
+}
+
+/* Equal photo, folder start and bottom edge across the mobile carousel. */
+@media(max-width:700px){
+ body>#s6 .trust-cases{align-items:stretch}
+ body>#s6 .trust-cases article{height:auto}
+ body>#s6 .case-folder{display:flex;flex-direction:column;flex:1}
+ body>#s6 .case-folder-tab{flex:none;align-self:flex-start;box-sizing:border-box}
+ body>#s6 .case-body{flex:1}
+}
+
+#s6 .portfolio-pagination{display:none}
+@media(max-width:700px){
+ body>#s6 .portfolio-heading .portfolio-controls{display:none}
+ #s6 .portfolio-pagination{display:flex;align-items:center;justify-content:center;gap:0;margin:12px 0 0}
+ #s6 .portfolio-pagination button{display:flex;align-items:center;justify-content:center;width:28px;height:44px;padding:0;border:0;border-radius:0;background:transparent;cursor:pointer;transition:width .2s ease}
+ #s6 .portfolio-pagination button span{display:block;width:6px;height:6px;border-radius:999px;background:#f3f2ed}
+ #s6 .portfolio-pagination button[aria-current]{width:88px}
+ #s6 .portfolio-pagination button[aria-current] span{position:relative;width:80px;height:6px}
+ #s6 .portfolio-pagination button[aria-current] span:after{content:"";display:block;width:100%;height:100%;transform:scaleX(var(--slide-progress,0));transform-origin:left center;background:#141414;border-radius:999px}
+}
+@media(prefers-reduced-motion:reduce){#s6 .portfolio-pagination button{transition:none}}
+
+/* Compact gap from the card edge to the pagination marks. */
+@media(max-width:700px){
+ html body #s6 .trust-cases{padding-bottom:0!important}
+ #s6 .portfolio-pagination{margin-top:0}
+ #s6 .portfolio-pagination button{height:38px}
+}

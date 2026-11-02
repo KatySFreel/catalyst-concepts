@@ -1,0 +1,33 @@
+html body #catalog-download.catalog-figma{position:relative;display:block;isolation:isolate;container-type:inline-size;padding:40px;background:#141414;color:#fff;border-radius:30px;min-height:317px;overflow:visible;box-sizing:border-box}
+#catalog-download .cfb-copy{position:relative;z-index:2;width:50%}
+html body #catalog-download .cfb-copy h2{font:500 48px/1.05 Roboto,Arial,sans-serif!important;letter-spacing:0;margin:0;position:relative}
+#catalog-download .cfb-underline{display:block;width:336px;height:22px;margin-top:-3px;max-width:100%}
+#catalog-download .cfb-copy p{font:400 16px/24px Roboto,Arial,sans-serif;opacity:.6;margin:18px 0 24px}
+html body #catalog-download .cfb-button{display:inline-flex;align-items:center;justify-content:center;gap:20px;background:#fff!important;color:#141414!important;border:0;border-radius:1000px;height:54px;padding:0 24px;font:500 16px/1.35 Roboto,Arial,sans-serif;cursor:pointer}
+#catalog-download .cfb-button img{width:20px;height:20px}
+#catalog-download .cfb-button:hover{box-shadow:inset 0 0 0 2px #ffdf4a}
+#catalog-download .cfb-green-clip{position:absolute;inset:0;border-radius:30px;overflow:hidden;pointer-events:none}
+#catalog-download .cfb-green-clip:before{content:'';position:absolute;width:41.5%;height:150%;left:49.7%;top:-28%;border-radius:50%;background:#0aba59}
+#catalog-download .cfb-art{position:absolute;width:44.6%;height:100%;right:2.1%;top:0;pointer-events:none}
+#catalog-download .cfb-back{position:absolute;width:67%;height:auto;aspect-ratio:418/235;object-fit:cover;right:0;top:-3%;border-radius:30px;rotate:12deg}
+#catalog-download .cfb-front{position:absolute;width:78.16%;height:auto;aspect-ratio:488/274.674;object-fit:cover;left:8%;top:12%;border-radius:30px;rotate:-8deg;box-shadow:0 7px 18px #14141412}
+#catalog-download .cfb-bookmark{position:absolute;width:37px;height:62px;background:#ffdf4a;right:22%;bottom:10%;rotate:-8deg}
+#catalog-download .cfb-clip{position:absolute;width:46px;height:26px;border-inline:5px solid #ffdf4a;border-radius:3px;left:12%;top:4%;transform:rotate(-13deg) skewX(23deg);box-sizing:border-box}
+#catalog-download .cfb-arrow{position:absolute;width:130px;height:70px;left:46%;top:46%;pointer-events:none}
+@media(max-width:1100px){html body #catalog-download .cfb-copy h2{font-size:36px!important}#catalog-download .cfb-arrow{left:43%;width:104px;height:56px}#catalog-download .cfb-art{top:30px;height:85%}}
+@media(max-width:700px){html body #catalog-download.catalog-figma{padding:24px 20px 250px;min-height:0;border-radius:24px}#catalog-download .cfb-copy{width:100%}html body #catalog-download .cfb-copy h2{font-size:28px!important;line-height:1.1!important}#catalog-download .cfb-copy p{font-size:14px;line-height:21px;margin:12px 0 20px}#catalog-download .cfb-underline{width:220px;height:auto}html body #catalog-download .cfb-button{width:100%;height:48px;font-size:14px;padding:0 16px;gap:12px}#catalog-download .cfb-art{width:90%;height:210px;top:auto;bottom:8px;right:3%}#catalog-download .cfb-green-clip:before{width:110%;height:260px;left:20%;top:auto;bottom:-25px}#catalog-download .cfb-arrow{left:5%;top:auto;bottom:140px;width:78px;height:42px}#catalog-download .cfb-front,#catalog-download .cfb-back{border-radius:18px}}
+
+/* The banner shares the existing catalog button's click and keyboard action. */
+#catalog-download .cfb-copy{position:static}
+html body #catalog-download .cfb-button{position:static;transition:background-color .22s ease,box-shadow .22s ease}
+#catalog-download .cfb-button::after{content:"";position:absolute;inset:0;z-index:5;cursor:pointer;border-radius:inherit}
+html body #catalog-download:hover .cfb-button,html body #catalog-download:focus-within .cfb-button{background:#ffdf4a!important;box-shadow:none}
+#catalog-download .cfb-back,#catalog-download .cfb-front{box-shadow:0 12px 32px #14141426,0 2px 8px #14141412}
+#catalog .catalog-filters [data-catalog-filter]>svg{display:none}
+@media(max-width:700px){
+ html body #new-year .ny-package-details>summary::before{display:none!important}
+ html body #new-year .ny-package-details>summary::after{content:""!important;display:block!important;position:static!important;flex:0 0 8px;width:8px!important;height:8px!important;padding:0!important;margin:0 3px 4px 0!important;border:0!important;border-right:2px solid currentColor!important;border-bottom:2px solid currentColor!important;border-radius:0!important;background:none!important;transform:rotate(45deg)!important;transition:transform .22s ease;color:#0aba59}
+ html body #new-year .ny-package-details[open]>summary::after{content:""!important;transform:rotate(225deg)!important}
+}
+/* Menu thumbnails */
+html body .mega-menu .photo-link img,html body .mobile-navigation .mobile-cards .photo-link img,html body .mobile-sheet .photo-link img{border-radius:16px!important}

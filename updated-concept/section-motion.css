@@ -1,0 +1,4 @@
+/* Scroll reveals the existing yellow mark without moving the message text. */
+@media(prefers-reduced-motion:no-preference){
+ #s7 .director-quote-accent.section-motion-enabled:after{clip-path:inset(0 var(--accent-reveal,0%) 0 0)}
+}

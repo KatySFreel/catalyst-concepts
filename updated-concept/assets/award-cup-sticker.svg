@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 230" fill="none">
+ <path d="M43 23Q41 13 55 13H145Q159 13 157 26L155 33H178Q193 33 191 49L187 72Q181 104 150 111L137 126L123 138V156L143 164L151 187Q170 190 171 204V216H29V202Q30 190 49 187L57 164L77 156V138L63 126L50 111Q19 104 13 72L9 49Q7 33 22 33H45Z" fill="white" stroke="white" stroke-width="12" stroke-linejoin="round"/>
+ <path d="M49 44H24L28 68Q32 88 59 93M151 44H176L172 68Q168 88 141 93" stroke="#141414" stroke-width="17" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M49 44H24L28 68Q32 88 59 93M151 44H176L172 68Q168 88 141 93" stroke="#ffdf4a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+ <path d="M88 117H112V172H88Z" fill="#ffdf4a" stroke="#141414" stroke-width="4"/>
+ <path d="M51 25H149L140 87Q135 125 100 132Q65 125 60 87Z" fill="#ffdf4a" stroke="#141414" stroke-width="4" stroke-linejoin="round"/>
+ <path d="M66 38L72 78Q76 97 85 103" stroke="#fff5b4" stroke-width="9" stroke-linecap="round"/>
+ <path d="M100 51L106 65L122 67L110 78L113 94L100 86L87 94L90 78L78 67L94 65Z" fill="#141414"/>
+ <path d="M64 170H136L145 194H55Z" fill="#0aba59" stroke="#141414" stroke-width="4" stroke-linejoin="round"/>
+ <path d="M42 194H158V210H42Z" fill="#141414"/>
+ <path d="M67 117L52 150L70 146L77 161L91 130M133 117L148 150L130 146L123 161L109 130" fill="#0aba59" stroke="#141414" stroke-width="3" stroke-linejoin="round"/>
+ <path d="M52 25H148" stroke="#141414" stroke-width="6" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,34 @@
+/* Approved borderless surfaces; keep functional icons and keyboard focus intact. */
+html body * { border-width: 0 !important; text-decoration: none !important; }
+html body #s8 .seo-toggle { border: 0 !important; }
+html body hr { display: none; }
+html body .inline-search,
+html body .inline-search:focus-within { box-shadow: none; }
+html body .cfb-underline,
+html body #trust-numbers .number-ink::after,
+html body > .newyear .ny-booking strong::after,
+html body > #s6 .case-numbers::after,
+html body .lead-divider::before,
+html body .lead-divider::after,
+html body .cf-divider::before,
+html body .cf-divider::after { display: none !important; }
+
+/* Overscan gives the photo room to move without exposing its edges. */
+html body #s10 .contact-scene-photo {
+  inset: -60px 0;
+  width: 100%;
+  height: calc(100% + 120px);
+  object-position: center 45%;
+  transform: translateY(var(--contact-photo-offset, 0px));
+}
+@media (max-width: 700px) {
+  html body #s10 .contact-scene-photo {
+    top: -30px;
+    bottom: auto;
+    height: 370px;
+    object-position: center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html body #s10 .contact-scene-photo { transform: none; }
+}

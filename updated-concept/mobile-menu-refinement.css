@@ -1,0 +1,15 @@
+@media(max-width:700px){
+ html body .mobile-sheet.mobile-navigation{border-radius:24px!important}
+ html body .mobile-sheet.mobile-navigation .mobile-sheet-body{padding:16px!important}
+ html body .mobile-sheet.mobile-navigation .mobile-sheet-head{padding:16px 16px 0!important;gap:12px}
+ html body .mobile-sheet.mobile-navigation .mobile-sheet-head strong{font-size:20px!important;line-height:1.2!important}
+ html body .mobile-sheet.mobile-navigation .mobile-row{font:500 16px/22px Roboto,Arial,sans-serif!important;min-height:48px!important;padding:13px 0!important;gap:12px}
+ html body .mobile-sheet.mobile-navigation .mobile-row[data-kind=programs]{min-height:48px!important;padding:13px 12px!important;border-radius:16px!important;margin-bottom:8px}
+ html body .mobile-sheet.mobile-navigation .mobile-search-entry{height:48px!important;min-height:48px!important;padding:12px 16px!important;font:400 14px/20px Roboto,Arial,sans-serif!important;border-radius:16px!important;margin-bottom:16px}
+ html body .mobile-sheet.mobile-navigation .mobile-nav-offers{min-height:48px!important;padding:12px!important;font:500 16px/22px Roboto,Arial,sans-serif!important;border-radius:16px!important;margin-top:12px}
+ html body .mobile-sheet.mobile-navigation :is(p,.mobile-description,.program-name,.company-panel-copy){font-size:14px!important;line-height:1.5!important}
+ html body .mobile-sheet.mobile-navigation .mobile-nav-footer{padding:12px 16px!important}
+ html body .mobile-sheet.mobile-navigation .mobile-nav-footer button{width:100%!important;height:48px!important;min-height:48px!important;padding:0 16px!important;font:500 14px/20px Roboto,Arial,sans-serif!important;border-radius:999px!important}
+ html body .mobile-sheet.mobile-navigation .mobile-cards .photo-link{border-radius:20px!important}
+ html body:has(.mobile-sheet[open]) :is(#chat-launcher,#catalyst-chat){display:none!important}
+}

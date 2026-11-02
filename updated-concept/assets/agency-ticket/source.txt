@@ -1,0 +1,4 @@
+Источник фотографии: https://catalystrussia.ru/cdnasset/img/6205bd7537eb8ca3.webp
+Страница: https://catalystrussia.ru/about/
+team-race.webp — исходный снимок без изменений
+team-race-sticker.svg — тот же снимок с векторной маской и белой обводкой

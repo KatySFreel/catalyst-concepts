@@ -1,0 +1,50 @@
+/* Agency channel invitation: existing green, paper, typography and stickers. */
+html body #telegram-invite{position:fixed;inset:0;margin:auto;width:min(1120px,calc(100% - 48px));max-width:none;max-height:calc(100dvh - 48px);padding:48px;border:0;border-radius:28px;overflow:auto;background:#0aba59;color:#fff;font:400 16px/1.5 Roboto,Arial,sans-serif;box-sizing:border-box}
+#telegram-invite::backdrop{background:#14141499}
+body:has(#telegram-invite[open]){overflow:hidden}
+#telegram-invite .ti-layout{display:grid;grid-template-columns:1.2fr .8fr 1fr;gap:24px;align-items:center}
+#telegram-invite .ti-kicker{display:inline-block;margin:0 0 24px;padding:8px 16px;border-radius:999px;background:#ffdf4a;color:#141414;font-weight:500}
+html body #telegram-invite h2{margin:0 0 24px;font:700 44px/1.06 Roboto,Arial,sans-serif;letter-spacing:-.6px;color:#fff}
+#telegram-invite .ti-copy{margin:0;font-size:18px;line-height:1.45}
+#telegram-invite .ti-art{position:relative;min-height:300px;pointer-events:none}
+#telegram-invite .ti-art img{position:absolute;display:block;width:110%;max-width:none;height:auto;left:-5%}
+#telegram-invite .ti-ideas{top:0;transform:rotate(-8deg)}
+#telegram-invite .ti-radio{bottom:-16px;transform:rotate(8deg);width:78%!important;left:24%!important}
+#telegram-invite .ti-action{padding:24px;border-radius:24px;background:#fff;color:#141414}
+#telegram-invite .ti-action h3{margin:0 0 16px;font:700 24px/1.2 Roboto,Arial,sans-serif}
+#telegram-invite .ti-action p{margin:0 0 24px;font-size:16px;line-height:1.5}
+html body #telegram-invite .ti-link{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;min-height:54px;box-sizing:border-box;padding:16px;border-radius:999px;background:#141414;color:#fff;font:500 16px/1.3 Roboto,Arial,sans-serif;text-decoration:none;transition:background-color .2s,color .2s}
+html body #telegram-invite .ti-link:hover{background:#ffdf4a;color:#141414}
+#telegram-invite .ti-link svg{width:24px;height:24px;flex:none}
+html body #telegram-invite .ti-close{position:absolute;right:16px;top:16px;display:grid;place-items:center;width:40px;height:40px;padding:0;border:0;border-radius:50%;background:#141414;color:#fff;cursor:pointer;transition:background-color .2s,color .2s}
+html body #telegram-invite .ti-close:hover{background:#fff;color:#141414}
+#telegram-invite .ti-close svg{width:20px;height:20px}
+#telegram-invite .ti-note{display:block;margin-top:12px;color:#53574f;font-size:13px;text-align:center}
+@media(max-width:1000px){#telegram-invite .ti-layout{grid-template-columns:1fr 1fr}#telegram-invite .ti-art{grid-column:2;grid-row:1 / span 2}#telegram-invite .ti-action{grid-column:1}html body #telegram-invite h2{font-size:38px}}
+@media(max-width:600px){html body #telegram-invite{width:calc(100% - 24px);max-height:calc(100dvh - 24px);padding:24px;border-radius:24px}#telegram-invite .ti-layout{display:flex;flex-direction:column;gap:24px;align-items:stretch}html body #telegram-invite h2{font-size:32px;line-height:1.08;letter-spacing:-.3px;margin-bottom:16px}#telegram-invite .ti-kicker{margin:0 40px 24px 0;font-size:13px;padding:8px 12px}#telegram-invite .ti-copy{font-size:16px}#telegram-invite .ti-art{display:none}#telegram-invite .ti-action{position:relative;padding:24px;padding-right:88px}#telegram-invite .ti-action::after{content:'';position:absolute;right:0;top:-24px;width:90px;height:90px;background:url('assets/user-stickers/ideas.png') center/contain no-repeat;transform:rotate(8deg);pointer-events:none}#telegram-invite .ti-action h3{font-size:22px}#telegram-invite .ti-link{white-space:nowrap}#telegram-invite .ti-action{padding-right:24px}#telegram-invite .ti-action h3{padding-right:48px}}
+@media(prefers-reduced-motion:reduce){#telegram-invite *{transition:none!important}}
+/* Two independent actions: enquiry on the left, agency channel on the right. */
+html body #telegram-invite{padding:48px}
+#telegram-invite .ti-layout{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:stretch}
+#telegram-invite .ti-form-panel{padding:32px;border-radius:24px;background:#fff;color:#141414}
+html body #telegram-invite .ti-form-panel h2{font-size:34px;color:#141414;line-height:1.1;margin-bottom:16px}
+#telegram-invite .ti-form-panel .ti-copy{font-size:16px;margin-bottom:24px;color:#53574f}
+#telegram-invite .ti-field{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;font-size:14px;font-weight:500}
+#telegram-invite .ti-field input{box-sizing:border-box;width:100%;min-height:54px;padding:14px 16px;border:0;border-radius:12px;background:#f3f2ed;color:#141414;font:400 16px/1.4 Roboto,Arial,sans-serif}
+#telegram-invite .ti-consent{display:flex;align-items:flex-start;gap:12px;margin:24px 0;font-size:13px;line-height:1.45;color:#53574f}
+#telegram-invite .ti-consent input{width:20px;height:20px;flex:none;margin:0;accent-color:#0aba59}
+#telegram-invite .ti-consent a{color:#141414}
+#telegram-invite #ti-form-status{font-size:14px;margin:16px 0 0;line-height:1.45}
+#telegram-invite #ti-form-status:empty{display:none}
+#telegram-invite .ti-manager{display:block;margin-top:16px;font-size:14px;text-align:center;color:#53574f}
+#telegram-invite .ti-manager:hover{color:#141414}
+#telegram-invite .ti-subscribe{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:16px 0}
+#telegram-invite .ti-subscribe h3{font:700 38px/1.1 Roboto,Arial,sans-serif;margin:0 0 16px;color:#fff;letter-spacing:-.6px}
+#telegram-invite .ti-art{display:block;min-height:220px;width:100%;max-width:360px;margin:16px auto 24px;flex:1}
+#telegram-invite .ti-art .ti-ideas{width:70%;left:0;top:0}
+#telegram-invite .ti-art .ti-radio{width:52%!important;left:48%!important;bottom:0}
+#telegram-invite .ti-subscribe .ti-channel{background:#ffdf4a;color:#141414}
+#telegram-invite .ti-subscribe .ti-channel:hover{background:#fff;color:#141414}
+#telegram-invite [type=submit]:disabled{opacity:.7;cursor:default}
+@media(max-width:800px){html body #telegram-invite{padding:24px}#telegram-invite .ti-layout{grid-template-columns:1fr;gap:24px}#telegram-invite .ti-form-panel{padding:24px;margin-top:32px}#telegram-invite .ti-subscribe{padding:0 24px 8px}#telegram-invite .ti-art{flex:none;min-height:200px;max-width:300px}html body #telegram-invite .ti-form-panel h2,#telegram-invite .ti-subscribe h3{font-size:28px;letter-spacing:-.3px}#telegram-invite .ti-kicker{margin:0 0 24px}#telegram-invite .ti-subscribe .ti-copy{font-size:16px}}
+@media(max-width:400px){html body #telegram-invite{padding:16px}#telegram-invite .ti-form-panel{padding:20px}#telegram-invite .ti-subscribe{padding:0 12px 8px}}

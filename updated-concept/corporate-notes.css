@@ -5,16 +5,16 @@ body>#s5{width:calc(100% - 112px);max-width:1280px;margin:96px auto 0;background
 #s5 .corporate-heading h2{max-width:1100px;margin:0 0 18px}
 #s5 .corporate-heading p:first-child{font:400 16px/1.5 Roboto,Arial,sans-serif;max-width:720px;margin:0;color:#53574f}
 #s5 .corporate-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;padding:16px 6px 12px;align-items:stretch}
-#s5 .corporate-grid article{position:relative;isolation:isolate;display:flex;flex-direction:column;gap:0;min-height:0;margin:0;padding:28px;border:0;border-radius:18px;background:var(--section-green,#0aba59);color:#fff;transform:none;overflow:hidden}
+#s5 .corporate-grid article{position:relative;isolation:isolate;display:flex;flex-direction:column;gap:0;min-height:0;margin:0;padding:28px;border:0;border-radius:32px;background:var(--section-green,#0aba59);color:#fff;transform:none;overflow:hidden}
 #s5 .corporate-grid article:nth-child(2){background:#e3f7ea;color:#141414}
 #s5 .corporate-grid article:nth-child(3){background:#ffdf4a;color:#141414}
 #s5 .corporate-grid article:before,#s5 .corporate-grid article:after{content:none}
 #s5 .corporate-grid article:first-child:before{content:none}
 #s5 .corporate-perforation{position:absolute;top:16px;left:28px;right:28px;display:flex;justify-content:space-between;pointer-events:none}
-#s5 .corporate-perforation i{display:block;width:6px;height:6px;flex:0 0 6px;border-radius:2px;background:#fff}
+#s5 .corporate-perforation i{display:block;width:6px;height:6px;flex:0 0 6px;border-radius:6px;background:#fff}
 #s5 .corporate-grid article:first-child{padding-top:36px}
 #s5 .corporate-grid article:nth-child(2){clip-path:polygon(0 0,100% 0,100% calc(100% - 26px),calc(100% - 44px) 100%,0 100%)}
-#s5 .corporate-grid article:nth-child(2):after{content:"";position:absolute;inset:auto 0 0 auto;width:44px;height:26px;background:#0aba59;clip-path:polygon(0 0,100% 0,0 100%);border-radius:3px 0 0 0;transform:none}
+#s5 .corporate-grid article:nth-child(2):after{content:"";position:absolute;inset:auto 0 0 auto;width:44px;height:26px;background:#0aba59;clip-path:polygon(0 0,100% 0,0 100%);border-radius:8px 0 0 0;transform:none}
 #s5 .corporate-grid article{transform:translate(var(--card-x,0px),var(--card-y,0px)) rotate(var(--card-turn,-2deg));transform-origin:50% 65%}
 #s5 .corporate-grid article:nth-child(2){--card-turn:2deg}
 #s5 .corporate-grid article:nth-child(3){--card-turn:-1.5deg}

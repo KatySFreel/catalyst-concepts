@@ -1,0 +1,101 @@
+/* Agency ticket: original event photograph, vector paper edge and Roboto. */
+html body #trust-numbers article.number-origin {
+  padding: 22px 18px 0;
+  gap: 0;
+  overflow: hidden;
+}
+html body #trust-numbers .number-origin .ticket-heading {
+  display: block;
+  margin: 0 0 8px;
+  font: 700 clamp(22px, 2.1vw, 32px)/1.12 Roboto, Arial, sans-serif;
+  letter-spacing: -.02em;
+}
+html body #trust-numbers .number-origin .number-origin-photo {
+  display: flex;
+  align-items: flex-start;
+  flex: 1 0 auto;
+  height: auto;
+  min-height: 0;
+  overflow: visible;
+  border-radius: 0;
+  padding: 0 0 12px;
+}
+html body #trust-numbers .number-origin .number-origin-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 700 / 440;
+  object-fit: contain;
+  transform: none;
+}
+html body #trust-numbers .number-origin-caption {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 44px;
+  align-items: center;
+  gap: 8px 10px;
+  margin: 16px -18px 0;
+  padding: 20px 18px 22px;
+  border-top: 1px dashed #c4c6bd;
+}
+html body #trust-numbers .number-origin-caption strong {
+  grid-column: 1 / -1;
+  font: 700 clamp(23px, 2vw, 30px)/1.15 Roboto, Arial, sans-serif;
+  letter-spacing: -.025em;
+}
+html body #trust-numbers .number-origin-caption p {
+  margin: 0;
+  font: 400 14px/1.4 Roboto, Arial, sans-serif;
+}
+html body #trust-numbers .number-origin-caption::before,
+html body #trust-numbers .number-origin-caption::after {
+  display: block;
+}
+html body #trust-numbers .number-origin-link {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #ffdf4a;
+  color: #141414;
+  text-decoration: none;
+  transition: background-color .2s ease;
+}
+html body #trust-numbers .number-origin-link svg {
+  position: static;
+  width: 24px;
+  height: 24px;
+}
+html body #trust-numbers .number-origin-link:hover { background: #ffe96f; }
+html body #trust-numbers .number-origin-link:focus-visible {
+  outline: 2px solid #141414;
+  outline-offset: 4px;
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+  html body #trust-numbers article.number-origin { padding: 18px 12px 0; }
+  html body #trust-numbers .number-origin-caption {
+    margin-inline: -12px;
+    padding: 16px 12px 18px;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  html body #trust-numbers .number-origin-link { justify-self: end; }
+}
+@media (max-width: 700px) {
+  html body #trust-numbers article.number-origin {
+    grid-column: 1 / -1;
+    padding: 24px 22px 0;
+    rotate: 0deg;
+  }
+  html body #trust-numbers .number-origin .ticket-heading { font-size: 28px; }
+  html body #trust-numbers .number-origin .number-origin-photo { flex: none; }
+  html body #trust-numbers .number-origin-caption {
+    margin: 18px -22px 0;
+    padding: 20px 22px 24px;
+  }
+  html body #trust-numbers .number-origin-caption strong { font-size: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html body #trust-numbers .number-origin-link { transition: none; }
+}

@@ -1,0 +1,43 @@
+/* Personal message: editorial typography with photographic notes. */
+body>#s7.director-editorial{background:#f3f2ed;padding:64px 40px 48px;border-radius:var(--surface-radius);overflow:hidden}
+#s7.director-editorial .continuation-inner{position:relative;text-align:center;isolation:isolate}
+body>#s7.director-editorial #director-editorial-title{font:400 16px/1.4 Roboto,Arial,sans-serif!important;color:#60655f;letter-spacing:0;margin:0 0 64px}
+#s7 .director-portrait-tile{position:absolute;left:42px;top:-22px;width:165px;height:200px;object-fit:cover;object-position:center 20%;border:5px solid #fff;border-radius:20px;transform:rotate(-12deg)}
+#s7 .director-quote{position:relative;margin:0 auto 40px;font:700 clamp(36px,4.4vw,68px)/1.14 Roboto,Arial,sans-serif;letter-spacing:-.035em;border:0;padding:0;color:#141414}
+#s7 .director-quote>span{display:block}
+#s7 .director-quote>span:first-child{padding-left:120px}
+#s7 .director-quote-muted{color:#666763}
+#s7 .director-quote-accent{position:relative;display:inline-block;isolation:isolate;margin-top:10px;white-space:nowrap}
+#s7 .director-quote-accent:after{content:'';position:absolute;inset:-12% -5% -13%;background:url('assets/hand-circle.svg') center/100% 100% no-repeat;z-index:-1;pointer-events:none}
+#s7 .director-event-tile{position:absolute;right:16px;top:310px;width:150px;height:190px;object-fit:cover;object-position:50% center;border:5px solid #fff;border-radius:20px;transform:rotate(-8deg)}
+#s7 .director-signature h3{font:700 26px/1.2 Roboto,Arial,sans-serif;margin:0 0 8px}
+#s7 .director-signature p{font:400 16px/1.4 Roboto,Arial,sans-serif;margin:0;color:#60655f}
+#s7 .director-editorial-summary{font:400 18px/1.5 Roboto,Arial,sans-serif;max-width:860px;margin:28px auto;color:#141414;padding:0 40px}
+#s7 .director-editorial-actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+#s7 .director-editorial-actions .cta{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:14px 24px;font:500 16px/1.35 Roboto,Arial,sans-serif;min-width:260px;border:1px solid #d7dbd4}
+#s7 .director-editorial-actions .director-messenger-icon{width:24px;height:24px;flex:none}
+#s7 .director-editorial-actions .cta:hover{background:#ffdf4a;color:#141414;border-color:#ffdf4a;text-decoration:none}
+@media(max-width:1100px){body>#s7.director-editorial{padding:48px 28px 36px}#s7 .director-portrait-tile{left:10px;top:-14px;width:120px;height:150px}body>#s7.director-editorial #director-editorial-title{margin-bottom:72px}#s7 .director-quote{font-size:clamp(30px,4.3vw,47px)}#s7 .director-quote>span:first-child{padding-left:70px}#s7 .director-event-tile{width:100px;height:130px;right:0;top:260px}#s7 .director-editorial-summary{padding:0 80px;font-size:16px}#s7 .director-editorial-summary br{display:none}}
+@media(max-width:700px){body>#s7.director-editorial{padding:28px 20px 28px}body>#s7.director-editorial #director-editorial-title{font-size:14px!important;margin:0 0 24px}#s7 .director-portrait-tile{position:relative;display:block;left:auto;top:auto;width:110px;height:140px;margin:0 auto 28px;transform:rotate(-8deg)}#s7 .director-quote{font-size:30px;line-height:1.14;letter-spacing:-.03em;margin-bottom:28px}#s7 .director-quote>span:first-child{padding-left:0}#s7 .director-quote>span{display:inline}#s7 .director-quote>span:after{content:' '}#s7 .director-quote-muted{display:block!important;margin-top:12px}#s7 .director-quote-accent{white-space:normal;font-size:27px;margin-top:4px}#s7 .director-event-tile{position:relative;display:block;right:auto;top:auto;width:95px;height:115px;margin:0 auto 24px;transform:rotate(7deg)}#s7 .director-signature h3{font-size:22px}#s7 .director-signature p{font-size:14px}#s7 .director-editorial-summary{padding:0;font-size:16px;margin:24px auto}#s7 .director-editorial-actions{gap:12px;margin-top:24px}#s7 .director-editorial-actions .cta{width:100%;min-width:0;font-size:15px;padding:14px 12px}}
+body>#s7.director-editorial{padding:64px 40px 48px!important}
+body>#s7.director-editorial #director-editorial-title{max-width:none;width:100%;text-align:center}
+@media(max-width:1100px){body>#s7.director-editorial{padding:48px 28px 36px!important}}
+@media(max-width:700px){body>#s7.director-editorial{padding:28px 20px!important}}
+/* Tighter statement on the page's own background. */
+body>#s7.director-editorial{background:transparent!important}
+#s7 .director-quote{line-height:1.04}
+#s7 .director-quote-muted{color:#141414}
+#s7 .director-quote-accent{margin-top:4px}
+@media(max-width:700px){#s7 .director-quote{line-height:1.06}#s7 .director-quote-muted{margin-top:6px}}
+#s7 .director-portrait-tile{background:#e4e9e3}
+#s7 .director-quote>span:first-child{padding-left:0}
+body>#s7.director-editorial #director-editorial-title{position:relative;top:24px}
+@media(min-width:701px) and (max-width:1100px){body>#s7.director-editorial #director-editorial-title{top:32px}}
+@media(max-width:700px){body>#s7.director-editorial #director-editorial-title{top:0}}
+
+@media(min-width:701px){
+ html body #s7 .director-editorial-actions{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+ html body #s7 .director-editorial-actions .cta{min-width:0;width:100%;box-sizing:border-box}
+ html body #s7 .director-editorial-actions .cta:first-child{grid-column:4 / 7}
+ html body #s7 .director-editorial-actions .cta:last-child{grid-column:7 / 10}
+}

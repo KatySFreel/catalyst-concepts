@@ -3,6 +3,23 @@
  const stage=document.createElement('div');stage.className='hero-slider-stage';collage.before(stage);stage.append(collage);
  const mobile=matchMedia('(max-width:1100px)');
  function layout(){
+  if(collage.hasAttribute('data-slide')){
+   if(mobile.matches){
+    body.append(actions);
+    const scale=Math.min(.88,(stage.clientWidth-24)/657.187);
+    collage.style.setProperty('--mobile-scene-scale',scale);
+    collage.style.setProperty('--mobile-scene-top','0px');
+    stage.style.height=(502.744*scale)+'px';
+   }else{
+    copy.append(actions);stage.style.height='';
+    const scale=Math.min(1.2,body.clientWidth/1232);
+    collage.style.setProperty('--scene-scale',scale);
+    collage.style.setProperty('--scene-left',(body.getBoundingClientRect().left-document.querySelector('.hero').getBoundingClientRect().left+584*scale)+'px');
+    collage.style.setProperty('--scene-top',Math.max(29.293,(document.querySelector('.hero').clientHeight-502.744*scale)/2)+'px');
+   }
+   return;
+  }
+  stage.style.height='';
   if(mobile.matches){
    body.append(actions);
    const pieces=[...collage.querySelectorAll('.team.hero-slide,.event-caption,.event-polaroid,.mini-folder,.seal')].filter(e=>getComputedStyle(e).display!=='none');

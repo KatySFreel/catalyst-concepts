@@ -1,0 +1,53 @@
+.ny-mobile-summary{display:none}
+.ny-package-details{display:contents}
+.ny-package-details>summary{display:none}
+@media(max-width:700px){
+ html body #new-year .ny-banner{gap:16px;padding:20px}
+ html body #new-year .ny-banner-side{margin-top:0}
+ html body #new-year .ny-paper{padding:16px;min-height:0;gap:0}
+ html body #new-year .ny-photo{height:130px;min-height:0;aspect-ratio:auto;margin:0 0 16px}
+ html body #new-year .ny-photo img{height:100%;width:100%;object-fit:cover}
+ html body #new-year .ny-paper h3{margin:0 0 8px;min-height:0}
+ html body #new-year .ny-mobile-summary{display:block;margin:0 0 8px}
+ html body #new-year .ny-package-details{display:block;margin:0 0 12px}
+ html body #new-year .ny-package-details>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;cursor:pointer;font:500 14px/20px Roboto,Arial,sans-serif;list-style:none}
+ #new-year .ny-package-details>summary::-webkit-details-marker{display:none}
+ #new-year .ny-package-details>summary:after{content:'+';font-size:20px;color:#0aba59}
+ #new-year .ny-package-details[open]>summary:after{content:'−'}
+ html body #new-year .ny-includes{min-height:0;margin:0;padding:0 0 8px}
+ html body #new-year .ny-price{margin:0 0 12px}
+ html body #new-year .ny-actions{margin-top:0;gap:8px}
+ html body #trust-numbers .numbers-composition{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;gap:12px;margin:24px 0 0}
+ html body #trust-numbers .numbers-composition>article{grid-column:auto;grid-row:auto;min-height:0;height:auto;margin:0;padding:20px 16px;transform:none;justify-content:flex-start;gap:8px}
+ html body #trust-numbers .number-origin{order:0}
+ html body #trust-numbers .number-origin :is(.ticket-heading,.number-origin-photo){display:none}
+ html body #trust-numbers .number-origin-caption{border:0;display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:0;padding:0;font-size:14px}
+ html body #trust-numbers .number-origin-caption:before,html body #trust-numbers .number-origin-caption:after{display:none}
+ html body #trust-numbers .number-origin-caption strong{font-size:32px}
+ html body #trust-numbers .number-projects{order:1}
+ html body #trust-numbers .number-projects .cta{display:none!important}
+ html body #trust-numbers .number-projects .number-ink{font-size:28px;line-height:1.3;display:inline-block}
+ html body #trust-numbers .number-programs{order:2}
+ html body #trust-numbers .number-awards{order:3}
+ html body #trust-numbers :is(.number-programs,.number-awards) strong{font-size:32px}
+ html body #trust-numbers .number-own{order:4;grid-column:1/-1!important;gap:12px}
+ html body #trust-numbers .production-visual{display:none}
+ html body #trust-numbers .trust-hub{grid-template-columns:1fr;gap:0;margin-top:16px}
+ html body #trust-numbers .trust-route{min-height:48px;height:auto;display:flex;flex-direction:row;align-items:center;justify-content:space-between;padding:12px 4px;border-radius:0;background:transparent;border-bottom:1px solid #e3e4dd}
+ html body #trust-numbers .trust-route .route-visual{display:none}
+ html body #trust-numbers .trust-route>span{font-size:14px;line-height:20px}
+ html body #trust-numbers .trust-route:after{content:'';width:16px;height:16px;background:url('assets/cta-hand-arrow.svg') center/contain no-repeat}
+}
+@media(max-width:700px){
+ html body:not(#compact-exception) #trust-numbers .number-projects .cta{display:none!important}
+ html body:not(#compact-exception) #trust-numbers .trust-route{background:transparent!important;border-radius:0!important;color:#141414}
+ html body #trust-numbers .trust-route:after{display:none}
+}
+
+@media(max-width:700px){
+ html body #new-year .ny-package-details>summary:after{content:'+'!important;display:block!important;background:none!important;position:static!important;color:#0aba59}
+ html body #new-year .ny-package-details[open]>summary:after{content:'−'!important}
+ html body #new-year .ny-package-details .ny-secondary{margin-top:8px}
+}
+
+html body #new-year .ny-package-details[hidden]{display:none!important}

@@ -1,0 +1,1207 @@
+/* Figma 194:2, 02.11.2026. Overrides only the revised page compositions. */
+/* Approved exception to borderless.css: the three header icon controls. */
+html body #header .primary-line > :is(.search-toggle,.messenger.mv-ib-tg,.messenger.mv-ib-max){border:1px solid #f3f2ed!important;border-radius:50%!important;box-sizing:border-box}
+@media(min-width:1101px){
+ html body>:is(.newyear,#catalog,.team-included,#s5,.continuation-block,.catalog-download-banner){margin-top:140px!important}
+ html body h2{font-size:42px!important;line-height:1.1;letter-spacing:0}
+ html body #header .primary-line{padding:10px!important;gap:8px!important;border-radius:16px!important}
+ html body #header .primary-line>nav{margin-left:4px;gap:0!important}
+ html body main>.hero{height:602px;min-height:602px}
+ html body main>.hero .hero-body{padding-top:20px;min-height:560px;grid-template-columns:650px minmax(0,1fr);gap:10px}
+ html body .hero .hero-copy{width:650px;padding:36px 0 85px;margin:0}
+ html body .hero h1.rotating-headline{font-size:clamp(48px,4.6875vw,60px);line-height:.95743;font-weight:600!important;letter-spacing:0;margin:0 0 34px}
+ html body .hero h1 #hero-changing-title{height:60px;min-height:60px;width:553px;margin-bottom:12px;line-height:1}
+ html body .hero h1 #hero-changing-title::after{bottom:-15px;width:553px;max-width:100%}
+ html body .hero .intro{font-size:14px;line-height:1.4;width:399px;max-width:100%;margin:0 0 27px}
+ html body .hero .hero-actions .button{height:50px;min-height:50px;padding:17px 26px;font-size:14px;line-height:1}
+ html body .hero .stats{gap:26px;padding-top:12px;padding-bottom:40px}
+ html body .hero .stats>div{gap:9px}
+ html body .hero .stats strong{font-size:36px;line-height:1}
+ html body .hero .stats span{font-size:14px;line-height:1.2;max-width:111px}
+}
+
+/* First programme: the editable card and the original transparent cutout. */
+html body .hero .collage-v2[data-slide]{width:657.187px;min-width:657.187px;max-width:657.187px;height:502.744px;min-height:502.744px;margin:0}
+html body .hero .collage-v2[data-slide] :is(.event-polaroid,.seal,.hero-sticker,.hero-ink,.orbit,.doodle){display:none!important}
+html body .hero .collage-v2[data-slide] .team.hero-slide{display:block;left:49.037px;top:141.153px;right:auto;bottom:auto;width:545.365px;height:322.178px;object-fit:contain;object-position:center;transform:none;rotate:none;translate:none;filter:none;z-index:4}
+html body .hero .collage-v2[data-slide] .mini-folder{display:flex;flex-direction:column;gap:9px;left:422px;top:54px;right:auto;bottom:auto;width:132px;height:auto;min-height:0;padding:12px;background:#ffdf4a;border:0;border-radius:14px!important;transform:none;transform-origin:center;rotate:none;translate:none;box-shadow:none;z-index:3}
+html body .hero .collage-v2[data-slide] .mini-folder>span{font-size:8.249px;line-height:normal;margin:0;padding:0;border:0}
+html body .hero .collage-v2[data-slide] .mini-folder strong{font-size:18.332px;line-height:16.04px;font-weight:800!important;font-style:normal;margin:0;padding:0;letter-spacing:0}
+html body .hero .collage-v2[data-slide] .mini-folder small{font-size:9.166px;line-height:normal;margin:0;padding:0;border:0;white-space:nowrap}
+html body .hero .collage-v2[data-slide] .mini-folder svg{display:none}
+html body .hero .collage-v2[data-slide] .event-caption{display:block;left:68px;top:151px;right:auto;bottom:auto;width:199.501px;height:127.46px;min-height:0;padding:0;background:#f3f2ed;color:#141414;border:0;border-radius:20px!important;transform:rotate(-6deg);transform-origin:center;rotate:none;translate:none;box-shadow:none;z-index:2}
+html body .hero .collage-v2[data-slide] .event-caption>span{position:absolute;left:12px;top:32.9px;font-size:8.708px;line-height:normal;opacity:.6;margin:0;padding:0}
+html body .hero .collage-v2[data-slide] .event-caption h3{position:absolute;left:12.537px;top:44.923px;font-size:25.664px;line-height:1.1;font-weight:900!important;font-style:italic;letter-spacing:0;margin:0;padding:0}
+html body .hero .collage-v2[data-slide] .event-caption p{position:absolute;left:12.537px;right:15.46px;top:79.923px;font-size:10.082px;line-height:12.374px;margin:0;padding:0}
+html body .hero .collage-v2[data-slide] .event-caption::before{content:"";display:block;position:absolute;top:12.566px;left:12.756px;width:6px;height:6px;border:0;border-radius:50%;background:#0aba59;box-shadow:54.638px 0 #0aba59,109.276px 0 #0aba59,163.915px 0 #0aba59}
+html body .hero .collage-v2[data-slide] .event-caption::after{display:none}
+.figma-race-sticker{display:none;position:absolute;pointer-events:none;z-index:5;overflow:hidden}
+.collage-v2[data-slide] .figma-race-sticker{display:block}
+.figma-race-sticker img{position:absolute;max-width:none}
+.figma-race-flag{left:233px;top:68.4px;width:114.655px;height:112.345px;transform:rotate(22.55deg)}
+.figma-race-flag img{width:273.55%;height:372.24%;left:0;top:0}
+.figma-race-star{left:441.48px;top:393.37px;width:60.205px;height:58.105px;transform:rotate(129.68deg)}
+.figma-race-star img{width:315.7%;height:436.14%;left:-113.66%;top:-17.17%}
+html body .hero .collage-v2[data-slide] .event-caption{clip-path:none;pointer-events:auto}
+html body .hero .collage-v2[data-slide] .team.hero-slide{bottom:auto!important}
+@media(min-width:1101px){
+ html body .hero .collage-v2[data-slide]{position:absolute;left:var(--scene-left);top:var(--scene-top)!important;bottom:auto!important;right:auto;scale:var(--scene-scale,1);translate:none;transform:none;transform-origin:0 0;overflow:visible}
+ html body #trust-numbers .numbers-composition{margin-top:40px;gap:20px}
+ html body #trust-numbers .trust-hub{margin-top:20px;gap:20px}
+}
+@media(max-width:1100px){
+ html body .hero .collage-v2[data-slide]{position:absolute;left:50%;top:var(--mobile-scene-top,0px)!important;bottom:auto!important;right:auto;scale:var(--mobile-scene-scale,.6);translate:-50% 0;transform:none;transform-origin:center top;overflow:visible}
+}
+html body>#prototype-footer.continuation-block{margin-top:24px!important}
+
+/* Seasonal heading and the paired actions retain their existing destinations. */
+html body #new-year .ny-heading.ny-banner{align-items:flex-end;margin-bottom:40px;overflow:visible}
+html body #new-year .ny-banner-side{align-self:flex-end}
+html body #new-year .ny-banner-action{justify-content:flex-end}
+html body #new-year .ny-banner-link{display:inline-flex;gap:8px;align-items:center;font-size:14px;line-height:1;padding:16px 24px}
+.figma-chevron{display:block;flex:none;width:20px;height:20px}
+.ny-banner-link .figma-chevron{filter:none}
+#newyear-title{position:relative}
+.figma-newyear-tree{display:inline-block;position:relative;vertical-align:baseline;width:56.791px;height:60px;margin-top:-14px;margin-bottom:-5px;overflow:hidden}
+.figma-newyear-tree img{position:absolute;width:307.63%;height:386.36%;max-width:none;left:-5.37%;top:-112.83%}
+html body #new-year .ny-featured .ny-paper,
+html body #new-year .ny-featured .ny-tab,
+html body #new-year .ny-featured .ny-tab::before,
+html body #new-year .ny-featured .ny-tab::after{background:#e3f3e9!important;color:#141414!important}
+html body #new-year .ny-featured .ny-paper :is(h3,p,li,.ny-price,.ny-price strong,.ny-price span,.ny-mobile-summary,.ny-package-details>summary,.ny-secondary){color:#141414!important}
+html body #new-year .ny-featured .ny-package-details>summary::after{color:#0aba59}
+html body #new-year .ny-actions{display:flex;gap:8px;align-items:center}
+html body #new-year .ny-actions .ny-primary{flex:1;min-width:0;min-height:52px;padding:15px 20px;font-size:14px;line-height:1;background:#141414;color:#fff}
+html body #new-year .ny-actions .ny-secondary{display:inline-flex;align-items:center;justify-content:center;gap:10px;flex:0 0 auto;min-height:50px;padding:14.5px 20px;border-radius:999px;background:#fff;color:#141414!important;font-size:14px;line-height:21px;text-decoration:none;white-space:nowrap}
+html body #new-year .ny-actions .ny-secondary::after{display:none}
+html body #new-year .ny-folder :is(.ny-primary,.ny-secondary){transition:background-color .2s ease,color .2s ease}
+html body #new-year .ny-folder :is(.ny-primary,.ny-secondary):hover{background:#ffdf4a!important;color:#141414!important;box-shadow:none;transform:none;translate:none;rotate:none;scale:none}
+html body #new-year .ny-tab::after{mask:none!important;clip-path:none!important;border-radius:0 18px 0 0!important;background:inherit!important}
+html body #new-year .ny-tab{white-space:nowrap;min-width:max-content}
+@media(min-width:701px){
+ html body #new-year .ny-tab{width:155px;height:41px;padding:11px 24px;box-sizing:border-box;font-size:14px;line-height:20px}
+ html body #new-year .ny-featured .ny-hit,
+ html body #new-year .ny-featured:hover .ny-hit{left:173.336px;right:auto;top:11px;height:30px;padding:8px 15px 6px;z-index:2;font-size:13px;line-height:15.6px;border-radius:12px 12px 0 0!important;transform:none}
+ html body #new-year .ny-actions{flex-direction:row;flex-wrap:nowrap;gap:8px;align-items:center}
+ html body #new-year .ny-actions .ny-primary{flex:1 1 0;width:auto;margin:0;white-space:nowrap}
+ html body #new-year .ny-actions .ny-secondary{flex:0 0 143px;width:143px;margin:0;padding:14.5px 20px}
+}
+@media(min-width:1101px){
+ html body #new-year .ny-paper{padding:20px 22px 22px}
+ html body #new-year .ny-photo{height:219px;margin-bottom:22px}
+ html body #new-year .ny-photo img{height:100%;width:100%;object-fit:cover}
+ html body #new-year .ny-paper h3{font-size:26px;line-height:1;margin:0 0 18px;letter-spacing:0}
+ html body #new-year .ny-includes{min-height:161px}
+}
+
+/* Catalogue: green selection and the new cutout from the Figma layer. */
+html body #catalog .catalog-tab-indicator{background:#0aba59}
+html body>#catalog .catalog-tab-track button[aria-pressed="true"]{background:#0aba59!important;color:#fff!important}
+html body>#catalog .catalog-tab-track.has-indicator button[aria-pressed="true"]{background:transparent!important}
+html body #catalog .catalog-card.catalog-category-card{position:relative}
+html body #catalog .catalog-card.catalog-category-card::before{content:"";position:absolute;left:24px;right:24px;top:24px;height:12px;background:radial-gradient(circle at 6px 6px,#fff 6px,transparent 6.5px) left/33.333% 12px repeat-x;pointer-events:none}
+@media(min-width:1101px){
+ html body #catalog .catalog-heading{margin-bottom:40px}
+ html body #catalog .catalog-grid{grid-template-rows:none}
+ html body #catalog .catalog-category-card{padding:59px 24px 70px;grid-template-columns:minmax(0,1fr) 218px;align-items:start;gap:0}
+ html body #catalog .catalog-category-card .category-illustration{width:218px!important;height:216.222px!important;align-self:center}
+ html body #catalog .catalog-help{padding:0;background:transparent;align-items:flex-end;margin-top:40px}
+ html body #catalog .catalog-help h3{font-size:26px;line-height:1.1;margin-bottom:14px}
+ html body #catalog .catalog-help p{max-width:527px}
+}
+
+/* Corporate occasions: shared paper panel and CTA on the heading row. */
+html body>#s5{background:#f3f2ed;border-radius:30px}
+html body #s5 .corporate-inner{width:100%;padding:40px 48px}
+html body #s5 .corporate-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin:0 0 32px}
+html body #s5 .corporate-heading h2{max-width:462px;margin:0}
+html body #s5 .corporate-heading>button{flex:none;min-height:54px;padding:17px 30px;font-size:16px;line-height:1.35}
+html body #s5 .corporate-grid article:nth-child(2){background:#fff}
+html body #s5 .corporate-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:24px}
+html body #s5 .corporate-bottom>div:first-child{max-width:550px}
+html body #s5 .corporate-actions>a{white-space:nowrap;font-size:14px}
+@media(min-width:1101px){
+ html body #s5 .corporate-grid{gap:var(--card-gap,0px);padding:16px 6px 12px;margin-bottom:32px}
+ html body #s5 .corporate-grid article{width:calc(100% + 16px * var(--card-spread,1));min-height:346px;padding:28px;transform:rotate(var(--card-turn,var(--figma-card-turn)));transform-origin:50% 65%}
+ html body #s5 .corporate-grid article:first-child{--figma-card-turn:-10.5deg;padding-top:36px}
+ html body #s5 .corporate-grid article:nth-child(2){--figma-card-turn:3.44deg}
+ html body #s5 .corporate-grid article:nth-child(3){--figma-card-turn:7.5deg}
+ html body #s5 .corporate-grid h3{font-size:26px;line-height:1.2;letter-spacing:0;margin-bottom:12px}
+ html body #s5 .corporate-card-foot a svg{transform:rotate(calc(-1 * var(--card-turn,var(--figma-card-turn))))}
+}
+
+/* Case photographs sit above full-width folder captions. The button covers the card. */
+html body>#s6 .trust-cases article{padding:0;min-height:0;display:flex;flex-direction:column;justify-content:flex-start;background:transparent;isolation:isolate}
+html body>#s6 .case-photo{position:relative;inset:auto;z-index:0;width:100%;height:auto;aspect-ratio:604/336;flex:none;border-radius:20px;overflow:hidden}
+html body>#s6 .case-photo img{display:block;border-radius:20px;width:100%;height:100%;object-fit:cover}
+html body>#s6 .case-folder{margin-top:-72px;z-index:1;display:flex;flex-direction:column;flex:1}
+html body>#s6 .case-folder-tab{align-self:flex-start;flex:none;font-size:16px;font-weight:400;line-height:20px;height:36px;padding:8px 20px}
+html body>#s6 .case-body{flex:1;min-height:156px}
+html body>#s6 .case-open{position:absolute;inset:0;z-index:3;display:block;width:100%;height:100%;margin:0;padding:0;background:transparent!important;border:0;transform:none;scale:none;transition:none;border-radius:32px!important}
+html body>#s6 .case-open svg{display:none}
+html body>#s6 .case-open:hover{background:transparent!important;transform:none;scale:none}
+html body>#s6 .portfolio-heading{margin-bottom:40px}
+html body>#s6 .buttons{margin-top:40px}
+
+@media(max-width:1100px){
+ html body #s5 .corporate-inner{padding:32px 24px}
+ html body #s5 .corporate-heading h2{max-width:60%}
+}
+@media(max-width:700px){
+ html body #new-year .ny-heading.ny-banner{align-items:flex-start;margin-bottom:24px}
+ html body #new-year .ny-banner-side{align-self:flex-start}
+ .figma-newyear-tree{width:38px;height:40px;margin-top:-9px;margin-bottom:-3px}
+ html body #new-year .ny-actions{flex-direction:column;align-items:stretch;flex-wrap:nowrap}
+ html body #s5 .corporate-heading{align-items:flex-start;flex-direction:column}
+ html body #s5 .corporate-heading h2{max-width:100%}
+ html body #s5 .corporate-bottom{align-items:flex-start;flex-direction:column}
+ html body #s5 .corporate-actions>a{white-space:normal}
+ html body>#s6 .case-folder{margin-top:-36px}
+ html body>#s6 .case-body{min-height:0}
+ html body>#s6 .portfolio-heading{margin-bottom:20px}
+ html body>#s6 .buttons{margin-top:24px}
+}
+
+/* The seven reported fragments, checked against their Figma layers. */
+@media(min-width:1101px){
+ html body #included>h2{margin:0 0 40px}
+ html body #included .team-included-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}
+ html body #included .team-included-label{font-size:26px;line-height:1;letter-spacing:0;font-weight:500!important}
+ html body #included .team-included-service>.team-included-label{padding:0;margin:0 0 30px}
+ html body #included .team-included-list{gap:24px}
+ html body #included .team-included-list>div{grid-template-rows:minmax(25px,auto) minmax(23.2px,auto);gap:6px}
+ html body #included .team-included-list dt{font-size:20px;line-height:25px;font-weight:600}
+ html body #included .team-included-list dd{font-size:16px;line-height:23.2px;color:rgba(20,20,20,.6)}
+ html body #included .included-tips{margin-top:30px;gap:24px}
+ html body #included .team-included-result>.team-included-label{display:block;box-sizing:border-box;width:379px;max-width:calc(100% - 22px);height:66px;padding:17px 26px 18px;margin:0 0 -5px;border-radius:18px 0 0 0!important;background:#f3f2ed}
+ html body #included .team-included-paper{display:flex;min-height:424px;padding:24px 32px;border-radius:0 32px 32px 32px!important}
+ html body #included .team-included-paper ul{display:flex;flex:1;flex-direction:column;justify-content:space-between}
+ html body #included .team-included-paper li{font-size:17px;line-height:23.8px;padding:14px 0 14px 34px}
+ html body #trust-numbers .numbers-composition{grid-template-rows:minmax(214.04px,auto) minmax(136px,auto)}
+ html body #trust-numbers .number-projects>.number-ink,
+ html body #trust-numbers :is(.number-programs,.number-awards) strong{font-size:52px;font-weight:500;line-height:48.4px}
+ html body #trust-numbers .number-awards-heading strong{line-height:44px;letter-spacing:-1.76px}
+ html body #trust-numbers .number-awards-heading p{font-size:16px;line-height:22.4px;margin:0}
+ html body #s7 .director-quote{font-size:56.32px;line-height:58.573px;letter-spacing:-1.9712px}
+ html body #s7 .director-portrait-tile{width:165px;height:165px;left:26.35px;top:-62.96px}
+ html body #s7 .director-event-tile{width:165px;height:165px;right:43.62px;top:100.66px;transform:rotate(8.81deg)}
+ html body #s7 .director-editorial-summary{font-size:16px;line-height:27px;margin:24px auto 0}
+ html body #s7 .director-editorial-actions .cta{font-size:14px;line-height:1}
+}
+html body #included .team-included-result>.team-included-label::after{mask:none!important;clip-path:none!important;border-radius:0 20px 0 0!important;background:inherit!important}
+html body>#s7.director-editorial{overflow:visible}
+@media(prefers-reduced-motion:reduce){
+ html body #s5 .corporate-grid{column-gap:20px}
+ html body #s5 .corporate-grid article{--card-spread:0;transform:none;width:100%}
+ html body #s5 .corporate-card-foot a svg{transform:none}
+}
+html body #trust-numbers .number-awards-heading{display:flex;align-items:flex-start;gap:20px}
+html body #trust-numbers .number-award-names{margin-top:auto}
+@media(min-width:701px) and (max-width:1100px){
+ html body #new-year .ny-actions{gap:6px}
+ html body #new-year .ny-actions .ny-primary{padding-inline:10px;white-space:normal}
+ html body #new-year .ny-actions .ny-secondary{flex-basis:auto;width:auto;padding-inline:12px;gap:6px}
+ html body #trust-numbers .number-awards-heading{flex-wrap:wrap;gap:8px 12px}
+}
+
+/* Desktop typography from the section-level Figma contexts (1232px content). */
+@media(min-width:1101px){
+ html body :is(#new-year,#catalog,#included,#s5,#trust-numbers,#s6,#s8) h2{font-size:42px!important;line-height:1.1!important;font-weight:500!important;letter-spacing:0}
+ html body #new-year .ny-paper h3{font-weight:500!important}
+ html body #new-year .ny-includes :is(p,li){font-size:14px;line-height:1.4;font-weight:400}
+ html body #new-year .ny-price,html body #new-year .ny-price span{font-size:14px;line-height:21px}
+ html body #new-year .ny-price strong{font-size:32px;line-height:32px;font-weight:700}
+ html body #new-year .ny-secondary{font-weight:400!important}
+ html body #catalog .catalog-card h3{font-size:24px;font-weight:500!important}
+ html body #catalog .catalog-category-card h3{font-size:26px;line-height:1.2}
+ html body #catalog .category-banner-description{font-size:14px;line-height:20.3px}
+ html body #catalog .catalog-help h3{font-weight:500!important;line-height:27.6px}
+ html body #catalog .catalog-help p{font-size:15px;line-height:22.5px}
+ html body #catalog-download .cfb-button{font-size:14px;line-height:1}
+ html body #s5 .corporate-grid h3{font-weight:500!important}
+ html body #s5 .corporate-actions>a{font-size:16px;line-height:22.4px}
+ html body #trust-numbers .number-origin .ticket-heading{font-size:26.88px;line-height:30.106px;font-weight:500!important;letter-spacing:-.5376px}
+ html body #trust-numbers .number-origin-caption strong{font-size:25.6px;line-height:29.44px;letter-spacing:-.64px}
+ html body #trust-numbers .number-projects p{font-size:16px;line-height:22.4px;letter-spacing:0}
+ html body #trust-numbers .numbers-reviews-title strong{font-size:18px;line-height:21.6px;font-weight:500}
+ html body #trust-numbers .numbers-reviews-title a{font-size:14px;line-height:21px}
+ html body #trust-numbers .numbers-ratings span{font-size:12px;line-height:14.4px}
+ html body #trust-numbers .numbers-ratings strong{font-size:38px;line-height:38px}
+ html body #trust-numbers .mini-photo span{font-size:8.5px;line-height:11.05px}
+ html body #trust-numbers .mini-checklist .checklist-title{font-size:10.2px;line-height:13.26px}
+ html body #trust-numbers .mini-checklist>div{font-size:10.2px;line-height:15.3px}
+ html body #s6 .case-copy p{font-size:17px;line-height:23.8px}
+ html body #s7 .director-signature h3{font-size:26px;line-height:31.2px;font-weight:500!important;letter-spacing:-.39px}
+ html body #s9>.continuation-inner>h2{font-size:24px!important;line-height:30px!important;font-weight:500!important;letter-spacing:-.48px}
+ html body #s10 .contact-folder-copy{font-size:18px;line-height:27px}
+ html body #s10 .contact-folder-actions .cta{font-size:14px;line-height:1}
+ html body #s10 .contact-folder-direct a{font-size:18px;line-height:1.5}
+ html body #s10 .contact-legal-row p{font-size:13px;line-height:16.9px}
+ html body #prototype-footer .ftr-h{font-size:16px;line-height:20px;font-weight:700}
+ html body #prototype-footer .ftr-col li{font-size:13px;line-height:18.85px}
+ html body #prototype-footer #newsletter-title{font-size:20px;line-height:23px;font-weight:500!important;letter-spacing:-.3px}
+ html body #prototype-footer .footer-proto-legal{font-size:11px;line-height:15.4px}
+}
+
+/* The chat label opens on hover or keyboard focus; the avatar stays visible. */
+html body #chat-launcher{gap:0;padding:9px;transition:padding .28s ease,background-color .2s ease}
+html body #chat-launcher>span:not(.chat-avatar){max-width:0;opacity:0;overflow:hidden;margin:0;transition:max-width .28s ease,opacity .2s ease,margin .28s ease}
+html body #chat-launcher:focus-visible{padding-right:20px}
+html body #chat-launcher:focus-visible>span:not(.chat-avatar){max-width:190px;opacity:1;margin-left:12px}
+@media(hover:hover) and (pointer:fine){
+ html body #chat-launcher:hover{padding-right:20px}
+ html body #chat-launcher:hover>span:not(.chat-avatar){max-width:190px;opacity:1;margin-left:12px}
+}
+@media(max-width:600px){html body #chat-launcher{padding:7px}}
+@media(prefers-reduced-motion:reduce){
+ html body #chat-launcher,html body #chat-launcher>span:not(.chat-avatar){transition:none}
+}
+
+/* Approved ticket perforation and single-line title. */
+html body #trust-numbers .number-origin{container-type:inline-size}
+html body #trust-numbers .number-origin .ticket-heading{white-space:nowrap;font-size:min(26.88px,8.3cqw)}
+html body #trust-numbers .number-origin-caption{border-top:1px dashed #c4c6bd!important}
+
+/* Chat uses the existing black action and catalog chevron. */
+html body #catalyst-chat{background:#fff}
+html body #catalyst-chat .cf-messengers a{background:#141414;color:#fff;border-radius:999px;font:500 14px/1 Roboto,Arial,sans-serif;min-height:48px;padding:14px 20px;transition:background-color .2s ease,color .2s ease}
+html body #catalyst-chat .cf-messengers a:hover{background:#ffdf4a;color:#141414;transform:none}
+html body #catalyst-chat .chat-request{font:500 14px/21px Roboto,Arial,sans-serif!important;background:transparent;color:#141414;gap:10px}
+html body #catalyst-chat .chat-request:hover{color:#0aba59;background:transparent;transform:none}
+html body #catalyst-chat .chat-request .figma-chevron{width:20px;height:20px;flex:0 0 20px}
+
+/* Catalogue hit card: Figma 194:362. */
+html body #catalog .catalog-category-card::before{display:block;background:radial-gradient(circle at 6px 6px,#fff 6px,transparent 6.5px) 0 0/12px 12px no-repeat,radial-gradient(circle at 6px 6px,#fff 6px,transparent 6.5px) 33.333% 0/12px 12px no-repeat,radial-gradient(circle at 6px 6px,#fff 6px,transparent 6.5px) 66.667% 0/12px 12px no-repeat,radial-gradient(circle at 6px 6px,#fff 6px,transparent 6.5px) 100% 0/12px 12px no-repeat}
+html body #catalog .catalog-category-card .category-banner-kicker{display:none}
+html body #catalog .catalog-category-card .category-banner-description{opacity:.6;font-weight:400}
+html body #catalog .catalog-category-card>.category-banner-action{gap:14px;font-weight:500;color:#141414;max-width:none}
+html body #catalog .category-banner-action>svg{width:36px;height:36px;flex:0 0 36px;padding:9px;box-sizing:border-box;border-radius:50%;background:#141414;color:#fff;transition:background-color .2s ease,color .2s ease}
+html body #catalog .catalog-category-card:hover .category-banner-action>svg{background:#fff;color:#141414}
+html body #s5 .corporate-actions>a{display:inline-flex;align-items:center;gap:6px}
+html body #s5 .corporate-actions>a::after{display:none}
+html body #prototype-footer .footer-proto-legal{display:flex;flex-direction:column;gap:8px}
+html body #prototype-footer .footer-legal-group{display:flex;flex-wrap:wrap;gap:8px 20px}
+html body #prototype-footer .footer-legal-group>*{margin:0}
+html body #prototype-footer .newsletter-controls input{border-radius:100px}
+html body #prototype-footer .newsletter-controls button{font-size:14px;line-height:1}
+html body #prototype-footer .footer-newsletter .cf-consent{display:block;margin:12px 0 0;font:400 14px/19.6px Roboto,Arial,sans-serif;color:#fff}
+html body #prototype-footer .footer-newsletter .cf-consent input{display:inline-block;vertical-align:middle;margin:0 3px 0 0;width:18px;height:18px}
+html body #prototype-footer #newsletter-privacy{margin:0}
+@media(min-width:1101px){
+ html body main>.hero{height:650px;min-height:650px}
+ html body main>.hero .hero-body{min-height:608px;padding-top:35px}
+ html body #header .primary-line>:is(.search-toggle,.messenger){width:46px!important;height:46px!important;min-width:46px!important;flex:0 0 46px!important;margin-right:0!important}
+ html body #header .primary-line>.messenger{margin-left:0!important}
+ html body #header .primary-line>.cta{height:46px;min-height:46px;padding:0 23px!important;margin-left:0!important;font-size:14px}
+ html body #catalog .catalog-category-card{display:block;padding:59px 24px 70px}
+ html body #catalog .catalog-category-card .catalog-card-copy{width:330px!important;max-width:58%;padding:0!important}
+ html body #catalog .catalog-category-card .category-illustration{position:absolute!important;inset:53px 50px auto auto!important;width:218px!important;height:216.222px!important}
+ html body #catalog .catalog-category-card>.category-banner-action{left:28px;bottom:24px;height:36px}
+ html body #prototype-footer.continuation-block{min-height:358px;padding:32px 32px 24px}
+ html body #prototype-footer .continuation-inner{row-gap:24px;grid-template-rows:minmax(222px,auto) auto}
+ html body #prototype-footer .footer-proto-nav .ftr-h{margin-bottom:14px}
+ html body #prototype-footer .footer-proto-nav li{margin-bottom:8px}
+ html body #prototype-footer .footer-proto-legal{padding-top:16px;color:rgba(255,255,255,.4);line-height:15.4px}
+ html body #prototype-footer .footer-proto-legal a{color:inherit}
+}
+@media(max-width:1100px){
+ html body #catalog .catalog-category-card{padding-top:52px}
+}
+
+/* Shared 20 × 20 spacing for the five card sections. */
+html body #s9 .faq-columns,
+html body #s9 .faq-columns>div,
+html body #s6 .trust-cases,
+html body #trust-numbers .numbers-composition,
+html body #trust-numbers .trust-hub,
+html body #catalog .catalog-grid,
+html body #new-year .ny-grid{gap:20px!important}
+html body #s9 .faq-columns .question{margin:0}
+html body #trust-numbers .numbers-composition{margin-bottom:0}
+html body #trust-numbers .trust-hub{margin-top:20px}
+html body #trust-numbers .number-origin{margin-inline:0}
+@media(min-width:701px){
+ html body #s6 .trust-cases article{flex-basis:calc((100% - 20px)/2)}
+}
+
+/* All collection cards share the approved Hits composition. */
+html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card{display:grid;grid-template-columns:minmax(0,1fr) 38%;grid-template-rows:auto;align-content:center;align-items:center;gap:20px;padding:52px 24px 76px;min-height:304px;height:auto}
+html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card .catalog-card-copy{position:relative;inset:auto;grid-column:1;grid-row:1;width:auto!important;max-width:none;padding:0!important}
+html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card .category-illustration{position:relative!important;inset:auto!important;grid-column:2;grid-row:1;width:100%!important;height:auto!important;max-height:none!important;aspect-ratio:218/216.222;display:flex;align-items:center;justify-content:center}
+html body #catalog .catalog-card.catalog-category-card .category-banner-description{font-size:14px;line-height:1.45;margin:12px 0 0;padding:0;opacity:.6}
+html body #catalog .catalog-card.catalog-category-card h3{font-size:26px;line-height:1.2;max-width:none}
+html body #catalog .category-sticker-crop{display:block;position:relative;width:100%;overflow:hidden}
+html body #catalog .category-sticker-crop>img{position:absolute;left:var(--sheet-left);top:var(--sheet-top);width:var(--sheet-width);height:var(--sheet-height);max-width:none;object-fit:fill;border-radius:0;transform:none;transition:none}
+html body #catalog .catalog-card.catalog-category-card>.category-banner-action{left:28px;bottom:24px;height:36px;max-width:calc(100% - 56px);white-space:nowrap}
+@media(min-width:1001px){
+ html body #catalog .catalog-grid[data-count="4"],html body #catalog .catalog-grid[data-count="3"]{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;grid-auto-rows:minmax(304px,auto)}
+ html body #catalog .catalog-grid[data-count="3"]>.catalog-card:first-child{grid-column:1/-1}
+}
+@media(max-width:1000px){
+ html body #catalog .catalog-grid[data-count]>.catalog-category-card{grid-column:1/-1}
+}
+@media(max-width:600px){
+ html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card{grid-template-columns:minmax(0,1fr) 30%;gap:12px;padding:52px 18px 76px;min-height:280px}
+ html body #catalog .catalog-card.catalog-category-card h3{font-size:23px}
+ html body #catalog .catalog-card.catalog-category-card .category-banner-description{font-size:13px}
+ html body #catalog .catalog-card.catalog-category-card>.category-banner-action{left:18px;max-width:calc(100% - 36px)}
+}
+
+/* FAQ: original Figma plus in a white 40px circle; 16px card corners. */
+html body:not(#faq-geometry-exception) #s9 .question{border-radius:16px!important}
+html body:not(#faq-geometry-exception) #s9 .question>summary{position:relative;padding:22px 50px 22px 0;min-height:69px}
+html body #s9 .question>summary::after{content:"";position:absolute;display:block;top:14px;right:-10px;width:40px;height:40px;margin:0;padding:0;border:0;border-radius:50%;background:#fff url("assets/figma-20261102/faq-plus.svg") center/24px 24px no-repeat;transform:none;box-shadow:none;transition:none}
+html body #s9 .question[open]>summary::after{content:"−";background:#fff;color:#0aba59;font:400 24px/40px Roboto,Arial,sans-serif;text-align:center;transform:none}
+
+/* Catalogue rows share a height; artwork cannot enlarge one row or overflow it. */
+html body #catalog .catalog-grid[data-count]{grid-template-rows:none;grid-auto-rows:auto;align-items:stretch}
+html body #catalog .catalog-grid[data-count]>.catalog-card{height:auto;min-height:304px;align-self:stretch}
+html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card{grid-template-columns:minmax(0,1fr) 38%;grid-template-rows:minmax(0,1fr);min-height:304px}
+html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card .category-illustration{position:absolute!important;inset:44px 24px auto auto!important;width:34%!important;max-width:218px;height:216px!important;aspect-ratio:auto}
+@media(min-width:1001px){
+ html body #catalog .catalog-grid[data-count]>.catalog-card{height:304px;min-height:304px}
+}
+@media(max-width:600px){
+ html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card{grid-template-columns:minmax(0,1fr) 30%}
+ html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card .category-illustration{inset:52px 18px auto auto!important;width:26%!important;height:150px!important}
+}
+
+/* Keep the FAQ control square in both states, overriding legacy open-state height. */
+html body #s9 .question>summary::after,
+html body #s9 .question[open]>summary::after{box-sizing:border-box;width:40px;height:40px;min-width:40px;max-width:40px;min-height:40px;max-height:40px;padding:0;margin:0;border-radius:50%;line-height:40px;aspect-ratio:1}
+
+/* Size stickers against the whole card, not its narrow second grid column. */
+html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card .category-illustration{grid-column:auto;grid-row:auto;inset:40px 24px auto auto!important;width:38%!important;max-width:240px;height:240px!important}
+@media(max-width:600px){
+ html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card .category-illustration{inset:52px 18px auto auto!important;width:30%!important;max-width:150px;height:150px!important}
+}
+
+/* Approved shared hover for black actions: yellow surface, black label. */
+html body :is(.action-black,.button.black,.hero-actions>.button.yellow,.mega-promo>a.promo-button,.mega-menu .menu-help,.catalog-menu-assistance button,.mobile-nav-footer button,.mobile-sheet .mobile-contact>.button,.lead-submit,#catalog .catalog-help>button,#catalog .catalog-tab-all,#search-result .mv-gbtn,#new-year .ny-primary,.catalog-download-approved .download-copy button,.company-contact-actions a.contact-all,#contact-dialog .cf-primary,#contact-dialog .cf-destination,#catalyst-chat .cf-messengers a,#telegram-invite .ti-link,#telegram-invite .ti-close):is(:hover,:focus-visible){background:#ffdf4a!important;color:#141414!important;border-color:#ffdf4a!important}
+html body #catalog .catalog-category-card:is(:hover,:focus-within) .category-banner-action>svg,
+html body #catalog .catalog-category-card:is(:hover,:focus-within) .catalog-more svg,
+html body #trust-numbers a:is(:hover,:focus-visible) .trust-arrow,
+html body #s5 .corporate-grid article:is(:hover,:focus-within) .corporate-card-foot a svg{background:#ffdf4a!important;color:#141414!important}
+html body #catalog .catalog-category-card:is(:hover,:focus-within)>.category-banner-action{color:#141414}
+
+/* Raise collection headings and descriptions together by 40px. */
+html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card .catalog-card-copy{top:-40px}
+
+/* Reuse the approved 3D sticker set beside the catalogue covers. */
+html body #catalog-download .cfb-art>.cfb-sticker{position:absolute;z-index:2;display:block;height:auto;aspect-ratio:1;object-fit:contain;pointer-events:none;border:0;border-radius:0;box-shadow:none}
+html body #catalog-download .cfb-sticker-hits{width:27%;max-width:160px;left:-6%;bottom:-3%}
+html body #catalog-download .cfb-sticker-creative{width:23%;max-width:136px;right:-2%;top:-8%}
+@media(max-width:700px){
+ html body #catalog-download .cfb-sticker-hits{width:27%;left:-2%;bottom:0}
+ html body #catalog-download .cfb-sticker-creative{width:23%;right:0;top:0}
+}
+
+/* Manual entry point for the existing Telegram invitation. */
+html body #prototype-footer .footer-telegram-open{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;margin-top:20px;padding:14px 24px;border:0;border-radius:999px;background:#0aba59;color:#fff;font:500 16px/1.35 Roboto,Arial,sans-serif;cursor:pointer;transition:background-color .2s ease,color .2s ease}
+html body #prototype-footer .footer-telegram-open:is(:hover,:focus-visible){background:#ffdf4a;color:#141414}
+@media(prefers-reduced-motion:reduce){html body #prototype-footer .footer-telegram-open{transition:none}}
+
+/* Compact invitation, with the existing messenger actions and icon artwork. */
+html body #telegram-invite{padding:20px}
+html body #telegram-invite .ti-layout{gap:20px;grid-template-columns:1.15fr 1fr}
+html body #telegram-invite .ti-form-panel{padding:24px;margin:0}
+html body #telegram-invite .ti-form-panel h2{font-size:30px;margin-bottom:12px}
+html body #telegram-invite .ti-form-panel .ti-copy{margin-bottom:20px}
+html body #telegram-invite .ti-field{margin-bottom:12px;gap:0}
+html body #telegram-invite .ti-field input{min-height:48px;padding:12px 16px}
+html body #telegram-invite .ti-consent{margin:16px 0;gap:10px}
+html body #telegram-invite .ti-link{min-height:48px;padding:12px 16px}
+html body #telegram-invite .ti-subscribe{padding:36px 12px 0;min-width:0}
+html body #telegram-invite .ti-kicker{display:flex;align-items:center;gap:10px;background:none;padding:0;margin:0 0 16px;color:#fff;border-radius:0;font-size:16px;font-weight:400}
+html body #telegram-invite .ti-kicker svg{width:24px;height:24px;flex:none}
+html body #telegram-invite .ti-subscribe h3{font-size:32px;line-height:1.1;margin-bottom:16px}
+html body #telegram-invite .ti-subscribe .ti-copy{font-size:16px;line-height:1.45}
+html body #telegram-invite .ti-art{min-height:180px;max-width:280px;margin:12px auto 16px}
+html body #telegram-invite .ti-manager-label{font-size:14px;text-align:center;margin:16px 0 12px;color:#53574f}
+html body #telegram-invite .ti-messengers{gap:10px}
+html body #telegram-invite .ti-messengers a{display:flex;align-items:center;justify-content:center;gap:10px;min-width:0;min-height:48px;padding:12px 16px;border:0;border-radius:999px;background:#141414;color:#fff;font:500 14px/1.35 Roboto,Arial,sans-serif}
+html body #telegram-invite .ti-messengers a svg{width:24px;height:24px;flex:none}
+html body #telegram-invite .ti-messengers a:first-child svg{color:#27a7e7}
+html body #telegram-invite .ti-messengers a:is(:hover,:focus-visible){background:#ffdf4a;color:#141414}
+@media(max-width:800px){
+ html body #telegram-invite .ti-layout{grid-template-columns:1fr}
+ html body #telegram-invite .ti-form-panel{margin-top:44px;padding:20px}
+ html body #telegram-invite .ti-subscribe{padding:0}
+ html body #telegram-invite .ti-form-panel h2,html body #telegram-invite .ti-subscribe h3{font-size:28px}
+ html body #telegram-invite .ti-art{flex:none}
+}
+
+/* Approved form separators and secondary messenger buttons. */
+html body #telegram-invite .ti-manager-label,html body #contact-dialog .cf-divider{display:flex;align-items:center;gap:12px;text-align:center;color:#53574f;font-size:14px}
+html body #telegram-invite .ti-manager-label::before,html body #telegram-invite .ti-manager-label::after,
+html body #contact-dialog .cf-divider::before,html body #contact-dialog .cf-divider::after{display:none!important}
+html body #telegram-invite .ti-messengers a,html body #contact-dialog .cf-messengers a{background:#fff!important;color:#141414!important;border:0;justify-content:center;border-radius:999px}
+html body #telegram-invite .ti-messengers a:is(:hover,:focus-visible),html body #contact-dialog .cf-messengers a:is(:hover,:focus-visible){background:#ffdf4a!important;color:#141414!important}
+/* Steps act as direct navigation, with only the current tab highlighted. */
+html body #contact-dialog .cf-steps li{min-width:0}
+html body #contact-dialog .cf-steps button{display:block;width:100%;min-height:44px;padding:10px 8px;border:0;border-radius:999px;background:#fff;color:#53574f;font:500 13px/1.3 Roboto,Arial,sans-serif;cursor:pointer}
+html body #contact-dialog .cf-steps button[aria-current="step"]{background:#0aba59;color:#fff}
+html body #contact-dialog .cf-steps button:hover{background:#ffdf4a;color:#141414}
+html body #contact-dialog .cf-options button[aria-pressed="false"]{background:#fff;color:#141414}
+html body #contact-dialog .cf-options button[aria-pressed="false"]:hover{background:#ffdf4a;color:#141414}
+html body #contact-dialog .cf-close,html body #catalyst-chat .cf-close{display:grid;place-items:center;width:40px;height:40px;min-width:40px;min-height:40px;padding:0;border:0;border-radius:50%;background:#141414;color:#fff}
+html body #contact-dialog .cf-close svg,html body #catalyst-chat .cf-close svg{width:20px;height:20px}
+html body #contact-dialog .cf-close:hover,html body #catalyst-chat .cf-close:hover{background:#ffdf4a;color:#141414}
+html body #contact-dialog #cf-title{padding-right:36px}
+html body #catalyst-chat .chat-header{padding-right:44px}
+@media(max-width:600px){html body #contact-dialog .cf-steps{gap:6px}html body #contact-dialog .cf-steps button{font-size:11px;padding:10px 4px}}
+
+/* Catalogue banner: supplied ribbon composition, with live title and action. */
+html body #catalog-download.catalog-figma{background:#000!important;min-height:33.333cqw;padding:5.5cqw 40px;overflow:hidden}
+html body #catalog-download .cfb-copy{position:relative;width:41%;z-index:3}
+html body #catalog-download .cfb-copy h2{font-size:clamp(28px,3.45cqw,48px)!important;line-height:1.05!important}
+html body #catalog-download .cfb-copy p{font-size:clamp(14px,1.45cqw,20px);line-height:1.4;margin:24px 0;opacity:.75}
+html body #catalog-download .cfb-button{position:static;gap:24px;background:#fff!important}
+html body #catalog-download .cfb-button svg{width:24px;height:24px;flex:none}
+html body #catalog-download .cfb-green-clip,html body #catalog-download .cfb-arrow{display:none}
+html body #catalog-download .cfb-ribbon-art{position:absolute;inset:0 0 0 40%;width:auto;height:100%;overflow:hidden}
+html body #catalog-download .cfb-ribbon-reference{position:absolute;right:0;top:50%;width:100cqw;max-width:none;height:auto;transform:translateY(-50%);border-radius:0}
+html body #catalog-download:is(:hover,:focus-within) .cfb-button{background:#ffdf4a!important}
+html body #catalog .catalog-card.catalog-category-card::before{background:radial-gradient(circle at 6px 6px,#fff 6px,transparent 6.5px) 0 0/12px 12px no-repeat,radial-gradient(circle at 6px 6px,#fff 6px,transparent 6.5px) 33.333% 0/12px 12px no-repeat,radial-gradient(circle at 6px 6px,#fff 6px,transparent 6.5px) 66.667% 0/12px 12px no-repeat,radial-gradient(circle at 6px 6px,#fff 6px,transparent 6.5px) 100% 0/12px 12px no-repeat}
+@media(max-width:700px){
+ html body #catalog-download.catalog-figma{padding:28px 20px 0;min-height:0}
+ html body #catalog-download .cfb-copy{width:100%}
+ html body #catalog-download .cfb-copy p{font-size:14px;margin:16px 0 20px}
+ html body #catalog-download .cfb-copy p br{display:none}
+ html body #catalog-download .cfb-ribbon-art{position:relative;inset:auto;width:calc(100% + 40px);height:auto;aspect-ratio:1.8;margin:16px -20px 0}
+ html body #catalog-download .cfb-ribbon-reference{width:166.667%;top:0;transform:none}
+}
+
+/* Compact banner; crop the reference strictly to its illustration region. */
+@media(min-width:701px){
+ html body #catalog-download.catalog-figma{min-height:30cqw;padding:4cqw 40px}
+ html body #catalog-download .cfb-ribbon-art{left:46%}
+ html body #catalog-download .cfb-ribbon-reference{width:166.667%}
+}
+html body #catalog-download .cfb-ribbon-art{clip-path:inset(0 0 0 2%)}
+
+/* Compact pill fields with labels that float on focus or when filled. */
+html body #telegram-invite #ti-lead-form .ti-field{position:relative;display:block;margin:0 0 8px;padding:0}
+html body #telegram-invite #ti-lead-form .ti-field input{display:block;box-sizing:border-box;width:100%;height:56px;min-height:56px;margin:0;padding:23px 20px 9px;border-radius:999px!important;font:400 16px/24px Roboto,Arial,sans-serif}
+html body #telegram-invite .ti-floating-label{position:absolute;left:20px;right:20px;top:50%;transform:translateY(-50%);pointer-events:none;color:#73796e;font:400 16px/20px Roboto,Arial,sans-serif;transition:top .18s ease,transform .18s ease,font-size .18s ease,line-height .18s ease}
+html body #telegram-invite .ti-field input:focus+.ti-floating-label,
+html body #telegram-invite .ti-field input:not(:placeholder-shown)+.ti-floating-label,
+html body #telegram-invite .ti-field input:autofill+.ti-floating-label{top:7px;transform:none;font-size:12px;line-height:14px}
+@media(prefers-reduced-motion:reduce){html body #telegram-invite .ti-floating-label{transition:none}}
+
+/* The transparent catalogue artwork can extend beyond the compact banner. */
+html body #catalog-download.catalog-figma{overflow:visible}
+html body #catalog-download .cfb-ribbon-art{clip-path:none;overflow:visible}
+@media(min-width:701px){
+ html body #catalog-download.catalog-figma{min-height:clamp(300px,26cqw,380px);padding:40px}
+ html body #catalog-download .cfb-ribbon-art{inset:-30px 0 -30px auto;width:56%;height:auto}
+ html body #catalog-download .cfb-ribbon-reference{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transform:none}
+}
+@media(max-width:700px){
+ html body #catalog-download .cfb-ribbon-art{aspect-ratio:1.5;margin-bottom:-20px}
+ html body #catalog-download .cfb-ribbon-reference{position:relative;inset:auto;display:block;width:100%;height:auto;transform:none}
+}
+
+/* Plain catalogue assistance, content-sized banner and green chat launcher. */
+html body #catalog .catalog-grid>.catalog-help{background:transparent;box-shadow:none}
+html body #catalog-download.catalog-figma{min-height:0}
+html body #chat-launcher,
+html body #chat-launcher:hover,
+html body #chat-launcher:focus-visible{background:#0aba59;color:#fff}
+html body #chat-launcher.chat-working .chat-status,
+html body #catalyst-chat.chat-working .chat-status{background:#ffdf4a}
+
+/* Director section, Figma 194:1312: exact artwork and uncropped emphasis. */
+html body #s10 .contact-folder-direct a{font-weight:500!important}
+html body #s7 .director-portrait-tile{display:block;overflow:hidden;background:#f3f2ed;border-radius:20px}
+html body #s7 .director-portrait-tile>img{position:absolute;left:2.68%;top:9.42%;width:100%;height:141.23%;max-width:none;object-fit:fill}
+html body #s7 .director-quote-accent::after{background:url('assets/figma-20261102/director-circle.png') center/100% 100% no-repeat;clip-path:none!important;inset:-10% -5% -14%;opacity:1}
+html body #s7 .director-signature h3{font-weight:500!important}
+@media(min-width:1101px){
+ html body>#s7.director-editorial{max-width:1232px;min-height:700px;margin-top:140px;padding:64px 40px 48px!important;box-sizing:border-box}
+ html body #s7 .continuation-inner{width:100%;max-width:none;padding:0}
+ html body #s7 .director-quote{font:700 56.32px/58.573px Roboto,Arial,sans-serif;letter-spacing:-1.9712px;margin:0 auto 40px}
+ html body #s7 .director-quote-accent{margin-top:3px}
+ html body #s7 .director-portrait-tile{width:165px;height:165px;left:26.35px;top:-62.96px;transform:rotate(-12deg)}
+ html body #s7 .director-event-tile{width:165px;height:165px;right:43.62px;top:100.66px;transform:rotate(8.81deg);border-radius:20px}
+ html body #s7 .director-signature h3{font-size:26px;line-height:31.2px;margin:0 0 8px}
+ html body #s7 .director-signature p{font-size:16px;line-height:22.4px;color:rgba(20,20,20,.6)}
+ html body #s7 .director-editorial-summary{font-size:16px;line-height:27px;margin:24px auto 0;max-width:860px}
+ html body #s7 .director-editorial-actions{display:flex;justify-content:center;gap:24px;margin-top:28px}
+ html body #s7 .director-editorial-actions .cta{width:270px;min-height:52px;font-size:14px;line-height:1;padding:14px 24px}
+}
+
+/* Form step navigation follows the catalogue's shared pill track. */
+html body #contact-dialog .cf-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:center;gap:0;padding:4px;background:#f3f2ed;border-radius:999px}
+html body #contact-dialog .cf-steps li{margin:0;padding:0}
+html body #contact-dialog .cf-steps button{min-height:44px;margin:0;padding:12px 8px;background:transparent;color:#202124;border-radius:999px;font-weight:500;line-height:1.3;white-space:nowrap}
+html body #contact-dialog .cf-steps button[aria-current="step"]{background:#0aba59;color:#fff}
+html body #contact-dialog .cf-steps button:hover:not([aria-current="step"]){background:#e8e7df;color:#141414}
+html body #contact-dialog .cf-steps button:focus-visible{outline:2px solid #0aba59;outline-offset:-3px}
+@media(max-width:600px){html body #contact-dialog .cf-steps{gap:0;padding:3px}html body #contact-dialog .cf-steps button{padding:12px 4px}}
+
+/* Contrast the shared tab track against the form's warm grey surface. */
+html body #contact-dialog .cf-steps{background:#fff}
+
+/* Contact forms reuse the subscription form's floating pill fields. */
+html body #contact-dialog .cf-context{background:transparent;padding:0;border-radius:0;margin:0 0 24px;color:#53574f;font:400 18px/1.4 Roboto,Arial,sans-serif}
+html body #contact-dialog .cf-channels input:checked+span{background:#0aba59!important;color:#fff!important}
+html body #contact-dialog .cf-channels input:checked+span .cf-icon{color:#fff}
+html body #contact-dialog .cf-floating-field{position:relative;display:block;margin:0 0 8px;padding:0}
+html body #contact-dialog .cf-floating-field input:not([type=radio]):not([type=checkbox]){display:block;box-sizing:border-box;width:100%;height:56px;min-height:56px;margin:0;padding:23px 20px 9px!important;border-radius:999px!important;font:400 16px/24px Roboto,Arial,sans-serif}
+html body #contact-dialog .cf-floating-label{position:absolute;left:20px;right:20px;top:50%;transform:translateY(-50%);pointer-events:none;color:#73796e;font:400 16px/20px Roboto,Arial,sans-serif;transition:top .18s ease,transform .18s ease,font-size .18s ease,line-height .18s ease}
+html body #contact-dialog .cf-floating-field input:focus+.cf-floating-label,
+html body #contact-dialog .cf-floating-field input:not(:placeholder-shown)+.cf-floating-label,
+html body #contact-dialog .cf-floating-field input:autofill+.cf-floating-label{top:7px;transform:none;font-size:12px;line-height:14px}
+@media(prefers-reduced-motion:reduce){html body #contact-dialog .cf-floating-label{transition:none}}
+
+/* Floating labels have no patch behind the text. */
+html body #telegram-invite .ti-floating-label,
+html body #contact-dialog .cf-floating-label{background:transparent!important;box-shadow:none;padding:0}
+@media(max-width:800px){
+ html body #telegram-invite{padding:12px}
+ html body #telegram-invite .ti-layout{display:flex;flex-direction:column;gap:12px}
+ html body #telegram-invite .ti-subscribe{order:0;padding:48px 12px 12px;margin:0}
+ html body #telegram-invite .ti-form-panel{order:1;margin:0;padding:20px}
+ html body #telegram-invite .ti-kicker{margin-bottom:12px}
+ html body #telegram-invite .ti-subscribe h3{margin-bottom:12px}
+ html body #telegram-invite .ti-subscribe .ti-copy{margin-bottom:12px}
+ html body #telegram-invite .ti-form-panel .ti-copy{margin-bottom:16px}
+ html body #telegram-invite .ti-consent{margin:16px 0}
+ html body #telegram-invite .ti-manager-label{margin:12px 0}
+}
+@media(max-width:700px){
+ html body #s9 .faq-columns,html body #s9 .faq-columns>div{gap:12px}
+ html body:not(#faq-geometry-exception) #s9 .question{padding:0 12px;margin:0}
+ html body:not(#faq-geometry-exception) #s9 .question>summary{padding:12px 52px 12px 0;min-height:64px;box-sizing:border-box}
+ html body #s9 .question>summary::after{top:12px;right:0}
+}
+
+/* Mobile cards retain their surfaces and compact, consistent insets. */
+@media(max-width:700px){
+ html body #s10 .contact-folder-body,
+ html body #s10 .contact-folder-tab,
+ html body #s10 .contact-folder-tab::after,
+ html body #s10 .contact-support{background:#f3f2ed}
+ html body #s10 .contact-folder-body,html body #s10 .contact-support{padding:20px}
+ html body #s10 .contact-folder-actions .cta{background:#fff}
+ html body #s10 .contact-folder-actions .cta:hover{background:#ffdf4a}
+ html body #s10 .contact-social-strip{padding:0}
+ html body #s7 .director-portrait-tile{width:140px;height:140px;flex:none}
+ html body #s7 .director-portrait-tile>img{width:100%;height:auto;object-fit:contain}
+ html body #trust-numbers .numbers-composition{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;gap:12px}
+ html body #trust-numbers .number-origin{grid-column:1/-1;grid-row:1}
+ html body #trust-numbers .number-projects{grid-column:1;grid-row:2}
+ html body #trust-numbers .number-programs{grid-column:2;grid-row:2}
+ html body #trust-numbers :is(.number-projects,.number-programs){padding:16px;min-height:176px;height:auto}
+ html body #trust-numbers .number-awards{grid-column:1/-1;grid-row:3;padding:16px;min-height:0;gap:16px}
+ html body #trust-numbers .number-awards-heading{flex-wrap:nowrap;align-items:center;gap:16px}
+ html body #trust-numbers .number-own{grid-column:1/-1;grid-row:4;padding:16px;min-height:0}
+ html body #trust-numbers .numbers-reviews{padding:16px}
+ html body #s5 .corporate-inner{padding:20px 16px}
+ html body #s5 .corporate-grid{padding:12px 0;gap:20px}
+ html body #s5 .corporate-grid article{padding:20px}
+ html body #s5 .corporate-grid article:first-child{padding-top:32px}
+}
+@media(max-width:1100px){
+ html body #header .primary-line>.mobile-trigger{background:#e3f3e9!important;color:#0aba59;border:0;border-radius:50%}
+ html body #header .primary-line>.mobile-trigger:hover{background:#ffdf4a!important}
+ html body #header .primary-line{padding:10px 12px!important}
+}
+
+/* Five existing calculator steps share the approved tab navigation. */
+html body #contact-dialog.cf-cost-quiz .cf-steps{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:600px){html body #contact-dialog.cf-cost-quiz .cf-steps button{font-size:10px;padding-inline:3px}}
+
+/* Aligned floating labels; quiet pointer focus, visible keyboard focus. */
+html body #contact-dialog input:not([type=radio]):not([type=checkbox]):focus{outline:none;box-shadow:none}
+html body #contact-dialog.cf-keyboard-focus input:not([type=radio]):not([type=checkbox]):focus{outline:2px solid #141414;outline-offset:2px}
+
+/* Approved form exceptions: legal links and the messenger separator. */
+html body #contact-dialog .cf-consent a{text-decoration:underline!important;text-underline-offset:2px}
+html body #contact-dialog .cf-divider::before,
+html body #contact-dialog .cf-divider::after{content:"";display:block!important;flex:1;height:1px;background:#d6d9d0}
+html body #contact-dialog.cf-cost-quiz .cf-quiz-back{display:inline-flex;align-items:center;justify-content:center;gap:12px;width:auto;min-height:48px;padding:12px 18px;background:#fff;color:#141414;border-radius:999px!important;font:500 15px/1.4 Roboto,Arial,sans-serif;transform:none}
+html body #contact-dialog.cf-cost-quiz .cf-quiz-back:hover{background:#ffdf4a;transform:none}
+html body #contact-dialog .cf-quiz-back svg{flex:none;transform:none}
+html body #contact-dialog .cf-selection{margin:0 0 20px}
+html body #contact-dialog .cf-selection .cf-intro{margin:0 0 12px}
+html body #contact-dialog .cf-selection dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0}
+html body #contact-dialog .cf-selection dt{font-size:12px;color:#73796e}
+html body #contact-dialog .cf-selection dd{margin:4px 0 0;font-size:14px;line-height:1.4;font-weight:500}
+
+html body #contact-dialog .cf-quiz-actions{display:flex;align-items:center;gap:12px}
+html body #contact-dialog .cf-quiz-actions .cf-quiz-back{margin:0;flex:none}
+html body #contact-dialog .cf-quiz-actions .cf-primary{flex:1;min-width:0}
+html body #contact-dialog .cf-quiz-actions{display:grid;grid-template-columns:auto minmax(0,1fr)}
+html body #contact-dialog .cf-quiz-actions .cf-primary{width:100%!important;min-width:0!important}
+@media(max-width:600px){html body #contact-dialog .cf-quiz-actions :is(.cf-primary,.cf-quiz-back){padding:12px 14px!important;font-size:14px!important}}
+
+/* Rounded consent control with the same thin, round-ended stroke as form icons. */
+html body :is(#contact-dialog,#telegram-invite,#prototype-footer) :is(.cf-consent,.ti-consent) input[type=checkbox]{appearance:none;-webkit-appearance:none;display:block;width:18px;height:18px;min-width:18px;padding:0;margin:0;flex:none;border:0;border-radius:7px!important;background:#fff;cursor:pointer;box-shadow:none}
+html body :is(#contact-dialog,#telegram-invite,#prototype-footer) :is(.cf-consent,.ti-consent) input[type=checkbox]:checked{background-color:#168746;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12 4 4 8-8'/%3E%3C/svg%3E");background-size:18px 18px;background-position:center;background-repeat:no-repeat}
+html body :is(#contact-dialog,#telegram-invite,#prototype-footer) :is(.cf-consent,.ti-consent) input[type=checkbox]:focus{outline:none}
+html body :is(#contact-dialog,#telegram-invite,#prototype-footer) :is(.cf-consent,.ti-consent) input[type=checkbox]:focus-visible{outline:2px solid #141414;outline-offset:2px}
+
+/* Named, separately filled progress segments; each name remains a step control. */
+html body #contact-dialog .cf-progress-steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;list-style:none;margin:0 32px 20px 0;padding:0}
+html body #contact-dialog .cf-progress-steps li{min-width:0;margin:0;padding:0}
+html body #contact-dialog .cf-progress-steps button{display:block;width:100%;min-width:0;min-height:44px;margin:0;padding:0;background:transparent;color:#53574f;border:0;border-radius:0!important;font:400 12px/1.4 Roboto,Arial,sans-serif;cursor:pointer;transform:none;text-align:left}
+html body #contact-dialog .cf-progress-segment{display:block;height:6px;margin-bottom:10px;background:#e1e1d9;border-radius:999px}
+html body #contact-dialog .cf-progress-steps .is-filled .cf-progress-segment{background:#0aba59}
+html body #contact-dialog .cf-progress-steps button[aria-current=step]{color:#141414;font-weight:500}
+html body #contact-dialog .cf-progress-steps button:hover{color:#141414;background:transparent;transform:none}
+html body #contact-dialog .cf-progress-steps button:focus-visible{outline:2px solid #141414;outline-offset:2px}
+@media(max-width:600px){html body #contact-dialog .cf-progress-steps{margin-top:24px;margin-right:0;gap:6px}html body #contact-dialog .cf-progress-steps button{font-size:11px}}
+
+/* Shared form controls: apply approved details to every contact surface. */
+html body :is(#contact-dialog,#telegram-invite,#prototype-footer) :is(.cf-consent,.ti-consent) a{text-decoration:underline!important;text-underline-offset:2px}
+html body :is(#contact-dialog,#telegram-invite,#catalyst-chat) .cf-messengers a{background:#fff!important;color:#141414!important}
+html body :is(#contact-dialog,#telegram-invite,#catalyst-chat) .cf-messengers a:is(:hover,:focus-visible){background:#ffdf4a!important;color:#141414!important;transform:none}
+html body #telegram-invite .ti-manager-label::before,
+html body #telegram-invite .ti-manager-label::after{content:"";display:block!important;flex:1;height:1px;background:#d6d9d0}
+
+html body #contact-dialog .cf-progress-steps button:disabled{cursor:default;color:#73796e;opacity:1}
+/* The invitation form has a white surface, so neutral controls retain contrast. */
+html body #telegram-invite .ti-messengers a{background:#f3f2ed!important}
+html body #telegram-invite .ti-consent input[type=checkbox]:not(:checked){background:#f3f2ed}
+
+/* The entire catalog banner opens the same form as its native button. */
+html body #catalog-download,html body #catalog-download *{cursor:pointer}
+
+html body #s9 .faq-more:not([hidden]){background:#141414;color:#fff}
+html body #s9 .faq-more:not([hidden]):is(:hover,:focus-visible){background:#ffdf4a;color:#141414}
+
+/* Compact chat: a personal message and the shared white messenger controls. */
+html body #catalyst-chat{background:#f3f2ed}
+html body #catalyst-chat .chat-paper{padding:24px 20px 0}
+html body #catalyst-chat .chat-header{margin-bottom:20px}
+html body #catalyst-chat .chat-message{background:#fff;padding:20px;border-radius:0 24px 24px 24px}
+html body #catalyst-chat .chat-message h2{font-size:23px!important;line-height:1.15!important;margin-bottom:12px}
+html body #catalyst-chat .chat-bottom{padding:20px}
+html body #catalyst-chat .chat-request{margin-top:16px;padding-top:12px}
+@media(max-width:700px){
+ html body:not(#mobile-type-exception) #s10 #contact-folder-title{font-size:clamp(18px,7cqw,24px)!important;line-height:1.2!important}
+ html body #trust-numbers .numbers-composition>.number-awards{grid-column:1/-1;grid-row:auto;min-height:0}
+}
+
+/* Keep the square logo at its native ratio, without vertical letterboxing. */
+html body #header.header-proto .primary-line>.brand img,
+html body .mobile-nav-bar .brand img{display:block;height:auto!important;aspect-ratio:1; padding:0; margin:0}
+html body #header.header-proto .primary-line>.brand,
+html body .mobile-nav-bar .brand{line-height:0}
+
+/* Simplify facts on phones only; preserve the complete desktop composition. */
+@media(max-width:700px){
+ html body #trust-numbers :is(.number-origin,.number-own,.number-awards,.trust-route){display:none!important}
+ html body #trust-numbers .numbers-composition{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}
+ html body #trust-numbers .numbers-composition>article{grid-column:auto;grid-row:auto;min-height:0}
+ html body #trust-numbers .trust-hub{grid-template-columns:1fr}
+ html body #trust-numbers .numbers-reviews{margin:0}
+}
+@media(max-width:700px){
+ html body #new-year #newyear-title{font-size:clamp(28px,7.8vw,36px)!important;line-height:1.12!important;letter-spacing:-.02em!important}
+ html body #new-year #newyear-title :is(.ny-title-label,.ny-title-year){display:inline;font:inherit!important;letter-spacing:inherit;margin:0;padding:0}
+ html body #new-year #newyear-title .ny-title-team{display:block;font:inherit!important;letter-spacing:inherit;margin:4px 0 0;padding:0}
+ html body #new-year #newyear-title .ny-desktop-break{display:none}
+ html body #new-year #newyear-title .figma-newyear-tree{width:28px;height:30px;margin:0 0 -2px 4px;vertical-align:baseline}
+ html body #new-year>.ny-banner-side{width:100%;margin-top:24px}
+ html body #new-year>.ny-banner-side .ny-banner-link{width:100%;justify-content:center}
+}
+
+/* The portrait signs the message, rather than preceding it. */
+html body>#s7.director-editorial{min-height:0}
+html body #s7 .director-author{display:flex;align-items:center;justify-content:center;gap:24px;margin:32px auto 0}
+html body #s7 .director-author .director-portrait-tile{position:relative;inset:auto;width:96px;height:96px;flex:0 0 96px;margin:0;transform:none}
+html body #s7 .director-author .director-signature{text-align:left}
+html body #s7 .director-editorial-actions{display:flex;flex-wrap:nowrap;justify-content:center;gap:12px}
+html body #s7 .director-editorial-actions .cta{min-width:0;width:200px;background:#f3f2ed;color:#141414;white-space:nowrap}
+html body #s7 .director-editorial-actions .cta:hover{background:#ffdf4a;color:#141414}
+@media(max-width:700px){
+ html body:not(#mobile-type-exception) #s7 .director-quote{font-size:30px!important;line-height:1.14!important;letter-spacing:-.03em;margin-bottom:28px}
+ html body #s7 .director-quote-accent{font-size:inherit;margin-top:4px}
+ html body #s7 .director-author{gap:16px;margin-top:28px}
+ html body #s7 .director-author .director-portrait-tile{width:80px;height:80px;flex-basis:80px}
+ html body #s7 .director-author .director-signature h3{font-size:20px;line-height:1.2;margin-bottom:6px}
+ html body #s7 .director-author .director-signature p{font-size:14px;line-height:1.4}
+ html body #s7 .director-editorial-actions .cta{flex:1;width:auto;min-width:0;padding:14px 12px;font-size:15px;gap:8px}
+}
+@media(max-width:700px){
+ html body:not(#mobile-type-exception) #s7 .director-quote span{font-size:inherit!important;line-height:inherit!important}
+ html body:not(#mobile-controls-exception) #s7 .director-editorial-actions{flex-direction:row;flex-wrap:nowrap}
+ html body:not(#mobile-controls-exception) #s7 .director-editorial-actions .cta{width:auto!important;min-width:0;flex:1;padding:14px 12px!important}
+}
+
+/* Event photographs frame the signed quote on desktop only. */
+html body #s7 .director-edge-photo{display:none}
+@media(min-width:701px){
+ html body #s7 .director-edge-photo{display:block;position:absolute;top:auto;bottom:12px;width:clamp(100px,12vw,165px);height:clamp(120px,14vw,190px);object-fit:cover;border-radius:20px;pointer-events:none}
+ html body #s7 .director-edge-left{left:0;transform:rotate(-8deg)}
+ html body #s7 .director-edge-right{right:0;transform:rotate(8deg)}
+}
+@media(min-width:701px) and (max-width:1000px){
+ html body #s7 .director-edge-photo{bottom:100px;width:100px;height:120px}
+}
+
+/* Additional editable hero compositions from Figma 218:3316/3382/3349/3403. */
+html body .hero .collage-v2[data-slide="1"] .team.hero-slide{left:92px;top:80px;width:459px;height:395px;transform:none;filter:none}
+html body .hero .collage-v2[data-slide="1"] .event-caption{left:68.115px;top:142.078px;height:127.46px;z-index:5}
+html body .hero .collage-v2[data-slide="1"] .mini-folder{left:421.656px;top:63.746px}
+html body .hero .collage-v2[data-slide="1"] .figma-race-flag{left:218.418px;top:72.471px;width:88.204px;height:86.426px;transform:rotate(3.31deg);z-index:1}
+html body .hero .collage-v2[data-slide="1"] .figma-race-flag img{width:297.31%;height:404.56%;left:-100.1%;top:-107.88%}
+html body .hero .collage-v2[data-slide="1"] .figma-race-star{left:486.478px;top:391.665px;z-index:6}
+html body .hero .collage-v2[data-slide="2"] .team.hero-slide{left:216.43px;top:133px;width:195.166px;height:323px;transform:none;filter:none}
+html body .hero .collage-v2[data-slide="2"] .event-caption{left:68.115px;top:142.078px;height:127.46px;z-index:5}
+html body .hero .collage-v2[data-slide="2"] .mini-folder{left:388.656px;top:173.746px}
+html body .hero .collage-v2[data-slide="2"] .figma-race-flag{left:151.796px;top:246.934px;width:91.182px;height:89.344px;transform:rotate(-8.03deg);z-index:1}
+html body .hero .collage-v2[data-slide="2"] .figma-race-flag img{width:307.64%;height:418.62%;left:-115.11%;top:-303.81%}
+html body .hero .collage-v2[data-slide="2"] .figma-race-star{left:383.478px;top:385.665px;z-index:6}
+html body .hero .collage-v2[data-slide="3"] .team.hero-slide{left:159px;top:133px;width:398.777px;height:351px;transform:none;filter:none}
+html body .hero .collage-v2[data-slide="3"] .event-caption{left:68.815px;top:72.041px;height:140.859px;z-index:5}
+html body .hero .collage-v2[data-slide="3"] .mini-folder{left:437.656px;top:96.746px}
+html body .hero .collage-v2[data-slide="3"] .figma-race-flag{left:245.091px;top:49.881px;width:114.655px;height:112.345px;transform:rotate(32.12deg);z-index:1}
+html body .hero .collage-v2[data-slide="3"] .figma-race-flag img{width:282.41%;height:384.29%;left:-186.73%;top:-275.53%}
+html body .hero .collage-v2[data-slide="3"] .figma-race-star{left:473.478px;top:385.665px;z-index:6}
+html body .hero .collage-v2[data-slide="4"] .team.hero-slide{left:50px;top:106px;width:577.151px;height:384.517px;transform:none;filter:none}
+html body .hero .collage-v2[data-slide="4"] .event-caption{left:56.719px;top:68.046px;height:139.014px;z-index:5}
+html body .hero .collage-v2[data-slide="4"] .mini-folder{left:437.656px;top:106.746px}
+html body .hero .collage-v2[data-slide="4"] .figma-race-flag{left:234.092px;top:49.879px;width:114.655px;height:112.345px;transform:rotate(3.22deg);z-index:1}
+html body .hero .collage-v2[data-slide="4"] .figma-race-flag img{width:282.48%;height:384.38%;left:-0.03%;top:-101.35%}
+html body .hero .collage-v2[data-slide="4"] .figma-race-star{left:496.478px;top:395.665px;z-index:6}
+html body .hero .collage-v2[data-slide="3"] .event-caption h3{line-height:.9}
+html body .hero .collage-v2[data-slide="3"] .event-caption p{top:100.44px;left:16.41px;right:11.59px}
+html body .hero .collage-v2[data-slide="4"] .event-caption p{top:82.78px;left:18.27px;right:35.12px}
+
+/* Two-panel offers dialog reuses the Telegram invitation palette and controls. */
+html body #contact-dialog.cf-offers{width:min(1040px,calc(100% - 32px));max-width:1040px;padding:20px;background:#0aba59;border-radius:32px}
+html body #contact-dialog.cf-offers>.cf-close{z-index:2;top:16px;right:16px}
+html body #contact-dialog.cf-offers .cf-content{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+html body #contact-dialog .cf-offer-showcase{padding:16px 12px;position:relative;display:flex;flex-direction:column;color:#fff}
+html body #contact-dialog .cf-offer-kicker{font-size:14px;margin:0 0 16px}
+html body #contact-dialog .cf-offer-showcase h3{font:700 36px/1.1 Roboto,Arial,sans-serif;margin:0 0 24px;color:#fff}
+html body #contact-dialog .cf-offer-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+html body #contact-dialog .cf-offer-tabs button{border:0;border-radius:999px;padding:12px 16px;font:500 14px/1.2 Roboto,Arial,sans-serif;background:#fff;color:#141414}
+html body #contact-dialog .cf-offer-tabs button[aria-selected=true]{background:#ffdf4a}
+html body #contact-dialog .cf-offer-tabs button:focus-visible{outline:2px solid #141414;outline-offset:3px}
+html body #contact-dialog .cf-offer-benefit{font:700 48px/1 Roboto,Arial,sans-serif;margin:0 0 16px;color:#ffdf4a}
+html body #contact-dialog .cf-offer-showcase h4{font:500 24px/1.2 Roboto,Arial,sans-serif;margin:0 0 12px}
+html body #contact-dialog .cf-offer-copy{font:400 16px/1.45 Roboto,Arial,sans-serif;margin:0 0 12px}
+html body #contact-dialog .cf-offer-detail{font:400 14px/1.4 Roboto,Arial,sans-serif;margin:0;max-width:320px}
+html body #contact-dialog .cf-offer-sticker{width:140px;height:auto;align-self:flex-end;margin:16px 0 0}
+html body #contact-dialog .cf-offer-demo{font:400 12px/1.4 Roboto,Arial,sans-serif;margin:16px 0 0}
+html body #contact-dialog .cf-offer-contact{background:#f3f2ed;border-radius:24px;padding:64px 24px 24px;align-self:stretch}
+html body #contact-dialog .cf-offer-contact h2{font-size:28px!important;line-height:1.15;margin-bottom:24px}
+html body #contact-dialog .cf-offer-contact .cf-channel-options{gap:6px}
+html body #contact-dialog .cf-offer-contact .cf-channels label>span{padding:12px 6px;gap:5px;font-size:13px}
+html body #contact-dialog .cf-offer-contact .cf-divider{font-size:12px}
+@media(max-width:700px){
+ html body #contact-dialog.cf-offers{width:calc(100% - 24px);padding:12px;border-radius:24px}
+ html body #contact-dialog.cf-offers .cf-content{grid-template-columns:1fr;gap:12px}
+ html body #contact-dialog .cf-offer-showcase{padding:48px 12px 12px}
+ html body #contact-dialog .cf-offer-showcase h3{font-size:30px}
+ html body #contact-dialog .cf-offer-contact{padding:24px 16px}
+ html body #contact-dialog .cf-offer-contact h2{font-size:24px!important}
+ html body #contact-dialog .cf-offer-sticker{width:100px;margin-top:12px}
+ html body #s5 .corporate-bottom>.action-black{display:flex;width:100%;max-width:none;justify-content:center;margin-top:8px}
+}
+
+/* Retain the accessible fieldset name without a repeated visual heading. */
+html body #contact-dialog .cf-channels legend{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+html body #contact-dialog .cf-program-selection{display:flex;align-items:center;gap:16px;margin:0 0 24px;padding:16px;background:#fff;border-radius:24px}
+html body #contact-dialog .cf-program-selection>img{width:88px;height:88px;flex:none;object-fit:cover;border-radius:16px}
+html body #contact-dialog .cf-program-selection h3{font:500 18px/1.2 Roboto,Arial,sans-serif;margin:0 0 8px}
+html body #contact-dialog .cf-program-selection p{font:400 14px/1.4 Roboto,Arial,sans-serif;color:#60655f;margin:0}
+@media(max-width:700px){
+ html body:not(#mobile-controls-exception) #new-year .ny-actions .ny-secondary{display:flex!important;width:100%!important;min-width:0;justify-content:center;background:#fff!important;color:#141414!important}
+ html body #contact-dialog .cf-program-selection{padding:12px;gap:12px}
+ html body #contact-dialog .cf-program-selection>img{width:72px;height:72px}
+ html body #contact-dialog .cf-program-selection h3{font-size:16px}
+}
+@media(max-width:700px){html body #s5 .corporate-bottom>.action-black{min-height:52px;padding:16px 24px;font:500 14px/20px Roboto,Arial,sans-serif}}
+
+/* Offers are visible cards, with a horizontal swipe strip on phones. */
+html body #contact-dialog.cf-offers{width:min(1200px,calc(100% - 32px));max-width:1200px}
+html body #contact-dialog.cf-offers .cf-content{grid-template-columns:minmax(0,1.7fr) minmax(340px,1fr)}
+html body #contact-dialog .cf-offer-showcase{min-width:0;padding:20px 0}
+html body #contact-dialog .cf-offer-showcase h3{margin-bottom:16px;padding:0 12px}
+html body #contact-dialog .cf-offer-kicker,html body #contact-dialog .cf-offer-demo{padding-inline:12px}
+html body #contact-dialog .cf-offer-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:64px 0 0;align-items:stretch}
+html body #contact-dialog .cf-offer-card{border:0;border-radius:24px;background:#ffdf4a;color:#141414;font:400 14px/1.4 Roboto,Arial,sans-serif;text-align:left;display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:0 16px 16px;cursor:pointer;position:relative}
+html body #contact-dialog .cf-offer-card-1{background:#fff}
+html body #contact-dialog .cf-offer-card-2{background:#e3f3e9}
+html body #contact-dialog .cf-offer-card>img{display:block;width:calc(100% + 24px);max-width:none;height:150px;object-fit:contain;flex:none;align-self:center;margin:-56px -12px 8px;pointer-events:none}
+html body #contact-dialog .cf-offer-card-benefit{font:700 32px/1.1 Roboto,Arial,sans-serif;margin:0 0 12px;overflow-wrap:anywhere}
+html body #contact-dialog .cf-offer-card-1 .cf-offer-card-benefit{font-size:24px;line-height:1.2}
+html body #contact-dialog .cf-offer-card>strong{font-size:18px;font-weight:500;line-height:1.2;margin:0 0 12px}
+html body #contact-dialog .cf-offer-card-copy{display:block;margin:0 0 20px}
+html body #contact-dialog .cf-offer-card-select{display:block;margin-top:auto;padding:10px 0;font-size:13px;font-weight:500;width:100%;text-align:center;border-radius:999px;background:#fff}
+html body #contact-dialog .cf-offer-card[aria-pressed=true] .cf-offer-card-select{background:#141414;color:#fff}
+html body #contact-dialog .cf-offer-card:focus-visible{outline:2px solid #141414;outline-offset:3px}
+html body #contact-dialog .cf-offer-contact h2{margin-bottom:12px}
+html body #contact-dialog .cf-offer-selected{font:400 14px/1.4 Roboto,Arial,sans-serif;color:#60655f;margin:0 0 24px}
+@media(max-width:900px){
+ html body #contact-dialog.cf-offers .cf-content{grid-template-columns:minmax(0,1fr)}
+ html body #contact-dialog .cf-offer-contact{padding-top:24px}
+}
+@media(max-width:700px){
+ html body #contact-dialog .cf-offer-showcase{padding:48px 0 12px}
+ html body #contact-dialog .cf-offer-cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;gap:12px;padding:64px 12px 12px}
+ html body #contact-dialog .cf-offer-card{flex:0 0 78%;scroll-snap-align:start;scroll-margin-left:12px}
+ html body #contact-dialog .cf-offer-card>img{height:160px}
+}
+/* Square event photos overlap the quotation's outer edges on desktop. */
+@media(min-width:701px){
+ html body #s7 .director-edge-photo{width:clamp(120px,16vw,200px);height:auto;aspect-ratio:1;bottom:auto;z-index:2;will-change:translate}
+ html body #s7 .director-edge-left{left:-12px;top:115px;object-position:48% center}
+ html body #s7 .director-edge-right{right:-12px;top:175px;object-position:55% center}
+ html body #s7 .director-quote{z-index:3}
+}
+@media(min-width:701px) and (max-width:1000px){
+ html body #s7 .director-edge-photo{width:120px;opacity:1}
+ html body #s7 .director-edge-left{left:-16px;top:90px}
+ html body #s7 .director-edge-right{right:-16px;top:175px}
+}
+@media(prefers-reduced-motion:reduce){html body #s7 .director-edge-photo{translate:none!important;will-change:auto}}
+/* Enlarge the complete tower composition while preserving its Figma arrangement. */
+html body .hero .collage-v2[data-slide="2"]{transform:scale(1.16);transform-origin:center top}
+html body #contact-dialog .cf-offer-card{border-radius:24px!important}
+html body #contact-dialog .cf-offer-card-copy{font-weight:400!important}
+@media(min-width:1001px){
+ html body #s7 .director-edge-left{left:16px;top:95px}
+ html body #s7 .director-edge-right{right:16px;top:125px}
+}
+
+/* Offer slider uses the portfolio arrows and pagination geometry. */
+html body #contact-dialog .cf-offer-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 12px;margin-bottom:16px}
+html body #contact-dialog .cf-offer-heading h3{padding:0;margin:0}
+html body #contact-dialog .cf-offer-controls{display:flex;flex:none;gap:12px}
+html body #contact-dialog .cf-offer-controls button{display:grid;place-items:center;width:48px;height:48px;padding:0;border:0;border-radius:50%;background:#141414;color:#fff;cursor:pointer;transform:none;box-shadow:none}
+html body #contact-dialog .cf-offer-controls button:hover:not(:disabled){background:#fff;color:#141414;transform:none}
+html body #contact-dialog .cf-offer-controls button:disabled{opacity:.3;cursor:default}
+html body #contact-dialog .cf-offer-cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:64px 0 12px;gap:12px}
+html body #contact-dialog .cf-offer-cards::-webkit-scrollbar{display:none}
+html body #contact-dialog .cf-offer-card{flex:0 0 calc((100% - 24px)/3);scroll-snap-align:start;background:#e3f3e9}
+html body #contact-dialog .cf-offer-card[aria-pressed=true]{background:#ffdf4a}
+html body #contact-dialog .cf-offer-contact{align-self:center;justify-self:center;width:100%;max-width:380px;min-width:0;padding:24px;box-sizing:border-box}
+html body #contact-dialog .cf-offer-pagination{display:flex;align-items:center;justify-content:center;margin:0;gap:0}
+html body #contact-dialog .cf-offer-pagination button{display:flex;align-items:center;justify-content:center;width:28px;height:44px;padding:0;border:0;border-radius:0;background:transparent;cursor:pointer;box-shadow:none;transform:none}
+html body #contact-dialog .cf-offer-pagination button span{display:block;width:6px;height:6px;border-radius:999px;background:#f3f2ed}
+html body #contact-dialog .cf-offer-pagination button[aria-current]{width:88px}
+html body #contact-dialog .cf-offer-pagination button[aria-current] span{width:80px;height:6px;background:#141414}
+html body #contact-dialog .cf-offer-controls button:focus-visible,html body #contact-dialog .cf-offer-pagination button:focus-visible{outline:2px solid #141414;outline-offset:3px}
+@media(max-width:900px){html body #contact-dialog .cf-offer-contact{max-width:480px}}
+@media(max-width:700px){
+ html body #contact-dialog .cf-offer-controls{display:none}
+ html body #contact-dialog .cf-offer-cards{padding:64px 12px 12px}
+ html body #contact-dialog .cf-offer-card{flex-basis:78%}
+ html body #contact-dialog .cf-offer-contact{padding:24px 16px}
+ html body #contact-dialog .cf-offer-pagination button{height:38px}
+}
+
+/* Equal outer spacing and controls only for an overflowing offer track. */
+html body #contact-dialog .cf-offer-showcase{padding:0}
+html body #contact-dialog .cf-offer-heading{padding:0}
+html body #contact-dialog .cf-offer-contact{align-self:start}
+html body #contact-dialog .cf-offer-controls[hidden],html body #contact-dialog .cf-offer-pagination[hidden]{display:none!important}
+@media(max-width:700px){
+ html body #contact-dialog .cf-offer-heading{padding-right:48px}
+ html body #contact-dialog .cf-offer-contact{padding:16px}
+}
+/* Centre the enlarged tower scene against the neighbouring hero copy. */
+@media(min-width:1101px){
+ html body .hero .collage-v2[data-slide="2"]{transform:translate(42px,-70px) scale(1.16)}
+}
+
+/* Prefilled programmes share the handwritten selected-value accent. */
+html body #contact-dialog .cf-program-selection{background:transparent;padding:0;border-radius:0}
+html body #contact-dialog .cf-program-selection>img{width:128px;height:80px;object-fit:cover}
+html body #contact-dialog .cf-program-selection>div{min-width:0}
+html body #contact-dialog .cf-program-selection h3{font:400 18px/1.4 Roboto,Arial,sans-serif;color:#53574f}
+@media(max-width:700px){
+ html body #contact-dialog .cf-program-selection{padding:0;gap:16px}
+ html body #contact-dialog .cf-program-selection>img{width:112px;height:70px}
+ html body #contact-dialog .cf-program-selection h3{font-size:16px}
+}
+
+/* Align the contact panel with the cards, excluding slider navigation. */
+@media(min-width:901px){
+ html body #contact-dialog .cf-offer-showcase{align-self:end}
+ html body #contact-dialog .cf-offer-contact{align-self:end;margin-bottom:12px}
+ html body #contact-dialog .cf-content:has(.cf-offer-pagination:not([hidden])) .cf-offer-contact{margin-bottom:56px}
+}
+
+/* A full mobile offer occupies the viewport; neighbouring cards stay offscreen. */
+@media(max-width:700px){
+ html body #contact-dialog .cf-offer-cards{padding-inline:0;scroll-padding-inline:0}
+ html body #contact-dialog .cf-offer-card{flex-basis:100%;scroll-margin-left:0;scroll-snap-stop:always}
+}
+
+/* Keep the mobile slide stage fixed and lift the tower within that stage. */
+@media(max-width:1100px){
+ html body .hero .collage-v2[data-slide="2"]{transform:translateY(-70px) scale(1.16)}
+}
+
+/* Match portfolio playback and keep each offer's scroll origin inside its track. */
+html body #contact-dialog .cf-offer-cards{position:relative;justify-content:flex-start;overflow-anchor:none}
+html body #contact-dialog .cf-offer-pagination button{transition:width .2s ease}
+html body #contact-dialog .cf-offer-pagination button[aria-current] span{position:relative;background:#f3f2ed}
+html body #contact-dialog .cf-offer-pagination button[aria-current] span::after{content:"";display:block;width:100%;height:100%;transform:scaleX(var(--slide-progress,0));transform-origin:left center;background:#141414;border-radius:999px}
+@media(max-width:700px){
+ html body #contact-dialog .cf-offer-card{flex:0 0 100%;width:100%;max-width:100%;box-sizing:border-box;scroll-snap-align:start;scroll-margin:0}
+}
+@media(prefers-reduced-motion:reduce){html body #contact-dialog .cf-offer-pagination button{transition:none}}
+
+/* Unboxed catalogue help follows the section's content edges. */
+html body #catalog .catalog-grid>.catalog-help{padding-left:0;padding-right:0}
+@media(max-width:700px){
+ html body #header .primary-line{border-radius:16px!important}
+}
+@media(max-width:600px){
+ html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card{min-height:280px;padding-top:52px;align-content:start;align-items:start}
+ html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card .catalog-card-copy{top:0}
+ html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card .category-illustration{inset:72px 18px auto auto!important;width:38%!important;max-width:180px;height:160px!important}
+}
+
+/* Neutral overlay and an external close button for every popup form. */
+html body dialog::backdrop,html body :is(#contact-dialog,#telegram-invite,#brief,#offers-preview,#concept-lead,#portfolio-dialog)::backdrop{background:rgb(0 0 0 / 65%)!important;backdrop-filter:blur(3px)}
+html body dialog[data-external-close]{padding:48px 0 0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:hidden!important;max-height:calc(100dvh - 32px)!important}
+html body dialog[data-external-close]>.popup-form-surface{box-sizing:border-box;padding:var(--popup-surface-padding);background:var(--popup-surface-background);border-radius:var(--popup-surface-radius);max-height:calc(100dvh - 80px);overflow:auto;overscroll-behavior:contain}
+html body dialog[data-external-close]>:is(.cf-close,.ti-close,.close,#offers-close){position:absolute;inset:0 0 auto auto!important;display:grid;place-items:center;width:40px;height:40px;min-width:40px;min-height:40px;padding:0;border:0;border-radius:50%;background:#141414;color:#fff;z-index:2;transform:none;cursor:pointer}
+html body dialog[data-external-close]>:is(.cf-close,.ti-close,.close,#offers-close):hover{background:#fff!important;color:#141414!important;transform:none}
+
+/* Mobile forms open as full-width bottom sheets, with their own scroll area. */
+@media(max-width:800px){html body #telegram-invite .ti-subscribe{padding-top:12px}}
+@media(max-width:700px){
+ html body dialog[data-external-close]{inset:auto 0 0!important;margin:0!important;width:100%!important;max-width:none!important;max-height:92dvh!important;padding-top:48px!important}
+ html body dialog[data-external-close]>.popup-form-surface{max-height:calc(92dvh - 48px);border-radius:24px 24px 0 0;padding-bottom:calc(24px + env(safe-area-inset-bottom,0px))}
+ html body dialog[data-external-close]>:is(.cf-close,.ti-close,.close,#offers-close){right:12px!important}
+ html body #contact-dialog.cf-offers[data-external-close]>.popup-form-surface{padding-top:24px}
+ html body #contact-dialog .cf-offer-heading{padding-right:0}
+}
+
+/* Quiz: question first, adaptive answer rows and one summary accent. */
+html body #contact-dialog.cf-cost-quiz .cf-progress-steps{margin:0 0 20px}
+html body #contact-dialog.cf-cost-quiz .cf-options-stacked{grid-template-columns:minmax(0,1fr)}
+html body #contact-dialog.cf-cost-quiz .cf-quiz-back{display:flex;width:100%;margin:16px 0 0;background:#141414;color:#fff}
+html body #contact-dialog.cf-cost-quiz .cf-quiz-back:hover{background:#ffdf4a;color:#141414}
+html body #contact-dialog .cf-selection-accent{position:relative;isolation:isolate;padding:16px;margin-bottom:24px}
+html body #contact-dialog .cf-selection-accent::after{content:"";position:absolute;inset:0 -8px;background:url("assets/figma-20261102/director-circle.png") center/100% 100% no-repeat;z-index:-1;pointer-events:none}
+
+/* Secondary navigation on the final quiz step. */
+html body #contact-dialog.cf-cost-quiz .cf-quiz-back-contact{background:#fff;color:#141414}
+/* Seasonal packages remain expanded; actions share a row when they fit. */
+@media(max-width:700px){
+ html body #new-year .ny-includes{display:block;min-height:0;margin:0 0 12px}
+ html body #new-year .ny-actions{display:flex;flex-direction:row;flex-wrap:wrap;align-items:stretch;gap:8px}
+ html body #new-year .ny-actions .ny-primary{flex:1.6 1 auto;width:auto;min-width:max-content;white-space:nowrap;margin:0;min-height:52px}
+ html body:not(#mobile-controls-exception) #new-year .ny-actions .ny-secondary{flex:1 1 auto;width:auto!important;min-width:max-content;white-space:nowrap;margin:0;min-height:52px}
+}
+
+/* Compact paired mobile statistics, with the catalogue arrow beside 50+. */
+@media(max-width:700px){
+ html body #trust-numbers .numbers-composition>:is(.number-projects,.number-programs){min-height:0;height:auto;padding:16px}
+ html body #trust-numbers .number-programs-link{display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto auto;align-content:start;align-items:center;gap:8px;flex:none}
+ html body #trust-numbers .number-programs-link>strong{grid-column:1;grid-row:1}
+ html body #trust-numbers .number-programs-link>p{grid-column:1/-1;grid-row:2;margin:0;padding:0}
+ html body #trust-numbers .number-programs-link>.trust-arrow{position:static;grid-column:2;grid-row:1;align-self:center;margin:0}
+}
+
+/* Chat invitation: one clear next step, followed by direct contact. */
+html body #catalyst-chat .chat-message{background:transparent;padding:0;border-radius:0}
+html body #catalyst-chat .chat-bottom{padding:20px}
+html body #catalyst-chat .chat-bottom>.chat-request{display:flex;justify-content:center;width:100%;min-height:48px;margin:0 0 16px;padding:14px 20px;border:0;border-radius:999px!important;background:#141414;color:#fff;font:500 14px/20px Roboto,Arial,sans-serif!important}
+html body #catalyst-chat .chat-bottom>.chat-request:hover{background:#ffdf4a!important;color:#141414!important;transform:none}
+html body #catalyst-chat .chat-bottom>p{margin:0 0 12px}
+html body #catalyst-chat .chat-status{display:none}
+
+
+/* Three static brand lanes respond only to page scrolling. */
+@media(min-width:701px){
+ html body #trust-numbers .trust-hub{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
+ html body #trust-numbers .trust-hub>.numbers-reviews{grid-column:auto}
+}
+html body:not(#compact-exception) #trust-numbers .trust-hub>.trust-portfolio-link{display:flex!important;flex-direction:column;align-items:stretch;grid-column:auto;min-height:0;height:auto;padding:24px;background:#f3f2ed!important;border-radius:24px!important;gap:20px;overflow:hidden}
+html body #trust-numbers .portfolio-brand-wall{width:100%;margin:0;overflow:hidden;display:grid;gap:16px;mask-image:linear-gradient(to right,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,#000 10%,#000 90%,transparent)}
+html body #trust-numbers .portfolio-brand-row{display:flex;align-items:center;justify-content:flex-start;width:max-content;gap:40px;height:40px;transform:translateX(calc(-160px + var(--brand-scroll,0px)));will-change:transform}
+html body #trust-numbers .portfolio-brand-row:nth-child(2){transform:translateX(calc(-240px - var(--brand-scroll,0px)))}
+html body #trust-numbers .portfolio-brand-row img{display:block;flex:0 0 120px;position:static;width:120px;max-width:none;height:36px;object-fit:contain;filter:grayscale(1);opacity:.8;border:0;border-radius:0;transform:none}
+html body #trust-numbers .portfolio-brand-row img[src*="raiffeisen"]{height:60px}
+html body #trust-numbers .portfolio-brand-row img[src*="abg"]{flex-basis:52px;width:52px;height:44px}
+html body #trust-numbers .trust-portfolio-link>.trust-route-label{display:flex;align-items:center;margin-top:auto;padding-right:56px;min-height:44px;color:#141414}
+html body #trust-numbers .trust-portfolio-link>.trust-arrow{position:absolute;right:24px;bottom:24px;margin:0}
+html body #trust-numbers .trust-portfolio-link::after{display:none}
+@media(max-width:700px){
+ html body:not(#compact-exception) #trust-numbers .trust-hub>.trust-portfolio-link{padding:20px;gap:16px}
+ html body #trust-numbers .trust-portfolio-link>.trust-arrow{right:20px;bottom:20px}
+}
+@media(prefers-reduced-motion:reduce){html body #trust-numbers .portfolio-brand-row{will-change:auto;transform:translateX(-160px)}}
+
+html body #s5 .corporate-grid article:nth-child(2){clip-path:none}
+html body #s5 .corporate-grid article:nth-child(2)::after{content:none;display:none}
+
+html body #s5 .corporate-grid article{padding-top:36px}
+html body #s5 .corporate-grid article:nth-child(2) .corporate-perforation i{background:#f3f2ed}
+@media(max-width:700px){html body #s5 .corporate-grid article{padding-top:32px}}
+
+/* Hero stickers sit in front of photos and caption cards on every slide. */
+html body .hero .collage-v2[data-slide] .figma-race-sticker{z-index:7}
+
+/* Preserve sticker anchors and rotations while adding scroll depth. */
+html body .hero .collage-v2[data-slide] .figma-race-sticker{translate:var(--motion-x,0px) var(--motion-y,0px)}
+@media(prefers-reduced-motion:reduce){html body .hero .collage-v2[data-slide] .figma-race-sticker{translate:none}}
+
+/* Separate assistance and channel discovery into two equally clear panels. */
+html body #telegram-invite{background:#f3f2ed}
+html body #telegram-invite .ti-layout{grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+html body #telegram-invite .ti-form-panel{margin:0;padding:24px;display:flex;flex-direction:column;justify-content:center}
+html body #telegram-invite .ti-subscribe{background:#0aba59;border-radius:24px;padding:24px;gap:0;order:1;justify-content:flex-start}
+html body #telegram-invite .ti-subscribe .ti-kicker{margin:0 0 12px;font-size:14px}
+html body #telegram-invite .ti-subscribe h3{font-size:28px;margin:0 0 12px}
+html body #telegram-invite .ti-subscribe .ti-copy{margin:0 0 20px}
+html body #telegram-invite .ti-telegram{width:100%;min-width:0;overflow:hidden;border-radius:20px;background:#141414;margin-bottom:20px}
+html body #telegram-invite .ti-telegram-header{display:flex;align-items:center;gap:12px;padding:12px 16px;color:#fff}
+html body #telegram-invite .ti-telegram-header strong{display:block;font-size:16px;font-weight:500}
+html body #telegram-invite .ti-telegram-header span:not(.ti-telegram-avatar){display:block;font-size:13px;color:#aaa}
+html body #telegram-invite .ti-telegram-avatar{display:grid;place-items:center;background:#0aba59;color:#fff;border-radius:50%;width:40px;height:40px;flex:none;font-size:22px;font-weight:700}
+html body #telegram-invite .ti-post-preview{display:block;max-height:280px;overflow:auto;scrollbar-width:thin;color:#fff}
+html body #telegram-invite .ti-post-crop{aspect-ratio:1170/1930;overflow:hidden}
+html body #telegram-invite .ti-post-crop img{display:block;width:100%;height:auto;margin-top:-30%}
+html body #telegram-invite .ti-channel{margin-top:auto;flex-shrink:0}
+@media(max-width:800px){html body #telegram-invite .ti-layout{display:flex;flex-direction:column}html body #telegram-invite .ti-form-panel{order:0}html body #telegram-invite .ti-subscribe{padding:20px}html body #telegram-invite .ti-post-preview{max-height:240px}}
+
+html body #telegram-invite .ti-post-preview{max-height:none;overflow:hidden;padding:0 12px 12px;box-sizing:border-box}
+html body #telegram-invite .ti-channel-post{border-radius:12px;overflow:hidden;background:#262626;color:#fff}
+html body #telegram-invite .ti-post-photo{height:160px;background:url('assets/telegram-channel-preview.png') center 42%/100% auto no-repeat}
+html body #telegram-invite .ti-post-text{padding:12px 16px;font-size:14px;line-height:1.4}
+html body #telegram-invite .ti-post-text strong{font-size:18px;font-weight:700}
+html body #telegram-invite .ti-post-text p{margin:8px 0 0}
+html body #telegram-invite .ti-post-text span{color:#a6d9bb}
+
+html body #prototype-footer .newsletter-controls input#newsletter-email{border-radius:999px!important}
+
+html body #catalog .category-tree-sprite{display:block;width:100%;height:100%;background:url('assets/figma-20261102/newyear-stickers.png') 4% 39.6% / 337% 401% no-repeat}
+html body #catalog-download .cfb-flat-cover{position:absolute;width:80%;height:auto;left:4%;top:18%;border-radius:20px;transform:rotate(-8deg)}
+html body #catalog-download .cfb-flat-sticker{position:absolute;width:32%;height:auto;right:0;bottom:0;transform:rotate(8deg)}
+@media(max-width:700px){html body #catalog-download .cfb-flat-cover{top:8%;left:8%}html body #catalog-download .cfb-flat-sticker{bottom:0;right:0;width:30%}}
+
+html body #telegram-invite .ti-infographic{display:block;width:100%;height:auto;max-height:360px;object-fit:contain;margin:0 auto 16px}
+@media(min-width:701px){html body #catalog-download .cfb-flat-cover{width:66%;left:16%;top:8%}html body #catalog-download .cfb-flat-sticker{width:26%;right:4%;bottom:8%}}
+
+/* Text offer links keep their surface; only the text and chevron change colour. */
+html body .mega-menu .promo-experiment .experiment-button,
+html body .mega-menu .promo-experiment .experiment-button:is(:hover,:focus-visible){background:transparent!important;border:0!important;box-shadow:none!important;transform:none!important}
+html body .mega-menu .promo-experiment .experiment-button:is(:hover,:focus-visible){color:#0aba59!important}
+
+/* Channel illustration built from independent UI elements. */
+html body #telegram-invite .ti-channel-scene{position:relative;width:100%;max-width:420px;min-height:320px;height:320px;margin:12px auto -28px;flex:1;pointer-events:none}
+html body #telegram-invite .ti-channel-window{position:absolute;top:24px;left:18%;width:66%;border-radius:20px;background:#fff;color:#141414;overflow:hidden;padding:12px;box-sizing:border-box}
+html body #telegram-invite .ti-preview-header{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+html body #telegram-invite .ti-preview-header img{width:32px;height:32px;object-fit:contain;border-radius:50%}
+html body #telegram-invite .ti-preview-header strong{font-size:14px;line-height:1.2}
+html body #telegram-invite .ti-preview-header span{display:block;font-size:10px;font-weight:400;color:#858982;margin-top:3px}
+html body #telegram-invite .ti-preview-photo{position:relative;aspect-ratio:1.6;overflow:hidden;border-radius:12px}
+html body #telegram-invite .ti-preview-photo img{position:absolute;width:128%;max-width:none;height:auto;left:-4%;top:-155%}
+html body #telegram-invite .ti-preview-copy{padding:12px 0 20px;font-size:12px;line-height:1.35}
+html body #telegram-invite .ti-preview-copy strong{font-size:14px}
+html body #telegram-invite .ti-preview-copy p{margin:8px 0}
+html body #telegram-invite .ti-preview-copy span{color:#0aba59}
+html body #telegram-invite .ti-scene-label{position:absolute;display:flex;align-items:center;gap:8px;padding:12px 16px;border-radius:16px;background:#fff;color:#141414;font-size:14px;line-height:1.15}
+html body #telegram-invite .ti-scene-label svg{width:28px;height:28px;flex:none;color:#0aba59}
+html body #telegram-invite .ti-scene-ideas{right:0;top:12px}
+html body #telegram-invite .ti-scene-offers{left:0;top:64%}
+html body #telegram-invite .ti-scene-offers svg{color:#ffdf4a}
+html body #telegram-invite .ti-channel{position:relative;z-index:2;margin-top:0}
+@media(max-width:800px){
+ html body #telegram-invite .ti-subscribe{order:0}
+ html body #telegram-invite .ti-form-panel{order:1}
+ html body #telegram-invite .ti-channel-scene{flex:none;height:300px;min-height:300px;margin-top:4px}
+ html body #telegram-invite .ti-channel-window{left:14%;width:76%}
+ html body #telegram-invite .ti-scene-label{font-size:12px;padding:12px}
+ html body #telegram-invite .ti-scene-ideas{right:-4px}
+ html body #telegram-invite .ti-scene-offers{left:-4px;top:62%}
+}
+html body #telegram-invite .ti-channel-scene{overflow:hidden}
+
+/* Figma 194:1308 / 194:395: original assets and proportions. */
+html body #catalog-download.catalog-figma{background:#141414!important;min-height:317px;padding:40px;border-radius:30px;overflow:visible}
+html body #catalog-download .cfb-copy{width:50%;position:relative;z-index:2}
+html body #catalog-download .cfb-copy h2{font-size:48px!important;font-weight:500!important;line-height:1!important;letter-spacing:0}
+html body #catalog-download .cfb-underline{display:block!important;width:380px;height:16px;margin:0;max-width:100%}
+html body #catalog-download .cfb-copy p{font-size:16px;line-height:24px;opacity:.6;margin:7px 0 24px}
+html body #catalog-download .cfb-button{height:54px;min-height:54px;padding:0 30px;font-size:14px;background:#fff!important}
+html body #catalog-download:hover .cfb-button{background:#ffdf4a!important;transform:none!important}
+html body #catalog-download .cfb-green-clip{display:block;inset:0;border-radius:30px;z-index:0}
+html body #catalog-download .cfb-green-clip::before{width:41.48%;height:150.16%;left:49.68%;top:-28.08%;background:#0aba59}
+html body #catalog-download .cfb-green-clip::after{content:'';position:absolute;width:21.92%;height:93.38%;left:79.22%;top:28.71%;border-radius:50%;background:#ffdf4a}
+html body #catalog-download .cfb-arrow{display:block;width:10.55%;height:auto;left:46.02%;top:46.06%;z-index:1}
+html body #catalog-download .cfb-design-art{position:absolute;left:53.33%;right:auto;top:0;width:44.56%;height:100%;z-index:1;overflow:visible}
+html body #catalog-download .cfb-design-back{position:absolute;width:67.03%;aspect-ratio:368/207;right:-.18%;top:-8px;transform:rotate(12deg);border-radius:24px;box-shadow:0 12px 32px #1414141a,0 2px 8px #1414140a;overflow:hidden}
+html body #catalog-download .cfb-design-back img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+html body #catalog-download .cfb-design-front{position:absolute;left:8.7%;top:71.67px;width:78.14%;height:auto;aspect-ratio:429/242;object-fit:cover;transform:rotate(-8deg);border-radius:24px;box-shadow:0 12px 32px #14141426,0 2px 8px #14141412}
+@media(min-width:701px) and (max-width:1100px){html body #catalog-download .cfb-copy h2{font-size:36px!important}html body #catalog-download .cfb-underline{width:285px}html body #catalog-download .cfb-design-art{top:24px}html body #catalog-download .cfb-copy p{max-width:300px}}
+@media(max-width:700px){
+ html body #catalog-download.catalog-figma{padding:24px 20px 260px;min-height:0;border-radius:24px}
+ html body #catalog-download .cfb-copy{width:100%}
+ html body #catalog-download .cfb-copy h2{font-size:28px!important;line-height:1.05!important}
+ html body #catalog-download .cfb-underline{width:225px;height:auto}
+ html body #catalog-download .cfb-copy p{font-size:14px;margin:12px 0 20px}
+ html body #catalog-download .cfb-button{width:100%;height:48px;min-height:48px}
+ html body #catalog-download .cfb-design-art{left:4%;top:auto;bottom:8px;width:90%;height:220px}
+ html body #catalog-download .cfb-design-back{top:12px;border-radius:16px}
+ html body #catalog-download .cfb-design-front{top:80px;border-radius:16px}
+ html body #catalog-download .cfb-green-clip{border-radius:24px}
+ html body #catalog-download .cfb-green-clip::before{width:95%;height:260px;left:22%;top:auto;bottom:-20px}
+ html body #catalog-download .cfb-green-clip::after{width:55%;height:200px;left:60%;top:auto;bottom:-40px}
+ html body #catalog-download .cfb-arrow{width:66px;left:8%;top:auto;bottom:165px}
+}
+
+/* Footer consent stays beside its checkbox, including narrow screens. */
+html body #prototype-footer .footer-newsletter .cf-consent{display:flex;align-items:flex-start;gap:10px;max-width:none}
+html body #prototype-footer .footer-newsletter .cf-consent input{display:block;flex:0 0 18px;margin:1px 0 0}
+html body #prototype-footer .footer-newsletter .cf-consent>span{display:block;min-width:0;flex:1}
+/* Fade the channel preview into the green panel; keep labels and CTA crisp. */
+html body #telegram-invite .ti-channel-window{-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 52%,transparent 84%);mask-image:linear-gradient(to bottom,#000 0%,#000 52%,transparent 84%)}
+html body #telegram-invite .ti-scene-label{box-shadow:0 8px 20px #1414141a,0 2px 6px #1414140a}
+@media(max-width:800px){html body #telegram-invite .ti-channel-window{-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 45%,transparent 74%);mask-image:linear-gradient(to bottom,#000 0%,#000 45%,transparent 74%)}}
+
+/* Final responsive spacing and unclipped offer artwork. */
+html body .hero .collage-v2[data-slide] .event-caption{transform:none}
+html body .hero .collage-v2[data-slide] .event-caption h3{font-style:normal}
+html body #catalyst-chat{background:#fff}
+html body #s6 .portfolio-pagination button[aria-current] span::after,
+html body #contact-dialog .cf-offer-pagination button[aria-current] span::after{width:calc(var(--slide-progress,0) * 100%);transform:none;border-radius:999px}
+html body #s6 .portfolio-pagination button span,
+html body #contact-dialog .cf-offer-pagination button span{border-radius:999px;overflow:hidden}
+html body #s8 + #s9.continuation-block{margin-top:40px!important}
+html body #contact-dialog .cf-offer-cards{padding-top:80px;overflow-y:hidden}
+@media(max-width:700px){
+ html body #prototype-footer.continuation-block{margin-inline:0!important;width:100%!important;max-width:none!important;box-sizing:border-box;border-radius:0!important}
+ html body #s7.director-editorial{padding-inline:0!important}
+ html body #s7 .continuation-inner{padding-inline:0}
+ html body #s8 + #s9.continuation-block{margin-top:32px!important}
+ html body #contact-dialog .cf-offer-cards{margin-inline:-12px;padding-inline:12px;scroll-padding-inline:12px;width:calc(100% + 24px);box-sizing:border-box}
+}
+
+/* Footer background follows the hero scroll treatment; content stays still. */
+html body #prototype-footer.continuation-block{position:relative;isolation:isolate;background:transparent!important;overflow:visible;margin-inline:0!important;width:100%!important;max-width:none!important;margin-bottom:16px!important;padding-bottom:32px!important;border-radius:0!important}
+html body #prototype-footer::before{content:"";position:absolute;z-index:-1;inset:0 var(--footer-inset,0px);background:#141414;border-radius:36px;pointer-events:none}
+html body:not(#faq-geometry-exception) #s9 .question>summary{display:flex;align-items:center}
+html body #s9 .question>summary::after{top:50%;transform:translateY(-50%)}
+html body #s9 .question[open]>summary::after{transform:translateY(-50%)}
+@media(max-width:700px){
+ html body #prototype-footer.continuation-block{padding-bottom:24px!important;margin-bottom:12px!important}
+ html body #prototype-footer::before{border-radius:24px}
+}
+
+html body #trust-numbers .number-programs-break{display:none}
+@media(max-width:700px){
+ html body #trust-numbers .number-programs-break{display:block}
+ html body:not(#mobile-type-exception) #s7 .director-quote{font-size:28px!important}
+}
+
+/* Floating labels retain their rounded edges and shadows. */
+html body #telegram-invite .ti-channel-scene{overflow:visible}
+html body #telegram-invite .ti-scene-ideas{right:0}
+html body #telegram-invite .ti-scene-offers{left:0}
+html body #prototype-footer.continuation-block{margin-bottom:0!important}
+html body #prototype-footer::before{border-bottom-left-radius:0;border-bottom-right-radius:0}

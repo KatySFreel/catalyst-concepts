@@ -31,8 +31,8 @@ button,.button,.cta,.hero-actions>.button,.primary-line>.cta,
  font-family:Roboto,Arial,sans-serif!important;font-weight:400!important;
 }
 /* Adjust only the outer header plate; keep original rounded menu controls. */
-.primary-line{border-radius:16px}
-.primary-line .mega-panel,.mobile-sheet{border-radius:16px}
+.primary-line{border-radius:32px}
+.primary-line .mega-panel,.mobile-sheet{border-radius:32px}
 .mega-results h4 .mega-all-category,.company-detail .company-title{
  padding:0;margin-left:0;border-radius:0;background:transparent;color:var(--ink)!important;
 }
