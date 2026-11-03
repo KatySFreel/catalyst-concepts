@@ -79,7 +79,7 @@
     if(focus){
       const target = choosing ? content.querySelector(`[data-offer="${draft().offerIndex||0}"]`) : content.querySelector('#cf-title');
       target?.focus({preventScroll:true});
-      (modal.querySelector('.popup-form-surface') || modal).scrollTop = 0;
+      (matchMedia('(max-width:700px)').matches ? modal : (modal.querySelector('.popup-form-surface') || modal)).scrollTop = 0;
     }
   }
   mobileOffers.addEventListener('change',()=>{if(modal.open)syncOfferStep();});
@@ -251,7 +251,7 @@
     }
     if (step === questions.length) html += `<div class="cf-divider">Или напишите нам напрямую</div>${messengerLinks()}`;
     content.innerHTML = html + '</div>';
-    const move = next => { const missing = questions.findIndex((_, i) => !d.answers[i]); if(next > (missing < 0 ? questions.length : missing)) return; remember(); step = next; renderQuiz(); content.querySelector(step===questions.length?'[name="contact"]':'#cf-title').focus({preventScroll:true}); (modal.querySelector('.popup-form-surface') || modal).scrollTop = 0; };
+    const move = next => { const missing = questions.findIndex((_, i) => !d.answers[i]); if(next > (missing < 0 ? questions.length : missing)) return; remember(); step = next; renderQuiz(); content.querySelector(step===questions.length?'[name="contact"]':'#cf-title').focus({preventScroll:true}); (matchMedia('(max-width:700px)').matches ? modal : (modal.querySelector('.popup-form-surface') || modal)).scrollTop = 0; };
     const options=content.querySelector('.cf-options');
     if(options){
       const measure=document.createElement('canvas').getContext('2d');
