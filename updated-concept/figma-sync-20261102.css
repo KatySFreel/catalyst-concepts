@@ -1308,11 +1308,25 @@ html body #contact-dialog .cf-offer-cards{touch-action:pan-x pan-y;overscroll-be
  html body #mobile-site-navigation .mobile-nav-actions>button svg{width:24px!important;height:24px!important}
 }
 
+@media(max-width:700px){
 /* Offers: a single vertical flow, with horizontal cards and no nested scroll area. */
 html body #contact-dialog.cf-offers[data-external-close]>.popup-form-surface{overflow-x:hidden;overflow-y:auto;touch-action:pan-y pinch-zoom}
 html body #contact-dialog .cf-offer-showcase{align-self:start}
 html body #contact-dialog .cf-offer-heading{padding-right:0}
 html body #contact-dialog .cf-offer-cards{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;width:100%;height:auto;max-height:none;overflow:visible;scroll-snap-type:none;padding:0;margin:0;touch-action:pan-y pinch-zoom;cursor:auto}
+html body #contact-dialog .cf-offer-card{display:grid;grid-template-columns:112px minmax(0,1fr);column-gap:16px;row-gap:8px;width:100%;max-width:100%;height:auto;min-height:0;padding:16px;align-items:start;scroll-snap-align:none;touch-action:pan-y pinch-zoom}
+html body #contact-dialog .cf-offer-card>img{grid-column:1;grid-row:1 / 5;width:100%;height:112px;max-width:100%;margin:0;align-self:center;transform:none;object-fit:contain}
+html body #contact-dialog .cf-offer-card-benefit,html body #contact-dialog .cf-offer-card-1 .cf-offer-card-benefit{grid-column:2;font-size:24px;line-height:1.2;margin:0}
+html body #contact-dialog .cf-offer-card>strong,html body #contact-dialog .cf-offer-card-copy,html body #contact-dialog .cf-offer-card-select{grid-column:2;margin:0}
+html body #contact-dialog .cf-offer-contact{align-self:start;margin-bottom:0}
+@media(max-width:700px){
+ html body #contact-dialog .cf-offer-card{grid-template-columns:80px minmax(0,1fr);gap:8px 12px}
+ html body #contact-dialog .cf-offer-card>img{height:96px}
+}
+
+}
+/* Full-width action and new composition apply only on mobile. */
+@media(max-width:700px){
 html body #contact-dialog .cf-offer-card{display:grid;grid-template-columns:112px minmax(0,1fr);grid-template-rows:auto auto auto auto;column-gap:16px;row-gap:12px;width:100%;max-width:100%;height:auto;min-height:0;padding:16px;align-items:start;scroll-snap-align:none;touch-action:pan-y pinch-zoom}
 html body #contact-dialog .cf-offer-card>img{grid-column:1;grid-row:2 / 4;width:100%;height:112px;max-width:100%;margin:0;align-self:center;transform:none;object-fit:contain}
 html body #contact-dialog .cf-offer-card-benefit{grid-column:1 / -1;grid-row:1;font-size:32px;line-height:1.1;margin:0;position:static;transform:none}
@@ -1324,4 +1338,5 @@ html body #contact-dialog .cf-offer-contact{align-self:start;margin-bottom:0}
 @media(max-width:700px){
  html body #contact-dialog .cf-offer-card{grid-template-columns:96px minmax(0,1fr);column-gap:12px}
  html body #contact-dialog .cf-offer-card>img{height:112px}
+}
 }
