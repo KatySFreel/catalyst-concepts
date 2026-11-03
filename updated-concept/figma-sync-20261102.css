@@ -1969,3 +1969,31 @@ html body .mobile-navigation .mobile-search-field input{background:#f3f2ed;borde
 
 /* Keep the tower caption clear of the cutout on desktop. */
 @media(min-width:1101px){html body .hero .collage-v2[data-slide="2"] .event-caption{left:28.115px}}
+
+/* A bounded native scrolling surface with rounded clipping and a separate close row. */
+@media(max-width:700px){
+ html body dialog[data-external-close],
+ html body #contact-dialog.cf-offers[data-external-close]{
+  bottom:var(--popup-viewport-bottom,0px)!important;
+  height:auto!important;
+  max-height:calc(var(--popup-viewport-height,100dvh) * .92)!important;
+  padding:48px 0 0!important;
+  overflow:hidden!important;
+ }
+ html body dialog[data-external-close]>.popup-form-surface,
+ html body #contact-dialog.cf-offers[data-external-close]>.popup-form-surface{
+  height:var(--popup-scroll-height,auto)!important;
+  max-height:calc(var(--popup-viewport-height,100dvh) * .92 - 48px)!important;
+  min-height:0;overflow-x:hidden!important;overflow-y:scroll!important;
+  border-radius:24px 24px 0 0!important;
+  overscroll-behavior-y:contain;touch-action:pan-y pinch-zoom;
+  -webkit-overflow-scrolling:auto;
+ }
+ html body dialog[data-external-close]>:is(.cf-close,.ti-close,.close,#offers-close){
+  position:absolute!important;top:0!important;right:12px!important;
+  margin:0;z-index:10;
+ }
+ html body dialog[data-external-close]>.popup-form-surface::after{
+  content:"";display:block;height:env(safe-area-inset-bottom,0px);
+ }
+}

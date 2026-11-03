@@ -21,6 +21,16 @@
     }
   }
   new MutationObserver(syncDocumentLock).observe(document.body,{subtree:true,attributes:true,attributeFilter:['open'],childList:true});
+  function syncViewport(){
+    const viewport=window.visualViewport;
+    const height=viewport?.height||window.innerHeight;
+    document.documentElement.style.setProperty('--popup-viewport-height',height+'px');
+    document.documentElement.style.setProperty('--popup-viewport-bottom',Math.max(0,window.innerHeight-height-(viewport?.offsetTop||0))+'px');
+  }
+  window.visualViewport?.addEventListener('resize',syncViewport);
+  window.visualViewport?.addEventListener('scroll',syncViewport);
+  window.addEventListener('resize',syncViewport);
+  syncViewport();
   document.querySelectorAll('#contact-dialog,#telegram-invite,#brief,#offers-preview').forEach(dialog => {
     const close=dialog.querySelector('.cf-close,.ti-close,.close,#offers-close');
     if(!close)return;
@@ -36,16 +46,23 @@
       dialog.style.setProperty('--popup-surface-background',style.backgroundColor);
       dialog.style.setProperty('--popup-surface-radius',style.borderRadius);
       dialog.setAttribute('data-external-close','');
-      // Offers use native scrolling only: do not register a cancelling touch listener.
-      surface.removeEventListener('touchstart',startGesture);
-      surface.removeEventListener('touchmove',moveGesture);
-      if(!dialog.classList.contains('cf-offers')){
-        surface.addEventListener('touchstart',startGesture,{passive:true});
-        surface.addEventListener('touchmove',moveGesture,{passive:false});
-      }else{gesture=null;}
+
     }
     const mobile=matchMedia('(max-width:700px)'),reduced=matchMedia('(prefers-reduced-motion:reduce)');
-    let motion,gesture=null,closing=false;
+    function sizeSurface(){
+      if(!dialog.open||!mobile.matches){surface.style.removeProperty('--popup-scroll-height');return;}
+      const style=getComputedStyle(surface);
+      const children=[...surface.children];
+      const natural=children.reduce((height,child)=>Math.max(height,child.offsetTop-surface.offsetTop+child.offsetHeight),0)+parseFloat(style.paddingBottom||0);
+      const available=(window.visualViewport?.height||innerHeight)*.92-48;
+      surface.style.setProperty('--popup-scroll-height',Math.max(0,Math.min(natural,available))+'px');
+    }
+    const contentObserver=new ResizeObserver(sizeSurface);
+    [...surface.children].forEach(child=>contentObserver.observe(child));
+    window.visualViewport?.addEventListener('resize',sizeSurface);
+    window.addEventListener('resize',sizeSurface);
+
+    let motion,closing=false;
     function animateIn(){
       if(!mobile.matches||reduced.matches)return;
       motion?.cancel();
@@ -55,7 +72,7 @@
       if(closing)return;
       if(!mobile.matches||reduced.matches){dialog.close();return;}
       closing=true;motion?.cancel();
-      const offset=gesture?.dy||0;gesture=null;
+      const offset=0;
       motion=dialog.animate([{transform:`translateY(${offset}px)`},{transform:'translateY(100%)'}],{duration:220,easing:'ease-in',fill:'forwards'});
       motion.onfinish=()=>{dialog.close();motion.cancel();dialog.style.transform='';closing=false;};
     }
@@ -64,31 +81,10 @@
       event.preventDefault();event.stopImmediatePropagation();dismiss();
     },true);
     dialog.addEventListener('cancel',event=>{if(mobile.matches){event.preventDefault();dismiss();}});
-    function startGesture(event){
-      if(dialog.classList.contains('cf-offers')||!mobile.matches||closing||surface.scrollTop>0||event.touches.length!==1||event.target.closest('input,textarea,select,button,a'))return;
-      const touch=event.touches[0];gesture={x:touch.clientX,y:touch.clientY,dy:0,started:performance.now()};
-    }
-    function moveGesture(event){
-      if(!gesture)return;
-      const touch=event.touches[0],dx=touch.clientX-gesture.x,dy=touch.clientY-gesture.y;
-      if(!gesture.dy&&(dy<0||Math.abs(dx)>Math.abs(dy))){gesture=null;return;}
-      if(dy>8&&dy>Math.abs(dx)&&surface.scrollTop<=0){
-        event.preventDefault();motion?.cancel();gesture.dy=dy;dialog.style.transform=`translateY(${dy}px)`;
-      }
-    }
-    function release(cancelled=false){
-      if(!gesture)return;
-      const dy=gesture.dy,velocity=dy/Math.max(1,performance.now()-gesture.started);
-      if(!cancelled&&(dy>100||(dy>40&&velocity>.5))){dismiss();return;}
-      gesture=null;dialog.style.transform='';
-      if(dy&&!reduced.matches)motion=dialog.animate([{transform:`translateY(${dy}px)`},{transform:'translateY(0)'}],{duration:180,easing:'ease-out'});
-    }
-    surface.addEventListener('touchend',()=>release(),{passive:true});
-    surface.addEventListener('touchcancel',()=>release(true),{passive:true});
-    dialog.addEventListener('close',()=>{gesture=null;closing=false;motion?.cancel();dialog.style.transform='';});
+    dialog.addEventListener('close',()=>{closing=false;motion?.cancel();dialog.style.transform='';});
     new MutationObserver(records=>{
       if(records.some(record=>record.attributeName==='class'||record.attributeName==='open'))refresh();
-      if(dialog.open&&records.some(record=>record.attributeName==='open'))animateIn();
+      if(dialog.open){sizeSurface();if(records.some(record=>record.attributeName==='open'))animateIn();}
     }).observe(dialog,{attributes:true,attributeFilter:['class','open']});
     window.addEventListener('resize',refresh);
     dialog.addEventListener('close',()=>{surface.scrollTop=0;dialog.scrollTop=0;});
