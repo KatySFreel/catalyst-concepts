@@ -1,6 +1,6 @@
 /* Compact facts and one reviews card within the shared navigation grid. */
 #trust-numbers .number-awards{gap:8px}
-#trust-numbers .number-award-names{font:400 11px/1.4 Roboto,Arial,sans-serif;color:#141414}
+#trust-numbers .number-award-names{font:400 16px/1.4 Roboto,Arial,sans-serif;color:#141414}
 #trust-numbers .number-projects{gap:16px}
 #trust-numbers .number-projects>.number-ink{font:500 44px/1.1 Roboto,Arial,sans-serif;white-space:nowrap}
 #trust-numbers .number-projects>p{font-size:16px;line-height:1.4;letter-spacing:0}

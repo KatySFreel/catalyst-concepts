@@ -93,7 +93,7 @@
       faq.classList.add('faq-expanded');
       more.setAttribute('aria-expanded', 'true');
       questions[6].querySelector('summary').focus({preventScroll:true});
-      more.hidden = true;
+      more.remove();
     });
   }
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');

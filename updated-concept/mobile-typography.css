@@ -1,5 +1,6 @@
 /* Mobile type scale. Desktop styling stays with the individual components. */
 @media(max-width:700px){
+ html body main>.hero h1 :is(.headline-mobile-break,.headline-desktop-break){display:none}
  html body:not(#mobile-type-exception) main>.hero h1{font-size:32px!important;line-height:1.08!important;letter-spacing:-.02em}
  html body:not(#mobile-type-exception)>section h2,
  html body:not(#mobile-type-exception)>footer h2{font-size:28px!important;line-height:1.14!important;letter-spacing:-.02em}

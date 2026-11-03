@@ -10,7 +10,7 @@ function level(name,title){mobileSheet.dataset.level=name;mobileSheet.querySelec
 mobileRoot=function(){
  mobileLevel='root';level('root','Меню');
  mobileBody.innerHTML='<button class="mobile-search-entry">Найти программу '+iconSVG('<circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/>')+'</button><nav class="mobile-main-links" aria-label="Основные разделы">'+Object.entries(mobileNames).map(([key,label])=>'<button class="mobile-row" data-kind="'+key+'"><span>'+label+'</span>'+chevron+'</button>').join('')+'<a class="mobile-row" href="https://catalystrussia.ru/cases/"><span>Портфолио</span></a></nav><nav class="mobile-secondary-links" aria-label="Дополнительные разделы"></nav><div class="mobile-nav-contact"><a href="tel:+79911501001">+7 991 150-10-01</a><p>Ежедневно 8:00–22:00<br>Москва и МО · выезды по России</p><div class="mobile-nav-messengers"></div></div>';
- document.querySelectorAll('.utility-nav a').forEach(a=>{const copy=a.cloneNode(true);copy.removeAttribute('id');if(a.id==='offers-trigger'){copy.classList.add('mobile-nav-offers');copy.textContent='Акции и предложения';}if(a.id==='offers-trigger')copy.onclick=e=>{e.preventDefault();closeMobile(false);document.getElementById('offers-preview').showModal()};(a.id==='offers-trigger'?mobileBody.querySelector('.mobile-main-links'):mobileBody.querySelector('.mobile-secondary-links')).append(copy)});
+ document.querySelectorAll('.utility-nav a').forEach(a=>{const copy=a.cloneNode(true);copy.removeAttribute('id');if(a.id==='offers-trigger'){copy.classList.add('mobile-nav-offers');copy.innerHTML='<span>Посмотреть<br>акции</span><img class="mobile-offer-sticker" src="assets/offer-percent-sticker.svg" alt="">';}if(a.id==='offers-trigger')copy.onclick=e=>{e.preventDefault();closeMobile(false);document.getElementById('offers-preview').showModal()};(a.id==='offers-trigger'?mobileBody.querySelector('.mobile-main-links'):mobileBody.querySelector('.mobile-secondary-links')).append(copy)});
  document.querySelectorAll('.primary-line>.messenger').forEach(a=>{const copy=a.cloneNode(true);copy.className='mobile-nav-messenger '+(a.classList.contains('mv-ib-tg')?'mobile-nav-telegram':'mobile-nav-max');copy.append(document.createTextNode(a.classList.contains('mv-ib-tg')?'Telegram':'Max'));mobileBody.querySelector('.mobile-nav-messengers').append(copy)});
 };
 mobileCategories=function(kind){mobileKind=kind;mobileLevel='categories';level('categories',mobileNames[kind]);if(kind==='about'){mobileBody.innerHTML='<a class="mobile-row" href="https://catalystrussia.ru/about/">О нас</a><a class="mobile-row" href="https://catalystrussia.ru/#contacts">Контакты</a>';return}mobileBody.innerHTML=menuData[kind].map((cat,i)=>'<button class="mobile-row" data-category="'+i+'">'+(kind==='programs'?'<span class="category-icon">'+iconSVG(categoryPaths[i])+'</span>':'')+'<span>'+cat.title+'</span>'+chevron+'</button>').join('');};
@@ -18,9 +18,22 @@ mobilePrograms=function(index){savedMobilePrograms(index);mobileBody.querySelect
 
 const desktopSearch=setSearch;
 positionMobilePanel=function(){const top=Math.max(12,primary.getBoundingClientRect().bottom+10);mobileSheet.style.setProperty('--mobile-panel-top',top+'px')};
-const previousClose=closeMobile;let savedOverflow='';
-closeMobile=function(restore=true){const wasOpen=mobileSheet.open;previousClose(restore);if(wasOpen)document.documentElement.style.overflow=savedOverflow};
-openMobile=function(){if(mobileSheet.open)return;menus.forEach(m=>m.open=false);desktopSearch(false);mobileRoot();savedOverflow=document.documentElement.style.overflow;document.documentElement.style.overflow='hidden';mobileSheet.show();positionMobilePanel();document.body.classList.add('mobile-menu-open');mobileTrigger.setAttribute('aria-expanded','true');mobileTrigger.setAttribute('aria-label','Закрыть меню');mobileTrigger.innerHTML=iconSVG('<path d="m6 6 12 12M18 6 6 18"/>')};
+const previousClose=closeMobile;let menuMotion=null,menuClosing=false;
+const reducedMenuMotion=matchMedia('(prefers-reduced-motion:reduce)');
+function finishClose(restore){
+ menuMotion?.cancel();previousClose(restore);menuClosing=false;
+ document.documentElement.style.overflow=document.querySelector('dialog[open],.mega-menu[open]')?'hidden':'';
+}
+closeMobile=function(restore=true){
+ if(!mobileSheet.open||menuClosing)return;
+ if(restore===false||reducedMenuMotion.matches){finishClose(restore);return;}
+ menuClosing=true;menuMotion?.cancel();
+ menuMotion=mobileSheet.animate([{transform:'translateY(0)'},{transform:'translateY(-100%)'}],{duration:220,easing:'ease-in',fill:'forwards'});
+ menuMotion.onfinish=()=>finishClose(restore);
+};
+mobileSheet.addEventListener('cancel',e=>{e.preventDefault();closeMobile()});
+mobileSheet.addEventListener('click',e=>{if(e.target===mobileSheet&&e.clientY>mobileSheet.getBoundingClientRect().bottom)closeMobile()});
+openMobile=function(){if(mobileSheet.open)return;menus.forEach(m=>m.open=false);desktopSearch(false);mobileRoot();document.documentElement.style.overflow='hidden';mobileSheet.showModal();if(!reducedMenuMotion.matches){menuMotion?.cancel();menuMotion=mobileSheet.animate([{transform:'translateY(-100%)'},{transform:'translateY(0)'}],{duration:280,easing:'cubic-bezier(.2,.8,.2,1)'});}positionMobilePanel();document.body.classList.add('mobile-menu-open');mobileTrigger.setAttribute('aria-expanded','true');mobileTrigger.setAttribute('aria-label','Закрыть меню');mobileTrigger.innerHTML=iconSVG('<path d="m6 6 12 12M18 6 6 18"/>')};
 function mobileSearch(){
  mobileLevel='search';level('search','Поиск');
  mobileBody.innerHTML='<label class="mobile-search-field"><span class="sr-only">Найти программу</span><input type="search" placeholder="Название или задача команды" autocomplete="off"></label><div class="mobile-search-results"></div>';
@@ -36,5 +49,5 @@ mobileSheet.querySelector('.mobile-back').innerHTML=iconSVG('<path d="m14 5-7 7 
 mobileSheet.querySelector('.mobile-back').onclick=()=>{mobileLevel==='programs'?mobileCategories(mobileKind):mobileRoot()};
 mobileBody.addEventListener('click',e=>{const a=e.target.closest('a.mobile-row');if(a)closeMobile(false)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mobileSheet.open){e.preventDefault();closeMobile()}});
-mobileSheet.addEventListener('keydown',e=>{if(e.key!=='Tab')return;const items=[mobileTrigger,...mobileSheet.querySelectorAll('a[href],button:not([hidden]),input')].filter(el=>el.getClientRects().length);const first=items[0],last=items.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}});
+mobileSheet.addEventListener('keydown',e=>{if(e.key!=='Tab')return;const items=[...mobileSheet.querySelectorAll('a[href],button:not([hidden]),input')].filter(el=>el.getClientRects().length);const first=items[0],last=items.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}});
 })();

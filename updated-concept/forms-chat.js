@@ -131,7 +131,7 @@
   function close() { modal.close(); }
   modal.querySelector('.cf-close').onclick = close;
   modal.addEventListener('click', e => { if (e.target === modal) { const r = modal.getBoundingClientRect(); if(e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) close(); } });
-  modal.addEventListener('close', () => { remember(); document.body.classList.remove('cf-modal-open'); opener?.focus({preventScroll:true}); });
+  modal.addEventListener('close', () => { document.body.classList.remove('cf-modal-open'); remember(); opener?.focus({preventScroll:true}); });
   function open(kind, trigger, selected = '') {
     mode = kind; opener = trigger; context = kind === 'quiz' ? '' : selected; step = 0;
     modal.classList.toggle('cf-cost-quiz', kind === 'quiz');
@@ -277,7 +277,7 @@
       controls.forEach(button=>button.onclick=()=>moveTo(active+Number(button.dataset.offerDirection)));
       track.addEventListener('scroll',()=>{scrolling=true;reset();update();syncPlayback();clearTimeout(settleTimer);settleTimer=setTimeout(settle,180);},{passive:true,...options});
       showcase.addEventListener('pointerdown',()=>{interacting=true;syncPlayback();},options);
-      const release=()=>{if(interacting){interacting=false;reset();settle();}};
+      const release=()=>{if(interacting){interacting=false;reset();clearTimeout(settleTimer);settleTimer=setTimeout(settle,240);}};
       window.addEventListener('pointerup',release,options);window.addEventListener('pointercancel',release,options);
       showcase.addEventListener('focusin',event=>{if(event.target.matches(':focus-visible')){interacting=true;syncPlayback();}},options);
       showcase.addEventListener('focusout',()=>{interacting=false;syncPlayback();},options);

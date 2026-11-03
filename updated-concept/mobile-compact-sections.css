@@ -5,7 +5,7 @@
  html body #new-year .ny-banner{gap:16px;padding:20px}
  html body #new-year .ny-banner-side{margin-top:0}
  html body #new-year .ny-paper{padding:16px;min-height:0;gap:0}
- html body #new-year .ny-photo{height:130px;min-height:0;aspect-ratio:auto;margin:0 0 16px}
+ html body #new-year .ny-photo{height:200px;min-height:0;aspect-ratio:auto;margin:0 0 16px}
  html body #new-year .ny-photo img{height:100%;width:100%;object-fit:cover}
  html body #new-year .ny-paper h3{margin:0 0 8px;min-height:0}
  html body #new-year .ny-mobile-summary{display:block;margin:0 0 8px}

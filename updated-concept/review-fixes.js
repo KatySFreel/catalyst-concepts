@@ -6,10 +6,10 @@
   if(collage.hasAttribute('data-slide')){
    if(mobile.matches){
     body.append(actions);
-    const scale=Math.min(.88,(stage.clientWidth-24)/657.187);
+    const scale=Math.min(.88,(stage.clientWidth-24)/657.187)*(innerWidth<=700?.9:1);
     collage.style.setProperty('--mobile-scene-scale',scale);
-    collage.style.setProperty('--mobile-scene-top','0px');
-    stage.style.height=(502.744*scale)+'px';
+    collage.style.setProperty('--mobile-scene-top',(innerWidth<=700?-40*scale:0)+'px');
+    stage.style.height=((innerWidth<=700?460:502.744)*scale)+'px';
    }else{
     copy.append(actions);stage.style.height='';
     const scale=Math.min(1.2,body.clientWidth/1232);

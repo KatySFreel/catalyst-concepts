@@ -1,5 +1,26 @@
 /* Keep modal close controls above the independently scrolling form surface. */
 (() => {
+  // Lock the document, while each dialog surface remains independently scrollable.
+  let savedScroll = null, savedBody = '';
+  function syncDocumentLock(){
+    const isOpen = !!document.querySelector('dialog[open]');
+    if(isOpen && savedScroll === null){
+      savedScroll = window.scrollY;
+      savedBody = document.body.getAttribute('style') || '';
+      document.documentElement.style.overflow = 'hidden';
+      Object.assign(document.body.style,{position:'fixed',top:`-${savedScroll}px`,left:'0',right:'0',width:'100%',overflow:'hidden'});
+    }else if(!isOpen && savedScroll !== null){
+      const y = savedScroll; savedScroll = null;
+      document.body.setAttribute('style',savedBody);
+      // A menu may have locked the root before handing off to this dialog.
+      // Never restore that stale lock once all overlays are closed.
+      const menuOpen = !!document.querySelector('.mega-menu[open]') || document.body.classList.contains('mobile-menu-open');
+      document.documentElement.style.overflow = menuOpen ? 'hidden' : '';
+      document.body.classList.remove('cf-modal-open');
+      window.scrollTo({top:y,behavior:'instant'});
+    }
+  }
+  new MutationObserver(syncDocumentLock).observe(document.body,{subtree:true,attributes:true,attributeFilter:['open'],childList:true});
   document.querySelectorAll('#contact-dialog,#telegram-invite,#brief,#offers-preview').forEach(dialog => {
     const close=dialog.querySelector('.cf-close,.ti-close,.close,#offers-close');
     if(!close)return;
