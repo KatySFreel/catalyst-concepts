@@ -14,11 +14,7 @@
  prev.onclick=()=>move(-1);next.onclick=()=>move(1);
  track.addEventListener('scroll',()=>{scrolling=true;elapsed=0;update();clearTimeout(settleTimer);settleTimer=setTimeout(()=>{scrolling=false;syncPlayback()},180)},{passive:true});new ResizeObserver(update).observe(track);
  track.addEventListener('keydown',e=>{if(e.target!==track)return;if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();move(e.key==='ArrowRight'?1:-1)}});
- const dialog=document.createElement('dialog');dialog.id='portfolio-dialog';dialog.setAttribute('aria-labelledby','portfolio-detail-title');dialog.innerHTML='<button class="portfolio-close" type="button" aria-label="Закрыть кейс">×</button><h2 id="portfolio-detail-title"></h2><img class="portfolio-detail-photo" alt=""><p></p>';document.body.append(dialog);
- dialog.querySelector('button').onclick=()=>dialog.close();
- dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
- cards.forEach(card=>card.querySelector('.case-open').onclick=()=>{const photo=card.querySelector('.case-photo img');dialog.querySelector('h2').textContent=card.querySelector('.case-client-logo').alt;dialog.querySelector('p').textContent=card.querySelector('.case-copy p').textContent;const img=dialog.querySelector('img');img.src=photo.src;img.alt=photo.alt;dialog.showModal();syncPlayback()});
- function canPlay(){return mobile.matches&&!reduced.matches&&visible&&!document.hidden&&!interacting&&!scrolling&&!dialog.open}
+ function canPlay(){return mobile.matches&&!reduced.matches&&visible&&!document.hidden&&!interacting&&!scrolling}
  function tick(now){
   raf=0;if(!canPlay()){lastFrame=0;return}
   if(lastFrame)elapsed+=Math.min(now-lastFrame,100);lastFrame=now;
@@ -33,7 +29,6 @@
  window.addEventListener('pointercancel',()=>{interacting=false;syncPlayback()});
  root.addEventListener('focusin',e=>{if(e.target.matches(':focus-visible')){interacting=true;syncPlayback()}});
  root.addEventListener('focusout',()=>{interacting=false;syncPlayback()});
- dialog.addEventListener('close',syncPlayback);
  window.addEventListener('scroll',syncPlayback,{passive:true});window.addEventListener('resize',syncPlayback);
  document.addEventListener('visibilitychange',syncPlayback);
  mobile.addEventListener('change',syncPlayback);reduced.addEventListener('change',syncPlayback);
