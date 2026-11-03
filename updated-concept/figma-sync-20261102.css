@@ -1340,3 +1340,22 @@ html body #contact-dialog .cf-offer-contact{align-self:start;margin-bottom:0}
  html body #contact-dialog .cf-offer-card>img{height:112px}
 }
 }
+
+/* Mobile hero text stays at least 10 CSS pixels after the scene is scaled. */
+@media(max-width:700px){
+ html body .hero .collage-v2[data-slide] .mini-folder>span,
+ html body .hero .collage-v2[data-slide] .mini-folder small{font-size:max(10px,calc(10px / var(--mobile-scene-scale,.6)));line-height:1.25;white-space:normal}
+ html body .hero .collage-v2[data-slide] .mini-folder strong{font-size:max(18.332px,calc(10px / var(--mobile-scene-scale,.6)));line-height:1.1}
+ html body .hero .collage-v2[data-slide] .event-caption{display:flex;flex-direction:column;gap:6px;box-sizing:border-box;height:auto;min-height:127.46px;padding:32px 12px 12px}
+ html body .hero .collage-v2[data-slide] .event-caption>span,
+ html body .hero .collage-v2[data-slide] .event-caption h3,
+ html body .hero .collage-v2[data-slide] .event-caption p{position:static;margin:0}
+ html body .hero .collage-v2[data-slide] .event-caption>span,
+ html body .hero .collage-v2[data-slide] .event-caption p{font-size:max(10.082px,calc(10px / var(--mobile-scene-scale,.6)));line-height:1.25}
+ html body .hero .collage-v2[data-slide] .event-caption h3{font-size:max(25.664px,calc(10px / var(--mobile-scene-scale,.6)));line-height:1.1}
+}
+@media(max-width:700px){
+ html body .hero .collage-v2[data-slide] .mini-folder{width:max(132px,calc(96px / var(--mobile-scene-scale,.6)));margin-left:min(0px,calc(132px - 96px / var(--mobile-scene-scale,.6)));z-index:7}
+ html body .hero .collage-v2[data-slide] .mini-folder strong{font-size:max(18.332px,calc(12px / var(--mobile-scene-scale,.6)))}
+}
+@media(max-width:700px){html body .hero .collage-v2[data-slide] .event-caption{z-index:7}}
