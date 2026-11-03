@@ -78,8 +78,8 @@ body:has(dialog[open]) #chat-launchers,body:has(dialog[open]) #chat-quiz,body.mo
 #chat-quiz .cq-footer .cf-divider{margin:12px 0}
 #chat-quiz .cq-messages,#chat-quiz .cq-compose{flex-shrink:0}
 
-#chat-quiz .cq-options button{background:#ffdf4a;color:#141414}
-#chat-quiz .cq-options button:hover{background:#141414;color:#fff}
+html body #chat-quiz .cq-options button{background:transparent;color:#141414;border:1px solid #f3f2ed!important;padding:7px 11px}
+html body #chat-quiz .cq-options button:hover{background:transparent;color:#141414;border-color:#141414!important}
 
 #chat-quiz .cf-messengers a:hover .cf-icon,
 #chat-quiz .cf-messengers a:focus-visible .cf-icon{color:#141414}
