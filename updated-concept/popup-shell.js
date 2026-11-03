@@ -50,8 +50,22 @@
     }
     const mobile=matchMedia('(max-width:700px)');
     function placeClose(){
-      if(!dialog.open||!mobile.matches)return;
-      dialog.style.setProperty('--popup-close-top',Math.max(0,dialog.getBoundingClientRect().top-48)+'px');
+      if(!dialog.open||!mobile.matches){
+        if(close.hasAttribute('popover')){
+          if(close.matches(':popover-open'))close.hidePopover();
+          close.removeAttribute('popover');
+        }
+        return;
+      }
+      const supportsPopover=typeof close.showPopover==='function';
+      const top=dialog.getBoundingClientRect().top+(supportsPopover?-48:8);
+      dialog.style.setProperty('--popup-close-top',Math.max(0,top)+'px');
+      // Promote the existing button, preserving its handler and accessible name.
+      // iOS clips fixed descendants of a scrolling dialog unless they have their own top layer.
+      if(supportsPopover){
+        close.setAttribute('popover','manual');
+        if(!close.matches(':popover-open'))close.showPopover();
+      }
     }
     new ResizeObserver(placeClose).observe(dialog);
     window.visualViewport?.addEventListener('resize',placeClose);
@@ -59,10 +73,10 @@
     window.addEventListener('resize',placeClose);
     new MutationObserver(records=>{
       if(records.some(record=>record.attributeName==='class'||record.attributeName==='open'))refresh();
-      if(dialog.open)placeClose();
+      placeClose();
     }).observe(dialog,{attributes:true,attributeFilter:['class','open']});
     window.addEventListener('resize',refresh);
-    dialog.addEventListener('close',()=>{surface.scrollTop=0;dialog.scrollTop=0;});
+    dialog.addEventListener('close',()=>{placeClose();surface.scrollTop=0;dialog.scrollTop=0;});
     refresh();
   });
 })();
