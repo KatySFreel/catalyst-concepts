@@ -183,12 +183,8 @@
       form.querySelector('[name="contact"]').oninput=e=>{e.target.removeAttribute('aria-invalid');content.querySelector('#cf-error').textContent='';};
     }
   }
-  let offerResize, offerCleanup;
-  modal.addEventListener('close',()=>offerCleanup?.());
   function render() {
     quizResize?.disconnect();
-    offerResize?.disconnect();
-    offerCleanup?.();
     const d = draft();
     modal.classList.toggle('cf-offers',mode==='offers');
     if(mode==='offers'){
@@ -217,7 +213,7 @@
       const contact=document.createElement('div');contact.className='cf-offer-contact';
       contact.append(...content.childNodes);content.append(contact);
       const art=['foodtruck','pizza','tower'];
-      content.insertAdjacentHTML('afterbegin',`<section class="cf-offer-showcase" aria-label="Специальные предложения"><div class="cf-offer-heading"><h3>Выберите свой бонус</h3><div class="cf-offer-controls">${[[-1,"Предыдущие акции","M19 12H5m7-7-7 7 7 7"],[1,"Следующие акции","M5 12h14m-7-7 7 7-7 7"]].map(([direction,label,path])=>`<button type="button" data-offer-direction="${direction}" aria-label="${label}" aria-controls="cf-offer-track"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="${path}"/></svg></button>`).join("")}</div></div><div id="cf-offer-track" class="cf-offer-cards" role="group" aria-label="Выберите акцию">${offers.map((o,i)=>`<button type="button" class="cf-offer-card cf-offer-card-${i}" data-offer="${i}" aria-pressed="false"><img src="assets/figma-hero-slides/${art[i % art.length]}.png" alt=""><span class="cf-offer-card-benefit">${o.benefit}</span><strong>${o.tab}</strong><span class="cf-offer-card-copy">${o.copy}</span><span class="cf-offer-card-select">Выбрать акцию</span></button>`).join('')}</div></section>`);
+      content.insertAdjacentHTML('afterbegin',`<section class="cf-offer-showcase" aria-label="Специальные предложения"><div class="cf-offer-heading"><h3>Выберите свой бонус</h3></div><div id="cf-offer-track" class="cf-offer-cards" role="group" aria-label="Выберите акцию">${offers.map((o,i)=>`<button type="button" class="cf-offer-card cf-offer-card-${i}" data-offer="${i}" aria-pressed="false"><img src="assets/figma-hero-slides/${art[i % art.length]}.png" alt=""><span class="cf-offer-card-benefit">${o.benefit}</span><strong>${o.tab}</strong><span class="cf-offer-card-copy">${o.copy}</span><span class="cf-offer-card-select">Выбрать акцию</span></button>`).join('')}</div></section>`);
       contact.querySelector('h2').insertAdjacentHTML('afterend','<p class="cf-offer-selected" aria-live="polite"><span class="cf-context-accent"></span></p>');
       const selectOffer=i=>{
         d.offerIndex=i;const offer=offers[i];context='Пример акции: '+offer.tab+' — '+offer.benefit;
@@ -227,95 +223,6 @@
       };
       content.querySelectorAll('[data-offer]').forEach(card=>{card.onclick=()=>selectOffer(Number(card.dataset.offer));});
       selectOffer(d.offerIndex||0);
-      const track=content.querySelector('.cf-offer-cards');
-      const cards=[...track.querySelectorAll('[data-offer]')];
-      const controls=[...content.querySelectorAll('[data-offer-direction]')];
-      const pagination=document.createElement('nav');
-      pagination.className='cf-offer-pagination';pagination.setAttribute('aria-label','Страницы акций');track.after(pagination);
-      const reduced=matchMedia('(prefers-reduced-motion: reduce)'),duration=5500;
-      let positions=[],active=0,elapsed=0,lastFrame=0,raf=0,interacting=false,scrolling=false,settleTimer;
-      const listeners=new AbortController(),options={signal:listeners.signal};
-      function visible(){const r=track.getBoundingClientRect(),m=modal.getBoundingClientRect();return r.bottom>Math.max(0,m.top)+100&&r.top<Math.min(innerHeight,m.bottom)-100;}
-      function canPlay(){return modal.open&&track.isConnected&&!document.hidden&&!reduced.matches&&positions.length>1&&!interacting&&!scrolling&&visible()&&!modal.querySelector('input:focus,textarea:focus');}
-      function syncPlayback(){if(!canPlay()){cancelAnimationFrame(raf);raf=0;lastFrame=0;}else if(!raf)raf=requestAnimationFrame(tick);}
-      function reset(){elapsed=0;lastFrame=0;pagination.style.setProperty('--slide-progress','0');}
-      function moveTo(index,wrap=false){
-        reset();scrolling=true;syncPlayback();
-        track.scrollTo({left:positions[Math.max(0,Math.min(positions.length-1,index))]||0,behavior:reduced.matches||wrap?'instant':'smooth'});
-        clearTimeout(settleTimer);settleTimer=setTimeout(settle,180);
-      }
-      function update(){
-        const next=positions.reduce((best,value,i)=>Math.abs(value-track.scrollLeft)<Math.abs(positions[best]-track.scrollLeft)?i:best,0);
-        if(next!==active){active=next;reset();}
-        controls[0].disabled=track.scrollLeft<2;controls[1].disabled=track.scrollLeft>=track.scrollWidth-track.clientWidth-2;
-        [...pagination.children].forEach((dot,i)=>{if(i===active)dot.setAttribute('aria-current','true');else dot.removeAttribute('aria-current');});
-      }
-      function settle(){
-        if(interacting)return;
-        update();
-        // Native scroll-snap finishes scrolling; do not pull a live gesture back.
-        scrolling=false;syncPlayback();
-      }
-      function measure(){
-        if(!modal.open)return;
-        const max=Math.max(0,track.scrollWidth-track.clientWidth);
-        content.querySelector('.cf-offer-controls').hidden=max<=2;pagination.hidden=max<=2;
-        const first=cards[0].getBoundingClientRect().left;
-        positions=[...new Set(cards.map(card=>Math.min(max,Math.max(0,card.getBoundingClientRect().left-first))))];
-        pagination.replaceChildren(...positions.map((_,i)=>{const dot=document.createElement('button');dot.type='button';dot.setAttribute('aria-label','Страница акций '+(i+1));dot.setAttribute('aria-controls','cf-offer-track');dot.innerHTML='<span aria-hidden="true"></span>';dot.onclick=()=>moveTo(i);return dot;}));
-        active=Math.min(active,positions.length-1);
-        track.scrollTo({left:positions[active]||0,behavior:'instant'});update();syncPlayback();
-      }
-      function tick(now){
-        raf=0;if(!canPlay()){lastFrame=0;return;}
-        if(lastFrame)elapsed+=Math.min(now-lastFrame,100);lastFrame=now;
-        pagination.style.setProperty('--slide-progress',String(Math.min(elapsed/duration,1)));
-        if(elapsed>=duration){const next=(active+1)%positions.length;moveTo(next,next===0);return;}
-        raf=requestAnimationFrame(tick);
-      }
-      const showcase=content.querySelector('.cf-offer-showcase');
-      controls.forEach(button=>button.onclick=()=>moveTo(active+Number(button.dataset.offerDirection)));
-      track.addEventListener('scroll',()=>{scrolling=true;reset();update();syncPlayback();clearTimeout(settleTimer);settleTimer=setTimeout(settle,180);},{passive:true,...options});
-      let drag=null,suppressClick=false;
-      track.addEventListener('pointerdown',event=>{
-        if(event.button!==0||!event.isPrimary)return;
-        interacting=true;clearTimeout(settleTimer);syncPlayback();
-        drag={id:event.pointerId,x:event.clientX,y:event.clientY,left:track.scrollLeft,horizontal:false};
-      },options);
-      track.addEventListener('pointermove',event=>{
-        if(!drag||event.pointerId!==drag.id)return;
-        const dx=event.clientX-drag.x,dy=event.clientY-drag.y;
-        if(!drag.horizontal){
-          if(Math.max(Math.abs(dx),Math.abs(dy))<8)return;
-          if(Math.abs(dy)>=Math.abs(dx)){drag=null;return;}
-          drag.horizontal=true;track.setPointerCapture(event.pointerId);track.classList.add('is-dragging');
-        }
-        event.preventDefault();track.scrollLeft=drag.left-dx;
-      },options);
-      const release=event=>{
-        if(drag&&event.pointerId!==drag.id)return;
-        const completed=drag;drag=null;
-        track.classList.remove('is-dragging');
-        if(track.hasPointerCapture(event.pointerId))track.releasePointerCapture(event.pointerId);
-        interacting=false;reset();clearTimeout(settleTimer);
-        if(completed?.horizontal&&event.type!=='pointercancel'){
-          suppressClick=true;setTimeout(()=>{suppressClick=false},0);
-          const dx=event.clientX-completed.x;
-          const start=positions.reduce((best,value,i)=>Math.abs(value-completed.left)<Math.abs(positions[best]-completed.left)?i:best,0);
-          moveTo(Math.abs(dx)>40?start+(dx<0?1:-1):active);
-        }else{scrolling=false;syncPlayback();}
-      };
-      window.addEventListener('pointerup',release,options);window.addEventListener('pointercancel',release,options);
-      track.addEventListener('click',event=>{if(suppressClick){event.preventDefault();event.stopImmediatePropagation();}}, {capture:true,...options});
-      track.addEventListener('dragstart',event=>event.preventDefault(),options);
-      showcase.addEventListener('focusin',event=>{if(event.target.matches(':focus-visible')){interacting=true;syncPlayback();}},options);
-      showcase.addEventListener('focusout',()=>{interacting=false;syncPlayback();},options);
-      modal.addEventListener('focusin',syncPlayback,options);modal.addEventListener('focusout',syncPlayback,options);
-      modal.addEventListener('scroll',syncPlayback,{passive:true,capture:true,...options});
-      document.addEventListener('visibilitychange',syncPlayback,options);reduced.addEventListener('change',syncPlayback,options);
-      offerResize=new ResizeObserver(measure);offerResize.observe(track);
-      const initialFrame=requestAnimationFrame(measure);
-      offerCleanup=()=>{listeners.abort();offerResize?.disconnect();cancelAnimationFrame(initialFrame);cancelAnimationFrame(raf);clearTimeout(settleTimer);};
 
     }
     const input = content.querySelector('[name="contact"]');
