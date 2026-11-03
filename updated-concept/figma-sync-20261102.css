@@ -1359,3 +1359,4 @@ html body #contact-dialog .cf-offer-contact{align-self:start;margin-bottom:0}
  html body .hero .collage-v2[data-slide] .mini-folder strong{font-size:max(18.332px,calc(12px / var(--mobile-scene-scale,.6)))}
 }
 @media(max-width:700px){html body .hero .collage-v2[data-slide] .event-caption{z-index:7}}
+@media(max-width:700px){html body #contact-dialog.cf-offers .cf-offer-contact #cf-title{padding-right:0;font-size:clamp(20px,5.6vw,28px)!important;line-height:1.2;white-space:nowrap;letter-spacing:-.02em}}
