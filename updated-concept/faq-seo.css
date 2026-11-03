@@ -102,3 +102,6 @@ html body>#s9.continuation-block{margin-top:40px!important}
 html body #s9>.continuation-inner>h2{font-size:24px!important;line-height:1.25!important;margin-bottom:20px}
 html body #s9 .faq-columns{margin-top:0}
 @media(max-width:700px){html body>#s9.continuation-block{margin-top:32px!important}html body #s9>.continuation-inner>h2{font-size:20px!important;margin-bottom:16px}}
+
+html body #s8 .seo-toggle{background:#f3f2ed!important}
+html body #s8 .seo-toggle:hover{background:#e7e6df!important}

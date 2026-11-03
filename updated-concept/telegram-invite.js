@@ -59,10 +59,8 @@
  let shown=false,elapsed=false,footerReached=false,frame=0,previousFocus=null;
  const timer=setTimeout(()=>{elapsed=true;schedule()},12000);
  function openInvite(){
-  if(modal.open)return;
-  previousFocus=document.activeElement;
-  modal.showModal();shown=true;clearTimeout(timer);
-  removeEventListener('scroll',onScroll);
+  shown=true;clearTimeout(timer);removeEventListener('scroll',onScroll);
+  document.dispatchEvent(new CustomEvent('catalyst:catalog-invite'));
  }
  document.querySelectorAll('[data-telegram-invite]').forEach(button=>button.addEventListener('click',openInvite));
  function check(){
@@ -70,7 +68,7 @@
   if(shown || document.visibilityState!=='visible')return;
   if(!elapsed && !footerReached && scrollY<Math.max(240,innerHeight*.5))return;
   if(document.activeElement?.matches('input,textarea,select'))return;
-  if(document.querySelector('dialog[open], #catalyst-chat:not([hidden])') || document.body.classList.contains('mobile-menu-open'))return;
+  if(document.querySelector('dialog[open], #catalyst-chat:not([hidden]), #chat-quiz:not([hidden])') || document.body.classList.contains('mobile-menu-open'))return;
   openInvite();
  }
  function schedule(){if(!frame)frame=requestAnimationFrame(check)}

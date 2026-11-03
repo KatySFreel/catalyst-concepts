@@ -428,7 +428,7 @@ body{font-size:14px}
 
 /* reference-stickers.css */
 /* Approved sticker pack: isolated decoration; existing layout is untouched. */
-.collage-v2 .seal,.hero-sticker{background-image:url('folder-source/assets/hero-stickers-lossless.webp');background-size:300% 100%;background-repeat:no-repeat;pointer-events:none;translate:var(--motion-x,0px) var(--motion-y,0px)}
+.collage-v2 .seal,.hero-sticker{background-image:url('assets/hero-stickers-lossless.webp');background-size:300% 100%;background-repeat:no-repeat;pointer-events:none;translate:var(--motion-x,0px) var(--motion-y,0px)}
 .collage-v2 .seal{background-color:transparent;clip-path:none;background-position:0 0;padding:0;filter:none;transform:rotate(4deg);z-index:1}
 .collage-v2 .seal .seal-copy{visibility:hidden}
 .hero-sticker{position:absolute;width:84px;height:84px;z-index:1}
@@ -489,14 +489,14 @@ body{font-size:14px}
 @media(max-width:1100px){.collage-v2 .seal{margin-left:8px}.sticker-highfive{right:max(10px,calc(50% - 290px));top:165px}.ink-arrow{left:0;top:145px}}
 @media(max-width:760px){.sticker-highfive{right:5px;top:185px}.ink-arrow{top:207px;left:0}}
 .mega-promo .promo-doodle{display:none}
-.mega-promo::after{content:"";position:absolute;width:90px;height:90px;right:-12px;bottom:-37px;background:url('folder-source/assets/sticker-arrow-lossless.webp') center/contain no-repeat;pointer-events:none;z-index:4}
+.mega-promo::after{content:"";position:absolute;width:90px;height:90px;right:-12px;bottom:-37px;background:url('assets/sticker-arrow-lossless.webp') center/contain no-repeat;pointer-events:none;z-index:4}
 .clients{max-width:var(--content);padding-left:0;padding-right:0}
 .client-logos:hover .logo-track{animation-play-state:running}
 .client-logos img{transition:filter .2s,opacity .2s}.client-logos img:hover{filter:grayscale(0);opacity:1}
 @media(max-width:1100px){.clients{max-width:none;margin-left:0;margin-right:0;padding-left:24px;padding-right:24px;box-sizing:border-box}.clients p{margin-left:0;margin-right:0}}
 @media(max-width:768px){.clients{max-width:none;margin:0;padding-left:24px;padding-right:24px;box-sizing:border-box}}
 
-.mega-promo::after{background: url("folder-source/assets/sticker-arrow-lossless.webp") center/contain no-repeat!important;width:90px!important;height:90px!important;right:-12px!important;bottom:-37px!important;top:auto!important;left:auto!important;transform:none!important;clip-path:none!important;border:0!important}
+.mega-promo::after{background: url("assets/sticker-arrow-lossless.webp") center/contain no-repeat!important;width:90px!important;height:90px!important;right:-12px!important;bottom:-37px!important;top:auto!important;left:auto!important;transform:none!important;clip-path:none!important;border:0!important}
 
 .mega-promo::after{bottom:-58px!important;right:-12px!important}
 
@@ -808,7 +808,7 @@ button,.button,.cta,.hero-actions>.button,.primary-line>.cta,
 .collage-v2 .mini-folder,
 .collage-v2 .event-caption{
  clip-path:none;
- background-image:linear-gradient(#ffffff55,#ffffff55),url('folder-source/assets/paper-texture-lossless.webp')!important;
+ background-image:linear-gradient(#ffffff55,#ffffff55),url('assets/paper-texture-lossless.webp')!important;
  background-size:auto,240px auto;
  background-repeat:repeat;
  background-blend-mode:soft-light,multiply;

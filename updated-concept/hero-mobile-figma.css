@@ -1,0 +1,30 @@
+/* Page 4, mobile hero revisions, 04.11.2026. Coordinates in the 390px design canvas. */
+@media(max-width:700px){
+ html body:not(#mobile-type-exception) main>.hero .intro{font-size:14px!important;line-height:21px!important;width:295px;max-width:100%;opacity:.8}
+ html body:not(#mobile-type-exception) main>.hero:has(.collage-v2[data-slide="0"]) .intro{width:289px}
+ html body .hero .collage-v2[data-slide]{width:390px;min-width:390px;max-width:390px;height:252px;min-height:252px;left:0;top:0;scale:var(--mobile-scene-scale,1);transform:none;translate:none;transform-origin:0 0}
+ html body .hero .collage-v2[data-slide] .event-caption{left:var(--card-x);top:var(--card-y);width:var(--card-w);height:var(--card-h);scale:none;transform:none;border-radius:12.531px!important;z-index:5}
+ html body .hero .collage-v2[data-slide] .event-caption>span{left:7.802px;top:18.47px;font-size:8px;line-height:normal;opacity:.6}
+ html body .hero .collage-v2[data-slide] .event-caption h3{left:8px;top:30px;right:8px;font-size:16px!important;line-height:17.687px!important;font-weight:500!important;font-style:normal}
+ html body .hero .collage-v2[data-slide] .event-caption p{left:8px;right:8px;top:51px;font-size:8px!important;line-height:1.3!important;opacity:.78}
+ html body .hero .collage-v2[data-slide] .event-caption::before{left:8.145px;top:7.729px;width:3.759px;height:3.759px;box-shadow:34.233px 0 #0aba59,68.465px 0 #0aba59,102.698px 0 #0aba59}
+ html body .hero .collage-v2[data-slide] .mini-folder{left:var(--folder-x);top:var(--folder-y);right:auto;width:var(--folder-w,90.221px);padding:7.518px;gap:5.639px;scale:none;transform:none;border-radius:8.771px!important;z-index:3}
+ html body .hero .collage-v2[data-slide] .mini-folder>span{font-size:6px;line-height:7px;white-space:nowrap}
+ html body .hero .collage-v2[data-slide] .mini-folder strong{font-size:12px;line-height:1.1;font-weight:500!important}
+ html body .hero .collage-v2[data-slide] .team.hero-slide{left:var(--photo-x);top:var(--photo-y);width:var(--photo-w);height:var(--photo-h);z-index:4}
+ html body .hero .collage-v2[data-slide] .figma-race-sticker{translate:none;scale:none}
+ html body .hero .collage-v2[data-slide] .figma-race-flag{left:var(--flag-x);top:var(--flag-y);width:var(--flag-w);height:var(--flag-h);transform:rotate(var(--flag-angle));z-index:7}
+ html body .hero .collage-v2[data-slide] .figma-race-flag img{left:var(--sprite-x);top:var(--sprite-y);width:var(--sprite-w);height:var(--sprite-h)}
+ html body .hero .collage-v2[data-slide] .figma-race-star{display:none}
+ html body .hero .collage-v2[data-slide="0"] .figma-race-star{display:block;left:266.751px;top:193.795px;width:30.074px;height:29.071px;transform:rotate(129.68deg)}
+ html body .hero .collage-v2[data-slide="0"] .figma-race-star img{left:-34.332px;top:-4.922px;width:95.233px;height:126.81px}
+ html body .hero .collage-v2[data-slide="1"] .event-caption,html body .hero .collage-v2[data-slide="4"] .event-caption{z-index:2}
+ html body .hero .collage-v2[data-slide="3"] .event-caption h3,html body .hero .collage-v2[data-slide="4"] .event-caption h3{line-height:16px!important}
+ html body .hero .collage-v2[data-slide="3"] .event-caption p{top:68px}
+ html body .hero .collage-v2[data-slide="4"] .event-caption p{top:52px}
+ html body .hero .collage-v2[data-slide="0"]{--card-x:16px;--card-y:50.477px;--card-w:134px;--card-h:82px;--folder-x:280px;--folder-y:-0.523px;--folder-w:90.221px;--photo-x:54.963px;--photo-y:61.957px;--photo-w:296.037px;--photo-h:174.906px;--flag-x:133.561px;--flag-y:6.383px;--flag-w:57.641px;--flag-h:56.137px;--flag-angle:22.55deg;--sprite-x:-0.008px;--sprite-y:-0.039px;--sprite-w:157.385px;--sprite-h:209.513px;}
+ html body .hero .collage-v2[data-slide="1"]{--card-x:14px;--card-y:42px;--card-w:134px;--card-h:82px;--folder-x:269.472px;--folder-y:0px;--folder-w:90.221px;--photo-x:55.398px;--photo-y:13px;--photo-w:272.088px;--photo-h:234.15px;--flag-x:131.208px;--flag-y:25.237px;--flag-w:44.108px;--flag-h:43.106px;--flag-angle:3.31deg;--sprite-x:-44.245px;--sprite-y:-46.927px;--sprite-w:131.321px;--sprite-h:175.429px;}
+ html body .hero .collage-v2[data-slide="2"]{--card-x:15px;--card-y:22px;--card-w:142px;--card-h:82px;--folder-x:276px;--folder-y:83px;--folder-w:90.221px;--photo-x:131px;--photo-y:9.801px;--photo-w:141px;--photo-h:233.15px;--flag-x:108.892px;--flag-y:183.967px;--flag-w:45.612px;--flag-h:44.609px;--flag-angle:-8.03deg;--sprite-x:-52.776px;--sprite-y:-136.132px;--sprite-w:140.845px;--sprite-h:187.459px;}
+ html body .hero .collage-v2[data-slide="3"]{--card-x:10px;--card-y:11px;--card-w:144px;--card-h:96px;--folder-x:288px;--folder-y:182px;--folder-w:94px;--photo-x:78px;--photo-y:34px;--photo-w:253.496px;--photo-h:223px;--flag-x:268.512px;--flag-y:34.027px;--flag-w:57.641px;--flag-h:56.137px;--flag-angle:32.12deg;--sprite-x:-107.27px;--sprite-y:-155.31px;--sprite-w:162.398px;--sprite-h:216.53px;}
+ html body .hero .collage-v2[data-slide="4"]{--card-x:14px;--card-y:12px;--card-w:144px;--card-h:90px;--folder-x:283px;--folder-y:38px;--folder-w:94px;--photo-x:55.395px;--photo-y:44.36px;--photo-w:289.208px;--photo-h:192.972px;--flag-x:31.531px;--flag-y:167.575px;--flag-w:57.641px;--flag-h:56.137px;--flag-angle:3.22deg;--sprite-x:0.035px;--sprite-y:-57.201px;--sprite-w:162.398px;--sprite-h:216.53px;}
+}

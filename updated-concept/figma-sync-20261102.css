@@ -9,9 +9,9 @@ html body #header .primary-line > :is(.search-toggle,.messenger.mv-ib-tg,.messen
  html body main>.hero{height:602px;min-height:602px}
  html body main>.hero .hero-body{padding-top:20px;min-height:560px;grid-template-columns:650px minmax(0,1fr);gap:10px}
  html body .hero .hero-copy{width:650px;padding:36px 0 85px;margin:0}
- html body .hero h1.rotating-headline{font-size:clamp(48px,4.6875vw,60px);line-height:.95743;font-weight:600!important;letter-spacing:0;margin:0 0 34px}
- html body .hero h1 #hero-changing-title{height:60px;min-height:60px;width:553px;margin-bottom:12px;line-height:1}
- html body .hero h1 #hero-changing-title::after{bottom:-15px;width:553px;max-width:100%}
+ html body .hero h1.rotating-headline{font-size:clamp(54px,5.15625vw,66px);width:720px;max-width:calc(100vw - 48px);line-height:.95743;font-weight:600!important;letter-spacing:0;margin:0 0 34px}
+ html body .hero h1 #hero-changing-title{height:1em;min-height:1em;width:610px;margin-bottom:12px;line-height:1}
+ html body .hero h1 #hero-changing-title::after{bottom:-15px;width:610px;max-width:100%}
  html body .hero .intro{font-size:14px;line-height:1.4;width:399px;max-width:100%;margin:0 0 27px}
  html body .hero .hero-actions .button{height:50px;min-height:50px;padding:17px 26px;font-size:14px;line-height:1}
  html body .hero .stats{gap:26px;padding-top:12px;padding-bottom:40px}
@@ -24,9 +24,9 @@ html body #header .primary-line > :is(.search-toggle,.messenger.mv-ib-tg,.messen
 html body .hero .collage-v2[data-slide]{width:657.187px;min-width:657.187px;max-width:657.187px;height:502.744px;min-height:502.744px;margin:0}
 html body .hero .collage-v2[data-slide] :is(.event-polaroid,.seal,.hero-sticker,.hero-ink,.orbit,.doodle){display:none!important}
 html body .hero .collage-v2[data-slide] .team.hero-slide{display:block;left:49.037px;top:141.153px;right:auto;bottom:auto;width:545.365px;height:322.178px;object-fit:contain;object-position:center;transform:none;rotate:none;translate:none;filter:none;z-index:4}
-html body .hero .collage-v2[data-slide] .mini-folder{display:flex;flex-direction:column;gap:9px;left:422px;top:54px;right:auto;bottom:auto;width:132px;height:auto;min-height:0;padding:12px;background:#ffdf4a;border:0;border-radius:14px!important;transform:none;transform-origin:center;rotate:none;translate:none;box-shadow:none;z-index:3}
+html body .hero .collage-v2[data-slide] .mini-folder{display:flex;flex-direction:column;gap:9px;left:422px;top:54px;right:auto;bottom:auto;width:144px;height:auto;min-height:0;padding:12px;background:#ffdf4a;border:0;border-radius:14px!important;transform:none;transform-origin:center;rotate:none;translate:none;box-shadow:none;z-index:3}
 html body .hero .collage-v2[data-slide] .mini-folder>span{font-size:8.249px;line-height:normal;margin:0;padding:0;border:0}
-html body .hero .collage-v2[data-slide] .mini-folder strong{font-size:18.332px;line-height:16.04px;font-weight:800!important;font-style:normal;margin:0;padding:0;letter-spacing:0}
+html body .hero .collage-v2[data-slide] .mini-folder strong{font-size:18.332px;line-height:16.04px;font-weight:500!important;font-style:normal;margin:0;padding:0;letter-spacing:0}
 html body .hero .collage-v2[data-slide] .mini-folder small{font-size:9.166px;line-height:normal;margin:0;padding:0;border:0;white-space:nowrap}
 html body .hero .collage-v2[data-slide] .mini-folder svg{display:none}
 html body .hero .collage-v2[data-slide] .event-caption{display:block;left:68px;top:151px;right:auto;bottom:auto;width:199.501px;height:127.46px;min-height:0;padding:0;background:#f3f2ed;color:#141414;border:0;border-radius:20px!important;transform:rotate(-6deg);transform-origin:center;rotate:none;translate:none;box-shadow:none;z-index:2}
@@ -208,7 +208,7 @@ html body #trust-numbers .number-award-names{margin-top:auto}
  html body #new-year .ny-includes :is(p,li){font-size:14px;line-height:1.4;font-weight:400}
  html body #new-year .ny-price,html body #new-year .ny-price span{font-size:14px;line-height:21px}
  html body #new-year .ny-price strong{font-size:32px;line-height:32px;font-weight:700}
- html body #new-year .ny-secondary{font-weight:400!important}
+ html body #new-year .ny-secondary{font-weight:500!important}
  html body #catalog .catalog-card h3{font-size:24px;font-weight:500!important}
  html body #catalog .catalog-category-card h3{font-size:26px;line-height:1.2}
  html body #catalog .category-banner-description{font-size:14px;line-height:20.3px}
@@ -285,8 +285,8 @@ html body #prototype-footer .footer-newsletter .cf-consent{display:block;margin:
 html body #prototype-footer .footer-newsletter .cf-consent input{display:inline-block;vertical-align:middle;margin:0 3px 0 0;width:18px;height:18px}
 html body #prototype-footer #newsletter-privacy{margin:0}
 @media(min-width:1101px){
- html body main>.hero{height:650px;min-height:650px}
- html body main>.hero .hero-body{min-height:608px;padding-top:35px}
+ html body main>.hero{height:602px;min-height:602px}
+ html body main>.hero .hero-body{min-height:560px;padding-top:20px}
  html body #header .primary-line>:is(.search-toggle,.messenger){width:46px!important;height:46px!important;min-width:46px!important;flex:0 0 46px!important;margin-right:0!important}
  html body #header .primary-line>.messenger{margin-left:0!important}
  html body #header .primary-line>.cta{height:46px;min-height:46px;padding:0 23px!important;margin-left:0!important;font-size:14px}
@@ -697,7 +697,7 @@ html body .mobile-nav-bar .brand{line-height:0}
  html body #trust-numbers .numbers-reviews{margin:0}
 }
 @media(max-width:700px){
- html body #new-year #newyear-title{font-size:clamp(28px,7.8vw,36px)!important;line-height:1.12!important;letter-spacing:-.02em!important}
+ html body #new-year #newyear-title{font-size:28px!important;line-height:1.14!important;letter-spacing:-.02em!important}
  html body #new-year #newyear-title :is(.ny-title-label,.ny-title-year){display:inline;font:inherit!important;letter-spacing:inherit;margin:0;padding:0}
  html body #new-year #newyear-title .ny-title-team{display:block;font:inherit!important;letter-spacing:inherit;margin:4px 0 0;padding:0}
  html body #new-year #newyear-title .ny-desktop-break{display:none}
@@ -1012,7 +1012,7 @@ html body #catalyst-chat .chat-bottom>p{margin:0 0 12px}
 html body #catalyst-chat .chat-status{display:none}
 
 
-/* Three static brand lanes respond only to page scrolling. */
+/* Two static brand lanes respond only to page scrolling. */
 @media(min-width:701px){
  html body #trust-numbers .trust-hub{grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch}
  html body #trust-numbers .trust-hub>.numbers-reviews{grid-column:auto}
@@ -1021,7 +1021,7 @@ html body:not(#compact-exception) #trust-numbers .trust-hub>.trust-portfolio-lin
 html body #trust-numbers .portfolio-brand-wall{width:100%;margin:0;overflow:hidden;display:grid;gap:16px;mask-image:linear-gradient(to right,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,#000 10%,#000 90%,transparent)}
 html body #trust-numbers .portfolio-brand-row{display:flex;align-items:center;justify-content:flex-start;width:max-content;gap:40px;height:40px;transform:translateX(calc(-160px + var(--brand-scroll,0px)));will-change:transform}
 html body #trust-numbers .portfolio-brand-row:nth-child(2){transform:translateX(calc(-240px - var(--brand-scroll,0px)))}
-html body #trust-numbers .portfolio-brand-row img{display:block;flex:0 0 120px;position:static;width:120px;max-width:none;height:36px;object-fit:contain;filter:grayscale(1);opacity:.8;border:0;border-radius:0;transform:none}
+html body #trust-numbers .portfolio-brand-row img{display:block;flex:0 0 120px;position:static;width:120px;max-width:none;height:36px;object-fit:contain;filter:grayscale(1);opacity:.6;border:0;border-radius:0;transform:none}
 html body #trust-numbers .portfolio-brand-row img[src*="raiffeisen"]{height:60px}
 html body #trust-numbers .portfolio-brand-row img[src*="abg"]{flex-basis:52px;width:52px;height:44px}
 html body #trust-numbers .trust-portfolio-link>.trust-route-label{display:flex;align-items:center;margin-top:auto;padding-right:56px;min-height:44px;color:#141414}
@@ -1380,20 +1380,589 @@ html body #contact-dialog .cf-offer-title-mobile{display:none}
 
 @media(min-width:701px){html body #contact-dialog .cf-offer-card>strong{font-size:24px;line-height:1.2;font-weight:700;margin-bottom:16px}}
 
-/* Mobile offers have one native scroll container: the dialog itself.
-   Avoid a clipped dialog around a nested momentum scroller on touch browsers. */
-@media(max-width:700px){
- html body #contact-dialog.cf-offers[data-external-close]{
-  height:92dvh!important;max-height:92dvh!important;
-  padding:0!important;overflow-x:hidden!important;overflow-y:auto!important;
-  overscroll-behavior-y:contain;touch-action:pan-y pinch-zoom;
-  -webkit-overflow-scrolling:touch;scroll-behavior:auto;
- }
- html body #contact-dialog.cf-offers[data-external-close]>.popup-form-surface{
-  height:auto;max-height:none;overflow:visible;touch-action:auto;
- }
- html body #contact-dialog.cf-offers[data-external-close]>.cf-close{
-  position:sticky;top:0!important;right:auto!important;
-  margin:0 12px 8px auto;
- }
+/* Larger action labels; desktop navigation keeps its existing mobile scale. */
+html body:not(#control-type-exception) :is(.button,.cta,.ny-primary,.cfb-button,.action-black,.cf-primary,.ti-link,.cf-copy,.cf-messengers a),
+html body:not(#control-type-exception) #prototype-footer .footer-newsletter button,
+html body:not(#control-type-exception) #chat-launcher,
+html body:not(#control-type-exception) #catalyst-chat .chat-request,
+html body:not(#control-type-exception) #contact-dialog .cf-quiz-actions .cf-primary{font-size:16px!important}
+html body:not(#control-type-exception) :is(#s5,#s6,#s8) :is(.action-black,.cta),
+html body:not(#control-type-exception) .faq-more{font-size:18px!important}
+@media(min-width:1101px){
+ html body:not(#control-type-exception) #header .utility-nav a,
+ html body:not(#control-type-exception) #header .primary-line>nav>a,
+ html body:not(#control-type-exception) #header .primary-line .mega-menu>summary{font-size:14px!important}
+ html body:not(#control-type-exception) #header :is(.mega-category,.mega-links a,.mega-all-category,.mega-footer a,.menu-help,.catalog-all-button){font-size:16px!important}
 }
+@media(min-width:1101px) and (max-width:1200px){
+ html body #header .primary-line>nav>a,
+ html body #header .primary-line .mega-menu>summary{padding-inline:4px!important}
+}
+@media(min-width:1101px) and (max-width:1200px){
+ html body #header .primary-line>nav{flex:0 0 auto;width:auto;min-width:0}
+ html body #header .primary-line>.cta{white-space:normal;text-align:center;min-width:0;padding-inline:12px!important;flex:1 1 0;line-height:1.2}
+}
+
+/* Menu offers reuse the dialog's content, palette and chevrons. */
+html body :is(#header,.mobile-sheet) .monthly-offers{background:#ffdf4a!important;color:#141414!important}
+html body :is(#header,.mobile-sheet) .monthly-offers .offers-art circle:first-of-type{fill:#f3f2ed}
+html body .menu-offer-slider{min-width:0;width:100%;margin:0}
+html body .menu-offer-track{display:flex;width:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;border-radius:24px}
+html body .menu-offer-track::-webkit-scrollbar{display:none}
+html body .menu-offer-card{box-sizing:border-box;flex:0 0 100%;min-width:0;width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:16px;border:0;border-radius:24px;background:#f3f2ed;color:#141414;text-align:left;font:400 14px/1.4 Roboto,Arial,sans-serif;scroll-snap-align:start;scroll-snap-stop:always;cursor:pointer}
+html body .menu-offer-card>img{height:64px;width:100%;object-fit:contain}
+html body .menu-offer-card>strong{font-size:18px;font-weight:500;line-height:1.2}
+html body .menu-offer-card .menu-offer-link{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;margin-top:auto;font-weight:500}
+html body .menu-offer-link svg{width:20px;height:20px;flex:none}
+html body .menu-offer-card:hover{background:#e3f3e9;transform:none}
+html body .menu-offer-controls{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:8px;font:400 14px/1.4 Roboto,Arial,sans-serif}
+html body .menu-offer-controls button{display:grid;place-items:center;width:32px;height:32px;padding:0;border:0;border-radius:50%;background:#141414;color:#fff;cursor:pointer}
+html body .menu-offer-controls button:hover{background:#fff;color:#141414;transform:none}
+html body .menu-offer-controls button:disabled{opacity:.35;cursor:default}
+html body .menu-offer-controls svg{width:20px;height:20px}
+html body .menu-offer-prev svg{transform:rotate(180deg)}
+html body .menu-offer-slider button:focus-visible{outline:2px solid #0aba59;outline-offset:-3px}
+html body .menu-offer-card{display:grid;grid-template-columns:minmax(0,1fr) 64px;align-content:start;align-items:center;border-radius:24px!important;min-height:132px}
+html body .menu-offer-card>img{grid-column:2;grid-row:1;width:64px}
+html body .menu-offer-card>strong{grid-column:1;grid-row:1}
+html body .menu-offer-card>span:not(.menu-offer-link){display:none}
+html body .menu-offer-card .menu-offer-link{grid-column:1/-1;grid-row:2}
+
+html body .mobile-sheet .mobile-nav-offers{background:#ffdf4a!important;color:#141414!important}
+html body .mobile-sheet .menu-offer-slider{margin:12px 0 24px}
+
+/* Reveal the first scene only after fonts, image and responsive layout agree. */
+html body .hero .collage-v2[data-slide]:not([data-layout-ready]){visibility:hidden}
+@media(min-width:1101px){
+ html body .hero .hero-actions .button{min-width:250px;padding-inline:36px}
+}
+
+/* Keep the pizza cutout in front of its programme card. */
+html body .hero .collage-v2:is([data-slide="1"],[data-slide="4"]) .event-caption{z-index:2}
+/* A scroll-triggered offer sits above the existing chat launcher. */
+html body #scroll-offer{position:fixed;right:24px;bottom:100px;z-index:899;width:260px;max-width:calc(100vw - 32px);border-radius:24px;background:#ffdf4a;color:#141414}
+html body #scroll-offer[hidden],
+html body:has(dialog[open],#catalyst-chat:not([hidden]),.mega-menu[open]) #scroll-offer,
+html body.mobile-menu-open #scroll-offer{display:none!important}
+html body #scroll-offer .scroll-offer-open{display:flex;flex-direction:column;gap:12px;width:100%;padding:20px;border:0;border-radius:inherit!important;background:transparent;color:inherit;text-align:left;font:400 14px/1.4 Roboto,Arial,sans-serif;cursor:pointer}
+html body #scroll-offer .scroll-offer-open>strong{font-size:20px;font-weight:500;line-height:1.2;padding-right:12px}
+html body #scroll-offer .scroll-offer-link{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%}
+html body #scroll-offer svg{width:20px;height:20px;flex:none}
+html body #scroll-offer .scroll-offer-close{position:absolute;top:12px;right:12px;display:grid;place-items:center;width:32px;height:32px;padding:0;border:0;background:transparent;color:inherit;border-radius:50%;cursor:pointer}
+html body #scroll-offer button:hover{background:transparent;transform:none}
+html body #scroll-offer button:focus-visible{outline:2px solid #141414;outline-offset:-3px}
+@media(max-width:600px){html body #scroll-offer{right:16px;bottom:calc(max(16px,env(safe-area-inset-bottom)) + 72px);width:240px}}
+@media(min-width:1101px){
+ html body #header .topline .utility-contacts,
+ html body #header .topline .utility-contacts :is(.geo-inline,.contact-block,span,small,a,strong){font-size:14px;line-height:1.4}
+}
+/* Menu programme cards use the catalogue's photo and title treatment. */
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link{
+ position:relative;display:block!important;isolation:isolate;overflow:hidden;
+ padding:0!important;border:0;border-radius:16px!important;aspect-ratio:1.65;
+ min-height:0!important;color:#fff!important;transform:none!important;
+}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link>img{
+ position:absolute;inset:0;width:100%!important;height:100%!important;max-height:none!important;
+ margin:0;object-fit:cover;border-radius:inherit!important;transform:none!important;
+}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link::before{
+ content:"";display:block!important;position:absolute;inset:0;z-index:1;pointer-events:none;
+ background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.62));opacity:1;
+}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link .program-name{
+ position:absolute;left:16px;right:16px;bottom:16px;z-index:2;display:block!important;
+ margin:0!important;padding:0 24px 0 0!important;width:auto!important;color:#fff!important;
+ font:500 16px/1.3 Roboto,Arial,sans-serif!important;text-align:left;
+}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link .link-arrow{display:block!important;position:absolute!important;left:auto!important;top:auto!important;right:0!important;bottom:1px!important;width:18px!important;height:18px!important;margin:0!important;padding:0!important;background:transparent!important;color:#fff!important;opacity:0;transform:none!important;transition:opacity .15s}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link:is(:hover,:focus-visible) .link-arrow{opacity:1}
+@media(hover:none){html body :is(#header,.mobile-sheet) .mega-links a.photo-link .link-arrow{opacity:1}}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link:is(:hover,:focus-visible)::before{
+ background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.68));
+}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link:focus-visible{outline-offset:-3px}
+html body .mobile-sheet .mega-links a.photo-link .mobile-program-meta{color:#fff;opacity:.85}
+
+/* Offer artwork and copy match the popup; pagination matches mobile portfolio. */
+html body .menu-offer-track{padding-top:48px;border-radius:0;align-items:stretch}
+html body .menu-offer-card{display:flex;flex-direction:column;align-items:flex-start;gap:0;min-height:0;padding:0 16px 16px;background:#e3f3e9;overflow:visible}
+html body .menu-offer-card>img{width:calc(100% + 24px);max-width:none;height:130px;align-self:center;margin:-48px -12px 8px;object-fit:contain}
+html body .menu-offer-card>strong{font-size:20px;line-height:1.2;margin:0 0 12px}
+html body .menu-offer-card>span:not(.menu-offer-link){display:block;margin-bottom:20px;font-size:14px;line-height:1.4}
+html body .menu-offer-card .menu-offer-link{display:block;padding:10px 0;text-align:center;border-radius:999px;background:#fff;font-size:14px;line-height:1.4;margin-top:auto}
+html body .menu-offer-card:hover{background:#ffdf4a}
+html body .menu-offer-card:hover .menu-offer-link{background:#141414;color:#fff}
+html body .menu-offer-pagination{display:flex;align-items:center;justify-content:center;gap:0;margin:0}
+html body .menu-offer-pagination button{display:flex;align-items:center;justify-content:center;width:28px;height:38px;padding:0;border:0;border-radius:0;background:transparent;cursor:pointer;transition:width .2s ease}
+html body .menu-offer-pagination button span{display:block;width:6px;height:6px;border-radius:999px;background:#f3f2ed;overflow:hidden}
+html body .menu-offer-pagination button[aria-current]{width:88px}
+html body .menu-offer-pagination button[aria-current] span{position:relative;width:80px;height:6px}
+html body .menu-offer-pagination button[aria-current] span::after{content:"";display:block;width:calc(var(--slide-progress,0) * 100%);height:100%;background:#141414;border-radius:999px}
+@media(prefers-reduced-motion:reduce){html body .menu-offer-pagination button{transition:none}}
+html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link .program-name,
+html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link .program-name *{color:#fff!important}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link>img{filter:none!important}
+
+html body .menu-offer-card .menu-offer-description{font-weight:400!important;opacity:.6;margin-bottom:0!important}
+
+/* Keep the floating offer hover within the card silhouette. */
+html body #scroll-offer{overflow:hidden;transition:background-color .2s ease}
+html body #scroll-offer:has(.scroll-offer-open:hover),html body #scroll-offer:has(.scroll-offer-open:focus-visible){background:#141414;color:#fff}
+html body #scroll-offer .scroll-offer-open:hover{background:transparent!important}
+html body #new-year .ny-secondary{font-weight:500!important}
+html body .mobile-sheet.mobile-navigation a.mobile-nav-offers{position:relative;padding-right:112px!important}
+html body .mobile-sheet.mobile-navigation .mobile-nav-offers .offers-art{position:absolute;right:16px;top:0;width:88px;height:88px;display:block}
+html body .mobile-sheet.mobile-navigation .mobile-nav-offers .offers-art circle:first-of-type{fill:#f3f2ed}
+@media(min-width:701px){html body #trust-numbers .trust-hub>.numbers-reviews{min-height:0;height:auto;gap:16px;justify-content:flex-start}}
+
+/* The floating offer repeats the illustrated menu card. */
+html body #scroll-offer .scroll-offer-open{position:relative;justify-content:center;min-height:100px;padding:20px 112px 20px 20px}
+html body #scroll-offer .scroll-offer-open>strong{padding:0;font-size:18px;line-height:1.3}
+html body #scroll-offer .offers-art{position:absolute;right:32px;top:0;width:76px;height:76px}
+html body #scroll-offer .offers-art circle:first-of-type{fill:#f3f2ed}
+html body #scroll-offer .scroll-offer-close{top:6px;right:6px;width:24px;height:24px}
+@media(max-width:600px){html body #scroll-offer{width:260px}}
+
+/* Search programmes reuse the image-card treatment from the catalogue menu. */
+html body .mv-cols.mv-hits{display:grid!important;grid-template-columns:repeat(3,minmax(0,280px))!important;gap:16px!important}
+html body .mv-hits>div{display:contents}
+html body .mv-row.mv-program-card{position:relative!important;display:block!important;isolation:isolate;overflow:hidden;aspect-ratio:1.65;padding:0!important;margin-bottom:16px;border-radius:16px!important;background:#141414!important;color:#fff!important;transform:none!important}
+html body .mv-hits .mv-program-card{margin-bottom:0}
+html body .mv-program-card .th{position:absolute!important;inset:0;width:100%!important;height:100%!important;max-width:none;object-fit:cover;border-radius:0!important;transform:none!important;filter:none!important}
+html body .mv-program-card::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(transparent 40%,#0006);pointer-events:none}
+html body .mv-program-card:hover::before,html body .mv-program-card.is-kb::before{background:linear-gradient(transparent 40%,#0008)}
+html body .mv-program-card .tx{position:absolute;left:16px;right:16px;bottom:16px;z-index:2;padding-right:24px;gap:6px!important}
+html body .mv-program-card .nm{font:500 16px/1.3 Roboto,Arial,sans-serif!important;color:#fff!important}
+html body .mv-program-card .mt,html body .mv-program-card .mt b{font:400 12px/1.4 Roboto,Arial,sans-serif!important;color:#fff!important}
+html body .mv-program-card .search-card-arrow{position:absolute;right:16px;bottom:16px;z-index:2;width:18px;height:18px;color:#fff;opacity:0;transform:none}
+html body .mv-program-card:hover .search-card-arrow,html body .mv-program-card:focus-visible .search-card-arrow,html body .mv-program-card.is-kb .search-card-arrow{opacity:1}
+@media(max-width:760px){html body .mv-cols.mv-hits{grid-template-columns:1fr!important}}
+@media(hover:none){html body .mv-program-card .search-card-arrow{opacity:1}}
+
+/* Compact search cards stay bounded on wide screens. */
+html body .mv-row.mv-program-card{aspect-ratio:auto;height:160px;max-width:280px}
+html body .mv-program-card .tx{left:12px;right:12px;bottom:12px}
+html body .mv-program-card .search-card-arrow{right:12px;bottom:12px}
+@media(max-width:760px){html body .mv-row.mv-program-card{max-width:none;height:160px}}
+
+/* Keep client logos in view without stretching the hero on tall desktop windows. */
+@media(min-width:1101px){
+ html body main>.hero{height:clamp(560px,calc(100svh - var(--hero-header-height,140px) - 92px),722px);min-height:560px}
+ html body main>.hero .hero-body{height:calc(100% - 88px);min-height:0;padding-top:0;align-items:center}
+ html body .hero .hero-copy{padding:24px 0;align-self:center}
+}
+
+/* Search assistance caption. */
+html body .mv-foot p{font-size:16px!important;line-height:1.4}
+html body .mega-menu :is(.menu-assistance,.catalog-menu-assistance) p{font-size:16px!important}
+
+/* The quotation pauses while two event photos travel in front of it. */
+@media(min-width:701px) and (prefers-reduced-motion:no-preference){
+ html body>#s7.director-scroll-scene{height:var(--director-scene-height);min-height:0;padding:0 40px!important;overflow:visible}
+ html body #s7.director-scroll-scene>.continuation-inner{position:sticky;top:100px;min-height:calc(100svh - 124px);display:flex;flex-direction:column;justify-content:center;overflow:clip}
+ html body #s7.director-scroll-scene .director-edge-photo{top:0;bottom:auto;z-index:5;will-change:translate}
+ html body #s7.director-scroll-scene .director-author{flex-shrink:0}
+ html body #s7.director-scroll-scene .director-quote{flex-shrink:0}
+}
+
+/* Two quieter background photographs pass behind the quotation. */
+html body #s7 .director-extra-photo{display:none}
+@media(min-width:701px) and (prefers-reduced-motion:no-preference){
+ html body #s7.director-scroll-scene .director-extra-photo{display:block;width:clamp(100px,12vw,150px);z-index:1}
+ html body #s7.director-scroll-scene .director-photo-back-left{left:4%;right:auto;transform:rotate(6deg)}
+ html body #s7.director-scroll-scene .director-photo-back-right{right:4%;left:auto;transform:rotate(-7deg)}
+ html body #s7.director-scroll-scene .director-quote{z-index:3}
+ html body #s7.director-scroll-scene .director-author,html body #s7.director-scroll-scene .director-editorial-actions{position:relative;z-index:4}
+}
+
+/* Current project stories use their titles in place of client logos. */
+html body #s6 .case-story .case-body{display:block;padding:24px 80px 24px 24px}
+html body #s6 .case-story .case-client-name{position:static;width:auto;height:auto;margin:0 0 12px;overflow:visible;clip-path:none;white-space:normal;font:500 24px/1.15 Roboto,Arial,sans-serif}
+html body #s6 .case-story-link{position:absolute;inset:0;z-index:3;border-radius:20px}
+html body #s6 .case-story-link .trust-arrow{position:absolute;right:24px;bottom:24px;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#141414;color:#fff}
+html body #s6 .case-story-link svg{width:24px;height:24px}
+html body #s6 .case-story-link:hover .trust-arrow{background:#fff;color:#141414;transform:none}
+@media(max-width:700px){html body #s6 .case-story .case-client-name{font-size:20px}html body #s6 .case-story .case-body{padding:20px 72px 20px 20px}}
+
+html body #s6 .case-story .case-body{display:grid;grid-template-columns:minmax(0,1fr) 44px;align-items:center;gap:20px;padding:24px}
+html body #s6 .case-story .case-body>.trust-arrow{position:static;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#141414;color:#fff;transform:none}
+html body #s6 .case-body>.trust-arrow svg{width:24px;height:24px}
+html body #s6 .case-story:hover .case-body>.trust-arrow{background:#fff;color:#141414}
+html body #s6 .case-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;pointer-events:none}
+html body #s6 .portfolio-pagination{display:flex;align-items:center;justify-content:center;gap:0;margin:12px 0 0}
+html body #s6 .portfolio-pagination button{display:flex;align-items:center;justify-content:center;width:28px;height:38px;padding:0;border:0;border-radius:0;background:transparent;cursor:pointer;transition:width .2s ease}
+html body #s6 .portfolio-pagination button[hidden]{display:none}
+html body #s6 .portfolio-pagination button span{display:block;width:6px;height:6px;border-radius:999px;background:#f3f2ed}
+html body #s6 .portfolio-pagination button[aria-current]{width:88px}
+html body #s6 .portfolio-pagination button[aria-current] span{position:relative;width:80px;height:6px}
+html body #s6 .portfolio-pagination button[aria-current] span:after{content:"";display:block;width:100%;height:100%;transform:scaleX(var(--slide-progress,0));transform-origin:left center;background:#141414;border-radius:999px}
+@media(max-width:700px){html body #s6 .case-story .case-body{padding:20px;gap:16px}}
+@media(prefers-reduced-motion:reduce){html body #s6 .portfolio-pagination button{transition:none}}
+
+/* Compact case captions with less space above the title. */
+html body #s6 .case-story .case-body{min-height:0;flex:0 0 auto;padding:20px 24px}
+html body #s6 .case-story .case-client-name{margin-bottom:8px}
+@media(max-width:700px){html body #s6 .case-story .case-body{padding:16px 20px}}
+
+/* Let moving cards reach the viewport edges without clipping at the content gutter. */
+html body #s6,html body #s6>.continuation-inner{overflow:visible}
+html body #s6 .trust-cases{width:calc(100% + var(--case-gutter-left,0px) + var(--case-gutter-right,0px));max-width:none;margin-left:calc(-1 * var(--case-gutter-left,0px));margin-right:calc(-1 * var(--case-gutter-right,0px));padding-left:var(--case-gutter-left,0px);padding-right:var(--case-gutter-right,0px);scroll-padding-left:var(--case-gutter-left,0px);scroll-padding-right:var(--case-gutter-right,0px);box-sizing:border-box;border-radius:0}
+
+/* Explain the quiz result before the first question. */
+html body #contact-dialog .cf-quiz-promise{margin:0 0 24px;padding:16px 20px;border-radius:16px;background:#ffdf4a;color:#141414;font:400 16px/1.4 Roboto,Arial,sans-serif}
+@media(max-width:600px){html body #contact-dialog .cf-quiz-promise{padding:16px;margin-bottom:20px;font-size:14px}}
+
+/* A separate yellow introduction above the quiz question card. */
+html body #contact-dialog.cf-cost-quiz[data-external-close]>.popup-form-surface:has(.cf-quiz-body){padding:0;background:transparent;border-radius:0}
+html body #contact-dialog .cf-quiz-promise{margin:0 0 12px;padding:24px 30px;border-radius:24px}
+html body #contact-dialog .cf-quiz-promise h2{margin:0 0 8px;padding:0;font:500 28px/1.15 Roboto,Arial,sans-serif!important;letter-spacing:0}
+html body #contact-dialog .cf-quiz-promise p{margin:0;font:400 16px/1.4 Roboto,Arial,sans-serif}
+html body #contact-dialog .cf-quiz-body{padding:30px;background:#f3f2ed;border-radius:24px}
+html body #contact-dialog .cf-quiz-body #cf-title{font-size:22px!important;line-height:1.2!important;padding-right:0}
+@media(max-width:600px){
+ html body #contact-dialog .cf-quiz-promise{padding:20px;margin-bottom:8px}
+ html body #contact-dialog .cf-quiz-promise h2{font-size:24px!important}
+ html body #contact-dialog .cf-quiz-promise p{font-size:14px}
+ html body #contact-dialog .cf-quiz-body{padding:20px 20px calc(20px + env(safe-area-inset-bottom,0px))}
+ html body #contact-dialog .cf-quiz-body #cf-title{font-size:20px!important}
+}
+
+html body #contact-dialog .cf-quiz-promise{margin-bottom:0}
+
+/* Figma 194:362: the top-right sticker from the supplied sheet. */
+html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card .category-illustration.category-idea-sticker{inset:13px 4.2% auto auto!important;width:39.52%!important;max-width:none;height:auto!important;aspect-ratio:239.48/267.265;overflow:hidden;transform:none}
+html body #catalog .category-idea-sticker img{position:absolute!important;top:0!important;left:-200%!important;display:block;width:300%!important;max-width:none!important;height:358.42%!important;object-fit:fill!important;transform:none!important}
+@media(max-width:700px){html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card .category-illustration.category-idea-sticker{inset:112px 6px auto auto!important;width:38%!important;max-width:180px}}
+
+html body #catalog .category-illustration.category-idea-sticker{clip-path:inset(0 0 5% 0)}
+
+/* Selected creative and sports stickers from the original high-resolution sheet. */
+html body #catalog .category-illustration.category-updated-sticker{display:flex;align-items:center;justify-content:center}
+html body #catalog .category-updated-crop{display:block;position:relative;width:100%;overflow:hidden}
+html body #catalog .category-updated-crop img{position:absolute!important;width:var(--sheet-w)!important;height:var(--sheet-h)!important;max-width:none!important;left:var(--sheet-x)!important;top:var(--sheet-y)!important;object-fit:fill!important;transform:none!important}
+
+/* Horizontal offer dragging keeps vertical menu scrolling available. */
+html body .menu-offer-track{touch-action:pan-y pinch-zoom;user-select:none;-webkit-user-select:none}
+html body .menu-offer-card img{-webkit-user-drag:none}
+html body #catalyst-chat .chat-bottom>.chat-request{background:#0aba59!important;color:#fff!important}
+html body #catalyst-chat .chat-bottom>.chat-request:is(:hover,:focus-visible){background:#141414!important;color:#fff!important}
+
+/* Reuse the round dialog close control on the floating offer. */
+html body #scroll-offer .scroll-offer-close{top:8px;right:8px;width:32px;height:32px;padding:0;border:0;border-radius:50%;background:#fff;color:#141414}
+html body #scroll-offer .scroll-offer-close svg{width:20px;height:20px}
+html body #scroll-offer .scroll-offer-close:is(:hover,:focus-visible){background:#141414!important;color:#fff!important;transform:none}
+/* Messenger outlines match the header icon buttons. */
+html body #catalyst-chat .cf-messengers a{border:1px solid #f3f2ed!important}
+
+/* Equal spacing and a clearer, stationary hover for menu programme cards. */
+html body #header .catalog-layout-refined .mega-links,
+html body #mobile-site-navigation .mobile-cards .mega-links{gap:16px!important}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link{margin:0!important}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link .program-name{transition:color .2s ease}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link:is(:hover,:focus-visible)::before{background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.16) 40%,rgba(0,0,0,.76))}
+html body #header .mega-links a.photo-link:is(:hover,:focus-visible) .program-name,
+html body #header .mega-links a.photo-link:is(:hover,:focus-visible) .program-name *,
+html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link:is(:hover,:focus-visible) .program-name,
+html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link:is(:hover,:focus-visible) .program-name *{color:#ffdf4a!important}
+
+/* Give both ways of contacting Vlad equal typographic weight. */
+html body #catalyst-chat .chat-paper .chat-message p,
+html body #catalyst-chat .chat-bottom>p{font:400 14px/1.45 Roboto,Arial,sans-serif;color:#4f584d;margin:0 0 16px}
+html body #catalyst-chat .chat-bottom>.chat-request{margin-bottom:24px}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link .program-name{padding-right:40px!important}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link .menu-card-description{display:block;margin-top:8px;font:400 12px/1.4 Roboto,Arial,sans-serif;color:#fff!important}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link .link-arrow{right:16px!important;bottom:16px!important;width:36px!important;height:36px!important;padding:9px!important;box-sizing:border-box;border-radius:50%;background:#141414!important;color:#fff!important;opacity:1}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link:is(:hover,:focus-visible) .link-arrow{background:#fff!important;color:#141414!important}
+html body #header .mega-links a.photo-link:is(:hover,:focus-visible) .program-name .menu-card-description,
+html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link:is(:hover,:focus-visible) .program-name .menu-card-description{color:#fff!important}
+
+/* The arrow belongs to the card, not its text wrapper. */
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link>.link-arrow{top:auto!important;left:auto!important;right:16px!important;bottom:16px!important;opacity:0!important;background:#ffdf4a!important;color:#141414!important;transition:opacity .2s ease}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link:is(:hover,:focus-visible)>.link-arrow{opacity:1!important}
+@media(hover:none){html body :is(#header,.mobile-sheet) .mega-links a.photo-link>.link-arrow{opacity:1!important}}
+/* Compact chat: identity, heading, then two equally readable choices. */
+html body #catalyst-chat .chat-paper{padding:20px 20px 0}
+html body #catalyst-chat .chat-header{position:static;padding-right:48px;margin-bottom:24px}
+html body #catalyst-chat .chat-header .cf-close{top:12px;right:12px}
+html body #catalyst-chat .chat-message h2{margin:0!important}
+html body #catalyst-chat .chat-bottom{padding:16px 20px 20px}
+html body #catalyst-chat .chat-bottom>p{margin:0 0 12px}
+html body #catalyst-chat .chat-bottom>.chat-request{margin:0 0 24px}
+html body #catalyst-chat #chat-title:focus{outline:none}
+html body:not(.using-keyboard) :is(.cf-close,.ti-close,.scroll-offer-close,#offers-close):focus{outline:none!important;box-shadow:none!important}
+html body.using-keyboard :is(.cf-close,.ti-close,.scroll-offer-close,#offers-close):focus-visible{outline:2px solid #747b72!important;outline-offset:3px}
+
+html body #contact-dialog[data-external-close]>.popup-form-surface:has(.cf-catalog-body){padding:0;background:transparent;border-radius:0}
+html body #s10 .contact-qr-pair{display:flex;gap:16px;align-items:start}
+html body #s10 .contact-qr-pair .contact-folder-qr{position:static;flex-direction:column}
+@media(min-width:1101px){
+ html body #s10 .contact-folder-connect{padding-right:0}
+ html body #s10 .contact-qr-pair{margin-top:20px}
+ html body #s10 .contact-folder-hours,html body #s10 .contact-folder-direct{margin-right:0}
+ html body #s10 .contact-folder-body .contact-legal-row{padding-right:0}
+}
+@media(max-width:700px){html body #s10 .contact-qr-pair{display:none}}
+
+/* Menu cards show only their title; the arrow appears on interaction. */
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link .menu-card-description{display:none!important}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link .program-name{bottom:16px!important;padding-right:48px!important}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link>.link-arrow{opacity:0!important}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link:is(:hover,:focus-visible)>.link-arrow{opacity:1!important}
+
+/* Hover darkens the photograph only; title and arrow stay above the overlay. */
+html body #header .mega-links a.photo-link:is(:hover,:focus-visible) .program-name,
+html body #header .mega-links a.photo-link:is(:hover,:focus-visible) .program-name *,
+html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link:is(:hover,:focus-visible) .program-name,
+html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link:is(:hover,:focus-visible) .program-name *{color:#fff!important}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link>.link-arrow,
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link:is(:hover,:focus-visible)>.link-arrow{z-index:3!important;background:#fff!important;color:#141414!important;filter:none!important}
+
+/* Catalogue invitation reuses the banner's two catalogue covers. */
+html body #contact-dialog.cf-catalog-banner{width:min(1000px,calc(100vw - 48px));max-width:1000px}
+html body #contact-dialog.cf-catalog-banner .cf-content{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+html body #contact-dialog.cf-catalog-banner .cf-quiz-promise{grid-column:1;grid-row:1;border-radius:24px 0 0 0}
+html body #contact-dialog.cf-catalog-banner .cf-catalog-body{grid-column:1;grid-row:2;border-radius:0 0 0 24px}
+html body #contact-dialog.cf-catalog-banner .cf-catalog-art{grid-column:2;grid-row:1/3;position:relative;overflow:hidden;background:#0aba59;border-radius:0 24px 24px 0;min-height:400px}
+html body .cf-catalog-art .cfb-design-back{position:absolute;top:22%;right:0;width:85%;aspect-ratio:368/207;transform:rotate(12deg);border-radius:24px;overflow:hidden}
+html body .cf-catalog-art .cfb-design-back img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+html body .cf-catalog-art .cfb-design-front{position:absolute;left:3%;top:43%;width:90%;height:auto;transform:rotate(-8deg);border-radius:24px}
+@media(max-width:700px){
+ html body #contact-dialog.cf-catalog-banner .cf-content{display:block}
+ html body #contact-dialog.cf-catalog-banner .cf-quiz-promise{border-radius:24px}
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-body{border-radius:24px}
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-art{display:none}
+}
+
+/* Keep QR codes alongside the contact buttons, in the right-hand space. */
+@media(min-width:701px){
+ html body #s10 .contact-folder-connect{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:start;padding-right:0}
+ html body #s10 .contact-qr-pair{display:flex;flex-direction:column;gap:16px;margin:0;justify-self:end;background:#f3f2ed;padding:16px;border-radius:24px}
+ html body #s10 .contact-qr-pair .contact-folder-qr{position:static;flex-direction:column;gap:8px}
+ html body #s10 .contact-qr-pair .contact-folder-qr img{width:100px;height:100px;border-radius:0;padding:0}
+ html body #s10 .contact-folder-actions{flex-wrap:wrap}
+}
+@media(min-width:1600px){html body #s10 .contact-qr-pair{flex-direction:row}}
+
+/* A quiet, unified catalogue invitation with one compact yellow accent. */
+html body #contact-dialog.cf-catalog-banner .cf-content{background:#f3f2ed;border-radius:24px;overflow:hidden;padding:24px;gap:0 24px;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
+html body #contact-dialog.cf-catalog-banner .cf-quiz-promise{border-radius:24px;padding:20px;background:#ffdf4a}
+html body #contact-dialog.cf-catalog-banner .cf-quiz-promise h2{font-size:26px!important}
+html body #contact-dialog.cf-catalog-banner .cf-quiz-promise p{font-size:14px;line-height:1.45}
+html body #contact-dialog.cf-catalog-banner .cf-catalog-body{padding:20px 0 0;border-radius:0;background:transparent}
+html body #contact-dialog.cf-catalog-banner .cf-catalog-art{background:transparent;border-radius:0;min-height:400px;overflow:visible}
+html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-back{top:19%;right:2%;width:82%;transform:rotate(8deg)}
+html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-front{top:42%;left:0;width:92%;transform:rotate(-6deg)}
+html body #contact-dialog.cf-catalog-banner .cf-channel-options input:checked+span{background:#141414!important;color:#fff!important}
+@media(max-width:700px){
+ html body #contact-dialog.cf-catalog-banner .cf-content{padding:16px}
+ html body #contact-dialog.cf-catalog-banner .cf-quiz-promise{padding:20px}
+ html body #contact-dialog.cf-catalog-banner .cf-quiz-promise h2{font-size:24px!important}
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-body{padding:20px 0 0}
+}
+
+/* QR codes sit beside the complete contact content without stretching its rows. */
+@media(min-width:701px){
+ html body #s10 .contact-folder-connect{position:relative;display:block;padding-right:140px}
+ html body #s10 .contact-qr-pair{position:absolute;top:-52px;right:0;display:flex;flex-direction:column;gap:12px;margin:0;padding:0;background:transparent;border-radius:0}
+ html body #s10 .contact-qr-pair .contact-folder-qr{gap:4px}
+ html body #s10 .contact-qr-pair .contact-folder-qr img{width:88px;height:88px}
+ html body #s10 .contact-qr-pair .contact-folder-qr span{font-size:11px}
+ html body #s10 .contact-folder-hours{margin-right:140px}
+ html body #s10 .contact-folder-direct{margin-right:140px}
+ html body #s10 .contact-folder-body .contact-legal-row{padding-right:140px}
+}
+@media(min-width:701px) and (max-width:1100px){html body #s10 .contact-qr-pair{top:0}}
+
+html body #contact-dialog.cf-catalog-banner .cf-quiz-promise{background:transparent;padding:0;border-radius:0}
+html body #contact-dialog.cf-catalog-banner .cf-channel-options input:checked+span{background:#0aba59!important;color:#fff!important}
+
+/* Brand artwork has fixed SVG fills; selected Max uses the white silhouette. */
+html body #contact-dialog .cf-channels input:checked+span .cf-icon--max svg{filter:brightness(0) invert(1)}
+
+/* Solid handset, inheriting the selected channel colour. */
+html body #contact-dialog .cf-icon--phone svg{fill:currentColor;stroke:none}
+
+/* Messenger icons follow the black label on yellow hover. */
+html body :is(#contact-dialog,#catalyst-chat) .cf-messengers a:is(:hover,:focus-visible) .cf-icon svg,
+html body #telegram-invite .ti-messengers a:is(:hover,:focus-visible) svg{filter:brightness(0)}
+
+/* Desktop photographs can pass the quotation without a hard clipping edge. */
+@media(min-width:701px){html body #s7.director-scroll-scene>.continuation-inner{overflow:visible}}
+html body #s5 .corporate-actions>a:is(:hover,:focus-visible){color:#0aba59!important}
+html body #s5 .corporate-actions>a:is(:hover,:focus-visible) .figma-chevron{filter:brightness(0) saturate(100%) invert(50%) sepia(97%) saturate(1763%) hue-rotate(113deg) brightness(93%) contrast(92%)}
+html body #s10 .contact-folder-actions a:is(:hover,:focus-visible) svg,
+html body #s7 .director-editorial-actions a:is(:hover,:focus-visible) svg{filter:brightness(0)}
+html body #contact-dialog .cf-offer-card{transition:background-color .2s ease;transform:none!important}
+html body #contact-dialog .cf-offer-card:is(:hover,:focus-visible){transform:none!important}
+html body #contact-dialog .cf-offer-card[aria-pressed=false]:is(:hover,:focus-visible) .cf-offer-card-select{background:#141414;color:#fff}
+html body #contact-dialog .cf-offer-card[aria-pressed=true]:is(:hover,:focus-visible) .cf-offer-card-select{background:#fff;color:#141414}
+
+/* Compact catalogue copy and explicit rows prevent a gap above the form. */
+html body #contact-dialog.cf-catalog-banner .cf-content{grid-template-rows:auto auto;align-content:center}
+html body #contact-dialog.cf-catalog-banner .cf-quiz-promise{align-self:end}
+html body #contact-dialog.cf-catalog-banner .cf-quiz-promise h2{font-size:24px!important;margin-bottom:10px}
+html body #contact-dialog.cf-catalog-banner .cf-quiz-promise p{font-size:13px;line-height:1.4;max-width:440px}
+html body #contact-dialog.cf-catalog-banner .cf-catalog-body{align-self:start;padding-top:16px}
+html body #contact-dialog.cf-catalog-banner .cf-catalog-art{min-height:0;height:100%;align-self:stretch}
+html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-back{top:12%}
+html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-front{top:38%}
+
+/* Keep catalogue covers composed on desktop and below the form on phones. */
+html body #contact-dialog.cf-catalog-banner .cf-catalog-art{aspect-ratio:1.15;align-self:center;height:auto;min-height:0}
+html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-back{top:5%;right:2%;width:82%}
+html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-front{top:32%;left:0;width:92%}
+@media(max-width:700px){
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-art{display:block;width:100%;margin-top:24px;aspect-ratio:1.15;height:auto}
+ html body #contact-dialog .cf-content,html body #contact-dialog .cf-catalog-body,html body #contact-dialog .cf-quiz-body{border-bottom-left-radius:0!important;border-bottom-right-radius:0!important}
+ html body #contact-dialog.cf-offers[data-external-close]{height:auto!important;overflow:hidden!important;padding-top:48px!important}
+ html body #contact-dialog.cf-offers[data-external-close]>.popup-form-surface{max-height:calc(92dvh - 48px);height:auto;overflow-x:hidden;overflow-y:auto;border-radius:24px 24px 0 0;touch-action:pan-y pinch-zoom}
+}
+/* Separate the fixed menu heading from its scrollable card list. */
+html body .mobile-sheet.mobile-navigation .mobile-sheet-head{padding-bottom:12px!important;position:relative!important;z-index:2;border-radius:24px 24px 0 0;transition:box-shadow .2s}
+html body .mobile-sheet.mobile-navigation.is-scrolled .mobile-sheet-head{border-radius:0 0 24px 24px;box-shadow:0 8px 12px rgb(20 20 20 / 8%)}
+html body .mobile-sheet.mobile-navigation .mobile-nav-footer{position:relative;z-index:2;border-radius:0;box-shadow:none;transition:none}
+html body .mobile-sheet.mobile-navigation.has-content-below .mobile-nav-footer{border-radius:24px 24px 0 0;box-shadow:0 -6px 12px rgb(20 20 20 / 8%)}
+html body .mobile-sheet.mobile-navigation .mobile-sheet-body{padding-top:12px!important}
+html body .mobile-sheet.mobile-navigation .mobile-quote-action{position:relative;z-index:2}
+
+@media(min-width:701px){
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-art{aspect-ratio:1.35}
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-back{top:4%}
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-front{top:25%}
+ html body #s7.director-scroll-scene .director-photo-front-left{left:8%;right:auto;z-index:5;transform:rotate(-6deg)}
+ html body #s7.director-scroll-scene .director-photo-front-right{right:8%;left:auto;z-index:5;transform:rotate(7deg)}
+}
+
+/* Search hits share the site's round arrows and dot/bar pagination. */
+html body .search-hits-slider{min-width:0}
+html body .search-hits-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:16px 0}
+html body .search-hits-heading .mv-hd{margin:0}
+html body .search-hits-arrows{display:flex;gap:12px;flex:none}
+html body .search-hits-arrows button{display:grid;place-items:center;width:48px;height:48px;padding:0;border:0;border-radius:50%;background:#f3f2ed;color:#141414;cursor:pointer;box-shadow:none;transform:none}
+html body .search-hits-arrows button:hover{background:#fff;color:#141414;transform:none}
+html body .search-hits-track{position:relative;display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+html body .search-hits-track::-webkit-scrollbar{display:none}
+html body .search-hits-track>.mv-program-card{flex:0 0 calc((100% - 32px)/3);min-width:0;max-width:none;margin:0;scroll-snap-align:start}
+html body .search-hits-pagination{display:flex;align-items:center;justify-content:center;gap:0;margin:12px 0 0}
+html body .search-hits-pagination button{display:flex;align-items:center;justify-content:center;width:28px;height:38px;padding:0;border:0;border-radius:0;background:transparent;cursor:pointer;box-shadow:none;transform:none}
+html body .search-hits-pagination button span{display:block;width:6px;height:6px;border-radius:999px;background:#f3f2ed}
+html body .search-hits-pagination button[aria-current]{width:88px}
+html body .search-hits-pagination button[aria-current] span{width:80px;background:#141414}
+html body .search-hits-slider button:focus-visible,html body .search-hits-track:focus-visible{outline:2px solid #141414;outline-offset:3px}
+html body .search-hits-slider [hidden]{display:none!important}
+@media(max-width:1000px){html body .search-hits-track>.mv-program-card{flex-basis:calc((100% - 16px)/2)}}
+@media(max-width:760px){html body .search-hits-track>.mv-program-card{flex-basis:100%}}
+
+/* Menu image cards use the same hover chevron as search cards. */
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link>.link-arrow,
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link:is(:hover,:focus-visible)>.link-arrow{width:18px!important;height:18px!important;padding:0!important;border-radius:0!important;background:transparent!important;color:#fff!important;stroke-width:1.5;transform:none!important}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link .program-name{padding-right:24px!important}
+
+/* Assistance strips: approved 14 px corners. */
+html body :is(#header,#mvSS,#catMenuV4,.mobile-sheet) :is(.menu-assistance,.catalog-menu-assistance,.mv-foot){border-radius:14px!important}
+
+/* Equal QR columns with larger codes and shared caption alignment. */
+@media(min-width:701px){
+ html body #s10 .contact-folder-connect{padding-right:184px}
+ html body #s10 .contact-qr-pair{width:160px;align-items:center;gap:16px}
+ html body #s10 .contact-qr-pair .contact-folder-qr{width:100%;align-items:center;justify-self:center;gap:8px;text-align:center}
+ html body #s10 .contact-qr-pair .contact-folder-qr img{width:128px;height:128px;flex:none}
+ html body #s10 .contact-folder-hours,html body #s10 .contact-folder-direct{margin-right:184px}
+ html body #s10 .contact-folder-body .contact-legal-row{padding-right:184px}
+}
+@media(min-width:1101px){
+ html body #s10 .contact-folder-body{min-height:364px;box-sizing:border-box}
+ html body #s10 .contact-folder-connect{position:static}
+ html body #s10 .contact-qr-pair{top:24px;right:24px}
+}
+@media(min-width:701px) and (max-width:1100px){
+ html body #s10 .contact-folder-connect{padding-right:0}
+ html body #s10 .contact-qr-pair{position:static;flex-direction:row;justify-content:center;width:100%;margin-top:24px;gap:16px}
+ html body #s10 .contact-qr-pair .contact-folder-qr{width:160px;flex:0 1 160px;min-width:0}
+ html body #s10 .contact-folder-hours,html body #s10 .contact-folder-direct{margin-right:0}
+ html body #s10 .contact-folder-body .contact-legal-row{padding-right:0}
+}
+
+html body .search-hits-arrows svg path{stroke-width:1.7;stroke-linecap:butt;stroke-linejoin:miter}
+
+/* Centre the five-piece scene as a whole; enlarge only the tower cutout. */
+html body .hero .collage-v2[data-slide]{transform:none;transform-origin:0 0}
+html body .hero .collage-v2[data-slide="2"] .team.hero-slide{left:196px;top:64px;width:254px;height:420px}
+@media(max-width:1100px){
+ html body .hero .collage-v2[data-slide]{left:var(--mobile-scene-left,0px);translate:none;transform-origin:0 0}
+}
+
+html body .hero .collage-v2[data-slide="2"] .mini-folder{top:96px}
+
+/* Root mobile menu: all section links precede seasonal promotions. */
+html body .mobile-sheet.mobile-navigation .mobile-secondary-links{margin:0}
+html body .mobile-sheet .mobile-root-season{margin:32px 0 12px}
+html body .mobile-sheet .mobile-root-season>.promo-calendar{display:block;text-decoration:none}
+html body .mobile-sheet .mobile-root-season>.promo-calendar .experiment-button{
+ position:static!important;justify-content:flex-start!important;gap:10px!important;
+ min-height:32px!important;padding:4px 0!important;border-radius:0!important;
+ background:transparent!important;color:#141414!important;text-align:left!important;
+ font-size:14px!important;white-space:normal;
+}
+html body .mobile-sheet .mobile-root-season>.promo-calendar:is(:hover,:focus-visible) .experiment-button{background:transparent!important;color:#0aba59!important}
+html body .mobile-sheet .mobile-root-season .experiment-button .offer-chevron{display:block;width:18px;height:18px;flex:none;color:inherit}
+
+/* Wider desktop tower, with its star kept beside the enlarged base. */
+@media(min-width:1101px){
+ html body .hero .collage-v2[data-slide="2"] .team.hero-slide{left:178px;top:34px;width:290px;height:480px}
+ html body .hero .collage-v2[data-slide="2"] .figma-race-star{left:410px;top:445px}
+}
+
+/* Catalogue description: compact measure and quieter body text in both entry points. */
+html body #contact-dialog .cf-quiz-promise p.cf-catalog-description{width:100%;max-width:420px;font-size:14px;line-height:1.4;color:#141414;opacity:.6}
+
+@media(min-width:1101px){html body #s10 .contact-folder-copy{max-width:calc(100% - 184px)}}
+
+/* Requested emphasis for supporting copy. */
+html body>.clients p>span,
+html body #catalog .catalog-help p,
+html body #s10 .contact-folder-copy{opacity:.6}
+html body .hero .intro{opacity:.8}
+
+/* Mobile offers: choose a card, then discuss it without losing form input. */
+html body #contact-dialog .cf-offer-back{display:none}
+@media(max-width:1100px){
+ html body #contact-dialog.cf-offers[data-offer-step="select"] .cf-offer-contact,
+ html body #contact-dialog.cf-offers[data-offer-step="contact"] .cf-offer-showcase{display:none}
+ html body #contact-dialog.cf-offers .cf-offer-back{display:grid;place-items:center;flex:0 0 40px;padding:0;border:0}
+}
+
+/* Keep the mobile hero headline in three responsive lines. */
+@media(max-width:700px){
+ html body main>.hero .hero-copy{container-type:inline-size}
+ html body:not(#mobile-type-exception) main>.hero h1.rotating-headline{font-size:clamp(24px,9.7cqw,52px)!important}
+ html body main>.hero h1 .headline-desktop-break{display:initial}
+ html body main>.hero h1 .headline-mobile-break{display:none}
+}
+
+html body #contact-dialog .cf-offer-contact-heading{display:contents}
+@media(max-width:1100px){
+ html body #contact-dialog.cf-offers .cf-offer-contact-heading{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+ html body #contact-dialog.cf-offers .cf-offer-contact-heading #cf-title{min-width:0;margin:0;white-space:normal}
+}
+
+html body #contact-dialog.cf-offers .cf-offer-back{background:#fff!important;color:#141414}
+
+/* Larger mobile programme cards while retaining the complete scene centring. */
+@media(max-width:700px){
+ html body .hero .collage-v2[data-slide] .event-caption{scale:1.25;transform-origin:left top;z-index:5}
+ html body .hero .collage-v2[data-slide] .mini-folder{scale:1.25;transform-origin:right top}
+}
+
+@media(max-width:700px){html body .hero .collage-v2[data-slide="2"] .figma-race-flag{left:151.796px;top:310px}}
+
+/* Mobile reference adjustments: compact description and white offline indicator. */
+html body #chat-launcher:not(.chat-working) .chat-status{background:#fff}
+@media(max-width:700px){
+ html body:not(#mobile-type-exception) main>.hero .intro{font-size:15px!important;line-height:1.5!important;width:79%}
+}
+
+/* Search fields share the approved warm paper surface. */
+html body #header .inline-search,
+html body .mobile-navigation .mobile-search-field input{background:#f3f2ed;border-radius:999px!important}

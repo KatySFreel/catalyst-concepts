@@ -9,11 +9,33 @@ const actions=document.createElement('div');actions.className='mobile-nav-action
 document.querySelectorAll('.primary-line>.messenger').forEach(a=>actions.append(a.cloneNode(true)));bar.append(actions);
 const close=document.createElement('button');close.type='button';close.setAttribute('aria-label','Закрыть меню');close.innerHTML=iconSVG('<path d="m6 6 12 12M18 6 6 18"/>');close.onclick=()=>closeMobile();actions.append(close);mobileSheet.prepend(bar);
 const footer=document.createElement('div');footer.className='mobile-nav-footer';footer.innerHTML='<button type="button">Подобрать программу</button>';footer.firstChild.onclick=()=>{closeMobile(false);document.querySelector('.hero-actions [data-brief]').click()};mobileSheet.append(footer);
+// The footer separates content only while more of the list remains below it.
+function syncFooterScroll(){
+ mobileSheet.classList.toggle('has-content-below',mobileBody.scrollHeight-mobileBody.clientHeight-mobileBody.scrollTop>2);
+}
+mobileBody.addEventListener('scroll',syncFooterScroll,{passive:true});
+new ResizeObserver(syncFooterScroll).observe(mobileBody);
+new MutationObserver(()=>requestAnimationFrame(syncFooterScroll)).observe(mobileBody,{childList:true,subtree:true});
+new MutationObserver(()=>requestAnimationFrame(syncFooterScroll)).observe(mobileSheet,{attributes:true,attributeFilter:['open']});
 function level(name,title){mobileSheet.dataset.level=name;mobileSheet.querySelector('.mobile-sheet-head strong').textContent=title;mobileSheet.querySelector('.mobile-back').hidden=name==='root';mobileBody.scrollTop=0;}
 mobileRoot=function(){
  mobileLevel='root';level('root','Меню');
  mobileBody.innerHTML='<button class="mobile-search-entry">Найти программу '+iconSVG('<circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/>')+'</button><nav class="mobile-main-links" aria-label="Основные разделы">'+Object.entries(mobileNames).map(([key,label])=>'<button class="mobile-row" data-kind="'+key+'"><span>'+label+'</span>'+chevron+'</button>').join('')+'<a class="mobile-row" href="https://catalystrussia.ru/cases/"><span>Портфолио</span></a></nav><nav class="mobile-secondary-links" aria-label="Дополнительные разделы"></nav><div class="mobile-nav-contact"><a href="tel:+79911501001">+7 991 150-10-01</a><p>Ежедневно 8:00–22:00<br>Москва и МО · выезды по России</p><div class="mobile-nav-messengers"></div></div>';
- document.querySelectorAll('.utility-nav a').forEach(a=>{const copy=a.cloneNode(true);copy.removeAttribute('id');if(a.id!=='offers-trigger')copy.classList.add('mobile-row');if(a.id==='offers-trigger'){copy.classList.add('mobile-nav-offers');copy.innerHTML='<span>Посмотреть<br>акции</span><img class="mobile-offer-sticker" src="assets/offer-percent-sticker.svg" alt="">';}if(a.id==='offers-trigger')copy.onclick=e=>{e.preventDefault();closeMobile(false);document.getElementById('offers-preview').showModal()};(a.id==='offers-trigger'?mobileBody.querySelector('.mobile-main-links'):mobileBody.querySelector('.mobile-secondary-links')).append(copy)});
+ document.querySelectorAll('.utility-nav a').forEach(a=>{const copy=a.cloneNode(true);copy.removeAttribute('id');if(a.id!=='offers-trigger')copy.classList.add('mobile-row');if(a.id==='offers-trigger'){copy.classList.add('mobile-nav-offers');copy.innerHTML='<span>Посмотреть<br>акции</span><svg class="offers-art" preserveAspectRatio="xMidYMin meet" viewBox="0 0 76 76" fill="none" aria-hidden="true"><path d="M24 0v20m-5 7v-7h10v7M57 0v32m-5 7v-7h10v7" stroke="#11743e" stroke-width="2"/><circle cx="24" cy="44" r="19" fill="#ffdf4a" stroke="#11743e" stroke-width="2"/><path d="M6 40q18 13 36 0M11 56q13-9 26 0" stroke="#11743e" stroke-width="2"/><circle cx="57" cy="56" r="16" fill="#e3f3e9" stroke="#11743e" stroke-width="2"/><path d="M57 44v24M45 56h24M49 48l16 16m0-16L49 64" stroke="#11743e" stroke-width="2"/></svg>';}if(a.id==='offers-trigger')copy.onclick=e=>{e.preventDefault();closeMobile(false);document.getElementById('offers-preview').showModal()};(a.id==='offers-trigger'?mobileBody.querySelector('.mobile-main-links'):mobileBody.querySelector('.mobile-secondary-links')).append(copy)});
+ // Keep all navigation together, followed by the seasonal card and offers.
+ const secondary=mobileBody.querySelector('.mobile-secondary-links');
+ const offers=mobileBody.querySelector('.mobile-nav-offers');
+ secondary.after(offers);
+ const seasonalSource=document.querySelector('#header .promo-calendar');
+ if(seasonalSource){
+  const stack=document.createElement('div');stack.className='promo-stack mobile-root-season';
+  const card=document.createElement('a');card.className=seasonalSource.className;
+  card.href='https://catalystrussia.ru/novogodnij-korporativ/';
+  card.innerHTML=seasonalSource.innerHTML;
+  const link=card.querySelector('.experiment-button');
+  if(link){const label=document.createElement('span');label.className=link.className;label.innerHTML=link.innerHTML;link.replaceWith(label)}
+  stack.append(card);offers.before(stack);
+ }
  document.querySelectorAll('.primary-line>.messenger').forEach(a=>{const copy=a.cloneNode(true);copy.className='mobile-nav-messenger '+(a.classList.contains('mv-ib-tg')?'mobile-nav-telegram':'mobile-nav-max');copy.append(document.createTextNode(a.classList.contains('mv-ib-tg')?'Telegram':'Max'));mobileBody.querySelector('.mobile-nav-messengers').append(copy)});
 };
 mobileCategories=function(kind){mobileKind=kind;mobileLevel='categories';level('categories',mobileNames[kind]);if(kind==='about'){mobileBody.innerHTML='<a class="mobile-row" href="https://catalystrussia.ru/about/">О нас</a><a class="mobile-row" href="https://catalystrussia.ru/#contacts">Контакты</a>';return}mobileBody.innerHTML=menuData[kind].map((cat,i)=>'<button class="mobile-row" data-category="'+i+'">'+(kind==='programs'?'<span class="category-icon">'+iconSVG(categoryPaths[i])+'</span>':'')+'<span>'+cat.title+'</span>'+chevron+'</button>').join('');};

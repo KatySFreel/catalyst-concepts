@@ -4,18 +4,47 @@
  const mobile=matchMedia('(max-width:1100px)');
  function layout(){
   if(collage.hasAttribute('data-slide')){
+   // Mobile Figma frames use a shared 390 × 252 canvas, scaled as one composition.
+   if(innerWidth<=700){
+    body.append(actions);
+    const scale=stage.clientWidth/390;
+    stage.style.height=(252*scale)+'px';
+    collage.style.setProperty('--mobile-scene-scale',scale);
+    collage.style.setProperty('--mobile-scene-left','0px');
+    collage.style.setProperty('--mobile-scene-top','0px');
+    return;
+   }
+
+   // Measure the complete composition, including rotated stickers, in scene units.
+   const origin=collage.getBoundingClientRect();
+   const currentScale=parseFloat(getComputedStyle(collage).scale)||1;
+   const pieces=[...collage.querySelectorAll('.team.hero-slide,.event-caption,.mini-folder,.figma-race-sticker')];
+   const rects=pieces.map(el=>el.getBoundingClientRect());
+   const left=(Math.min(...rects.map(r=>r.left))-origin.left)/currentScale;
+   const right=(Math.max(...rects.map(r=>r.right))-origin.left)/currentScale;
+   const top=(Math.min(...rects.map(r=>r.top))-origin.top)/currentScale;
+   const bottom=(Math.max(...rects.map(r=>r.bottom))-origin.top)/currentScale;
    if(mobile.matches){
     body.append(actions);
     const scale=Math.min(.88,(stage.clientWidth-24)/657.187)*(innerWidth<=700?.9:1);
+    const height=502.744*scale;
+    stage.style.height=height+'px';
     collage.style.setProperty('--mobile-scene-scale',scale);
-    collage.style.setProperty('--mobile-scene-top',(innerWidth<=700?-40*scale:0)+'px');
-    stage.style.height=((innerWidth<=700?460:502.744)*scale)+'px';
+    collage.style.setProperty('--mobile-scene-left',(stage.clientWidth/2-(left+right)*scale/2)+'px');
+    collage.style.setProperty('--mobile-scene-top',(height/2-(top+bottom)*scale/2)+'px');
    }else{
     copy.append(actions);stage.style.height='';
-    const scale=Math.min(1.2,body.clientWidth/1232);
+    const hero=document.querySelector('.hero');
+    hero.style.setProperty('--hero-header-height',(document.querySelector('#header').offsetHeight-1)+'px');
+    const scale=Math.min(1.2,body.clientWidth/1232,(hero.clientHeight-60)/502.744);
+    const areaRight=body.getBoundingClientRect().right-hero.getBoundingClientRect().left;
+    const areaWidth=627.151*scale;
     collage.style.setProperty('--scene-scale',scale);
-    collage.style.setProperty('--scene-left',(body.getBoundingClientRect().left-document.querySelector('.hero').getBoundingClientRect().left+584*scale)+'px');
-    collage.style.setProperty('--scene-top',Math.max(29.293,(document.querySelector('.hero').clientHeight-502.744*scale)/2)+'px');
+    const shift=([24,24,36,24,0][Number(collage.dataset.slide)]||0)*scale;
+    const centeredLeft=areaRight-areaWidth/2-(left+right)*scale/2;
+    const sceneLeft=Math.min(centeredLeft+shift,areaRight-right*scale);
+    collage.style.setProperty('--scene-left',sceneLeft+'px');
+    collage.style.setProperty('--scene-top',(hero.clientHeight/2-(top+bottom)*scale/2)+'px');
    }
    return;
   }
@@ -61,5 +90,8 @@
  const observer=new ResizeObserver(layout);observer.observe(collage);observer.observe(copy);
  new MutationObserver(layout).observe(collage,{attributes:true,attributeFilter:['data-slide']});
  collage.querySelector('.hero-slide').addEventListener('load',layout);
- addEventListener('resize',layout);document.fonts.ready.then(layout);layout();
+ addEventListener('resize',layout);layout();
+ Promise.all([document.fonts.ready,collage.querySelector('.hero-slide').decode().catch(()=>{})]).then(()=>{
+  layout();requestAnimationFrame(()=>{layout();collage.dataset.layoutReady='true';collage.dispatchEvent(new Event('hero-layout-ready'));});
+ });
 })();

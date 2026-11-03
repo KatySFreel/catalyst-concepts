@@ -140,7 +140,7 @@ window.__MV_DATA__={"built": "2026-10-07", "programs": [{"url": "https://catalys
   function metaP(p) { var a = [p.kind, p.place].filter(Boolean).map(esc); if (p.price) a.push('<b>' + esc(p.price) + '</b>'); return a.join(' · '); }
   function metaG(g) { var a = [g.group, g.note || g.sub].filter(Boolean).map(esc); if (g.price) a.push('<b>' + esc(g.price) + '</b>'); return a.join(' · '); }
   function thumb(p) { return p.img ? '<img class="th" src="' + esc(p.img) + '" alt="' + esc(p.name) + '" loading="lazy" decoding="async" width="84" height="63">' : '<span class="th" aria-hidden="true"></span>'; }
-  function rowP(p, tk) { return '<a class="mv-row" href="' + esc(p.url) + '">' + thumb(p) + '<span class="tx"><span class="nm">' + hl(p.name, tk) + '</span><span class="mt">' + metaP(p) + '</span></span></a>'; }
+  function rowP(p, tk) { return '<a class="mv-row mv-program-card" href="' + esc(p.url) + '">' + thumb(p) + '<span class="tx"><span class="nm">' + hl(p.name, tk) + '</span><span class="mt">' + metaP(p) + '</span></span><svg class="search-card-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="1.5"/></svg></a>'; }
   function rowG(g, tk) { return '<a class="mv-row pg" href="' + esc(g.url) + '"><span class="pi">' + I_PAGE + '</span><span class="tx"><span class="nm">' + hl(g.name, tk) + '</span><span class="mt">' + metaG(g) + '</span></span></a>'; }
   function catChips(cats) { return cats.length ? '<div class="mv-chips">' + cats.map(function (c) { return '<a class="mv-chip" href="' + esc(c.url) + '">' + esc(c.name) + ' <span>' + c.count + '</span></a>'; }).join('') + '</div>' : ''; }
   var POPULAR = ['Фестиваль Фудтраков', 'Новогодний корпоратив', 'Выездной корпоратив', 'Нейросети', 'Мегаполис', 'Квест', 'Бизнес-игры'];
@@ -155,9 +155,9 @@ window.__MV_DATA__={"built": "2026-10-07", "programs": [{"url": "https://catalys
   function results(kind, q) {
     var R = query(q), h = '';
     if (R.empty) {
-      h += hd('Часто ищут') + qChips() + hd('Категории') + catChips(ALLCATS) + hd('Хиты');
-      if (kind === 'sheet') h += HITS.map(function (p) { return rowP(p); }).join('');
-      else h += '<div class="mv-cols"><div>' + HITS.slice(0, 3).map(function (p) { return rowP(p); }).join('') + '</div><div>' + HITS.slice(3, 6).map(function (p) { return rowP(p); }).join('') + '</div></div>';
+      h += hd('Часто ищут') + qChips() + hd('Категории') + catChips(ALLCATS);
+      var arrow = function (left) { return '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="' + (left ? 'M19 12H5m7-7-7 7 7 7' : 'M5 12h14m-7-7 7 7-7 7') + '" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'; };
+      h += '<section class="search-hits-slider" aria-label="Хиты"><div class="search-hits-heading">' + hd('Хиты') + '<div class="search-hits-arrows"><button type="button" data-hit-prev aria-label="Предыдущие программы">' + arrow(true) + '</button><button type="button" data-hit-next aria-label="Следующие программы">' + arrow(false) + '</button></div></div><div class="search-hits-track" tabindex="0" aria-label="Популярные программы">' + HITS.map(function (p) { return rowP(p); }).join('') + '</div><nav class="search-hits-pagination" aria-label="Выбрать слайд"></nav></section>';
       return h + foot();
     }
     if (!R.progs.length && !R.pages.length) {
@@ -178,8 +178,38 @@ window.__MV_DATA__={"built": "2026-10-07", "programs": [{"url": "https://catalys
   }
 
   /* выдача в контейнере: чипы «Часто ищут» подставляют запрос, стрелки и Enter ходят по выдаче */
-  function bindResults(pop, input, kind) {
-    function render() { pop.innerHTML = results(kind, input.value); }
+  function bindResults(pop, input, kind, renderOnly) {
+    var cleanupHits = function () {};
+    function render() {
+      cleanupHits();
+      pop.innerHTML = results(kind, input.value);
+      var slider = pop.querySelector('.search-hits-slider');
+      if (!slider) return;
+      var track = slider.querySelector('.search-hits-track'), cards = Array.from(track.children);
+      var pagination = slider.querySelector('.search-hits-pagination'), positions = [], active = 0;
+      var reduced = matchMedia('(prefers-reduced-motion: reduce)');
+      function move(index) { track.scrollTo({left: positions[index], behavior: reduced.matches ? 'instant' : 'smooth'}); }
+      function update() {
+        active = positions.reduce(function (best, pos, i) { return Math.abs(pos-track.scrollLeft)<Math.abs(positions[best]-track.scrollLeft) ? i : best; }, 0);
+        Array.from(pagination.children).forEach(function (dot, i) { if (i===active) dot.setAttribute('aria-current','true'); else dot.removeAttribute('aria-current'); });
+      }
+      function resize() {
+        var max = Math.max(0, track.scrollWidth-track.clientWidth);
+        positions = cards.map(function (card) { return Math.min(max, card.offsetLeft-cards[0].offsetLeft); }).filter(function (pos,i,all) { return !i || pos>all[i-1]+1; });
+        pagination.replaceChildren();
+        positions.forEach(function (_,i) { var dot=document.createElement('button'); dot.type='button'; dot.setAttribute('aria-label','Слайд '+(i+1)); dot.innerHTML='<span aria-hidden="true"></span>'; dot.onclick=function(){move(i)}; pagination.append(dot); });
+        pagination.hidden=positions.length<2;
+        slider.querySelector('.search-hits-arrows').hidden=positions.length<2;
+        update();
+      }
+      slider.querySelector('[data-hit-prev]').onclick=function(){move((active-1+positions.length)%positions.length)};
+      slider.querySelector('[data-hit-next]').onclick=function(){move((active+1)%positions.length)};
+      track.addEventListener('scroll',update,{passive:true});
+      track.addEventListener('keydown',function(e){if(e.target!==track)return;if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();move((active+(e.key==='ArrowRight'?1:-1)+positions.length)%positions.length)}});
+      var observer=new ResizeObserver(resize); observer.observe(track); resize();
+      cleanupHits=function(){observer.disconnect()};
+    }
+    if (renderOnly) return render;
     pop.addEventListener('click', function (e) {
       var c = e.target.closest('[data-q]');
       if (c) { e.preventDefault(); input.value = c.getAttribute('data-q'); input.dispatchEvent(new Event('input')); input.focus(); }
@@ -231,5 +261,5 @@ window.__MV_DATA__={"built": "2026-10-07", "programs": [{"url": "https://catalys
     return ss.__mvs;
   }
 
-  window.MVS = { query: query, results: results, bindDesk: bindDesk, bindSheet: bindSheet, info: function () { return { programs: PROGS.length, pages: PAGES.length, built: D.built }; } };
+  window.MVS = { bindResults: bindResults, query: query, results: results, bindDesk: bindDesk, bindSheet: bindSheet, info: function () { return { programs: PROGS.length, pages: PAGES.length, built: D.built }; } };
 })();

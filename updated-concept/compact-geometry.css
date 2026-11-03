@@ -64,7 +64,7 @@ body #header .primary-line>.messenger,body #header .primary-line>.search-toggle{
 body #header .primary-line{gap:16px!important;padding:10px 12px!important;min-height:0!important;height:auto!important;border-radius:24px!important}
 body #header .primary-line>.messenger{margin-left:-8px!important;margin-right:0!important}
 body #header .primary-line>.search-toggle{margin-inline:0!important}
-body #header .catalog-layout-refined .catalog-menu-assistance{border-radius:24px!important;padding:10px 10px 10px 20px!important;gap:20px!important}
+body #header .catalog-layout-refined .catalog-menu-assistance{border-radius:14px!important;padding:10px 10px 10px 20px!important;gap:20px!important}
 body #header .promo-stack>:is(.promo-experiment,.experiment-offers,.monthly-offers),body .mobile-navigation .promo-stack>:is(.promo-experiment,.experiment-offers,.monthly-offers){border-radius:24px!important}
 body .hero .collage-v2 :is(.mini-folder,.event-polaroid,.event-caption){border-radius:24px!important}
 body .hero .collage-v2 .event-polaroid img{border-radius:16px!important}

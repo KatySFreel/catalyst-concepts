@@ -13,7 +13,6 @@
   add('#recommend .rating-grid > div', null, 'rating');
   add('#recommend .recommend-photo img', '.recommend-photo', 'photo');
   add('#recommend .awards-cup-sticker', '.trust-awards', 'sticker');
-  add('#s7 .director-portrait-tile, #s7 .director-event-tile', '#s7', 'portrait');
   add('#s7 .director-quote-accent', null, 'accent');
   // Contact cards stay fixed within their section; only its photo has parallax.
   const visible = new Set();
@@ -62,12 +61,55 @@
   preference();
 })();
 
-// Subtle scroll parallax for the two desktop event photographs.
+// Hold the quotation while its event photographs pass over it.
 (()=>{
- const section=document.querySelector('#s7');const photos=section?.querySelectorAll('.director-edge-photo');
- if(!photos?.length)return;
- const reduced=matchMedia('(prefers-reduced-motion: reduce)'),desktop=matchMedia('(min-width:701px)');let frame=0;
- function render(){frame=0;const enabled=desktop.matches&&!reduced.matches;const rect=section.getBoundingClientRect();const progress=Math.max(-1,Math.min(1,(innerHeight/2-rect.top-rect.height/2)/innerHeight));photos.forEach((photo,i)=>{photo.style.translate=enabled?'0 '+(progress*(i?-32:32)).toFixed(2)+'px':'none';});}
- function update(){if(!frame)frame=requestAnimationFrame(render);}
- addEventListener('scroll',update,{passive:true});addEventListener('resize',update);reduced.addEventListener('change',update);desktop.addEventListener('change',update);update();
+ const section=document.querySelector('#s7');
+ const panel=section?.querySelector('.continuation-inner');
+ const photos=[...(section?.querySelectorAll('.director-edge-photo')||[])];
+ if(!panel||!photos.length)return;
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ const desktop=matchMedia('(min-width:701px)');
+ let frame=0, distance=0, enabled=false;
+ function render(){
+  frame=0;if(!enabled)return;
+  const progress=Math.max(0,Math.min(1,(100-section.getBoundingClientRect().top)/distance));
+  const height=panel.offsetHeight;
+  // The first pair is already beside the quotation on entry.
+  // Once pinned, the first four pass above the viewport; the last pair settles.
+  // Overlapping travel windows keep the group moving together before the final hold.
+  const timings=[
+   {start:.02,duration:.24,end:.40},
+   {start:.04,duration:.26,end:.46},
+   {start:.08,duration:.30,end:.02},
+   {start:.16,duration:.28,end:.08},
+   {start:.32,duration:.32,end:.20},
+   {start:.42,duration:.36,end:.58}
+  ];
+  photos.forEach((photo,i)=>{
+   const timing=timings[i%timings.length];
+   const p=Math.max(0,Math.min(1,(progress-timing.start)/timing.duration));
+   const eased=i<4?p:1-Math.pow(1-p,3);
+   const startY=i<2 ? height*timing.end : height+photo.offsetHeight*.25;
+   const endY=i<4 ? -photo.offsetHeight*1.5-100 : Math.min(height-photo.offsetHeight,height*timing.end);
+   photo.style.translate=`0 ${(startY+(endY-startY)*eased).toFixed(2)}px`;
+   photo.style.opacity=(i<2||p>0)&&(i>=4||p<1)?'1':'0';
+  });
+ }
+ function request(){if(!frame)frame=requestAnimationFrame(render);}
+ function setup(){
+  section.classList.remove('director-scroll-scene');
+  section.style.removeProperty('--director-scene-height');
+  photos.forEach(photo=>{photo.style.removeProperty('translate');photo.style.removeProperty('opacity')});
+  enabled=desktop.matches&&!reduced.matches&&panel.offsetHeight<innerHeight-124;
+  if(enabled){
+   section.classList.add('director-scroll-scene');
+   distance=Math.round(innerHeight*3);
+   section.style.setProperty('--director-scene-height',(panel.offsetHeight+distance)+'px');
+  }
+  request();
+ }
+ addEventListener('scroll',request,{passive:true});
+ addEventListener('resize',setup);
+ reduced.addEventListener('change',setup);desktop.addEventListener('change',setup);
+ document.fonts.ready.then(setup);setup();
 })();

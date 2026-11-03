@@ -1137,8 +1137,8 @@ body.mobile-menu-open { overflow: hidden; }
 .mobile-navigation .mobile-sheet-body { flex: 1 1 auto; padding: 16px !important; }
 .mobile-navigation .mobile-sheet-head { padding: 16px 16px 0px !important; }
 .mobile-navigation .mobile-sheet-head strong { font-size: 22px !important; }
-.mobile-navigation .mobile-back { display: grid; place-items: center; border-radius: 50%; width: 40px !important; height: 40px !important; background: rgb(243, 242, 237) !important; }
-.mobile-navigation .mobile-back svg { width: 20px; height: 20px; }
+.mobile-navigation .mobile-back, #contact-dialog .cf-offer-back { display: grid; place-items: center; border-radius: 50%; width: 40px !important; height: 40px !important; background: rgb(243, 242, 237) !important; }
+.mobile-navigation .mobile-back svg, #contact-dialog .cf-offer-back svg { width: 20px; height: 20px; }
 .mobile-navigation .mobile-row[data-kind="programs"] { border: 0px; background: rgb(227, 243, 233) !important; border-radius: 32px !important; padding: 16px 12px !important; }
 .mobile-navigation a.mobile-nav-offers { display: flex; align-items: center; min-height: 52px; background: rgb(255, 223, 74); border-radius: 32px; padding: 14px 12px; margin-top: 12px; font: 500 17px Roboto; }
 .mobile-nav-telegram svg { color: rgb(42, 163, 232); fill: rgb(42, 163, 232); }

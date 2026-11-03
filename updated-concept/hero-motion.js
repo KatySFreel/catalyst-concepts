@@ -14,6 +14,10 @@
  ];
  const eventCard=surface.querySelector('.event-caption'),polaroid=surface.querySelector('.event-polaroid');
  const contextImages=events.map(e=>{const image=new Image();image.src='assets/'+e.photo;return image});
+ const folderTitles=[['Лучшие','тимбилдинги','в России'],['Корпоратив','на 100+'],['События','по всей','России'],['Фестиваль','для команды'],['Тимбилдинг','со вкусом']];
+ const folderTitle=surface.querySelector('.mini-folder strong');
+ function syncFolder(i){if(!folderTitle)return;folderTitle.replaceChildren(...folderTitles[i].flatMap((line,n)=>n?[document.createElement('br'),document.createTextNode(line)]:[document.createTextNode(line)]));}
+ syncFolder(0);
  const phrases=['болид Формулы-1','город из картона','башню 10 метров','свой фудтрак','огромную пиццу'];
  const phrase=document.getElementById('hero-changing-title');let typingTimer;
  function typeHeadline(text){
@@ -29,7 +33,7 @@
   erase();
  }
  const stickerFiles=['figma-20261102/hero-stickers-lossless.webp','figma-hero-slides/stickers-city-lossless.webp','figma-hero-slides/stickers-tower-lossless.webp','figma-hero-slides/stickers-lossless.webp','figma-hero-slides/stickers-pizza-lossless.webp'];
- function syncEvent(i){surface.querySelectorAll('.figma-race-sticker img').forEach(el=>el.src='assets/'+stickerFiles[i]);typeHeadline(phrases[i]);const e=events[i];surface.querySelectorAll('.event-project-link').forEach(link=>{link.href="https://catalystrussia.ru/teambuilding/vse-programmy/"+programSlugs[i]+"/";link.setAttribute("aria-label","Подробнее о программе "+e.title)});eventCard.querySelector('h3').textContent=e.title;eventCard.querySelector('p').textContent=e.copy;polaroid.querySelector('img').src=contextImages[i].src;polaroid.querySelector('img').alt=e.caption;polaroid.querySelector('figcaption').textContent=e.caption;}
+ function syncEvent(i){syncFolder(i);surface.querySelectorAll('.figma-race-sticker img').forEach(el=>el.src='assets/'+stickerFiles[i]);typeHeadline(phrases[i]);const e=events[i];surface.querySelectorAll('.event-project-link').forEach(link=>{link.href="https://catalystrussia.ru/teambuilding/vse-programmy/"+programSlugs[i]+"/";link.setAttribute("aria-label","Подробнее о программе "+e.title)});eventCard.querySelector('h3').textContent=e.title;eventCard.querySelector('p').textContent=e.copy;polaroid.querySelector('img').src=contextImages[i].src;polaroid.querySelector('img').alt=e.caption;polaroid.querySelector('figcaption').textContent=e.caption;}
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');let index=0,timer,visible=true,request=0,touch=null,suppressClick=false;
  let transitions=[];
  const pieces=[img,polaroid,eventCard,surface.querySelector('.mini-folder'),...surface.querySelectorAll('.seal,.hero-sticker,.figma-race-sticker')].filter(Boolean);
@@ -45,25 +49,17 @@
   const apply=()=>{index=next;img.src=images[index].src;img.alt=slides[index][1];surface.dataset.slide=String(index);syncEvent(index)};
   if(reduced.matches||!img.animate){apply();return}
   const leaving=pieces.filter(el=>getComputedStyle(el).display!=='none');
-  transitions=leaving.map((el,i)=>el.animate([
-   {opacity:1,translate:'0 0',scale:'1'},
-   {opacity:0,translate:`${i%2?-12:12}px 24px`,scale:'.975'}
-  ],{duration:210,easing:'cubic-bezier(.4,0,1,1)',fill:'forwards'}));
+  transitions=leaving.map(el=>el.animate([{opacity:1},{opacity:0}],{duration:210,easing:'ease-out',fill:'forwards'}));
   try{await Promise.all(transitions.map(a=>a.finished))}catch{return}
   if(token!==request)return;
   cancelTransition();apply();
-  transitions=pieces.filter(el=>getComputedStyle(el).display!=='none').map((el,i)=>{
-   const photo=el===img,sticker=el.matches('.seal,.hero-sticker');
-   return el.animate([
-    {opacity:0,translate:`${i%2?-18:18}px ${photo?48:30}px`,scale:sticker?'.82':'.97',offset:0},
-    {opacity:1,translate:`0 ${sticker?-5:-3}px`,scale:sticker?'1.06':'1.008',offset:.76},
-    {opacity:1,translate:'0 0',scale:'1',offset:1}
-   ],{duration:photo?620:480,delay:photo?0:70+i*35,easing:'cubic-bezier(.22,.75,.25,1)',fill:'both'});
-  });
+  transitions=pieces.filter(el=>getComputedStyle(el).display!=='none').map(el=>
+   el.animate([{opacity:0},{opacity:1}],{duration:480,easing:'ease-out',fill:'both'})
+  );
   try{await Promise.all(transitions.map(a=>a.finished))}catch{return}
   if(token===request)cancelTransition();
  }
- function start(){stop();if(editingFirstSlide||reduced.matches||document.hidden||!visible||touch||surface.matches(':focus-within'))return;timer=setInterval(()=>show((index+1)%slides.length),5500)}
+ function start(){stop();if(!surface.hasAttribute('data-layout-ready')||editingFirstSlide||reduced.matches||document.hidden||!visible||touch||surface.matches(':focus-within'))return;timer=setInterval(()=>show((index+1)%slides.length),5500)}
  surface.addEventListener('pointerdown',e=>{if(editingFirstSlide||e.pointerType==='mouse')return;suppressClick=false;touch={x:e.clientX,y:e.clientY,id:e.pointerId};(e.target.closest('.event-project-link')||surface).setPointerCapture(e.pointerId);stop()});
  surface.addEventListener('pointerup',e=>{if(!touch||touch.id!==e.pointerId)return;const dx=e.clientX-touch.x,dy=e.clientY-touch.y;touch=null;start();suppressClick=Math.abs(dx)>10||Math.abs(dy)>10;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.3)show((index+(dx<0?1:-1)+slides.length)%slides.length)});
  surface.addEventListener('click',e=>{if(suppressClick){e.preventDefault();suppressClick=false}});
@@ -72,6 +68,7 @@
  surface.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();stop();show((index+(e.key==='ArrowRight'?1:-1)+slides.length)%slides.length)});
  surface.addEventListener('pointercancel',()=>{touch=null;start()});
  surface.addEventListener('focusin',stop);surface.addEventListener('focusout',()=>setTimeout(start,0));
+ surface.addEventListener('hero-layout-ready',start);
  document.addEventListener('visibilitychange',start);reduced.addEventListener('change',()=>{reset();start()});
  new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;start()},{threshold:.05}).observe(hero);
  // Different depth and direction for each sticker; keep the approved anchor positions.
