@@ -58,7 +58,7 @@
     },true);
     dialog.addEventListener('cancel',event=>{if(mobile.matches){event.preventDefault();dismiss();}});
     surface.addEventListener('touchstart',event=>{
-      if(!mobile.matches||closing||surface.scrollTop>0||event.touches.length!==1||event.target.closest('input,textarea,select,button,a'))return;
+      if(dialog.classList.contains('cf-offers')||!mobile.matches||closing||surface.scrollTop>0||event.touches.length!==1||event.target.closest('input,textarea,select,button,a'))return;
       const touch=event.touches[0];gesture={x:touch.clientX,y:touch.clientY,dy:0,started:performance.now()};
     },{passive:true});
     surface.addEventListener('touchmove',event=>{

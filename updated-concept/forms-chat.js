@@ -253,7 +253,7 @@
       function settle(){
         if(interacting)return;
         update();
-        if(Math.abs(track.scrollLeft-(positions[active]||0))>1)track.scrollTo({left:positions[active]||0,behavior:'instant'});
+        // Native scroll-snap finishes scrolling; do not pull a live gesture back.
         scrolling=false;syncPlayback();
       }
       function measure(){
@@ -276,9 +276,38 @@
       const showcase=content.querySelector('.cf-offer-showcase');
       controls.forEach(button=>button.onclick=()=>moveTo(active+Number(button.dataset.offerDirection)));
       track.addEventListener('scroll',()=>{scrolling=true;reset();update();syncPlayback();clearTimeout(settleTimer);settleTimer=setTimeout(settle,180);},{passive:true,...options});
-      showcase.addEventListener('pointerdown',()=>{interacting=true;syncPlayback();},options);
-      const release=()=>{if(interacting){interacting=false;reset();clearTimeout(settleTimer);settleTimer=setTimeout(settle,240);}};
+      let drag=null,suppressClick=false;
+      track.addEventListener('pointerdown',event=>{
+        if(event.button!==0||!event.isPrimary)return;
+        interacting=true;clearTimeout(settleTimer);syncPlayback();
+        drag={id:event.pointerId,x:event.clientX,y:event.clientY,left:track.scrollLeft,horizontal:false};
+      },options);
+      track.addEventListener('pointermove',event=>{
+        if(!drag||event.pointerId!==drag.id)return;
+        const dx=event.clientX-drag.x,dy=event.clientY-drag.y;
+        if(!drag.horizontal){
+          if(Math.max(Math.abs(dx),Math.abs(dy))<8)return;
+          if(Math.abs(dy)>=Math.abs(dx)){drag=null;return;}
+          drag.horizontal=true;track.setPointerCapture(event.pointerId);track.classList.add('is-dragging');
+        }
+        event.preventDefault();track.scrollLeft=drag.left-dx;
+      },options);
+      const release=event=>{
+        if(drag&&event.pointerId!==drag.id)return;
+        const completed=drag;drag=null;
+        track.classList.remove('is-dragging');
+        if(track.hasPointerCapture(event.pointerId))track.releasePointerCapture(event.pointerId);
+        interacting=false;reset();clearTimeout(settleTimer);
+        if(completed?.horizontal&&event.type!=='pointercancel'){
+          suppressClick=true;setTimeout(()=>{suppressClick=false},0);
+          const dx=event.clientX-completed.x;
+          const start=positions.reduce((best,value,i)=>Math.abs(value-completed.left)<Math.abs(positions[best]-completed.left)?i:best,0);
+          moveTo(Math.abs(dx)>40?start+(dx<0?1:-1):active);
+        }else{scrolling=false;syncPlayback();}
+      };
       window.addEventListener('pointerup',release,options);window.addEventListener('pointercancel',release,options);
+      track.addEventListener('click',event=>{if(suppressClick){event.preventDefault();event.stopImmediatePropagation();}}, {capture:true,...options});
+      track.addEventListener('dragstart',event=>event.preventDefault(),options);
       showcase.addEventListener('focusin',event=>{if(event.target.matches(':focus-visible')){interacting=true;syncPlayback();}},options);
       showcase.addEventListener('focusout',()=>{interacting=false;syncPlayback();},options);
       modal.addEventListener('focusin',syncPlayback,options);modal.addEventListener('focusout',syncPlayback,options);
