@@ -1382,3 +1382,21 @@ html body #contact-dialog .cf-offer-title-mobile{display:none}
 }
 
 @media(min-width:701px){html body #contact-dialog .cf-offer-card>strong{font-size:24px;line-height:1.2;font-weight:700;margin-bottom:16px}}
+
+/* Mobile offers have one native scroll container: the dialog itself.
+   Avoid a clipped dialog around a nested momentum scroller on touch browsers. */
+@media(max-width:700px){
+ html body #contact-dialog.cf-offers[data-external-close]{
+  height:92dvh!important;max-height:92dvh!important;
+  padding:0!important;overflow-x:hidden!important;overflow-y:auto!important;
+  overscroll-behavior-y:contain;touch-action:pan-y pinch-zoom;
+  -webkit-overflow-scrolling:touch;scroll-behavior:auto;
+ }
+ html body #contact-dialog.cf-offers[data-external-close]>.popup-form-surface{
+  height:auto;max-height:none;overflow:visible;touch-action:auto;
+ }
+ html body #contact-dialog.cf-offers[data-external-close]>.cf-close{
+  position:sticky;top:0!important;right:auto!important;
+  margin:0 12px 8px auto;
+ }
+}

@@ -36,6 +36,13 @@
       dialog.style.setProperty('--popup-surface-background',style.backgroundColor);
       dialog.style.setProperty('--popup-surface-radius',style.borderRadius);
       dialog.setAttribute('data-external-close','');
+      // Offers use native scrolling only: do not register a cancelling touch listener.
+      surface.removeEventListener('touchstart',startGesture);
+      surface.removeEventListener('touchmove',moveGesture);
+      if(!dialog.classList.contains('cf-offers')){
+        surface.addEventListener('touchstart',startGesture,{passive:true});
+        surface.addEventListener('touchmove',moveGesture,{passive:false});
+      }else{gesture=null;}
     }
     const mobile=matchMedia('(max-width:700px)'),reduced=matchMedia('(prefers-reduced-motion:reduce)');
     let motion,gesture=null,closing=false;
@@ -57,18 +64,18 @@
       event.preventDefault();event.stopImmediatePropagation();dismiss();
     },true);
     dialog.addEventListener('cancel',event=>{if(mobile.matches){event.preventDefault();dismiss();}});
-    surface.addEventListener('touchstart',event=>{
+    function startGesture(event){
       if(dialog.classList.contains('cf-offers')||!mobile.matches||closing||surface.scrollTop>0||event.touches.length!==1||event.target.closest('input,textarea,select,button,a'))return;
       const touch=event.touches[0];gesture={x:touch.clientX,y:touch.clientY,dy:0,started:performance.now()};
-    },{passive:true});
-    surface.addEventListener('touchmove',event=>{
+    }
+    function moveGesture(event){
       if(!gesture)return;
       const touch=event.touches[0],dx=touch.clientX-gesture.x,dy=touch.clientY-gesture.y;
       if(!gesture.dy&&(dy<0||Math.abs(dx)>Math.abs(dy))){gesture=null;return;}
       if(dy>8&&dy>Math.abs(dx)&&surface.scrollTop<=0){
         event.preventDefault();motion?.cancel();gesture.dy=dy;dialog.style.transform=`translateY(${dy}px)`;
       }
-    },{passive:false});
+    }
     function release(cancelled=false){
       if(!gesture)return;
       const dy=gesture.dy,velocity=dy/Math.max(1,performance.now()-gesture.started);
@@ -84,7 +91,7 @@
       if(dialog.open&&records.some(record=>record.attributeName==='open'))animateIn();
     }).observe(dialog,{attributes:true,attributeFilter:['class','open']});
     window.addEventListener('resize',refresh);
-    dialog.addEventListener('close',()=>{surface.scrollTop=0;});
+    dialog.addEventListener('close',()=>{surface.scrollTop=0;dialog.scrollTop=0;});
     refresh();
   });
 })();
