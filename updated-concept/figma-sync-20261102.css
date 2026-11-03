@@ -1966,3 +1966,6 @@ html body #chat-launcher:not(.chat-working) .chat-status{background:#fff}
 /* Search fields share the approved warm paper surface. */
 html body #header .inline-search,
 html body .mobile-navigation .mobile-search-field input{background:#f3f2ed;border-radius:999px!important}
+
+/* Keep the tower caption clear of the cutout on desktop. */
+@media(min-width:1101px){html body .hero .collage-v2[data-slide="2"] .event-caption{left:28.115px}}

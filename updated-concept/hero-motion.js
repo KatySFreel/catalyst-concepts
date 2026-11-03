@@ -3,7 +3,7 @@
  const hero=document.querySelector('.hero'),img=hero?.querySelector('.hero-slide');if(!img)return;
  const surface=hero.querySelector('.collage-v2');
  const editingFirstSlide=false; // Automatic rotation and swiping enabled after composition review.
- const slides=[['figma-20261102/hero-race-lossless.webp','Болид программы Формула-1'],['figma-hero-slides/city-lossless.webp','Город, построенный участниками программы Мегаполис'],['figma-hero-slides/tower-lossless.webp','Конструкция программы WOW Башня'],['figma-hero-slides/foodtruck-lossless.webp','Оформленный участниками фудтрак'],['figma-hero-slides/pizza-lossless.webp','Команда с огромной пиццей программы WOW Пицца']];
+ const slides=[['figma-20261102/hero-race-lossless.webp','Болид программы Формула-1'],['figma-hero-slides/city-lossless.webp','Город, построенный участниками программы Мегаполис'],['figma-hero-slides/tower-lossless.webp','Конструкция программы WOW Башня'],['optimized/foodtruck.webp','Оформленный участниками фудтрак'],['optimized/pizza.webp','Команда с огромной пиццей программы WOW Пицца']];
  const programSlugs=['formula-1','gorodskaya-strojka','wow-bashnya','festival-fudtrakov','wow-pizza'];
  const events=[
   {title:'Формула-1',copy:'Строим свой болид и выходим на командный заезд.',photo:'formula-1.webp',caption:'Формула-1 / командный заезд'},
@@ -13,7 +13,6 @@
   {title:'WOW Пицца',copy:'Готовим большую пиццу всей командой под руководством шеф-повара.',photo:'wow-pizza.webp',caption:'WOW Пицца / готовим вместе'}
  ];
  const eventCard=surface.querySelector('.event-caption'),polaroid=surface.querySelector('.event-polaroid');
- const contextImages=events.map(e=>{const image=new Image();image.src='assets/'+e.photo;return image});
  const folderTitles=[['Лучшие','тимбилдинги','в России'],['Корпоратив','на 100+'],['События','по всей','России'],['Фестиваль','для команды'],['Тимбилдинг','со вкусом']];
  const folderTitle=surface.querySelector('.mini-folder strong');
  function syncFolder(i){if(!folderTitle)return;folderTitle.replaceChildren(...folderTitles[i].flatMap((line,n)=>n?[document.createElement('br'),document.createTextNode(line)]:[document.createTextNode(line)]));}
@@ -32,19 +31,20 @@
   function type(){phrase.textContent=text.slice(0,++count);if(count<text.length)typingTimer=setTimeout(type,55)}
   erase();
  }
- const stickerFiles=['figma-20261102/hero-stickers-lossless.webp','figma-hero-slides/stickers-city-lossless.webp','figma-hero-slides/stickers-tower-lossless.webp','figma-hero-slides/stickers-lossless.webp','figma-hero-slides/stickers-pizza-lossless.webp'];
- function syncEvent(i){syncFolder(i);surface.querySelectorAll('.figma-race-sticker img').forEach(el=>el.src='assets/'+stickerFiles[i]);typeHeadline(phrases[i]);const e=events[i];surface.querySelectorAll('.event-project-link').forEach(link=>{link.href="https://catalystrussia.ru/teambuilding/vse-programmy/"+programSlugs[i]+"/";link.setAttribute("aria-label","Подробнее о программе "+e.title)});eventCard.querySelector('h3').textContent=e.title;eventCard.querySelector('p').textContent=e.copy;polaroid.querySelector('img').src=contextImages[i].src;polaroid.querySelector('img').alt=e.caption;polaroid.querySelector('figcaption').textContent=e.caption;}
+ const stickerFiles=Array(5).fill('optimized/hero-stickers.webp');
+ function syncEvent(i){syncFolder(i);surface.querySelectorAll('.figma-race-sticker img').forEach(el=>el.src='assets/'+stickerFiles[i]);typeHeadline(phrases[i]);const e=events[i];surface.querySelectorAll('.event-project-link').forEach(link=>{link.href="https://catalystrussia.ru/teambuilding/vse-programmy/"+programSlugs[i]+"/";link.setAttribute("aria-label","Подробнее о программе "+e.title)});eventCard.querySelector('h3').textContent=e.title;eventCard.querySelector('p').textContent=e.copy;polaroid.querySelector('img').alt=e.caption;polaroid.querySelector('figcaption').textContent=e.caption;}
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');let index=0,timer,visible=true,request=0,touch=null,suppressClick=false;
  let transitions=[];
  const pieces=[img,polaroid,eventCard,surface.querySelector('.mini-folder'),...surface.querySelectorAll('.seal,.hero-sticker,.figma-race-sticker')].filter(Boolean);
  function cancelTransition(){transitions.forEach(a=>a.cancel());transitions=[];}
- const images=slides.map(s=>{const image=new Image();image.src='assets/'+s[0];return image});
+ const images=[];
+ function loadSlide(i){if(!images[i]){const image=new Image();image.decoding='async';image.src='assets/'+slides[i][0];images[i]=image}return images[i]}
  surface.dataset.slide='0';
  function stop(){clearInterval(timer);clearTimeout(typingTimer);if(phrase)phrase.textContent=phrases[index];request++;cancelTransition();img.classList.remove('slide-changing')}
  async function show(next){
   if(editingFirstSlide||next===index)return;
   const token=++request;cancelTransition();
-  try{await Promise.all([images[next].decode(),contextImages[next].decode()])}catch{return}
+  try{await loadSlide(next).decode()}catch{return}
   if(token!==request)return;
   const apply=()=>{index=next;img.src=images[index].src;img.alt=slides[index][1];surface.dataset.slide=String(index);syncEvent(index)};
   if(reduced.matches||!img.animate){apply();return}
