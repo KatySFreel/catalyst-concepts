@@ -1367,3 +1367,18 @@ html body #contact-dialog .cf-offer-title-mobile{display:none}
  html body #contact-dialog .cf-offer-card>img{height:80px;align-self:start;object-position:center top}
  html body #contact-dialog .cf-offer-card-copy{align-self:start}
 }
+
+/* Keep the offer form in the same flow and width throughout phone/tablet sizes. */
+@media(max-width:1100px){
+ html body #contact-dialog.cf-offers .cf-content{grid-template-columns:minmax(0,1fr)}
+ html body #contact-dialog.cf-offers .cf-offer-contact{width:100%;max-width:none;min-width:0;box-sizing:border-box;justify-self:stretch;align-self:start;margin:0}
+ html body #contact-dialog.cf-offers .cf-offer-showcase{align-self:start}
+ html body #contact-dialog.cf-offers[data-external-close]>.popup-form-surface{overflow-x:hidden;overflow-y:auto;touch-action:pan-y pinch-zoom}
+}
+@media(min-width:701px) and (max-width:1100px){
+ html body #contact-dialog.cf-offers .cf-offer-cards{overflow:visible;scroll-snap-type:none;touch-action:pan-y pinch-zoom}
+ html body #contact-dialog.cf-offers .cf-offer-card{touch-action:pan-y pinch-zoom}
+ html body #contact-dialog.cf-offers .cf-offer-contact #cf-title{padding-right:0}
+}
+
+@media(min-width:701px){html body #contact-dialog .cf-offer-card>strong{font-size:24px;line-height:1.2;font-weight:700;margin-bottom:16px}}
