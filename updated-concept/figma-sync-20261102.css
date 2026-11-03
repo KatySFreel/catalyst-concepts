@@ -831,7 +831,7 @@ html body #contact-dialog .cf-offer-card-1{background:#fff}
 html body #contact-dialog .cf-offer-card-2{background:#e3f3e9}
 html body #contact-dialog .cf-offer-card>img{display:block;width:calc(100% + 24px);max-width:none;height:150px;object-fit:contain;flex:none;align-self:center;margin:-56px -12px 8px;pointer-events:none}
 html body #contact-dialog .cf-offer-card-benefit{font:700 32px/1.1 Roboto,Arial,sans-serif;margin:0 0 12px;overflow-wrap:anywhere}
-html body #contact-dialog .cf-offer-card-1 .cf-offer-card-benefit{font-size:24px;line-height:1.2}
+html body #contact-dialog .cf-offer-card-1 .cf-offer-card-benefit{grid-column:1 / -1;grid-row:1;font-size:24px;line-height:1.2}
 html body #contact-dialog .cf-offer-card>strong{font-size:18px;font-weight:500;line-height:1.2;margin:0 0 12px}
 html body #contact-dialog .cf-offer-card-copy{display:block;margin:0 0 20px}
 html body #contact-dialog .cf-offer-card-select{display:block;margin-top:auto;padding:10px 0;font-size:13px;font-weight:500;width:100%;text-align:center;border-radius:999px;background:#fff}
@@ -1330,7 +1330,7 @@ html body #contact-dialog .cf-offer-contact{align-self:start;margin-bottom:0}
 html body #contact-dialog .cf-offer-card{display:grid;grid-template-columns:112px minmax(0,1fr);grid-template-rows:auto auto auto auto;column-gap:16px;row-gap:12px;width:100%;max-width:100%;height:auto;min-height:0;padding:16px;align-items:start;scroll-snap-align:none;touch-action:pan-y pinch-zoom}
 html body #contact-dialog .cf-offer-card>img{grid-column:1;grid-row:2 / 4;width:100%;height:112px;max-width:100%;margin:0;align-self:center;transform:none;object-fit:contain}
 html body #contact-dialog .cf-offer-card-benefit{grid-column:1 / -1;grid-row:1;font-size:32px;line-height:1.1;margin:0;position:static;transform:none}
-html body #contact-dialog .cf-offer-card-1 .cf-offer-card-benefit{font-size:24px;line-height:1.2}
+html body #contact-dialog .cf-offer-card-1 .cf-offer-card-benefit{grid-column:1 / -1;grid-row:1;font-size:24px;line-height:1.2}
 html body #contact-dialog .cf-offer-card>strong{grid-column:2;grid-row:2;margin:0;position:static;transform:none;align-self:end}
 html body #contact-dialog .cf-offer-card-copy{grid-column:2;grid-row:3;margin:0}
 html body #contact-dialog .cf-offer-card-select{grid-column:1 / -1;grid-row:4;width:100%;box-sizing:border-box;margin:4px 0 0;min-height:44px;display:flex;align-items:center;justify-content:center}
