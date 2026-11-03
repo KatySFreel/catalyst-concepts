@@ -7,9 +7,9 @@
 /* One distinct sticker for each of the five programmes. */
 .hero .collage-v2[data-slide] .seal{display:block!important;width:116px;height:116px;left:var(--accent-x,280px);top:var(--accent-y,20px);right:auto;bottom:auto;z-index:8;transform:rotate(4deg)}
 .collage-v2[data-slide="0"] .seal{background-image:url('assets/sticker-finish.svg');background-size:contain;background-position:center}
-.collage-v2[data-slide="1"] .seal{background-image:url('assets/hero-stickers.png');background-size:300% 100%;background-position:100% 0}
-.collage-v2[data-slide="2"] .seal{background-image:url('assets/hero-stickers.png');background-size:285% 100%;background-position:0 0}
-.collage-v2[data-slide="3"] .seal{background-image:url('assets/hero-stickers.png');background-size:342% 100%;background-position:50.8% 0}
+.collage-v2[data-slide="1"] .seal{background-image:url('assets/hero-stickers-lossless.webp');background-size:300% 100%;background-position:100% 0}
+.collage-v2[data-slide="2"] .seal{background-image:url('assets/hero-stickers-lossless.webp');background-size:285% 100%;background-position:0 0}
+.collage-v2[data-slide="3"] .seal{background-image:url('assets/hero-stickers-lossless.webp');background-size:342% 100%;background-position:50.8% 0}
 .collage-v2[data-slide="4"] .seal{background-image:url('assets/sticker-pizza.svg');background-size:contain;background-position:center}
 @media(min-width:1101px){
  .hero .collage-v2[data-slide]{top:var(--scene-top,0px);bottom:auto;left:var(--scene-left,50%);translate:none;scale:var(--scene-scale,.9);transform-origin:0 0}

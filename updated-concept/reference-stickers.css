@@ -7,14 +7,14 @@
  background-color:transparent;
 }
 .hero .collage-v2 .seal,
-.hero .collage-v2[data-slide="0"] .seal {background-image:url('assets/user-stickers/movement.png')}
-.hero .collage-v2[data-slide="1"] .seal {background-image:url('assets/user-stickers/roller.png')}
-.hero .collage-v2[data-slide="2"] .seal {background-image:url('assets/user-stickers/together.png')}
-.hero .collage-v2[data-slide="3"] .seal {background-image:url('assets/user-stickers/toaster.png')}
-.hero .collage-v2[data-slide="4"] .seal {background-image:url('assets/user-stickers/ideas.png')}
-.hero .collage-v2 .sticker-popper {background-image:url('assets/user-stickers/radio.png')}
-.hero .collage-v2 .sticker-highfive {background-image:url('assets/user-stickers/magnet.png')}
-.mega-promo::after {background-image:url('assets/user-stickers/pinwheel.png')!important}
+.hero .collage-v2[data-slide="0"] .seal {background-image:url('assets/user-stickers/movement-lossless.webp')}
+.hero .collage-v2[data-slide="1"] .seal {background-image:url('assets/user-stickers/roller-lossless.webp')}
+.hero .collage-v2[data-slide="2"] .seal {background-image:url('assets/user-stickers/together-lossless.webp')}
+.hero .collage-v2[data-slide="3"] .seal {background-image:url('assets/user-stickers/toaster-lossless.webp')}
+.hero .collage-v2[data-slide="4"] .seal {background-image:url('assets/user-stickers/ideas-lossless.webp')}
+.hero .collage-v2 .sticker-popper {background-image:url('assets/user-stickers/radio-lossless.webp')}
+.hero .collage-v2 .sticker-highfive {background-image:url('assets/user-stickers/magnet-lossless.webp')}
+.mega-promo::after {background-image:url('assets/user-stickers/pinwheel-lossless.webp')!important}
 
 /* Seasonal illustrations follow the supplied sticker pack. */
 #new-year .ny-title-year{color:#141414}

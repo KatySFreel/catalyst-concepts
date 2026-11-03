@@ -710,8 +710,8 @@ summary::after, .mega-menu[open] > summary::after { display: none; }
 .primary-line > nav > a { padding: 12px 10px; border-radius: 999px; transition: background-color 0.18s, color 0.18s; }
 .primary-line > nav > a:hover, .primary-line > nav > a:focus-visible { background: rgb(227, 247, 234); color: var(--ink); text-decoration: none; }
 .mega-promo .promo-doodle { display: none; }
-.mega-promo::after { content: ""; position: absolute; width: 90px; height: 90px; right: -12px; bottom: -37px; background: url("assets/sticker-arrow.png") center center / contain no-repeat; pointer-events: none; z-index: 4; }
-.mega-promo::after { background: url("assets/sticker-arrow.png") center center / contain no-repeat !important; width: 90px !important; height: 90px !important; inset: auto -12px -37px auto !important; transform: none !important; clip-path: none !important; border: 0px !important; }
+.mega-promo::after { content: ""; position: absolute; width: 90px; height: 90px; right: -12px; bottom: -37px; background: url("assets/sticker-arrow-lossless.webp") center center / contain no-repeat; pointer-events: none; z-index: 4; }
+.mega-promo::after { background: url("assets/sticker-arrow-lossless.webp") center center / contain no-repeat !important; width: 90px !important; height: 90px !important; inset: auto -12px -37px auto !important; transform: none !important; clip-path: none !important; border: 0px !important; }
 .mega-promo::after { bottom: -58px !important; right: -12px !important; }
 .mega-promo { isolation: isolate; background: transparent !important; }
 .mega-promo > .folder-front { position: absolute; inset: 0px; z-index: 1; border-radius: inherit; background: var(--folder-surface); pointer-events: none; }

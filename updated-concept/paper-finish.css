@@ -3,7 +3,7 @@
 .collage-v2 .mini-folder,
 .collage-v2 .event-caption{
  clip-path:none;
- background-image:linear-gradient(#ffffff55,#ffffff55),url('assets/paper-texture.png')!important;
+ background-image:linear-gradient(#ffffff55,#ffffff55),url('assets/paper-texture-lossless.webp')!important;
  background-size:auto,240px auto;
  background-repeat:repeat;
  background-blend-mode:soft-light,multiply;

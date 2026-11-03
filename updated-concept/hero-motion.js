@@ -3,13 +3,13 @@
  const hero=document.querySelector('.hero'),img=hero?.querySelector('.hero-slide');if(!img)return;
  const surface=hero.querySelector('.collage-v2');
  const editingFirstSlide=false; // Automatic rotation and swiping enabled after composition review.
- const slides=[['figma-20261102/hero-race.png','Болид программы Формула-1'],['figma-hero-slides/city.png','Город, построенный участниками программы Мегаполис'],['figma-hero-slides/tower.png','Конструкция программы WOW Башня'],['figma-hero-slides/foodtruck.png','Оформленный участниками фудтрак'],['figma-hero-slides/pizza.png','Команда с огромной пиццей программы WOW Пицца']];
+ const slides=[['figma-20261102/hero-race-lossless.webp','Болид программы Формула-1'],['figma-hero-slides/city-lossless.webp','Город, построенный участниками программы Мегаполис'],['figma-hero-slides/tower-lossless.webp','Конструкция программы WOW Башня'],['figma-hero-slides/foodtruck-lossless.webp','Оформленный участниками фудтрак'],['figma-hero-slides/pizza-lossless.webp','Команда с огромной пиццей программы WOW Пицца']];
  const programSlugs=['formula-1','gorodskaya-strojka','wow-bashnya','festival-fudtrakov','wow-pizza'];
  const events=[
   {title:'Формула-1',copy:'Строим свой болид и выходим на командный заезд.',photo:'formula-1.webp',caption:'Формула-1 / командный заезд'},
   {title:'Мегаполис',copy:'Строим город: от отдельных кварталов до общего проекта.',photo:'megapolis-action.webp',caption:'Мегаполис / строим вместе'},
   {title:'WOW Башня',copy:'Собираем масштабную башню с вращающимися мельницами.',photo:'wow-bashnya.webp',caption:'WOW Башня / большая общая цель'},
-  {title:'Фестиваль Фудтраков',copy:'Создаём свой фудтрак и готовим угощения всей командой.',photo:'foodtruck-selected.png',caption:'Фудтраки / готовим вместе'},
+  {title:'Фестиваль Фудтраков',copy:'Создаём свой фудтрак и готовим угощения всей командой.',photo:'foodtruck-selected-lossless.webp',caption:'Фудтраки / готовим вместе'},
   {title:'WOW Пицца',copy:'Готовим большую пиццу всей командой под руководством шеф-повара.',photo:'wow-pizza.webp',caption:'WOW Пицца / готовим вместе'}
  ];
  const eventCard=surface.querySelector('.event-caption'),polaroid=surface.querySelector('.event-polaroid');
@@ -28,7 +28,7 @@
   function type(){phrase.textContent=text.slice(0,++count);if(count<text.length)typingTimer=setTimeout(type,55)}
   erase();
  }
- const stickerFiles=['figma-20261102/hero-stickers.png','figma-hero-slides/stickers-city.png','figma-hero-slides/stickers-tower.png','figma-hero-slides/stickers.png','figma-hero-slides/stickers-pizza.png'];
+ const stickerFiles=['figma-20261102/hero-stickers-lossless.webp','figma-hero-slides/stickers-city-lossless.webp','figma-hero-slides/stickers-tower-lossless.webp','figma-hero-slides/stickers-lossless.webp','figma-hero-slides/stickers-pizza-lossless.webp'];
  function syncEvent(i){surface.querySelectorAll('.figma-race-sticker img').forEach(el=>el.src='assets/'+stickerFiles[i]);typeHeadline(phrases[i]);const e=events[i];surface.querySelectorAll('.event-project-link').forEach(link=>{link.href="https://catalystrussia.ru/teambuilding/vse-programmy/"+programSlugs[i]+"/";link.setAttribute("aria-label","Подробнее о программе "+e.title)});eventCard.querySelector('h3').textContent=e.title;eventCard.querySelector('p').textContent=e.copy;polaroid.querySelector('img').src=contextImages[i].src;polaroid.querySelector('img').alt=e.caption;polaroid.querySelector('figcaption').textContent=e.caption;}
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');let index=0,timer,visible=true,request=0,touch=null,suppressClick=false;
  let transitions=[];
