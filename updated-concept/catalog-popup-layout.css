@@ -1,0 +1,49 @@
+/* Catalogue: larger preview on the left, separate contact panel on the right. */
+html body #contact-dialog.cf-catalog-banner .cf-content{
+ display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);grid-template-rows:auto;
+ gap:48px;padding:24px;background:#0aba59;align-items:center;
+}
+html body #contact-dialog.cf-catalog-banner .cf-quiz-promise{margin:0 0 24px;align-self:start}
+html body #contact-dialog.cf-catalog-banner .cf-quiz-promise h2{font-size:36px!important;line-height:1.1!important;margin:0 0 16px}
+html body #contact-dialog.cf-catalog-banner .cf-quiz-promise p.cf-catalog-description{font-size:14px;line-height:1.4;max-width:340px}
+html body #contact-dialog.cf-catalog-banner .cf-catalog-body{
+ grid-column:2;grid-row:1;align-self:center;padding:24px;background:#f3f2ed;border-radius:24px;
+ min-width:0;position:relative;z-index:1;
+}
+html body #contact-dialog.cf-catalog-banner .cf-catalog-art{
+ grid-column:1;grid-row:1;display:block;width:100%;height:auto;aspect-ratio:1.35;
+ align-self:center;margin:0;overflow:visible;
+}
+html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-back{top:4%;right:2%;width:94%}
+html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-front{top:28%;left:0;width:104%}
+@media(max-width:700px){
+ html body #contact-dialog.cf-catalog-banner .cf-content{grid-template-columns:minmax(0,1fr);gap:20px;padding:20px}
+ html body #contact-dialog.cf-catalog-banner .cf-quiz-promise h2{font-size:28px!important}
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-art{grid-column:1;grid-row:2;max-width:440px;justify-self:center;margin-bottom:6%}
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-body{grid-column:1;grid-row:1;padding:20px;border-radius:24px!important}
+}
+
+@media(min-width:701px){
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-art{margin-bottom:8%}
+}
+
+@media(min-width:701px){
+ html body #contact-dialog.cf-catalog-banner .cf-quiz-promise p.cf-catalog-description{max-width:340px}
+}
+
+@media(max-width:700px){
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-front{left:4%;width:92%}
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-back{right:4%;width:86%}
+}
+
+/* Reveal the automatic catalogue invitation without moving its composition. */
+@keyframes catalog-invite-reveal {
+ from { opacity:0; }
+ to { opacity:1; }
+}
+@media (prefers-reduced-motion:no-preference) {
+ html body #contact-dialog.cf-catalog-banner[open],
+ html body #contact-dialog.cf-catalog-banner[open]::backdrop {
+  animation:catalog-invite-reveal .4s ease-out both;
+ }
+}

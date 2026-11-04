@@ -18,7 +18,7 @@
    // Measure the complete composition, including rotated stickers, in scene units.
    const origin=collage.getBoundingClientRect();
    const currentScale=parseFloat(getComputedStyle(collage).scale)||1;
-   const pieces=[...collage.querySelectorAll('.team.hero-slide,.event-caption,.mini-folder,.figma-race-sticker')];
+   const pieces=[...collage.querySelectorAll('.team.hero-slide,.event-caption,.mini-folder,.figma-race-sticker')].filter(el=>getComputedStyle(el).display!=='none');
    const rects=pieces.map(el=>el.getBoundingClientRect());
    const left=(Math.min(...rects.map(r=>r.left))-origin.left)/currentScale;
    const right=(Math.max(...rects.map(r=>r.right))-origin.left)/currentScale;

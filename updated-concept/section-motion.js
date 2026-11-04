@@ -69,30 +69,28 @@
  if(!panel||!photos.length)return;
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
  const desktop=matchMedia('(min-width:701px)');
+ // Release the scene when the last pair settles; keep that pair beside the quote.
+ const timings=[
+  {start:.02,duration:.24,end:.40},
+  {start:.04,duration:.26,end:.46},
+  {start:.08,duration:.22,end:.02},
+  {start:.16,duration:.18,end:.58}
+ ];
+ const sceneEnd=Math.max(...timings.map(t=>t.start+t.duration));
  let frame=0, distance=0, enabled=false;
  function render(){
   frame=0;if(!enabled)return;
-  const progress=Math.max(0,Math.min(1,(100-section.getBoundingClientRect().top)/distance));
+  const progress=Math.max(0,Math.min(1,(100-section.getBoundingClientRect().top)/distance))*sceneEnd;
   const height=panel.offsetHeight;
   // The first pair is already beside the quotation on entry.
-  // Once pinned, the first four pass above the viewport; the last pair settles.
-  // Overlapping travel windows keep the group moving together before the final hold.
-  const timings=[
-   {start:.02,duration:.24,end:.40},
-   {start:.04,duration:.26,end:.46},
-   {start:.08,duration:.30,end:.02},
-   {start:.16,duration:.28,end:.08},
-   {start:.32,duration:.32,end:.20},
-   {start:.42,duration:.36,end:.58}
-  ];
   photos.forEach((photo,i)=>{
    const timing=timings[i%timings.length];
    const p=Math.max(0,Math.min(1,(progress-timing.start)/timing.duration));
-   const eased=i<4?p:1-Math.pow(1-p,3);
+   const eased=i<2?p:1-Math.pow(1-p,2);
    const startY=i<2 ? height*timing.end : height+photo.offsetHeight*.25;
-   const endY=i<4 ? -photo.offsetHeight*1.5-100 : Math.min(height-photo.offsetHeight,height*timing.end);
+   const endY=i<2 ? -photo.offsetHeight*1.5-100 : Math.min(height-photo.offsetHeight,height*timing.end);
    photo.style.translate=`0 ${(startY+(endY-startY)*eased).toFixed(2)}px`;
-   photo.style.opacity=(i<2||p>0)&&(i>=4||p<1)?'1':'0';
+   photo.style.opacity=(i<2||p>0)&&(i>=2||p<1)?'1':'0';
   });
  }
  function request(){if(!frame)frame=requestAnimationFrame(render);}
@@ -103,7 +101,7 @@
   enabled=desktop.matches&&!reduced.matches&&panel.offsetHeight<innerHeight-124;
   if(enabled){
    section.classList.add('director-scroll-scene');
-   distance=Math.round(innerHeight*3);
+   distance=Math.round(innerHeight*3*sceneEnd);
    section.style.setProperty('--director-scene-height',(panel.offsetHeight+distance)+'px');
   }
   request();

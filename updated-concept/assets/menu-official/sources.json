@@ -1,0 +1,344 @@
+{
+  "Фестиваль Фудтраков": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/festival-fudtrakov/",
+    "image": "https://catalystrussia.ru/slides/foodtrucks-hover.webp",
+    "title": "Фестиваль Фудтраков",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/408b995a0d8d-foodtrucks-hover.webp"
+  },
+  "Мегаполис": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/gorodskaya-strojka/",
+    "image": "https://catalystrussia.ru/cdnasset/img/catalog/megapolis.webp",
+    "title": "Мегаполис",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/a424f89569c1-megapolis.webp"
+  },
+  "WOW Башня": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/wow-bashnya/",
+    "image": "https://catalystrussia.ru/cdnasset/img/catalog/wow-bashnya.webp",
+    "title": "WOW Башня",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/d28ae89a5b54-wow-bashnya.webp"
+  },
+  "Гонки Формула-1": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/formula-1/",
+    "image": "https://catalystrussia.ru/cdnasset/img/501386952ef9eebe.webp",
+    "title": "Гонки Формула-1",
+    "source": "https://catalystrussia.ru/teambuilding/vse-programmy/formula-1/",
+    "local": "assets/menu-official/367df5691b79-501386952ef9eebe.webp"
+  },
+  "WOW Пицца": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/wow-pizza/",
+    "image": "https://catalystrussia.ru/cdnasset/img/catalog/wow-pizza.webp",
+    "title": "WOW Пицца",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/c2c7ecc50a4e-wow-pizza.webp"
+  },
+  "Стартап с нейросетями": {
+    "url": "https://catalystrussia.ru/startap_business_game/",
+    "image": "https://catalystrussia.ru/cdnasset/img/9e6ac9307bddf3ff.webp",
+    "title": "Стартап с нейросетями",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/8b064e041fc5-9e6ac9307bddf3ff.webp"
+  },
+  "Город Мечты": {
+    "url": "https://catalystrussia.ru/new-year-teambuildings/",
+    "image": "https://catalystrussia.ru/rd-assets/i/c_megapolis.webp",
+    "title": "Город Мечты",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/e52d689329c7-c_megapolis.webp"
+  },
+  "Новогодняя Ярмарка": {
+    "url": "https://catalystrussia.ru/new-year-teambuildings/",
+    "image": "https://catalystrussia.ru/rd-assets/i/c_yarmarka.webp",
+    "title": "Новогодняя Ярмарка",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/03e481a955cd-c_yarmarka.webp"
+  },
+  "Конвейер подарков": {
+    "url": "https://catalystrussia.ru/new-year-teambuildings/",
+    "image": "https://catalystrussia.ru/rd-assets/i/c_konveer.webp",
+    "title": "Конвейер подарков",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/5b1faf3d79af-c_konveer.webp"
+  },
+  "Квиз «Итоги года»": {
+    "url": "https://catalystrussia.ru/new-year-teambuildings/",
+    "image": "https://catalystrussia.ru/rd-assets/i/c_kviz.webp",
+    "title": "Квиз «Итоги года»",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/8afbfe0181dd-c_kviz.webp"
+  },
+  "Машина Голдберга": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/cepnaya-reakciya/",
+    "image": "https://catalystrussia.ru/rd-assets/p/cepnaya-reakciya/00.webp",
+    "title": "Машина Голдберга",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/2920c423f245-00.webp"
+  },
+  "Кофейный синдикат": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/kofejnyj-sindikat/",
+    "image": "https://catalystrussia.ru/rd-assets/p/kofejnyj-sindikat/00.webp",
+    "title": "Кофейный синдикат",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/d9046dbb9161-00.webp"
+  },
+  "Космическая станция": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/kosmicheskaya-stancina/",
+    "image": "https://catalystrussia.ru/rd-assets/p/kosmicheskaya-stancina/00.webp",
+    "title": "Космическая станция",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/c78b15d16da9-00.webp"
+  },
+  "Корпоративная картина": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/teambuilding-obshaya-kartina/",
+    "image": "https://catalystrussia.ru/rd-assets/p/teambuilding-obshaya-kartina/00.webp",
+    "title": "Корпоративная картина",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/74ba0a1c43ec-00.webp"
+  },
+  "Озвучка 2.0": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/sound-designer/",
+    "image": "https://catalystrussia.ru/cdnasset/img/c65d1babb9a4aaf2.webp",
+    "title": "Озвучка 2.0",
+    "source": "https://catalystrussia.ru/teambuilding/vse-programmy/sound-designer/",
+    "local": "assets/menu-official/10278b806ceb-c65d1babb9a4aaf2.webp"
+  },
+  "Камера! Мотор!": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/kannskiye-lvi/",
+    "image": "https://catalystrussia.ru/rd-assets/p/kannskiye-lvi/00.webp",
+    "title": "Камера! Мотор!",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/107b6e81440e-00.webp"
+  },
+  "Театр Марионеток": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/marionetka/",
+    "image": "https://catalystrussia.ru/rd-assets/p/marionetka/00.webp",
+    "title": "Театр Марионеток",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/9768216672f8-00.webp"
+  },
+  "Оркестр": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/boom-time/",
+    "image": "https://catalystrussia.ru/rd-assets/p/boom-time/00.webp",
+    "title": "Оркестр",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/765333c19ab1-00.webp"
+  },
+  "Гонки на плотах": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/vodnaya-odisseya/",
+    "image": "https://catalystrussia.ru/cdnasset/img/b110fb84953edb0f.webp",
+    "title": "Гонки на плотах",
+    "source": "https://catalystrussia.ru/teambuilding/vse-programmy/vodnaya-odisseya/",
+    "local": "assets/menu-official/667ef8944e7e-b110fb84953edb0f.webp"
+  },
+  "Супер Ниндзя": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/super-nindzya/",
+    "image": "https://catalystrussia.ru/rd-assets/p/super-nindzya/00.webp",
+    "title": "Супер Ниндзя",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/f5a6d266bc89-00.webp"
+  },
+  "Форт Боярд": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/fort-boyard/",
+    "image": "https://catalystrussia.ru/rd-assets/p/fort-boyard/00.webp",
+    "title": "Форт Боярд",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/f0710edf166e-00.webp"
+  },
+  "Гонки Чаплина": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/soap-box-derby/",
+    "image": "https://catalystrussia.ru/rd-assets/p/soap-box-derby/00.webp",
+    "title": "Гонки Чаплина",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/e95de7ff47ba-00.webp"
+  },
+  "Спортивный квест": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/challenge/",
+    "image": "https://catalystrussia.ru/rd-assets/p/challenge/00.webp",
+    "title": "Спортивный квест",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/cd59b6704e3a-00.webp"
+  },
+  "Сыроварня": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/hand-made_cheese/",
+    "image": "https://catalystrussia.ru/rd-assets/p/hand-made_cheese/00.webp",
+    "title": "Сыроварня",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/da2beeef0fca-00.webp"
+  },
+  "Фестиваль Мороженого": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/festival-morozhenogo/",
+    "image": "https://catalystrussia.ru/img/festival-morozhenogo/festival-morozhenogo-telezhka.webp",
+    "title": "Фестиваль Мороженого",
+    "source": "https://catalystrussia.ru/teambuilding/vse-programmy/festival-morozhenogo/",
+    "local": "assets/menu-official/a00a70771eae-festival-morozhenogo-telezhka.webp"
+  },
+  "Музыкальный Лейбл": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/muzikalni_leibl/",
+    "image": "https://catalystrussia.ru/rd-assets/p/muzikalni_leibl/00.webp",
+    "title": "Музыкальный Лейбл",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/b6262078435d-00.webp"
+  },
+  "Нейрокалендарь": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/neiro-kalendar/",
+    "image": "https://catalystrussia.ru/rd-assets/p/neiro-kalendar/00.webp",
+    "title": "Нейрокалендарь",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/a90d44dccc8b-00.webp"
+  },
+  "Art&Fun&Sport": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/art-fun-sport/",
+    "image": "https://catalystrussia.ru/rd-assets/p/art-fun-sport/00.webp",
+    "title": "Art&Fun&Sport",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/a65aaa5ceeea-00.webp"
+  },
+  "Ужин с уликами": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/uzhin-s-ulikami/",
+    "image": "https://catalystrussia.ru/rd-assets/p/uzhin-s-ulikami/00.webp",
+    "title": "Ужин с уликами",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/114597d0b494-00.webp"
+  },
+  "Новогодний корпоратив": {
+    "url": "https://catalystrussia.ru/novogodnij-korporativ/",
+    "image": "https://catalystrussia.ru/img/novyj-god/ng-salym-01-w600.webp",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/197875ad878d-ng-salym-01-w600.webp"
+  },
+  "Камерный Новый год · до 50 гостей": {
+    "url": "https://catalystrussia.ru/novogodnij-korporativ/do-50-chelovek/",
+    "image": "https://catalystrussia.ru/img/novyj-god/ng-salym-07-w600.webp",
+    "title": "Камерный Новый год, Каталист",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/f631ffc8204f-ng-salym-07-w600.webp"
+  },
+  "Новый год компании · 50–200 гостей": {
+    "url": "https://catalystrussia.ru/novogodnij-korporativ/na-50-200-chelovek/",
+    "image": "https://catalystrussia.ru/img/novyj-god/ng-salym-01-w600.webp",
+    "title": "Новый год компании, Каталист",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/197875ad878d-ng-salym-01-w600.webp"
+  },
+  "Большой праздник · 200–3 000 гостей": {
+    "url": "https://catalystrussia.ru/novogodnij-korporativ/ot-200-chelovek/",
+    "image": "https://catalystrussia.ru/img/korporativ/korporativ-katalist-61-w600.webp",
+    "title": "Большой праздник, Каталист",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/7e1d768ea342-korporativ-katalist-61-w600.webp"
+  },
+  "Новогодние тимбилдинги": {
+    "url": "https://catalystrussia.ru/new-year-teambuildings/",
+    "image": "https://catalystrussia.ru/img/novyj-god/timbilding/tv-shou-w600.webp",
+    "title": "Новогодние тимбилдинги, Новый год с агентством «Каталист»",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/74e9ac945460-tv-shou-w600.webp"
+  },
+  "Новогодние станции": {
+    "url": "https://catalystrussia.ru/novogodnij-korporativ/#ng-stancii",
+    "image": "https://catalystrussia.ru/img/novyj-god/stancii/chudo-shar-w600.webp",
+    "title": "Новогодние станции, Новый год с агентством «Каталист»",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/7aea0f345281-chudo-shar-w600.webp"
+  },
+  "Новогодние фотозоны": {
+    "url": "https://catalystrussia.ru/novogodnij-korporativ/#ng-photozone",
+    "image": "https://catalystrussia.ru/img/novyj-god/photozone/novogodnyaya-fotobudka-w600.webp",
+    "title": "Фотозоны, Новый год с агентством «Каталист»",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/f531686fdbb0-novogodnyaya-fotobudka-w600.webp"
+  },
+  "Шоу, артисты и ведущие": {
+    "url": "https://catalystrussia.ru/shou-programma-na-korporativ/",
+    "image": "https://catalystrussia.ru/img/novyj-god/shou/elfy-w600.webp",
+    "title": "Шоу, артисты и ведущие, Новый год с агентством «Каталист»",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/102f214af726-elfy-w600.webp"
+  },
+  "Нейрогалерея": {
+    "url": "https://catalystrussia.ru/neural-network/",
+    "image": "https://catalystrussia.ru/img/programs/neural-network/neural-network-yd-27.webp",
+    "source": "https://catalystrussia.ru/neural-network/",
+    "local": "assets/menu-official/13fe5e4b6b40-neural-network-yd-27.webp"
+  },
+  "Эко ферма": {
+    "url": "https://catalystrussia.ru/programmy/ecoferma/",
+    "image": "https://catalystrussia.ru/img/ecoferma/ecoferma-04.webp",
+    "source": "https://catalystrussia.ru/programmy/ecoferma/",
+    "local": "assets/menu-official/e963cf690f5d-ecoferma-04.webp"
+  },
+  "Юбилей компании": {
+    "url": "https://catalystrussia.ru/yubiley-kompanii/",
+    "image": "https://catalystrussia.ru/img/korporativ/korporativ-katalist-26.webp",
+    "source": "https://catalystrussia.ru/yubiley-kompanii/",
+    "local": "assets/menu-official/462c30250a04-korporativ-katalist-26.webp"
+  },
+  "Летний корпоратив": {
+    "url": "https://catalystrussia.ru/letnij-korporativ/",
+    "image": "https://catalystrussia.ru/img/letnij-korporativ/hero-01.webp",
+    "source": "https://catalystrussia.ru/letnij-korporativ/",
+    "local": "assets/menu-official/effa041bdef5-hero-01.webp"
+  },
+  "Тематический корпоратив": {
+    "url": "https://catalystrussia.ru/korporativ/",
+    "image": "https://catalystrussia.ru/img/novyj-god/ng-salym-05.webp",
+    "source": "https://catalystrussia.ru/korporativ/",
+    "local": "assets/menu-official/4cf9790df245-ng-salym-05.webp"
+  },
+  "Выездной за городом": {
+    "url": "https://catalystrussia.ru/vyezdnoj-korporativ/",
+    "image": "https://catalystrussia.ru/img/vyezdnoj-korporativ/vyezd-ploty-ozero-01.webp",
+    "source": "https://catalystrussia.ru/vyezdnoj-korporativ/",
+    "local": "assets/menu-official/69e58fe8ec9e-vyezd-ploty-ozero-01.webp"
+  },
+  "На теплоходе": {
+    "url": "https://catalystrussia.ru/korporativ-na-teplohode/",
+    "image": "https://catalystrussia.ru/img/letnij-korporativ/ploshchadki-03.webp",
+    "source": "https://catalystrussia.ru/korporativ-na-teplohode/",
+    "local": "assets/menu-official/30f3e8bfd24a-ploshchadki-03.webp"
+  },
+  "На природе": {
+    "url": "https://catalystrussia.ru/korporativ-na-prirode/",
+    "image": "https://catalystrussia.ru/img/festival-foodtrucks/festival-fudtrakov-timbilding-45.webp",
+    "source": "https://catalystrussia.ru/korporativ-na-prirode/",
+    "local": "assets/menu-official/f6062dd40d9d-festival-fudtrakov-timbilding-45.webp"
+  },
+  "Площадки для корпоратива": {
+    "url": "https://catalystrussia.ru/ploshchadki-dlya-korporativa/",
+    "image": "https://catalystrussia.ru/img/letnij-korporativ/ploshchadki-01.webp",
+    "source": "https://catalystrussia.ru/ploshchadki-dlya-korporativa/",
+    "local": "assets/menu-official/807e80ab6eea-ploshchadki-01.webp"
+  },
+  "Корпоратив целиком": {
+    "url": "https://catalystrussia.ru/korporativ/",
+    "image": "https://catalystrussia.ru/img/korporativ/korporativ-katalist-16.webp",
+    "source": "https://catalystrussia.ru/korporativ/",
+    "local": "assets/menu-official/72425acd2e18-korporativ-katalist-16.webp"
+  },
+  "Концепция и сценарий": {
+    "url": "https://catalystrussia.ru/scenarij-korporativa/",
+    "image": "https://catalystrussia.ru/img/scenarij-korporativa/korporativ-scenarij-02.webp",
+    "source": "https://catalystrussia.ru/scenarij-korporativa/",
+    "local": "assets/menu-official/b6dd7284d833-korporativ-scenarij-02.webp"
+  },
+  "Подбор площадки": {
+    "url": "https://catalystrussia.ru/ploshchadki-dlya-korporativa/",
+    "image": "https://catalystrussia.ru/img/letnij-korporativ/ploshchadki-01.webp",
+    "source": "https://catalystrussia.ru/ploshchadki-dlya-korporativa/",
+    "local": "assets/menu-official/807e80ab6eea-ploshchadki-01.webp"
+  },
+  "Командная программа": {
+    "url": "https://catalystrussia.ru/timbilding/",
+    "image": "https://catalystrussia.ru/rd-assets/p/gorodskaya-strojka/00.webp",
+    "source": "https://catalystrussia.ru/timbilding/",
+    "local": "assets/menu-official/69fd2837e609-00.webp"
+  },
+  "Организация мероприятий": {
+    "url": "https://catalystrussia.ru/organizaciya-meropriyatiy/",
+    "image": "https://catalystrussia.ru/img/organizaciya-meropriyatiy/organizaciya-meropriyatiy-34.webp",
+    "source": "https://catalystrussia.ru/organizaciya-meropriyatiy/",
+    "local": "assets/menu-official/50b521b991e6-organizaciya-meropriyatiy-34.webp"
+  }
+}

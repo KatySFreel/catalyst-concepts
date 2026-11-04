@@ -8,7 +8,7 @@ bar.append(document.querySelector('.brand').cloneNode(true));
 const actions=document.createElement('div');actions.className='mobile-nav-actions';
 document.querySelectorAll('.primary-line>.messenger').forEach(a=>actions.append(a.cloneNode(true)));bar.append(actions);
 const close=document.createElement('button');close.type='button';close.setAttribute('aria-label','Закрыть меню');close.innerHTML=iconSVG('<path d="m6 6 12 12M18 6 6 18"/>');close.onclick=()=>closeMobile();actions.append(close);mobileSheet.prepend(bar);
-const footer=document.createElement('div');footer.className='mobile-nav-footer';footer.innerHTML='<button type="button">Подобрать программу</button>';footer.firstChild.onclick=()=>{closeMobile(false);document.querySelector('.hero-actions [data-brief]').click()};mobileSheet.append(footer);
+const footer=document.createElement('div');footer.className='mobile-nav-footer';footer.innerHTML='<button type="button" data-form="callback" aria-haspopup="dialog">Заказать звонок</button>';mobileSheet.append(footer);
 // The footer separates content only while more of the list remains below it.
 function syncFooterScroll(){
  mobileSheet.classList.toggle('has-content-below',mobileBody.scrollHeight-mobileBody.clientHeight-mobileBody.scrollTop>2);
@@ -107,7 +107,8 @@ function mobileSearch(){
  mobileLevel='search';level('search','Поиск');
  mobileBody.innerHTML='<label class="mobile-search-field"><span class="sr-only">Найти программу</span><input type="search" placeholder="Название или задача команды" autocomplete="off"></label><div class="mobile-search-results"></div>';
  const input=mobileBody.querySelector('input'),results=mobileBody.querySelector('.mobile-search-results');
- function render(){results.innerHTML=MVS.results('sheet',input.value);results.querySelectorAll('.mv-gbtn').forEach(a=>{a.removeAttribute('onclick');a.href='https://catalystrussia.ru/#contacts'})}
+ const renderResults=MVS.bindResults(results,input,'sheet',true);
+ function render(){renderResults();results.querySelectorAll('.mv-gbtn').forEach(a=>{a.removeAttribute('onclick');a.href='https://catalystrussia.ru/#contacts'})}
  input.oninput=render;render();input.focus();
  results.onclick=e=>{const chip=e.target.closest('[data-q]');if(chip){e.preventDefault();input.value=chip.dataset.q;render();input.focus()}};
 }

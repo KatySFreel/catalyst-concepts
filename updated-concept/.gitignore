@@ -1,0 +1,8 @@
+.DS_Store
+.backups/
+node_modules/
+optimization-preview.html
+*preview.jpg
+*preview.png
+figma-*.html
+index.before-*.html

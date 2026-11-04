@@ -6,6 +6,7 @@ html body #included .team-included-list {
   margin: 0;
 }
 html body #included .team-included-list > div {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 6px;
@@ -13,8 +14,9 @@ html body #included .team-included-list > div {
 }
 html body #included .team-included-list dt {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
+  padding-left: 36px;
 }
 html body #included .team-included-list dd {
   margin: 0;
@@ -51,3 +53,21 @@ html body #included .included-tip-trigger:focus-visible > span {
   html body #included .included-tip-trigger > span { transition: none; }
 }
 
+
+/* Match the inset of the adjacent paper panel. */
+html body #included > h2,
+html body #included .team-included-service {
+  box-sizing: border-box;
+  padding-inline: 32px;
+}
+html body #included .included-service-icon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin-block: auto;
+}
+@media (max-width: 700px) {
+  html body #included > h2,
+  html body #included .team-included-service { padding-inline: 0; }
+}

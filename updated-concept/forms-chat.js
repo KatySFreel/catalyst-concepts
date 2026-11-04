@@ -85,9 +85,9 @@
   mobileOffers.addEventListener('change',()=>{if(modal.open)syncOfferStep();});
 
   const offers = [
-    {label:'−10% в будний день',art:'foodtruck',tab:'Будний день',title:'Команда собирается — цена приятнее',benefit:'−10%',copy:'На тимбилдинг с понедельника по четверг для команды от 30 человек.',detail:'Пример предложения: скидка на программу, без аренды площадки и дополнительных услуг.'},
+    {label:'−10% за раннее бронирование',art:'foodtruck',tab:'Раннее бронирование',title:'Команда собирается — цена приятнее',benefit:'−10%',copy:'При бронировании за 30 дней до мероприятия для команды от 30 человек.',detail:'Пример предложения: скидка на программу, без аренды площадки и дополнительных услуг.'},
     {label:'Фото в подарок',art:'pizza',tab:'Фото в подарок',title:'Общие моменты останутся с вами',benefit:'Фотоотчёт',copy:'Два часа работы фотографа в подарок к командной программе от 50 участников.',detail:'Пример предложения: готовые фотографии после мероприятия для вашей команды.'},
-    {label:'−15% на вторую программу',art:'tower',tab:'Две программы',title:'Больше впечатлений за один день',benefit:'−15%',copy:'На вторую программу, если проводите обе на одном мероприятии.',detail:'Пример предложения: объедините активный тимбилдинг и творческий мастер-класс.'}
+    {label:'−35% на вторую программу',art:'tower',tab:'Две программы',title:'Больше впечатлений за один день',benefit:'−35%',copy:'На вторую программу, если проводите обе на одном мероприятии.',detail:'Пример предложения: объедините активный тимбилдинг и творческий мастер-класс.'}
   ];
   // Use the same offer content and selection IDs in menus and the dialog.
   function mountMenuOffers(){
@@ -98,23 +98,25 @@
       slider.innerHTML=`<div class="menu-offer-track">${offers.map((o,i)=>`<button type="button" class="menu-offer-card" data-form="offers" data-offer-index="${i}" aria-haspopup="dialog"><img src="assets/figma-hero-slides/${o.art}.png" alt=""><strong>${o.label}</strong><span class="menu-offer-description">${o.copy}</span></button>`).join('')}</div><nav class="menu-offer-pagination" aria-label="Выбрать акцию">${offers.map((o,i)=>`<button type="button" aria-label="Акция ${i+1}: ${o.label}"><span aria-hidden="true"></span></button>`).join('')}</nav>`;
       trigger.after(slider);
       const track=slider.querySelector('.menu-offer-track'),cards=[...track.children];
+      const loop=createLoopCarousel(track,cards);
+      const offerStep=()=>cards[1].offsetLeft-cards[0].offsetLeft;
       const pagination=slider.querySelector('.menu-offer-pagination'),dots=[...pagination.children];
       const reduced=matchMedia('(prefers-reduced-motion: reduce)');
       let current=0,elapsed=0,touch=false,scrolling=false,settle;
       function update(){
-        const active=track.clientWidth?Math.min(cards.length-1,Math.max(0,Math.round(track.scrollLeft/track.clientWidth))):0;
+        const active=track.clientWidth?Math.min(cards.length-1,Math.max(0,Math.round(loop.position()/offerStep())%cards.length)):0;
         if(active!==current){current=active;elapsed=0;}
         dots.forEach((dot,i)=>{if(i===current)dot.setAttribute('aria-current','true');else dot.removeAttribute('aria-current');});
         pagination.style.setProperty('--slide-progress',String(elapsed/5500));
       }
-      function move(index){elapsed=0;track.scrollTo({left:index*track.clientWidth,behavior:reduced.matches||index===0?'instant':'smooth'});update();}
+      function move(index){elapsed=0;loop.move(index*offerStep(),reduced.matches?'instant':'smooth');update();}
       dots.forEach((dot,i)=>dot.onclick=()=>move(i));
       track.addEventListener('scroll',()=>{scrolling=true;elapsed=0;update();clearTimeout(settle);settle=setTimeout(()=>{scrolling=false},180);},{passive:true});
       let drag=null,suppressClick=false;
       track.addEventListener('pointerdown',event=>{
         if(!event.isPrimary||event.button!==0)return;
         suppressClick=false;touch=true;
-        drag={id:event.pointerId,x:event.clientX,y:event.clientY,left:track.scrollLeft,horizontal:false};
+        drag={id:event.pointerId,x:event.clientX,y:event.clientY,left:track.scrollLeft,index:current,horizontal:false};
       });
       track.addEventListener('pointermove',event=>{
         if(!drag||drag.id!==event.pointerId)return;
@@ -130,12 +132,12 @@
       });
       function endDrag(event){
         if(!drag||drag.id!==event.pointerId)return;
-        const moved=drag.horizontal,dx=event.clientX-drag.x,start=drag.left;
+        const moved=drag.horizontal,dx=event.clientX-drag.x,start=drag.index;
         drag=null;touch=false;elapsed=0;track.style.scrollSnapType='';
         if(track.hasPointerCapture(event.pointerId))track.releasePointerCapture(event.pointerId);
         if(moved){
-          const index=Math.round(start/track.clientWidth)+(Math.abs(dx)>35?(dx<0?1:-1):0);
-          move(Math.max(0,Math.min(cards.length-1,index)));
+          const index=start+(Math.abs(dx)>35?(dx<0?1:-1):0);
+          move((index+cards.length)%cards.length);
           setTimeout(()=>{suppressClick=false},0);
         }
       }
@@ -173,7 +175,7 @@
   function buildMessage() {
     remember();
     const d = draft();
-    return [mode === 'catalog' ? 'Здравствуйте! Хочу получить каталог программ.' : mode === 'offers' ? 'Здравствуйте! Хочу обсудить предложение для команды.' : 'Здравствуйте! Помогите подобрать программу и рассчитать стоимость.',
+    return [mode === 'callback' ? (d.channel === 'Телефон' ? 'Здравствуйте! Перезвоните мне, пожалуйста.' : 'Здравствуйте! Свяжитесь со мной, пожалуйста.') : mode === 'catalog' ? 'Здравствуйте! Хочу получить каталог программ.' : mode === 'offers' ? 'Здравствуйте! Хочу обсудить предложение для команды.' : 'Здравствуйте! Помогите подобрать программу и рассчитать стоимость.',
       (context || d.answers[1]) && 'Формат: ' + (context || d.answers[1]),
       (d.people || d.answers[0]) && 'Участников: ' + (d.people || d.answers[0]),
       d.answers[2] && 'Когда: ' + d.answers[2],
@@ -227,6 +229,7 @@
     modal.setAttribute('aria-labelledby','cf-title');
     modal.classList.remove('cf-catalog-banner');
     modal.classList.toggle('cf-cost-quiz', kind === 'quiz');
+    modal.classList.toggle('cf-callback', kind === 'callback');
     modal.classList.toggle('cf-offers', kind === 'offers');
     document.querySelectorAll('.mega-menu[open]').forEach(el => el.open = false);
     if(typeof closeMobile === 'function') closeMobile(false);
@@ -235,36 +238,70 @@
     render(); modal.showModal(); document.body.classList.add('cf-modal-open');
   }
   function field(name, label, placeholder, type = 'text', extra = '') { return `<label class="cf-field cf-floating-field"><input name="${name}" type="${type}" aria-label="${label}" placeholder=" " value="${escape(draft()[name])}" ${extra}><span class="cf-floating-label">${label}</span></label>`; }
-  let quizResize;
-  function renderQuiz() {
-    quizResize?.disconnect();
-    const d = draft();
-    d.channel = 'Телефон';
+  function quizMarkup(step,d) {
     const firstUnanswered = questions.findIndex((_, i) => !d.answers[i]);
     const availableStep = firstUnanswered < 0 ? questions.length : firstUnanswered;
     const heading = step < questions.length ? questions[step][0] : 'Куда прислать расчёт?';
-    let html = `<div class="cf-quiz-promise"><h2>Заполните короткий бриф — пришлём КП за 10 минут</h2><p>Ответьте на несколько вопросов о мероприятии — подберём программы и рассчитаем стоимость.</p></div><div class="cf-quiz-body"><h2 id="cf-title" tabindex="-1" ${step===questions.length?'hidden':''}>${heading}</h2><ol class="cf-progress-steps" aria-label="Шаги расчёта стоимости">${['Участники','Формат','Дата','Бюджет','Контакты'].map((label,i)=>`<li><button type="button" data-step="${i}" ${i>availableStep?'disabled':''} class="${i<=step?'is-filled':''}" ${i===step?'aria-current="step"':''}><span class="cf-progress-segment" aria-hidden="true"></span>${label}</button></li>`).join('')}</ol><p class="cf-step">Шаг ${step + 1} из 5</p>`;
+    const mobileHeading = {0: 'Сколько человек?', 3: 'Какой бюджет?'}[step];
+    const headingMarkup = mobileHeading ? `<span class="cf-heading-desktop">${heading}</span><span class="cf-heading-mobile">${mobileHeading}</span>` : heading;
+    let html = `<div class="cf-quiz-promise"><h2>Заполните короткий бриф — пришлём КП за 10 минут</h2><p>Ответьте на несколько вопросов о мероприятии — подберём программы и рассчитаем стоимость.</p></div><div class="cf-quiz-body"><div class="cf-quiz-heading"><h2 id="cf-title" tabindex="-1">${headingMarkup}</h2><p class="cf-step">Шаг ${step + 1} из 5</p></div><ol class="cf-progress-steps" aria-label="Шаги расчёта стоимости">${['Участники','Формат','Дата','Бюджет','Контакты'].map((label,i)=>`<li><button type="button" data-step="${i}" ${i>availableStep?'disabled':''} class="${i<=step?'is-filled':''}" ${i===step?'aria-current="step"':''}><span class="cf-progress-segment" aria-hidden="true"></span>${label}</button></li>`).join('')}</ol>`;
     if (step < questions.length) {
       html += `<div class="cf-options">${questions[step][1].map(a=>`<button type="button" aria-pressed="${d.answers[step]===a}" data-answer="${a}">${a}</button>`).join('')}</div>`;
     } else {
-      html += `<section class="cf-selection" aria-label="Ваш выбор"><dl>${['Участники','Формат','Когда','Бюджет'].map((label,i)=>`<div><dt>${label}</dt><dd>${d.answers[i] ? `<span class="cf-context-accent">${escape(d.answers[i])}</span>` : 'Пока не выбрано'}</dd></div>`).join('')}</dl></section><form class="cf-form" novalidate><input type="radio" name="channel" value="Телефон" checked hidden>${field('contact','Телефон','+7 (___) ___-__-__','tel','required autocomplete="tel" inputmode="tel" maxlength="25" aria-describedby="cf-error"')}<p id="cf-error" class="cf-error" role="alert"></p><label class="cf-consent"><input type="checkbox" name="consent" required><span>Согласен на обработку персональных данных по <a href="${privacy}" target="_blank" rel="noopener">политике конфиденциальности</a></span></label><button class="cf-primary" type="submit">Получить расчёт</button></form>`;
+      html += `<section class="cf-selection" aria-label="Ваш выбор"><dl>${['Участники','Формат','Когда','Бюджет'].map((label,i)=>`<div><dt>${label}</dt><dd>${d.answers[i] ? `<span class="cf-context-accent">${escape(d.answers[i])}</span>` : 'Пока не выбрано'}</dd></div>`).join('')}</dl></section><form id="cf-quiz-form" class="cf-form" novalidate><fieldset class="cf-channels"><legend>Как с вами связаться?</legend><div class="cf-channel-options">${['Телефон','Telegram','Max'].map(c=>`<label><input type="radio" name="channel" value="${c}" ${d.channel===c?'checked':''}><span>${contactIcon(c)}${c}</span></label>`).join('')}</div></fieldset><div class="cf-quiz-contact-field">${field('contact',d.channel==='Telegram'?'Ваш Telegram — @username':d.channel==='Max'?'Номер телефона в Max':'Номер телефона','',d.channel==='Telegram'?'text':'tel','required maxlength="40" aria-describedby="cf-error"')}<p id="cf-error" class="cf-error" role="alert"></p></div></form>`;
     }
-    if (step === questions.length) html += `<div class="cf-divider">Или напишите нам напрямую</div>${messengerLinks()}`;
-    content.innerHTML = html + '</div>';
-    const move = next => { const missing = questions.findIndex((_, i) => !d.answers[i]); if(next > (missing < 0 ? questions.length : missing)) return; remember(); step = next; renderQuiz(); content.querySelector(step===questions.length?'[name="contact"]':'#cf-title').focus({preventScroll:true}); (matchMedia('(max-width:700px)').matches ? modal : (modal.querySelector('.popup-form-surface') || modal)).scrollTop = 0; };
-    const options=content.querySelector('.cf-options');
-    if(options){
-      const measure=document.createElement('canvas').getContext('2d');
-      const fit=()=>{
-        if(!options.clientWidth)return;
-        const gap=parseFloat(getComputedStyle(options).columnGap)||0;
-        const available=(options.clientWidth-gap)/2;
-        const stack=[...options.children].some(button=>{const style=getComputedStyle(button);measure.font=style.font;return measure.measureText(button.textContent).width+parseFloat(style.paddingLeft)+parseFloat(style.paddingRight)>available;});
-        options.classList.toggle('cf-options-stacked',stack);
-      };
-      quizResize=new ResizeObserver(fit);quizResize.observe(options);
-      document.fonts.ready.then(()=>{if(options.isConnected)fit();});
-    }
+    if (step === questions.length) html += `<div class="cf-divider">Напишите в мессенджер — ответим вам сразу</div>${messengerLinks()}`;
+    return html + `</div><div class="cf-quiz-submit-panel"><button class="cf-primary" type="submit" form="cf-quiz-form" ${step < questions.length ? 'disabled' : ''}>Получить расчёт</button></div>`;
+  }
+  let quizSizeObserver;
+  function sizeQuizPanel(panel,d) {
+    const width=panel.getBoundingClientRect().width;
+    if(!width)return;
+    // Use the final step as the size reference, including the longest answer labels
+    // so selecting a longer answer cannot change the panel height midway through.
+    const reference={...d,answers:questions.map(q=>q[1].reduce((a,b)=>a.length>b.length?a:b,''))};
+    const template=document.createElement('template');
+    template.innerHTML=quizMarkup(questions.length,reference);
+    const probe=template.content.querySelector('.cf-quiz-body');
+    probe.inert=true;probe.setAttribute('aria-hidden','true');
+    Object.assign(probe.style,{position:'fixed',left:'0',top:'0',width:width+'px',height:'auto',minHeight:'0',maxHeight:'none',visibility:'hidden',pointerEvents:'none',overflow:'hidden'});
+    content.append(probe);
+    const height=Math.ceil(probe.getBoundingClientRect().height);
+    probe.remove();
+    const introHeight=content.querySelector('.cf-quiz-promise').getBoundingClientRect().height;
+    const actionHeight=content.querySelector(':scope > .cf-quiz-submit-panel')?.getBoundingClientRect().height || 0;
+    const viewportHeight=window.visualViewport?.height || innerHeight;
+    // Every step shares the same external action panel. Reserve its height
+    // before constraining the scrollable question and contact content.
+    const dialogStyle=getComputedStyle(modal);
+    const dialogLimit=parseFloat(dialogStyle.maxHeight)-parseFloat(dialogStyle.paddingTop)-parseFloat(dialogStyle.paddingBottom);
+    const surface=modal.querySelector('.popup-form-surface');
+    const surfaceLimit=surface?parseFloat(getComputedStyle(surface).maxHeight):NaN;
+    const limits=[viewportHeight-72,dialogLimit,surfaceLimit].filter(Number.isFinite);
+    const available=Math.max(0,Math.min(...limits)-introHeight);
+    panel.style.height=Math.max(0,Math.min(height,available-actionHeight))+'px';
+  }
+  function resizeOpenQuiz(){
+    const panel=content.querySelector('.cf-quiz-body');
+    if(modal.open&&mode==='quiz'&&panel)sizeQuizPanel(panel,draft());
+  }
+  window.addEventListener('resize',resizeOpenQuiz);
+  window.visualViewport?.addEventListener('resize',resizeOpenQuiz);
+  function renderQuiz() {
+    quizSizeObserver?.disconnect();
+    const d = draft();
+    if(!['Телефон','Telegram','Max'].includes(d.channel))d.channel='Телефон';
+    content.innerHTML=quizMarkup(step,d);
+    const panel=content.querySelector('.cf-quiz-body');
+    sizeQuizPanel(panel,d);
+    let lastWidth=panel.getBoundingClientRect().width;
+    quizSizeObserver=new ResizeObserver(()=>{
+      const width=panel.getBoundingClientRect().width;
+      if(width!==lastWidth){lastWidth=width;sizeQuizPanel(panel,d);}
+    });
+    quizSizeObserver.observe(panel);
+    document.fonts.ready.then(()=>{if(panel.isConnected)sizeQuizPanel(panel,d);});
+    const move = next => { const missing = questions.findIndex((_, i) => !d.answers[i]); if(next > (missing < 0 ? questions.length : missing)) return; remember(); step = next; renderQuiz(); content.querySelector(step===questions.length?'[name="contact"]':'#cf-title').focus({preventScroll:true}); content.querySelector('.cf-quiz-body').scrollTop = 0; };
     content.querySelectorAll('[data-step]').forEach(b=>b.onclick=()=>move(Number(b.dataset.step)));
     const telegramLink = content.querySelector('[data-messenger="Telegram"]');
     if (telegramLink) telegramLink.href=telegramDraft(buildMessage());
@@ -272,36 +309,51 @@
     const form = content.querySelector('form');
     if (form) {
       form.onsubmit=submit;
+      const button=content.querySelector('.cf-quiz-submit-panel button');
+      const syncSubmit=()=>{button.disabled=form.dataset.submitting==='true';};
+      form.addEventListener('input',()=>queueMicrotask(syncSubmit));
+      form.addEventListener('change',syncSubmit);
       form.querySelector('[name="contact"]').oninput=e=>{e.target.removeAttribute('aria-invalid');content.querySelector('#cf-error').textContent='';};
+      form.querySelectorAll('[name="channel"]').forEach(r=>r.onchange=()=>{
+        remember();d.channel=r.value;d.contact='';
+        const scroll=content.querySelector('.cf-quiz-body').scrollTop;
+        renderQuiz();content.querySelector('.cf-quiz-body').scrollTop=scroll;
+      });
+      syncSubmit();
     }
   }
   function render() {
-    quizResize?.disconnect();
+    quizSizeObserver?.disconnect();
     const d = draft();
     modal.classList.toggle('cf-offers',mode==='offers');
     if(mode==='offers'){
       context='Пример акции: '+offers[d.offerIndex||0].tab;
-      if(d.channel!=='Телефон')d.contact='';
-      d.channel='Телефон';
     }
     let html = '';
     if (mode === 'catalog') {
       if(!['Telegram','Max'].includes(d.channel)){d.channel='Telegram';d.contact='';}
-      content.innerHTML = `<div class="cf-quiz-promise"><h2 id="cf-title">Пришлём каталог программ</h2><p class="cf-catalog-description">Выберите Telegram или Max и оставьте контакт — отправим каталог, чтобы вы могли удобно посмотреть все программы и обсудить их с коллегами.</p></div><div class="cf-quiz-body cf-catalog-body"><form class="cf-form" novalidate><fieldset class="cf-channels"><legend>Куда прислать каталог?</legend><div class="cf-channel-options">${['Telegram','Max'].map(c=>`<label><input type="radio" name="channel" value="${c}" ${d.channel===c?'checked':''}><span>${contactIcon(c)}${c}</span></label>`).join('')}</div></fieldset>${field('contact',d.channel==='Telegram'?'Ваш Telegram — @username':'Номер телефона в Max',d.channel==='Telegram'?'@username':'+7 (999) 123-45-67',d.channel==='Telegram'?'text':'tel','required maxlength="40" aria-describedby="cf-error"')}<p id="cf-error" class="cf-error" role="alert"></p><label class="cf-consent"><input type="checkbox" name="consent" required><span>Согласен на обработку персональных данных по <a href="${privacy}" target="_blank" rel="noopener">политике конфиденциальности</a></span></label><button class="cf-primary" type="submit">Получить каталог</button></form></div>`;
+      content.innerHTML = `<div class="cf-quiz-promise"><h2 id="cf-title">Пришлём каталог программ</h2><p class="cf-catalog-description">Оставьте контакт, чтобы посмотреть все программы и обсудить их с коллегами.</p></div><div class="cf-quiz-body cf-catalog-body"><form class="cf-form" novalidate><fieldset class="cf-channels"><legend>Куда прислать каталог?</legend><div class="cf-channel-options">${['Telegram','Max'].map(c=>`<label><input type="radio" name="channel" value="${c}" ${d.channel===c?'checked':''}><span>${contactIcon(c)}${c}</span></label>`).join('')}</div></fieldset>${field('contact',d.channel==='Telegram'?'Ваш Telegram — @username':'Номер телефона в Max',d.channel==='Telegram'?'@username':'+7 (999) 123-45-67',d.channel==='Telegram'?'text':'tel','required maxlength="40" aria-describedby="cf-error"')}<p id="cf-error" class="cf-error" role="alert"></p><button class="cf-primary" type="submit">Получить каталог</button></form></div>`;
       content.querySelector('form').onsubmit=submit;
       content.querySelectorAll('[name="channel"]').forEach(r=>r.onchange=()=>{d.channel=r.value;d.contact='';render();addCatalogArtwork();});
       content.querySelector('[name="contact"]').oninput=e=>{e.target.removeAttribute('aria-invalid');content.querySelector('#cf-error').textContent='';};
       return;
     }
     if (mode === 'quiz') { renderQuiz(); return; }
-    if (mode !== 'quiz') html += `<h2 id="cf-title" tabindex="-1">${mode==='offers'?'Обсудим предложение':context ? 'Обсудим ваше событие' : 'Подберём программу'}</h2>`;
+    if (mode === 'callback') html += '<div class="cf-quiz-promise"><h2 id="cf-title" tabindex="-1">Перезвоним вам</h2><p>Оставьте номер телефона или контакт в мессенджере — свяжемся в течение 10 минут.</p></div>';
+    else if (mode !== 'quiz') html += `<h2 id="cf-title" tabindex="-1">${mode==='offers'?'Обсудим предложение':context ? 'Обсудим ваше событие' : 'Подберём программу'}</h2>`;
     if(context && mode!=='offers') {
       const card=opener?.closest('.ny-folder');
       const photo=card?.querySelector('.ny-photo img');
       html += photo ? `<div class="cf-program-selection"><img src="${escape(photo.getAttribute('src'))}" alt=""><div><h3><span class="cf-context-accent">${escape(card.querySelector('h3').textContent)}</span></h3><p>${escape(card.querySelector('.ny-tab').textContent)}</p></div></div>` : `<div class="cf-context"><span class="cf-context-accent">${escape(context)}</span></div>`;
     }
-    html += `<form class="cf-form" novalidate>${mode==='offers' ? '<input type="radio" name="channel" value="Телефон" checked hidden>' : `<fieldset class="cf-channels"><legend>Способ связи</legend><div class="cf-channel-options">${['Телефон','Telegram','Max'].map(c=>`<label><input type="radio" name="channel" value="${c}" ${d.channel===c?'checked':''}><span>${contactIcon(c)}${c}</span></label>`).join('')}</div></fieldset>`}<label class="cf-field cf-floating-field"><input name="contact" required maxlength="150" placeholder=" " aria-labelledby="cf-contact-label" aria-describedby="cf-error" value="${escape(d.contact)}"><span id="cf-contact-label" class="cf-floating-label">${d.channel==='Telegram'?'Ваш Telegram — @username':d.channel==='Max'?'Номер телефона в Max':'Номер телефона'}</span></label><p id="cf-error" class="cf-error" role="alert"></p><label class="cf-consent"><input type="checkbox" name="consent" required><span>Согласен на обработку персональных данных по <a href="${privacy}" target="_blank" rel="noopener">политике конфиденциальности</a></span></label><button class="cf-primary" type="submit">Отправить заявку </button></form><div class="cf-divider">Или напишите нам напрямую</div>${messengerLinks()}`;
+    html += `<form class="cf-form" novalidate><fieldset class="cf-channels"><legend>Способ связи</legend><div class="cf-channel-options">${['Телефон','Telegram','Max'].map(c=>`<label><input type="radio" name="channel" value="${c}" ${d.channel===c?'checked':''}><span>${contactIcon(c)}${c}</span></label>`).join('')}</div></fieldset><label class="cf-field cf-floating-field"><input name="contact" required maxlength="150" placeholder=" " aria-labelledby="cf-contact-label" aria-describedby="cf-error" value="${escape(d.contact)}"><span id="cf-contact-label" class="cf-floating-label">${d.channel==='Telegram'?'Ваш Telegram — @username':d.channel==='Max'?'Номер телефона в Max':'Номер телефона'}</span></label><p id="cf-error" class="cf-error" role="alert"></p><label class="cf-consent"><input type="checkbox" name="consent" required><span>Согласен на обработку персональных данных по <a href="${privacy}" target="_blank" rel="noopener">политике конфиденциальности</a></span></label><button class="cf-primary" type="submit">Отправить заявку </button></form><div class="cf-divider">Или напишите нам напрямую</div>${messengerLinks()}`;
     content.innerHTML = html;
+    if(mode==='callback'||mode==='offers')content.querySelector('.cf-consent')?.remove();
+    else content.querySelector('[type=submit]').after(content.querySelector('.cf-consent'));
+    if(mode==='callback'){
+      const body=document.createElement('div');body.className='cf-quiz-body';
+      body.append(...Array.from(content.children).slice(1));content.append(body);
+    }
     if(mode==='offers') {
       const contact=document.createElement('div');contact.className='cf-offer-contact';
       contact.append(...content.childNodes);content.append(contact);
@@ -341,9 +393,9 @@
       input.removeAttribute('aria-invalid'); content.querySelector('#cf-error').textContent='';
       input.closest('.cf-field').hidden=false;
       input.required=true;
-      content.querySelector('.cf-consent').hidden=false;
+      if(content.querySelector('.cf-consent'))content.querySelector('.cf-consent').hidden=false;
       submitButton.hidden=false;
-      submitButton.textContent='Отправить заявку';
+      submitButton.textContent=mode==='callback' ? (c==='Телефон'?'Перезвонить мне':'Связаться со мной') : 'Отправить заявку';
       content.querySelector('.cf-divider').hidden=false;
       content.querySelector('.cf-messengers').hidden=false;
       refreshLinks();
@@ -361,35 +413,33 @@
     if(mode==='quiz'){const missing=questions.findIndex((_,i)=>!d.answers[i]);if(missing>=0){step=missing;renderQuiz();return;}}
     const input=content.querySelector('[name="contact"]'), value=input.value.trim(), digits=value.replace(/\D/g,'');
     const phone=/^7\d{10}$/.test(digits);
-    const valid=(d.channel==='Телефон'||d.channel==='Max')?phone:d.channel==='Email'?/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value):/^@?[a-zA-Z][\w]{4,31}$/.test(value);
+    const valid=(d.channel==='Телефон'||d.channel==='Max')?phone:d.channel==='Email'?/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value):/^@?[a-zA-Z0-9_]{1,32}$/.test(value);
     const error=content.querySelector('#cf-error');
-    if(!valid) {error.textContent=d.channel==='Email'?'Укажите почту в формате name@company.ru.':d.channel==='Telegram'?'Укажите ник Telegram: от 5 до 32 латинских букв, цифр или знаков подчёркивания. Первый символ — буква.':'Введите номер полностью: +7 (999) 123-45-67.';input.setAttribute('aria-invalid','true');input.focus();return;}
+    if(!valid) {error.textContent=d.channel==='Email'?'Укажите почту в формате name@company.ru.':d.channel==='Telegram'?'Укажите ваш @username. Если его нет, напишите нам напрямую.':'Введите номер полностью: +7 (999) 123-45-67.';input.setAttribute('aria-invalid','true');input.focus();return;}
     const people=content.querySelector('[name="people"]'); if(people && !people.checkValidity()){people.reportValidity();return;}
-    if(!content.querySelector('[name="consent"]').checked){error.textContent='Подтвердите согласие на обработку данных.';content.querySelector('[name="consent"]').focus();return;}
+    if(mode!=='quiz'&&mode!=='callback'&&mode!=='offers'&&mode!=='catalog'&&!content.querySelector('[name="consent"]').checked){error.textContent='Подтвердите согласие на обработку данных.';const consent=content.querySelector('[name="consent"]');consent.setAttribute('aria-invalid','true');consent.setAttribute('aria-describedby','cf-error');consent.focus();return;}
     if(d.channel==='Telegram'){d.contact='@'+value.replace(/^@/,'');input.value=d.contact;}
     const message=buildMessage();
     if(endpoint) {
-      const button=content.querySelector('[type="submit"]');button.disabled=true;button.textContent='Отправляем…';
-      try {const res=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:d.name,phone:d.channel==='Телефон'?value:'',contact:value,channel:d.channel,comment:message,program:context||(mode==='catalog'?'Каталог программ':'Подбор программы'),source:mode,page:location.pathname}),signal:AbortSignal.timeout(15000)});const data=await res.json();if(!res.ok||data.ok!==true)throw Error();if(mode==='catalog'){showCatalog();delete drafts[mode];return;}content.innerHTML='<p class="cf-kicker">Запрос отправлен</p><h2 id="cf-title">Спасибо! Обсудим ваши планы.</h2><p class="cf-intro">Свяжемся с вами выбранным способом. Работаем ежедневно с 8:00 до 22:00.</p>';delete drafts[mode];}
-      catch {error.textContent=mode==='catalog'?'Не удалось отправить запрос. Контакт сохранён в форме — попробуйте ещё раз.':'Не удалось отправить запрос. Данные сохранены в форме. Попробуйте ещё раз или напишите нам в мессенджере.';button.disabled=false;button.textContent='Попробовать ещё раз';}return;
+      const button=content.querySelector('[type="submit"]');button.disabled=true;button.textContent='Отправляем…';content.querySelector('form').dataset.submitting='true';
+      try {const res=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:d.name,phone:d.channel==='Телефон'?value:'',contact:value,channel:d.channel,comment:message,program:context||(mode==='catalog'?'Каталог программ':mode==='callback'?'Обратный звонок':'Подбор программы'),source:mode,page:location.pathname}),signal:AbortSignal.timeout(15000)});const data=await res.json();if(!res.ok||data.ok!==true)throw Error();if(mode==='catalog'){showCatalog();delete drafts[mode];return;}content.innerHTML='<p class="cf-kicker">Запрос отправлен</p><h2 id="cf-title">Спасибо! Обсудим ваши планы.</h2><p class="cf-intro">Свяжемся с вами выбранным способом. Работаем ежедневно с 8:00 до 22:00.</p>';delete drafts[mode];}
+      catch {error.textContent=mode==='catalog'?'Не удалось отправить запрос. Контакт сохранён в форме — попробуйте ещё раз.':'Не удалось отправить запрос. Данные сохранены в форме. Попробуйте ещё раз или напишите нам в мессенджере.';delete content.querySelector('form').dataset.submitting;button.disabled=false;button.textContent='Попробовать ещё раз';}return;
     }
     error.textContent='Отправка заявок пока не подключена. Вы можете написать нам в мессенджере.';
   }
   const chat=document.createElement('aside'); chat.id='catalyst-chat';chat.hidden=true;chat.setAttribute('aria-labelledby','chat-title');
-  chat.innerHTML=`<div class="chat-paper"><div class="chat-header"><span class="chat-avatar"><img src="assets/chat-vlad.webp" alt="Влад"><i class="chat-status" aria-hidden="true"></i></span><div><strong>Влад · Каталист</strong><span>Ежедневно, 8:00–22:00 мск</span></div><button class="cf-close" aria-label="Закрыть чат" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><div class="chat-message"><h2 id="chat-title">Помогу выбрать программу</h2></div></div><div class="chat-bottom"><p>Ответьте на несколько вопросов на сайте.</p><button class="action-black chat-request" type="button" data-form="quiz">Подобрать программу</button><p>Или напишите мне в Telegram или Max — отвечу в течение 2 минут.</p>${messengerLinks()}</div>`;
+  chat.innerHTML=`<div class="chat-paper"><div class="chat-header"><span class="chat-avatar"><img src="assets/chat-vlad.webp" alt="Влад"><i class="chat-status" aria-hidden="true"></i></span><div><strong>Влад · Каталист</strong><span>Ежедневно, 8:00–22:00 мск</span></div><button class="cf-close" aria-label="Закрыть чат" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><div class="chat-message"><h2 id="chat-title">Помогу выбрать, что<br>подойдёт вашей команде</h2></div></div><div class="chat-bottom"><p>Ответьте на несколько вопросов о вашем мероприятии — подберу подходящие программы<span class="chat-mobile-break"></span> и рассчитаю стоимость.</p><button class="action-black chat-request" type="button" data-form="quiz">Получить расчёт</button><div class="cf-divider"><span>Или напишите мне в мессенджере — отвечу в&nbsp;течение 5 минут.</span></div>${messengerLinks()}</div>`;
   const launcher=document.createElement('button');launcher.type='button';launcher.id='chat-launcher';launcher.setAttribute('aria-label','Открыть чат с Каталист');launcher.setAttribute('aria-controls','catalyst-chat');launcher.setAttribute('aria-expanded','false');
-  launcher.innerHTML='<span class="chat-avatar"><img src="assets/chat-vlad.webp" alt="Влад" width="40" height="40"><i class="chat-status" aria-hidden="true"></i></span><span>Задать вопрос</span>';
+  launcher.innerHTML='<span class="chat-avatar"><img src="assets/chat-vlad.webp" alt="Влад" width="40" height="40"><i class="chat-status" aria-hidden="true"></i></span><span>Получить расчёт</span>';
   document.body.append(chat,launcher);
-  window.mountCatalystChatQuiz({questions,answerLabels,endpoint,privacy,messengerLinks,telegramDraft,escape,formatPhone,contactIcon});
+  // «Чатик 2» отключён; реализация сохранена в chat-quiz.js и chat-quiz.css.
+  // window.mountCatalystChatQuiz({questions,answerLabels,endpoint,privacy,messengerLinks,telegramDraft,escape,formatPhone,contactIcon});
   const scrollOffer=document.createElement('aside');
   scrollOffer.id='scroll-offer';scrollOffer.hidden=true;scrollOffer.setAttribute('aria-label','Специальное предложение');
   scrollOffer.innerHTML=`<button type="button" class="scroll-offer-open" data-form="offers" aria-haspopup="dialog"><strong>Посмотреть<br>акции</strong><svg class="offers-art" preserveAspectRatio="xMidYMin meet" viewBox="0 0 76 76" fill="none" aria-hidden="true"><path d="M24 0v20m-5 7v-7h10v7M57 0v32m-5 7v-7h10v7" stroke="#11743e" stroke-width="2"/><circle cx="24" cy="44" r="19" fill="#ffdf4a" stroke="#11743e" stroke-width="2"/><path d="M6 40q18 13 36 0M11 56q13-9 26 0" stroke="#11743e" stroke-width="2"/><circle cx="57" cy="56" r="16" fill="#e3f3e9" stroke="#11743e" stroke-width="2"/><path d="M57 44v24M45 56h24M49 48l16 16m0-16L49 64" stroke="#11743e" stroke-width="2"/></svg></button><button type="button" class="scroll-offer-close" aria-label="Скрыть карточку акции"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>`;
   document.body.append(scrollOffer);
-  let offerDismissed=false,offerFrame=0;
-  function updateScrollOffer(){offerFrame=0;scrollOffer.hidden=offerDismissed||scrollY<180;}
-  scrollOffer.querySelector('.scroll-offer-close').onclick=()=>{offerDismissed=true;updateScrollOffer();launcher.focus({preventScroll:true});};
-  addEventListener('scroll',()=>{if(!offerFrame)offerFrame=requestAnimationFrame(updateScrollOffer);},{passive:true});
-  updateScrollOffer();
+  const offerTimer=setTimeout(()=>{scrollOffer.hidden=false;},30000);
+  scrollOffer.querySelector('.scroll-offer-close').onclick=()=>{clearTimeout(offerTimer);scrollOffer.hidden=true;launcher.focus({preventScroll:true});};
 
   function updateChatHours(){
     const hour=Number(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Moscow',hour:'2-digit',hourCycle:'h23'}).format(new Date()));
@@ -409,16 +459,11 @@
   });
   function addCatalogArtwork(){
     if(!modal.classList.contains('cf-catalog-banner')||content.querySelector('.cf-catalog-art'))return;
+    const intro=content.querySelector('.cf-quiz-promise'), formPanel=content.querySelector('.cf-catalog-body');
+    if(intro&&formPanel)formPanel.prepend(intro);
     const art=document.querySelector('#catalog-download .cfb-design-art')?.cloneNode(true);
     if(art){art.className='cf-catalog-art';content.append(art);}
   }
-  let exitCatalogShown=false;
-  const exitReadyAt=Date.now()+12000;
-  document.addEventListener('mouseleave',event=>{
-    if(exitCatalogShown||Date.now()<exitReadyAt||event.clientY>0||!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
-    if(document.querySelector('dialog[open],#catalyst-chat:not([hidden]),#chat-quiz:not([hidden])')||document.body.classList.contains('mobile-menu-open')||document.activeElement?.matches('input,textarea,select'))return;
-    exitCatalogShown=true;open('catalog',document.activeElement);
-  });
   window.addEventListener('click',e=>{
     const trigger=e.composedPath().find(n=>n instanceof Element&&n.matches('a,button'))
       || (e.target instanceof Element && e.target.closest('#catalog-download')?.querySelector('[data-form="catalog"]'));if(!trigger)return;
@@ -428,7 +473,7 @@
     if(/Скачать каталог/.test(text))kind='catalog';
     if(/Помочь с выбором|Обсудить корпоратив|Обсудить мероприятие/.test(text))kind='proposal';
     if(trigger.id==='offers-trigger'||trigger.getAttribute('href')==='#offers-preview'||trigger.classList.contains('monthly-offers'))kind='offers';
-    if(!['proposal','quiz','catalog','offers'].includes(kind))return;
+    if(!['proposal','quiz','catalog','offers','callback'].includes(kind))return;
     e.preventDefault();e.stopImmediatePropagation();
     const selected=trigger.dataset.brief|| (trigger.id==='offers-trigger'?'Интересуют специальные предложения':text==='Обсудить корпоратив'?'Корпоратив под ключ':'');
     open(kind,trigger,selected);
@@ -436,7 +481,6 @@
   const newsletter=$('.footer-newsletter');
   if(newsletter){
     newsletter.querySelector('button').textContent='Подписаться';
-    newsletter.querySelector('#newsletter-privacy').innerHTML = '<label class="cf-consent"><input type="checkbox" required><span>Хочу получать новости и идеи мероприятий. Согласен с <a href="'+privacy+'" target="_blank" rel="noopener">политикой конфиденциальности</a>.</span></label>';
     newsletter.insertAdjacentHTML('beforeend','<p class="newsletter-result" role="status"></p>');
     newsletter.onsubmit=e=>{e.preventDefault();const email=new FormData(newsletter).get('email');const result=newsletter.querySelector('.newsletter-result');result.innerHTML=`<span>Подтвердите подписку письмом:</span> <a href="mailto:info@catalystrussia.ru?subject=${encodeURIComponent('Подписка на новости Каталист')}&body=${encodeURIComponent('Хочу получать новости и идеи мероприятий Каталист на адрес '+email+'.')}" class="cf-text">Открыть письмо</a><small>Подписка начнётся после обработки запроса.</small>`;};
   }

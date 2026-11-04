@@ -140,7 +140,14 @@ window.__MV_DATA__={"built": "2026-10-07", "programs": [{"url": "https://catalys
   function metaP(p) { var a = [p.kind, p.place].filter(Boolean).map(esc); if (p.price) a.push('<b>' + esc(p.price) + '</b>'); return a.join(' · '); }
   function metaG(g) { var a = [g.group, g.note || g.sub].filter(Boolean).map(esc); if (g.price) a.push('<b>' + esc(g.price) + '</b>'); return a.join(' · '); }
   function thumb(p) { return p.img ? '<img class="th" src="' + esc(p.img) + '" alt="' + esc(p.name) + '" loading="lazy" decoding="async" width="84" height="63">' : '<span class="th" aria-hidden="true"></span>'; }
-  function rowP(p, tk) { return '<a class="mv-row mv-program-card" href="' + esc(p.url) + '">' + thumb(p) + '<span class="tx"><span class="nm">' + hl(p.name, tk) + '</span><span class="mt">' + metaP(p) + '</span></span><svg class="search-card-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="1.5"/></svg></a>'; }
+  function rowP(p, tk) {
+    return '<a class="mv-row mv-program-card photo-link menu-paper-card search-result-ticket" href="' + esc(p.url) + '"><img src="' + esc(p.img) + '" alt="" loading="lazy" decoding="async"><span class="menu-card-tear" aria-hidden="true"></span><span class="program-name">' + hl(p.name, tk) + '</span><span class="search-ticket-meta">' + metaP(p) + '</span><svg class="link-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="1.7"/></svg></a>';
+  }
+  var hitCardDetails = {"Фестиваль Фудтраков": {"title": "Фестиваль Фудтраков", "image": "assets/menu-official/408b995a0d8d-foodtrucks-hover.webp"}, "Город Мегаполис": {"title": "Мегаполис", "image": "assets/menu-official/a424f89569c1-megapolis.webp"}, "WOW Башня": {"title": "WOW Башня", "image": "assets/menu-official/d28ae89a5b54-wow-bashnya.webp"}, "Формула-1": {"title": "Гонки Формула-1", "image": "assets/menu-official/367df5691b79-501386952ef9eebe.webp"}, "WOW Пицца": {"title": "WOW Пицца", "image": "assets/menu-official/c2c7ecc50a4e-wow-pizza.webp"}, "Стартап с нейросетями": {"title": "Стартап с нейросетями", "image": "assets/menu-official/8b064e041fc5-9e6ac9307bddf3ff.webp"}};
+  function hitCard(p) {
+    var card = hitCardDetails[p.name] || {title:p.name, image:p.img};
+    return '<a class="mv-row mv-program-card photo-link menu-paper-card" href="' + esc(p.url) + '"><img src="' + esc(card.image) + '" alt="" loading="lazy" decoding="async"><span class="menu-card-tear" aria-hidden="true"></span><span class="program-name">' + esc(card.title) + '</span><svg class="link-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7" stroke="currentColor" stroke-width="1.7"/></svg></a>';
+  }
   function rowG(g, tk) { return '<a class="mv-row pg" href="' + esc(g.url) + '"><span class="pi">' + I_PAGE + '</span><span class="tx"><span class="nm">' + hl(g.name, tk) + '</span><span class="mt">' + metaG(g) + '</span></span></a>'; }
   function catChips(cats) { return cats.length ? '<div class="mv-chips">' + cats.map(function (c) { return '<a class="mv-chip" href="' + esc(c.url) + '">' + esc(c.name) + ' <span>' + c.count + '</span></a>'; }).join('') + '</div>' : ''; }
   var POPULAR = ['Фестиваль Фудтраков', 'Новогодний корпоратив', 'Выездной корпоратив', 'Нейросети', 'Мегаполис', 'Квест', 'Бизнес-игры'];
@@ -157,7 +164,7 @@ window.__MV_DATA__={"built": "2026-10-07", "programs": [{"url": "https://catalys
     if (R.empty) {
       h += hd('Часто ищут') + qChips() + hd('Категории') + catChips(ALLCATS);
       var arrow = function (left) { return '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="' + (left ? 'M19 12H5m7-7-7 7 7 7' : 'M5 12h14m-7-7 7 7-7 7') + '" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>'; };
-      h += '<section class="search-hits-slider" aria-label="Хиты"><div class="search-hits-heading">' + hd('Хиты') + '<div class="search-hits-arrows"><button type="button" data-hit-prev aria-label="Предыдущие программы">' + arrow(true) + '</button><button type="button" data-hit-next aria-label="Следующие программы">' + arrow(false) + '</button></div></div><div class="search-hits-track" tabindex="0" aria-label="Популярные программы">' + HITS.map(function (p) { return rowP(p); }).join('') + '</div><nav class="search-hits-pagination" aria-label="Выбрать слайд"></nav></section>';
+      h += '<section class="search-hits-slider" aria-label="Хиты"><div class="search-hits-heading">' + hd('Хиты') + '<div class="search-hits-arrows"><button type="button" data-hit-prev aria-label="Предыдущие программы">' + arrow(true) + '</button><button type="button" data-hit-next aria-label="Следующие программы">' + arrow(false) + '</button></div></div><div class="search-hits-track" tabindex="0" aria-label="Популярные программы">' + HITS.map(function (p) { return hitCard(p); }).join('') + '</div><nav class="search-hits-pagination" aria-label="Выбрать слайд"></nav></section>';
       return h + foot();
     }
     if (!R.progs.length && !R.pages.length) {
@@ -186,16 +193,17 @@ window.__MV_DATA__={"built": "2026-10-07", "programs": [{"url": "https://catalys
       var slider = pop.querySelector('.search-hits-slider');
       if (!slider) return;
       var track = slider.querySelector('.search-hits-track'), cards = Array.from(track.children);
+      var loop=createLoopCarousel(track,cards,()=>cards.length>1 && cards.reduce((width,card)=>width+card.getBoundingClientRect().width,0)>track.clientWidth+1);
       var pagination = slider.querySelector('.search-hits-pagination'), positions = [], active = 0;
       var reduced = matchMedia('(prefers-reduced-motion: reduce)');
-      function move(index) { track.scrollTo({left: positions[index], behavior: reduced.matches ? 'instant' : 'smooth'}); }
+      function move(index) { loop.move(positions[index],reduced.matches ? 'instant' : 'smooth'); }
       function update() {
-        active = positions.reduce(function (best, pos, i) { return Math.abs(pos-track.scrollLeft)<Math.abs(positions[best]-track.scrollLeft) ? i : best; }, 0);
+        active = positions.reduce(function (best, pos, i) { return Math.abs(pos-loop.position())<Math.abs(positions[best]-loop.position()) ? i : best; }, 0);
         Array.from(pagination.children).forEach(function (dot, i) { if (i===active) dot.setAttribute('aria-current','true'); else dot.removeAttribute('aria-current'); });
       }
       function resize() {
         var max = Math.max(0, track.scrollWidth-track.clientWidth);
-        positions = cards.map(function (card) { return Math.min(max, card.offsetLeft-cards[0].offsetLeft); }).filter(function (pos,i,all) { return !i || pos>all[i-1]+1; });
+        positions = cards.map(function (card) { return card.offsetLeft-cards[0].offsetLeft; }).filter(function (pos,i,all) { return !i || pos>all[i-1]+1; });
         pagination.replaceChildren();
         positions.forEach(function (_,i) { var dot=document.createElement('button'); dot.type='button'; dot.setAttribute('aria-label','Слайд '+(i+1)); dot.innerHTML='<span aria-hidden="true"></span>'; dot.onclick=function(){move(i)}; pagination.append(dot); });
         pagination.hidden=positions.length<2;
@@ -207,7 +215,7 @@ window.__MV_DATA__={"built": "2026-10-07", "programs": [{"url": "https://catalys
       track.addEventListener('scroll',update,{passive:true});
       track.addEventListener('keydown',function(e){if(e.target!==track)return;if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();move((active+(e.key==='ArrowRight'?1:-1)+positions.length)%positions.length)}});
       var observer=new ResizeObserver(resize); observer.observe(track); resize();
-      cleanupHits=function(){observer.disconnect()};
+      cleanupHits=function(){observer.disconnect();loop.destroy()};
     }
     if (renderOnly) return render;
     pop.addEventListener('click', function (e) {

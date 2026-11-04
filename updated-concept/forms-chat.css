@@ -140,3 +140,59 @@ body.cf-modal-open{overflow:hidden}
 /* Selected direction: reuse the director quote’s handwritten circle. */
 #contact-dialog .cf-context-accent{position:relative;display:inline-block;isolation:isolate;max-width:100%}
 #contact-dialog .cf-context-accent::after{content:"";position:absolute;inset:-10% -5% -14%;background:url("assets/figma-20261102/director-circle.png") center/100% 100% no-repeat;z-index:-1;pointer-events:none}
+
+/* Persistent action below the quiz; enabled only when the brief is complete. */
+html body #contact-dialog.cf-cost-quiz .cf-quiz-submit-panel{padding:24px 30px;background:#f3f2ed;border-radius:24px;margin-top:0}
+html body #contact-dialog.cf-cost-quiz .cf-quiz-submit-panel .cf-primary{background:#141414!important;color:#fff!important}
+html body #contact-dialog.cf-cost-quiz .cf-quiz-submit-panel .cf-primary:disabled{opacity:.4;cursor:not-allowed;background:#141414!important;color:#fff!important;transform:none!important}
+html body #contact-dialog.cf-cost-quiz .cf-quiz-submit-panel .cf-primary:enabled:is(:hover,:focus-visible){background:#ffdf4a!important;color:#141414!important}
+@media(max-width:600px){html body #contact-dialog.cf-cost-quiz .cf-quiz-submit-panel{padding:20px}}
+
+html body #contact-dialog .cf-quiz-submit-hint{font:400 14px/1.4 Roboto,Arial,sans-serif;color:#53574f;margin:12px 0 0;text-align:center}
+
+/* JavaScript measures the final step and shares its natural height with all steps. */
+html body #contact-dialog.cf-cost-quiz .cf-quiz-body{
+ box-sizing:border-box;height:auto;min-height:0;max-height:none;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable;
+}
+html body #contact-dialog.cf-cost-quiz .cf-channel-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+html body #contact-dialog.cf-cost-quiz .cf-channel-options>label{min-width:0}
+@media(max-width:600px){
+ html body #contact-dialog.cf-cost-quiz .cf-channel-options>label>span{padding-inline:8px;font-size:14px!important;gap:6px}
+}
+
+html body #contact-dialog.cf-cost-quiz .cf-quiz-body #cf-title{
+ min-height:0;margin:0 0 20px;font-size:20px!important;line-height:1.2!important;
+}
+@media(max-width:600px){html body #contact-dialog.cf-cost-quiz .cf-quiz-body #cf-title{font-size:18px!important;margin-bottom:16px}}
+
+/* Step counter shares the heading row. */
+html body #contact-dialog.cf-cost-quiz .cf-quiz-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:20px}
+html body #contact-dialog.cf-cost-quiz .cf-quiz-heading #cf-title{flex:1;min-width:0;margin:0}
+html body #contact-dialog.cf-cost-quiz .cf-quiz-heading .cf-step{flex:none;white-space:nowrap;margin:0;padding:0;text-align:right;font-size:14px;line-height:24px}
+@media(max-width:600px){
+ html body #contact-dialog.cf-cost-quiz .cf-quiz-heading{gap:12px;margin-bottom:16px}
+ html body #contact-dialog.cf-cost-quiz .cf-quiz-heading .cf-step{font-size:12px;line-height:22px}
+}
+
+html body #contact-dialog.cf-cost-quiz .cf-options{grid-template-columns:minmax(0,1fr);gap:12px}
+
+/* Contact errors are shown on submit, without locking the final-step action. */
+html body #contact-dialog #cf-quiz-form input[name="contact"][aria-invalid="true"]{
+ outline:2px solid #ad3729!important;outline-offset:0;background:#fff;
+}
+
+/* Validation feedback floats below the input without changing the quiz height. */
+html body #contact-dialog #cf-quiz-form .cf-quiz-contact-field{position:relative;min-width:0}
+html body #contact-dialog #cf-quiz-form .cf-quiz-contact-field #cf-error{
+ position:absolute;z-index:5;top:calc(100% + 4px);left:16px;right:16px;
+ margin:0;padding:8px 12px;border-radius:999px;background:#fff;color:#a43524;
+ font:400 13px/1.4 Roboto,Arial,sans-serif;pointer-events:none;
+}
+html body #contact-dialog #cf-quiz-form .cf-quiz-contact-field #cf-error:empty{display:none}
+
+/* Compact first question on mobile, with the full wording on desktop. */
+#contact-dialog .cf-heading-mobile{display:none}
+@media(max-width:600px){
+ #contact-dialog .cf-heading-desktop{display:none}
+ #contact-dialog .cf-heading-mobile{display:inline;white-space:nowrap}
+}

@@ -1,0 +1,676 @@
+{
+  "assets/newyear-bauble-lossless.webp": {
+    "width": 1254,
+    "height": 1254,
+    "originalBytes": 569836,
+    "fallback": "assets/performance/assets--newyear-bauble-lossless-1254.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--newyear-bauble-lossless-320.webp",
+        "bytes": 14866
+      },
+      {
+        "width": 640,
+        "path": "assets/performance/assets--newyear-bauble-lossless-640.webp",
+        "bytes": 35392
+      },
+      {
+        "width": 960,
+        "path": "assets/performance/assets--newyear-bauble-lossless-960.webp",
+        "bytes": 62422
+      },
+      {
+        "width": 1254,
+        "path": "assets/performance/assets--newyear-bauble-lossless-1254.webp",
+        "bytes": 92082
+      }
+    ]
+  },
+  "assets/newyear-bauble-green-lossless.webp": {
+    "width": 1254,
+    "height": 1254,
+    "originalBytes": 591038,
+    "fallback": "assets/performance/assets--newyear-bauble-green-lossless-1254.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--newyear-bauble-green-lossless-320.webp",
+        "bytes": 17936
+      },
+      {
+        "width": 640,
+        "path": "assets/performance/assets--newyear-bauble-green-lossless-640.webp",
+        "bytes": 43730
+      },
+      {
+        "width": 960,
+        "path": "assets/performance/assets--newyear-bauble-green-lossless-960.webp",
+        "bytes": 73382
+      },
+      {
+        "width": 1254,
+        "path": "assets/performance/assets--newyear-bauble-green-lossless-1254.webp",
+        "bytes": 108626
+      }
+    ]
+  },
+  "assets/figma-20261102/newyear-stickers-lossless.webp": {
+    "width": 1089,
+    "height": 1445,
+    "originalBytes": 996918,
+    "fallback": "assets/performance/assets--figma-20261102--newyear-stickers-lossless-1089.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--figma-20261102--newyear-stickers-lossless-320.webp",
+        "bytes": 56564
+      },
+      {
+        "width": 640,
+        "path": "assets/performance/assets--figma-20261102--newyear-stickers-lossless-640.webp",
+        "bytes": 145994
+      },
+      {
+        "width": 960,
+        "path": "assets/performance/assets--figma-20261102--newyear-stickers-lossless-960.webp",
+        "bytes": 266296
+      },
+      {
+        "width": 1089,
+        "path": "assets/performance/assets--figma-20261102--newyear-stickers-lossless-1089.webp",
+        "bytes": 323566
+      }
+    ]
+  },
+  "assets/catalog-figma/back-new-lossless.webp": {
+    "width": 2798,
+    "height": 1576,
+    "originalBytes": 981494,
+    "fallback": "assets/performance/assets--catalog-figma--back-new-lossless-2798.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--catalog-figma--back-new-lossless-320.webp",
+        "bytes": 17262
+      },
+      {
+        "width": 640,
+        "path": "assets/performance/assets--catalog-figma--back-new-lossless-640.webp",
+        "bytes": 46800
+      },
+      {
+        "width": 960,
+        "path": "assets/performance/assets--catalog-figma--back-new-lossless-960.webp",
+        "bytes": 84184
+      },
+      {
+        "width": 1280,
+        "path": "assets/performance/assets--catalog-figma--back-new-lossless-1280.webp",
+        "bytes": 119992
+      },
+      {
+        "width": 2798,
+        "path": "assets/performance/assets--catalog-figma--back-new-lossless-2798.webp",
+        "bytes": 334614
+      }
+    ]
+  },
+  "assets/catalog-figma/front-new-lossless.webp": {
+    "width": 1408,
+    "height": 792,
+    "originalBytes": 405858,
+    "fallback": "assets/performance/assets--catalog-figma--front-new-lossless-1408.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--catalog-figma--front-new-lossless-320.webp",
+        "bytes": 12726
+      },
+      {
+        "width": 640,
+        "path": "assets/performance/assets--catalog-figma--front-new-lossless-640.webp",
+        "bytes": 38406
+      },
+      {
+        "width": 960,
+        "path": "assets/performance/assets--catalog-figma--front-new-lossless-960.webp",
+        "bytes": 70772
+      },
+      {
+        "width": 1280,
+        "path": "assets/performance/assets--catalog-figma--front-new-lossless-1280.webp",
+        "bytes": 104250
+      },
+      {
+        "width": 1408,
+        "path": "assets/performance/assets--catalog-figma--front-new-lossless-1408.webp",
+        "bytes": 132550
+      }
+    ]
+  },
+  "assets/corporate-stickers/cake-lossless.webp": {
+    "width": 1224,
+    "height": 1285,
+    "originalBytes": 968146,
+    "fallback": "assets/performance/assets--corporate-stickers--cake-lossless-1224.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--corporate-stickers--cake-lossless-320.webp",
+        "bytes": 26550
+      },
+      {
+        "width": 640,
+        "path": "assets/performance/assets--corporate-stickers--cake-lossless-640.webp",
+        "bytes": 65004
+      },
+      {
+        "width": 960,
+        "path": "assets/performance/assets--corporate-stickers--cake-lossless-960.webp",
+        "bytes": 115300
+      },
+      {
+        "width": 1224,
+        "path": "assets/performance/assets--corporate-stickers--cake-lossless-1224.webp",
+        "bytes": 174814
+      }
+    ]
+  },
+  "assets/corporate-stickers/tent-lossless.webp": {
+    "width": 1312,
+    "height": 1199,
+    "originalBytes": 912426,
+    "fallback": "assets/performance/assets--corporate-stickers--tent-lossless-1312.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--corporate-stickers--tent-lossless-320.webp",
+        "bytes": 23180
+      },
+      {
+        "width": 640,
+        "path": "assets/performance/assets--corporate-stickers--tent-lossless-640.webp",
+        "bytes": 55742
+      },
+      {
+        "width": 960,
+        "path": "assets/performance/assets--corporate-stickers--tent-lossless-960.webp",
+        "bytes": 97988
+      },
+      {
+        "width": 1280,
+        "path": "assets/performance/assets--corporate-stickers--tent-lossless-1280.webp",
+        "bytes": 144448
+      },
+      {
+        "width": 1312,
+        "path": "assets/performance/assets--corporate-stickers--tent-lossless-1312.webp",
+        "bytes": 162018
+      }
+    ]
+  },
+  "assets/corporate-stickers/masks-lossless.webp": {
+    "width": 1312,
+    "height": 1199,
+    "originalBytes": 875908,
+    "fallback": "assets/performance/assets--corporate-stickers--masks-lossless-1312.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--corporate-stickers--masks-lossless-320.webp",
+        "bytes": 24326
+      },
+      {
+        "width": 640,
+        "path": "assets/performance/assets--corporate-stickers--masks-lossless-640.webp",
+        "bytes": 59328
+      },
+      {
+        "width": 960,
+        "path": "assets/performance/assets--corporate-stickers--masks-lossless-960.webp",
+        "bytes": 101988
+      },
+      {
+        "width": 1280,
+        "path": "assets/performance/assets--corporate-stickers--masks-lossless-1280.webp",
+        "bytes": 149694
+      },
+      {
+        "width": 1312,
+        "path": "assets/performance/assets--corporate-stickers--masks-lossless-1312.webp",
+        "bytes": 165636
+      }
+    ]
+  },
+  "assets/summer-event.webp": {
+    "width": 600,
+    "height": 399,
+    "originalBytes": 49560,
+    "fallback": "assets/summer-event.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--summer-event-320.webp",
+        "bytes": 31894
+      },
+      {
+        "width": 600,
+        "path": "assets/performance/assets--summer-event-600.webp",
+        "bytes": 70058
+      }
+    ]
+  },
+  "assets/hero-food-photo.webp": {
+    "width": 1400,
+    "height": 933,
+    "originalBytes": 86048,
+    "fallback": "assets/hero-food-photo.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--hero-food-photo-320.webp",
+        "bytes": 25050
+      },
+      {
+        "width": 640,
+        "path": "assets/performance/assets--hero-food-photo-640.webp",
+        "bytes": 66800
+      },
+      {
+        "width": 960,
+        "path": "assets/performance/assets--hero-food-photo-960.webp",
+        "bytes": 115212
+      },
+      {
+        "width": 1280,
+        "path": "assets/performance/assets--hero-food-photo-1280.webp",
+        "bytes": 152178
+      },
+      {
+        "width": 1400,
+        "path": "assets/performance/assets--hero-food-photo-1400.webp",
+        "bytes": 136000
+      }
+    ]
+  },
+  "assets/portfolio/case-abg.webp": {
+    "width": 900,
+    "height": 496,
+    "originalBytes": 73746,
+    "fallback": "assets/portfolio/case-abg.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--portfolio--case-abg-320.webp",
+        "bytes": 24742
+      },
+      {
+        "width": 640,
+        "path": "assets/performance/assets--portfolio--case-abg-640.webp",
+        "bytes": 71612
+      },
+      {
+        "width": 900,
+        "path": "assets/performance/assets--portfolio--case-abg-900.webp",
+        "bytes": 98360
+      }
+    ]
+  },
+  "assets/portfolio/case-rustore.webp": {
+    "width": 900,
+    "height": 496,
+    "originalBytes": 66596,
+    "fallback": "assets/portfolio/case-rustore.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--portfolio--case-rustore-320.webp",
+        "bytes": 24580
+      },
+      {
+        "width": 640,
+        "path": "assets/performance/assets--portfolio--case-rustore-640.webp",
+        "bytes": 66948
+      },
+      {
+        "width": 900,
+        "path": "assets/performance/assets--portfolio--case-rustore-900.webp",
+        "bytes": 86124
+      }
+    ]
+  },
+  "assets/figma-20261102/director-portrait-lossless.webp": {
+    "width": 633,
+    "height": 894,
+    "originalBytes": 224778,
+    "fallback": "assets/performance/assets--figma-20261102--director-portrait-lossless-633.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--figma-20261102--director-portrait-lossless-320.webp",
+        "bytes": 29276
+      },
+      {
+        "width": 633,
+        "path": "assets/performance/assets--figma-20261102--director-portrait-lossless-633.webp",
+        "bytes": 95088
+      }
+    ]
+  },
+  "assets/portfolio/case-raft.webp": {
+    "width": 640,
+    "height": 480,
+    "originalBytes": 57638,
+    "fallback": "assets/portfolio/case-raft.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--portfolio--case-raft-320.webp",
+        "bytes": 32122
+      },
+      {
+        "width": 640,
+        "path": "assets/performance/assets--portfolio--case-raft-640.webp",
+        "bytes": 76952
+      }
+    ]
+  },
+  "assets/portfolio/case-raif2.webp": {
+    "width": 640,
+    "height": 480,
+    "originalBytes": 39032,
+    "fallback": "assets/portfolio/case-raif2.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--portfolio--case-raif2-320.webp",
+        "bytes": 28252
+      },
+      {
+        "width": 640,
+        "path": "assets/performance/assets--portfolio--case-raif2-640.webp",
+        "bytes": 54350
+      }
+    ]
+  },
+  "assets/continuation/contact-rustore-lossless.webp": {
+    "width": 1500,
+    "height": 1000,
+    "originalBytes": 903522,
+    "fallback": "assets/performance/assets--continuation--contact-rustore-lossless-1500.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--continuation--contact-rustore-lossless-320.webp",
+        "bytes": 24172
+      },
+      {
+        "width": 640,
+        "path": "assets/performance/assets--continuation--contact-rustore-lossless-640.webp",
+        "bytes": 56458
+      },
+      {
+        "width": 960,
+        "path": "assets/performance/assets--continuation--contact-rustore-lossless-960.webp",
+        "bytes": 93160
+      },
+      {
+        "width": 1280,
+        "path": "assets/performance/assets--continuation--contact-rustore-lossless-1280.webp",
+        "bytes": 128236
+      },
+      {
+        "width": 1500,
+        "path": "assets/performance/assets--continuation--contact-rustore-lossless-1500.webp",
+        "bytes": 139954
+      }
+    ]
+  },
+  "assets/telegram-channel-preview-lossless.webp": {
+    "width": 1170,
+    "height": 2532,
+    "originalBytes": 1188422,
+    "fallback": "assets/performance/assets--telegram-channel-preview-lossless-1170.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--telegram-channel-preview-lossless-320.webp",
+        "bytes": 46904
+      },
+      {
+        "width": 640,
+        "path": "assets/performance/assets--telegram-channel-preview-lossless-640.webp",
+        "bytes": 120690
+      },
+      {
+        "width": 960,
+        "path": "assets/performance/assets--telegram-channel-preview-lossless-960.webp",
+        "bytes": 190010
+      },
+      {
+        "width": 1170,
+        "path": "assets/performance/assets--telegram-channel-preview-lossless-1170.webp",
+        "bytes": 257740
+      }
+    ]
+  },
+  "assets/sticker-arrow-lossless.webp": {
+    "width": 1254,
+    "height": 1254,
+    "originalBytes": 517638,
+    "fallback": "assets/performance/assets--sticker-arrow-lossless-1254.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--sticker-arrow-lossless-320.webp",
+        "bytes": 19914
+      },
+      {
+        "width": 640,
+        "path": "assets/performance/assets--sticker-arrow-lossless-640.webp",
+        "bytes": 47478
+      },
+      {
+        "width": 960,
+        "path": "assets/performance/assets--sticker-arrow-lossless-960.webp",
+        "bytes": 80408
+      },
+      {
+        "width": 1254,
+        "path": "assets/performance/assets--sticker-arrow-lossless-1254.webp",
+        "bytes": 123436
+      }
+    ]
+  },
+  "assets/paper-texture-lossless.webp": {
+    "width": 640,
+    "height": 1092,
+    "originalBytes": 416882,
+    "fallback": "assets/performance/assets--paper-texture-lossless-640.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--paper-texture-lossless-320.webp",
+        "bytes": 40772
+      },
+      {
+        "width": 640,
+        "path": "assets/performance/assets--paper-texture-lossless-640.webp",
+        "bytes": 145462
+      }
+    ]
+  },
+  "folder-source/assets/corporate-event-background.webp": {
+    "width": 1024,
+    "height": 683,
+    "originalBytes": 105636,
+    "fallback": "folder-source/assets/corporate-event-background.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/folder-source--assets--corporate-event-background-320.webp",
+        "bytes": 28314
+      },
+      {
+        "width": 640,
+        "path": "assets/performance/folder-source--assets--corporate-event-background-640.webp",
+        "bytes": 83896
+      },
+      {
+        "width": 960,
+        "path": "assets/performance/folder-source--assets--corporate-event-background-960.webp",
+        "bytes": 138524
+      },
+      {
+        "width": 1024,
+        "path": "assets/performance/folder-source--assets--corporate-event-background-1024.webp",
+        "bytes": 135220
+      }
+    ]
+  },
+  "assets/user-stickers/movement-lossless.webp": {
+    "width": 443,
+    "height": 437,
+    "originalBytes": 135876,
+    "fallback": "assets/performance/assets--user-stickers--movement-lossless-443.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--user-stickers--movement-lossless-320.webp",
+        "bytes": 28832
+      },
+      {
+        "width": 443,
+        "path": "assets/performance/assets--user-stickers--movement-lossless-443.webp",
+        "bytes": 45962
+      }
+    ]
+  },
+  "assets/user-stickers/roller-lossless.webp": {
+    "width": 510,
+    "height": 471,
+    "originalBytes": 155198,
+    "fallback": "assets/performance/assets--user-stickers--roller-lossless-510.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--user-stickers--roller-lossless-320.webp",
+        "bytes": 26364
+      },
+      {
+        "width": 510,
+        "path": "assets/performance/assets--user-stickers--roller-lossless-510.webp",
+        "bytes": 47252
+      }
+    ]
+  },
+  "assets/user-stickers/together-lossless.webp": {
+    "width": 572,
+    "height": 512,
+    "originalBytes": 155398,
+    "fallback": "assets/performance/assets--user-stickers--together-lossless-572.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--user-stickers--together-lossless-320.webp",
+        "bytes": 23784
+      },
+      {
+        "width": 572,
+        "path": "assets/performance/assets--user-stickers--together-lossless-572.webp",
+        "bytes": 52876
+      }
+    ]
+  },
+  "assets/user-stickers/toaster-lossless.webp": {
+    "width": 521,
+    "height": 458,
+    "originalBytes": 160532,
+    "fallback": "assets/performance/assets--user-stickers--toaster-lossless-521.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--user-stickers--toaster-lossless-320.webp",
+        "bytes": 26360
+      },
+      {
+        "width": 521,
+        "path": "assets/performance/assets--user-stickers--toaster-lossless-521.webp",
+        "bytes": 50864
+      }
+    ]
+  },
+  "assets/user-stickers/ideas-lossless.webp": {
+    "width": 521,
+    "height": 425,
+    "originalBytes": 144466,
+    "fallback": "assets/performance/assets--user-stickers--ideas-lossless-521.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--user-stickers--ideas-lossless-320.webp",
+        "bytes": 21254
+      },
+      {
+        "width": 521,
+        "path": "assets/performance/assets--user-stickers--ideas-lossless-521.webp",
+        "bytes": 41254
+      }
+    ]
+  },
+  "assets/user-stickers/radio-lossless.webp": {
+    "width": 483,
+    "height": 507,
+    "originalBytes": 153328,
+    "fallback": "assets/performance/assets--user-stickers--radio-lossless-483.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--user-stickers--radio-lossless-320.webp",
+        "bytes": 27296
+      },
+      {
+        "width": 483,
+        "path": "assets/performance/assets--user-stickers--radio-lossless-483.webp",
+        "bytes": 47824
+      }
+    ]
+  },
+  "assets/user-stickers/magnet-lossless.webp": {
+    "width": 530,
+    "height": 414,
+    "originalBytes": 126202,
+    "fallback": "assets/performance/assets--user-stickers--magnet-lossless-530.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--user-stickers--magnet-lossless-320.webp",
+        "bytes": 20698
+      },
+      {
+        "width": 530,
+        "path": "assets/performance/assets--user-stickers--magnet-lossless-530.webp",
+        "bytes": 40692
+      }
+    ]
+  },
+  "assets/user-stickers/pinwheel-lossless.webp": {
+    "width": 491,
+    "height": 474,
+    "originalBytes": 129998,
+    "fallback": "assets/performance/assets--user-stickers--pinwheel-lossless-491.webp",
+    "variants": [
+      {
+        "width": 320,
+        "path": "assets/performance/assets--user-stickers--pinwheel-lossless-320.webp",
+        "bytes": 25094
+      },
+      {
+        "width": 491,
+        "path": "assets/performance/assets--user-stickers--pinwheel-lossless-491.webp",
+        "bytes": 45304
+      }
+    ]
+  }
+}

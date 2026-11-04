@@ -1,7 +1,7 @@
 (()=>{
 let locked=false,previousOverflow='';
 function lockPage(){
- const open=!!document.querySelector('.mega-menu[open]');
+ const open=!!document.querySelector('.mega-menu[open]')||document.body.classList.contains('search-is-open');
  if(open===locked)return;
  locked=open;
  // Keep the document in its normal flow: closing on hover must not restore
@@ -11,6 +11,7 @@ function lockPage(){
  else{root.style.overflow=previousOverflow;}
 }
 document.querySelectorAll('.mega-menu').forEach(menu=>menu.addEventListener('toggle',lockPage));
+new MutationObserver(lockPage).observe(document.body,{attributes:true,attributeFilter:['class']});
 
 document.querySelectorAll('.mega-menu').forEach(menu=>{
 if(!menu.querySelector('.mega-results'))return;

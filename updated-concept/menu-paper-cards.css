@@ -1,0 +1,107 @@
+/* Programme cards: photograph above the name and the original menu chevron. */
+html body :is(:is(#header,#mobile-site-navigation) .mega-links a.photo-link.menu-paper-card,a.mv-program-card.menu-paper-card){
+ display:grid!important;grid-template-columns:minmax(0,1fr) 26px;gap:12px 12px!important;align-items:center;aspect-ratio:auto!important;
+ padding:6px 8px 16px!important;background:#f3f2ed!important;color:#141414!important;
+ border:0!important;border-radius:16px!important;box-shadow:none!important;transform:none!important;
+}
+html body :is(:is(#header,#mobile-site-navigation) .mega-links a.photo-link.menu-paper-card,a.mv-program-card.menu-paper-card)::before,
+html body :is(:is(#header,#mobile-site-navigation) .mega-links a.photo-link.menu-paper-card,a.mv-program-card.menu-paper-card)::after{content:none!important;display:none!important}
+html body :is(:is(#header,#mobile-site-navigation) .mega-links a.photo-link.menu-paper-card,a.mv-program-card.menu-paper-card) .program-name,
+html body :is(:is(#header,#mobile-site-navigation) .mega-links a.photo-link.menu-paper-card,a.mv-program-card.menu-paper-card):is(:hover,:focus-visible) .program-name,
+html body :is(:is(#header,#mobile-site-navigation) .mega-links a.photo-link.menu-paper-card,a.mv-program-card.menu-paper-card):is(:hover,:focus-visible) .program-name *{
+ position:static!important;inset:auto!important;grid-column:1;grid-row:3;padding:0 0 0 8px!important;color:#141414!important;
+ min-height:0;transform:none!important;
+}
+html body :is(:is(#header,#mobile-site-navigation) .mega-links a.photo-link.menu-paper-card,a.mv-program-card.menu-paper-card)>img{
+ position:static!important;inset:auto!important;grid-column:1 / -1;grid-row:1;width:100%!important;height:auto!important;
+ aspect-ratio:1.65;object-fit:cover;border-radius:8px!important;filter:none!important;transform:none!important;
+}
+html body :is(:is(#header,#mobile-site-navigation) .mega-links a.photo-link.menu-paper-card,a.mv-program-card.menu-paper-card)>.link-arrow{
+ position:static!important;inset:auto!important;grid-column:2;grid-row:3;align-self:center;
+ width:18px!important;height:18px!important;padding:0!important;margin:0 8px 0 0!important;
+ box-sizing:border-box;border-radius:0!important;background:transparent!important;color:#141414!important;
+ opacity:1!important;transform:none!important;transition:background-color .2s ease,color .2s ease;
+}
+html body :is(:is(#header,#mobile-site-navigation) .mega-links a.photo-link.menu-paper-card,a.mv-program-card.menu-paper-card):is(:hover,:focus-visible)>.link-arrow{
+ background:transparent!important;color:#141414!important;transform:none!important;
+}
+
+html body #header .catalog-layout-refined .mega-links,
+html body #mobile-site-navigation .mobile-cards .mega-links{gap:20px!important}
+
+/* Tear line and side cutouts reuse the origin card's ticket detail. */
+html body :is(:is(#header,#mobile-site-navigation) .mega-links a.photo-link.menu-paper-card,a.mv-program-card.menu-paper-card)>.menu-card-tear{
+ display:block;position:relative;grid-column:1 / -1;grid-row:2;height:0;
+ margin:0 -8px;border-top:1px dashed #c4c6bd!important;pointer-events:none;
+}
+html body :is(:is(#header,#mobile-site-navigation) .mega-links a.photo-link.menu-paper-card,a.mv-program-card.menu-paper-card)>.menu-card-tear::before,
+html body :is(:is(#header,#mobile-site-navigation) .mega-links a.photo-link.menu-paper-card,a.mv-program-card.menu-paper-card)>.menu-card-tear::after{
+ content:"";position:absolute;top:-10px;width:18px;height:18px;border-radius:50%;background:#fff;
+}
+html body :is(:is(#header,#mobile-site-navigation) .mega-links a.photo-link.menu-paper-card,a.mv-program-card.menu-paper-card)>.menu-card-tear::before{left:-9px}
+html body :is(:is(#header,#mobile-site-navigation) .mega-links a.photo-link.menu-paper-card,a.mv-program-card.menu-paper-card)>.menu-card-tear::after{right:-9px}
+
+/* Mobile tickets keep the photo above a shared title-and-arrow row. */
+@media(max-width:760px){
+ html body #mobile-site-navigation .mobile-cards .mega-links{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;align-items:stretch!important;
+ }
+ html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link.menu-paper-card{
+  min-width:0;grid-template-columns:minmax(0,1fr) 18px!important;grid-template-rows:auto 0 1fr!important;
+  gap:12px 6px!important;padding:6px 8px 16px!important;align-items:center!important;
+ }
+ html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link.menu-paper-card>img{
+  grid-area:1 / 1 / 2 / -1!important;width:100%!important;height:auto!important;aspect-ratio:1.2!important;
+ }
+ html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link.menu-paper-card .program-name{
+  grid-area:3 / 1 / 4 / 2!important;display:block!important;min-width:0;padding:0!important;
+  font-size:14px!important;line-height:1.3!important;overflow-wrap:anywhere;
+ }
+ html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link.menu-paper-card>.link-arrow{
+  grid-area:3 / 2 / 4 / 3!important;margin:0!important;align-self:center!important;
+ }
+ html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link.menu-paper-card>.menu-card-tear{
+  grid-area:2 / 1 / 3 / -1!important;
+ }
+}
+
+/* Readable ticket captions, including nested mobile titles and guest counts. */
+html body :is(:is(#header,#mobile-site-navigation) .mega-links a.photo-link.menu-paper-card,a.mv-program-card.menu-paper-card) .program-name,
+html body :is(:is(#header,#mobile-site-navigation) .mega-links a.photo-link.menu-paper-card,a.mv-program-card.menu-paper-card) .program-name *,
+html body :is(:is(#header,#mobile-site-navigation) .mega-links a.photo-link.menu-paper-card,a.mv-program-card.menu-paper-card):is(:hover,:focus-visible,:active) .program-name,
+html body :is(:is(#header,#mobile-site-navigation) .mega-links a.photo-link.menu-paper-card,a.mv-program-card.menu-paper-card):is(:hover,:focus-visible,:active) .program-name *{color:#141414!important;opacity:1!important}
+
+/* Search hits use the same ticket component and retain horizontal scrolling. */
+html body a.mv-program-card.menu-paper-card{height:auto!important;box-sizing:border-box;overflow:visible;grid-template-rows:auto 0 1fr}
+html body a.mv-program-card.menu-paper-card .program-name{font:500 16px/1.3 Roboto,Arial,sans-serif!important}
+
+
+/* Search results share the ticket, with programme details below the name. */
+html body a.search-result-ticket{max-width:none!important;width:100%;grid-template-rows:auto 0 auto auto}
+html body a.search-result-ticket .search-ticket-meta{grid-column:1 / -1;grid-row:4;padding:0 8px;color:#141414;font:400 12px/1.4 Roboto,Arial,sans-serif}
+html body a.search-result-ticket .search-ticket-meta b{font-weight:500}
+html body a.search-result-ticket .mv-hl{color:#141414!important}
+html body .search-hits-track{border-radius:0!important;mask-image:none!important;-webkit-mask-image:none!important}
+
+
+/* Keep the scrolling viewport outside the card edges and keyboard focus. */
+html body .search-hits-track{margin:0 -16px;padding:4px 16px;scroll-padding-inline:16px}
+
+/* Let assistance copy use the available row, across all dropdowns. */
+html body #header .mega-menu .catalog-menu-assistance p,
+html body #header .mega-menu .menu-assistance p,
+html body #header-search .mv-foot p{max-width:none!important;min-width:0;flex:1;text-wrap:wrap}
+
+/* Four search hits retain the original photograph proportions. */
+@media(min-width:1001px){
+ html body #header-search .search-hits-track>.mv-program-card{
+  flex-basis:calc((100% - 48px)/4);
+ }
+}
+
+/* Give offer slides breathing room; mobile scrolling reaches the sheet edges. */
+html body .menu-offer-track{gap:12px}
+html body .mobile-sheet.mobile-navigation .menu-offer-track{
+ box-sizing:border-box;width:calc(100% + 32px);margin-inline:-16px;
+ padding-inline:16px;scroll-padding-inline:16px;
+}

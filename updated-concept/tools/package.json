@@ -1,0 +1,5 @@
+{
+  "private": true,
+  "scripts": { "build:css": "node build-css.cjs", "optimize:images": "node optimize-images.cjs" },
+  "devDependencies": { "postcss": "8.5.23", "sharp": "0.35.4" }
+}

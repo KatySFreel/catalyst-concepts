@@ -43,12 +43,8 @@ html body #s8 :is(.seo-toc,.seo-copy) a:focus-visible{outline:2px solid #0aba59;
 @media(prefers-reduced-motion:reduce){html body #s8 :is(.seo-toc,.seo-copy) a{transition:none}}
 
 /* Secondary action for the extended article. */
-html body #s8 .seo-toggle{background:#f3f2ed!important;color:#141414!important;font-weight:500;box-shadow:none;transition:background-color .22s ease}
-html body #s8 .seo-toggle:hover{background:#e7e6df!important;color:#141414!important}
 html body #s8 .seo-toggle:focus-visible{outline:2px solid #0aba59;outline-offset:3px}
 
-html body #s8 .seo-toggle{background:#fff!important;color:#141414!important;border:1px solid #d7dbd4!important}
-html body #s8 .seo-toggle:hover{background:#f3f2ed!important;border-color:#bfc5bc!important}
 html body #s8 .seo-copy p a{color:#286b43}
 html body #s8 .seo-copy p a:hover{color:#079447}
 
@@ -65,8 +61,6 @@ html body #s8 .seo-copy :is(p,li) a{color:#286b43;text-decoration:none;transitio
 html body #s8 .seo-copy :is(p,li) a:hover{color:#079447}
 @media(min-width:701px){html body #s8.seo-expanded .seo-toc{position:sticky;top:calc(var(--header-height,92px) + 20px);max-height:calc(100dvh - var(--header-height,92px) - 40px);overflow-y:auto;align-self:start;overscroll-behavior:contain}}
 
-html body #s8 .seo-toggle{background:#fff!important;color:#141414!important;border:1px solid #d7dbd4!important}
-html body #s8 .seo-toggle:hover{background:#f3f2ed!important;border-color:#bfc5bc!important}
 html body #s8 .seo-copy p a{color:#286b43}
 html body #s8 .seo-copy p a:hover{color:#079447}
 
@@ -103,5 +97,17 @@ html body #s9>.continuation-inner>h2{font-size:24px!important;line-height:1.25!i
 html body #s9 .faq-columns{margin-top:0}
 @media(max-width:700px){html body>#s9.continuation-block{margin-top:32px!important}html body #s9>.continuation-inner>h2{font-size:20px!important;margin-bottom:16px}}
 
-html body #s8 .seo-toggle{background:#f3f2ed!important}
-html body #s8 .seo-toggle:hover{background:#e7e6df!important}
+
+/* Match the catalogue assistance action and align it beside the introduction. */
+html body #s8 .seo-toggle{border:0!important;box-shadow:none;font-weight:500;min-height:52px;padding:16px 24px}
+@media(min-width:701px){
+ html body #s8:not(.seo-expanded)>.continuation-inner{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:40px;align-items:end}
+ html body #s8:not(.seo-expanded)>.continuation-inner>h2{grid-column:1 / -1}
+ html body #s8:not(.seo-expanded) .seo-intro{grid-column:1}
+ html body #s8:not(.seo-expanded) .seo-layout{grid-column:2;margin-top:0}
+ html body #s8:not(.seo-expanded) .seo-toggle{white-space:nowrap}
+}
+
+/* Preserve the original light article action. */
+html body #s8 .seo-toggle{background:#f3f2ed!important;color:#141414!important;transition:background-color .22s ease}
+html body #s8 .seo-toggle:hover{background:#e7e6df!important;color:#141414!important}

@@ -16,3 +16,12 @@
  const sync=()=>mobile.matches?bottom.append(button):heading.append(button);
  mobile.addEventListener('change',sync);sync();
 })();
+
+// Keep the download action after the catalogue covers on mobile.
+(()=>{
+ const banner=document.querySelector('#catalog-download'),copy=banner?.querySelector('.cfb-copy'),button=copy?.querySelector('.cfb-button');
+ if(!button)return;
+ const mobile=matchMedia('(max-width:700px)');
+ const sync=()=>mobile.matches?banner.append(button):copy.append(button);
+ mobile.addEventListener('change',sync);sync();
+})();

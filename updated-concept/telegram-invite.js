@@ -8,6 +8,7 @@
   const phone=form.elements.phone;
   const value=phone.value.trim(), digits=value.replace(/\D/g,'');
   const status=form.querySelector('#ti-form-status');
+  status.classList.add('is-error');
   if(!/^7\d{10}$/.test(digits)){status.textContent='Введите российский номер полностью: +7 (999) 123-45-67.';phone.setAttribute('aria-invalid','true');phone.focus();return;}
   phone.removeAttribute('aria-invalid');
   const endpoint=window.CATALYST_LEAD_ENDPOINT || (['catalystrussia.ru','www.catalystrussia.ru'].includes(location.hostname)?'/api/lead/':null);
@@ -16,7 +17,7 @@
   try{
    const response=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:form.elements.name.value.trim(),phone:value,contact:value,channel:'Телефон',program:'Подбор программы',comment:'Вопрос и подбор программы',source:'scroll-invite',page:location.pathname}),signal:AbortSignal.timeout(15000)});
    const data=await response.json();if(!response.ok||data.ok!==true)throw new Error();
-   status.textContent='Спасибо! Свяжемся с вами, чтобы обсудить событие.';button.textContent='Заявка отправлена';form.reset();
+   status.classList.remove('is-error');status.textContent='Спасибо! Свяжемся с вами, чтобы обсудить событие.';button.textContent='Заявка отправлена';form.reset();
   }catch{status.textContent='Не удалось отправить заявку. Попробуйте ещё раз или напишите менеджеру.';button.disabled=false;button.textContent='Попробовать ещё раз';}
  });
  const phoneInput=form.elements.phone;
@@ -42,6 +43,7 @@
   if(caret===raw.length)position=phoneInput.value.length;
   phoneInput.setSelectionRange(position,position);
   phoneInput.removeAttribute('aria-invalid');
+  form.querySelector('#ti-form-status').textContent='';
  }
  phoneInput.addEventListener('input',applyPhoneMask);
  phoneInput.addEventListener('focus',()=>{if(!phoneInput.value)phoneInput.value='+7 ('});
@@ -56,17 +58,17 @@
    phoneInput.setSelectionRange(start,start);applyPhoneMask();
   }
  });
- let shown=false,elapsed=false,footerReached=false,frame=0,previousFocus=null;
- const timer=setTimeout(()=>{elapsed=true;schedule()},12000);
+ let shown=false,frame=0,previousFocus=null;
  function openInvite(){
-  shown=true;clearTimeout(timer);removeEventListener('scroll',onScroll);
+  shown=true;removeEventListener('scroll',onScroll);
   document.dispatchEvent(new CustomEvent('catalyst:catalog-invite'));
  }
  document.querySelectorAll('[data-telegram-invite]').forEach(button=>button.addEventListener('click',openInvite));
  function check(){
   frame=0;
   if(shown || document.visibilityState!=='visible')return;
-  if(!elapsed && !footerReached && scrollY<Math.max(240,innerHeight*.5))return;
+  const aboutHeading=document.querySelector('#s8 h2');
+  if(!aboutHeading || scrollY<=0 || aboutHeading.getBoundingClientRect().bottom>innerHeight)return;
   if(document.activeElement?.matches('input,textarea,select'))return;
   if(document.querySelector('dialog[open], #catalyst-chat:not([hidden]), #chat-quiz:not([hidden])') || document.body.classList.contains('mobile-menu-open'))return;
   openInvite();
@@ -80,7 +82,5 @@
  document.addEventListener('close',schedule,true);
  document.addEventListener('focusout',schedule);
  document.addEventListener('visibilitychange',schedule);
- const footer=document.getElementById('prototype-footer');
- if(footer)new IntersectionObserver(entries=>{footerReached=entries[0].isIntersecting;if(footerReached)schedule()},{threshold:0}).observe(footer);
  addEventListener('scroll',onScroll,{passive:true});
 })();

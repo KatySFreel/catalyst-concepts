@@ -1,0 +1,94 @@
+{
+  "Фестиваль Фудтраков": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/festival-fudtrakov/",
+    "image": "https://catalystrussia.ru/slides/foodtrucks-hover.webp",
+    "title": "Фестиваль Фудтраков",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/408b995a0d8d-foodtrucks-hover.webp"
+  },
+  "Мегаполис": {
+    "url": "https://catalystrussia.ru/timbilding/",
+    "image": "https://catalystrussia.ru/rd-assets/p/gorodskaya-strojka/00.webp",
+    "source": "https://catalystrussia.ru/timbilding/",
+    "local": "folder-source/assets/gorodskaya-strojka.webp"
+  },
+  "WOW Башня": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/wow-bashnya/",
+    "image": "https://catalystrussia.ru/cdnasset/img/catalog/wow-bashnya.webp",
+    "title": "WOW Башня",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/d28ae89a5b54-wow-bashnya.webp"
+  },
+  "Гонки Формула-1": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/formula-1/",
+    "image": "https://catalystrussia.ru/cdnasset/img/501386952ef9eebe.webp",
+    "title": "Гонки Формула-1",
+    "source": "https://catalystrussia.ru/teambuilding/vse-programmy/formula-1/",
+    "local": "assets/menu-official/367df5691b79-501386952ef9eebe.webp"
+  },
+  "Корпоративная картина": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/teambuilding-obshaya-kartina/",
+    "image": "https://catalystrussia.ru/rd-assets/p/teambuilding-obshaya-kartina/00.webp",
+    "title": "Корпоративная картина",
+    "source": "https://catalystrussia.ru/",
+    "local": "assets/menu-official/74ba0a1c43ec-00.webp"
+  },
+  "Стартап с нейросетями": {
+    "url": "https://catalystrussia.ru/startap_business_game/",
+    "image": "https://catalystrussia.ru/cdnasset/img/9e6ac9307bddf3ff.webp",
+    "title": "Стартап с нейросетями",
+    "source": "https://catalystrussia.ru/",
+    "local": "folder-source/assets/startap_business_game.webp"
+  },
+  "Фестиваль Мороженого": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/festival-morozhenogo/",
+    "image": "https://catalystrussia.ru/img/festival-morozhenogo/festival-morozhenogo-telezhka.webp",
+    "title": "Фестиваль Мороженого",
+    "source": "https://catalystrussia.ru/teambuilding/vse-programmy/festival-morozhenogo/",
+    "local": "assets/menu-official/a00a70771eae-festival-morozhenogo-telezhka.webp"
+  },
+  "Art&Fun&Sport": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/art-fun-sport/",
+    "image": "https://catalystrussia.ru/rd-assets/p/art-fun-sport/00.webp",
+    "title": "Art&Fun&Sport",
+    "source": "https://catalystrussia.ru/",
+    "local": "folder-source/assets/art-fun-sport.webp"
+  },
+  "Ужин с уликами": {
+    "url": "https://catalystrussia.ru/teambuilding/vse-programmy/uzhin-s-ulikami/",
+    "image": "https://catalystrussia.ru/rd-assets/p/uzhin-s-ulikami/00.webp",
+    "title": "Ужин с уликами",
+    "source": "https://catalystrussia.ru/",
+    "local": "folder-source/assets/uzhin-s-ulikami.webp"
+  },
+  "Город Мечты": {
+    "url": "https://catalystrussia.ru/new-year-teambuildings/",
+    "source": "https://catalystrussia.ru/new-year-teambuildings/",
+    "image": "https://catalystrussia.ru/cdnasset/img/catalog/megapolis-w600.webp",
+    "local": "assets/menu-official/38a5ffdc8828-megapolis-w600.webp"
+  },
+  "Новогодняя Ярмарка": {
+    "url": "https://catalystrussia.ru/new-year-teambuildings/",
+    "source": "https://catalystrussia.ru/new-year-teambuildings/",
+    "image": "https://catalystrussia.ru/cdnasset/img/catalog/festival-foodtrucks-w600.webp",
+    "local": "assets/menu-official/467ab5a71114-festival-foodtrucks-w600.webp"
+  },
+  "Конвейер подарков": {
+    "url": "https://catalystrussia.ru/new-year-teambuildings/",
+    "source": "https://catalystrussia.ru/new-year-teambuildings/",
+    "image": "https://catalystrussia.ru/cdnasset/img/catalog/goldberg-machine.webp",
+    "local": "assets/menu-official/1ea852cc66b3-goldberg-machine.webp"
+  },
+  "Квиз «Итоги года»": {
+    "url": "https://catalystrussia.ru/new-year-teambuildings/",
+    "source": "https://catalystrussia.ru/new-year-teambuildings/",
+    "image": "https://catalystrussia.ru/img/novyj-god/timbilding/kviz-itogi-goda-w600.webp",
+    "local": "assets/menu-official/25832d4ed829-kviz-itogi-goda-w600.webp"
+  },
+  "Новогоднее ТВ-шоу": {
+    "url": "https://catalystrussia.ru/new-year-teambuildings/",
+    "source": "https://catalystrussia.ru/new-year-teambuildings/",
+    "image": "https://catalystrussia.ru/img/novyj-god/timbilding/tv-shou-w600.webp",
+    "local": "assets/menu-official/74e9ac945460-tv-shou-w600.webp"
+  }
+}

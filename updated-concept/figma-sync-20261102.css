@@ -756,8 +756,8 @@ html body .hero .collage-v2[data-slide="2"] .figma-race-star{left:383.478px;top:
 html body .hero .collage-v2[data-slide="3"] .team.hero-slide{left:159px;top:133px;width:398.777px;height:351px;transform:none;filter:none}
 html body .hero .collage-v2[data-slide="3"] .event-caption{left:68.815px;top:72.041px;height:140.859px;z-index:5}
 html body .hero .collage-v2[data-slide="3"] .mini-folder{left:437.656px;top:96.746px}
-html body .hero .collage-v2[data-slide="3"] .figma-race-flag{left:245.091px;top:49.881px;width:114.655px;height:112.345px;transform:rotate(32.12deg);z-index:1}
-html body .hero .collage-v2[data-slide="3"] .figma-race-flag img{width:282.41%;height:384.29%;left:-186.73%;top:-275.53%}
+html body .hero .collage-v2[data-slide="3"] .figma-race-flag{left:245.091px;top:49.881px;width:114.655px;height:112.345px;transform:none;z-index:6}
+html body .hero .collage-v2[data-slide="3"] .figma-race-flag img{width:100%;height:100%;left:0;top:0;object-fit:contain}
 html body .hero .collage-v2[data-slide="3"] .figma-race-star{left:473.478px;top:385.665px;z-index:6}
 html body .hero .collage-v2[data-slide="4"] .team.hero-slide{left:50px;top:106px;width:577.151px;height:384.517px;transform:none;filter:none}
 html body .hero .collage-v2[data-slide="4"] .event-caption{left:56.719px;top:68.046px;height:139.014px;z-index:5}
@@ -1165,9 +1165,9 @@ html body #telegram-invite .ti-scene-label{box-shadow:0 8px 20px #1414141a,0 2px
 html body .hero .collage-v2[data-slide] .event-caption{transform:none}
 html body .hero .collage-v2[data-slide] .event-caption h3{font-style:normal}
 html body #catalyst-chat{background:#fff}
-html body #s6 .portfolio-pagination button[aria-current] span::after,
+html body :is(#s6,#new-year) .portfolio-pagination button[aria-current] span::after,
 html body #contact-dialog .cf-offer-pagination button[aria-current] span::after{width:calc(var(--slide-progress,0) * 100%);transform:none;border-radius:999px}
-html body #s6 .portfolio-pagination button span,
+html body :is(#s6,#new-year) .portfolio-pagination button span,
 html body #contact-dialog .cf-offer-pagination button span{border-radius:999px;overflow:hidden}
 html body #s8 + #s9.continuation-block{margin-top:40px!important}
 html body #contact-dialog .cf-offer-cards{padding-top:80px;overflow-y:hidden}
@@ -1482,7 +1482,7 @@ html body :is(#header,.mobile-sheet) .mega-links a.photo-link:is(:hover,:focus-v
  background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.68));
 }
 html body :is(#header,.mobile-sheet) .mega-links a.photo-link:focus-visible{outline-offset:-3px}
-html body .mobile-sheet .mega-links a.photo-link .mobile-program-meta{color:#fff;opacity:.85}
+html body .mobile-sheet .mega-links a.photo-link .mobile-program-meta{color:#141414;opacity:.85}
 
 /* Offer artwork and copy match the popup; pagination matches mobile portfolio. */
 html body .menu-offer-track{padding-top:48px;border-radius:0;align-items:stretch}
@@ -1501,7 +1501,7 @@ html body .menu-offer-pagination button[aria-current] span{position:relative;wid
 html body .menu-offer-pagination button[aria-current] span::after{content:"";display:block;width:calc(var(--slide-progress,0) * 100%);height:100%;background:#141414;border-radius:999px}
 @media(prefers-reduced-motion:reduce){html body .menu-offer-pagination button{transition:none}}
 html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link .program-name,
-html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link .program-name *{color:#fff!important}
+html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link .program-name *{color:#141414!important}
 html body :is(#header,.mobile-sheet) .mega-links a.photo-link>img{filter:none!important}
 
 html body .menu-offer-card .menu-offer-description{font-weight:400!important;opacity:.6;margin-bottom:0!important}
@@ -1590,15 +1590,15 @@ html body #s6 .case-story .case-body>.trust-arrow{position:static;display:grid;p
 html body #s6 .case-body>.trust-arrow svg{width:24px;height:24px}
 html body #s6 .case-story:hover .case-body>.trust-arrow{background:#fff;color:#141414}
 html body #s6 .case-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit;pointer-events:none}
-html body #s6 .portfolio-pagination{display:flex;align-items:center;justify-content:center;gap:0;margin:12px 0 0}
-html body #s6 .portfolio-pagination button{display:flex;align-items:center;justify-content:center;width:28px;height:38px;padding:0;border:0;border-radius:0;background:transparent;cursor:pointer;transition:width .2s ease}
-html body #s6 .portfolio-pagination button[hidden]{display:none}
-html body #s6 .portfolio-pagination button span{display:block;width:6px;height:6px;border-radius:999px;background:#f3f2ed}
-html body #s6 .portfolio-pagination button[aria-current]{width:88px}
-html body #s6 .portfolio-pagination button[aria-current] span{position:relative;width:80px;height:6px}
-html body #s6 .portfolio-pagination button[aria-current] span:after{content:"";display:block;width:100%;height:100%;transform:scaleX(var(--slide-progress,0));transform-origin:left center;background:#141414;border-radius:999px}
+html body :is(#s6,#new-year) .portfolio-pagination{display:flex;align-items:center;justify-content:center;gap:0;margin:12px 0 0}
+html body :is(#s6,#new-year) .portfolio-pagination button{display:flex;align-items:center;justify-content:center;width:28px;height:38px;padding:0;border:0;border-radius:0;background:transparent;cursor:pointer;transition:width .2s ease}
+html body :is(#s6,#new-year) .portfolio-pagination button[hidden]{display:none}
+html body :is(#s6,#new-year) .portfolio-pagination button span{display:block;width:6px;height:6px;border-radius:999px;background:#f3f2ed}
+html body :is(#s6,#new-year) .portfolio-pagination button[aria-current]{width:88px}
+html body :is(#s6,#new-year) .portfolio-pagination button[aria-current] span{position:relative;width:80px;height:6px}
+html body :is(#s6,#new-year) .portfolio-pagination button[aria-current] span:after{content:"";display:block;width:100%;height:100%;transform:scaleX(var(--slide-progress,0));transform-origin:left center;background:#141414;border-radius:999px}
 @media(max-width:700px){html body #s6 .case-story .case-body{padding:20px;gap:16px}}
-@media(prefers-reduced-motion:reduce){html body #s6 .portfolio-pagination button{transition:none}}
+@media(prefers-reduced-motion:reduce){html body :is(#s6,#new-year) .portfolio-pagination button{transition:none}}
 
 /* Compact case captions with less space above the title. */
 html body #s6 .case-story .case-body{min-height:0;flex:0 0 auto;padding:20px 24px}
@@ -1664,18 +1664,18 @@ html body :is(#header,.mobile-sheet) .mega-links a.photo-link:is(:hover,:focus-v
 html body #header .mega-links a.photo-link:is(:hover,:focus-visible) .program-name,
 html body #header .mega-links a.photo-link:is(:hover,:focus-visible) .program-name *,
 html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link:is(:hover,:focus-visible) .program-name,
-html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link:is(:hover,:focus-visible) .program-name *{color:#ffdf4a!important}
+html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link:is(:hover,:focus-visible) .program-name *{color:#141414!important}
 
 /* Give both ways of contacting Vlad equal typographic weight. */
 html body #catalyst-chat .chat-paper .chat-message p,
 html body #catalyst-chat .chat-bottom>p{font:400 14px/1.45 Roboto,Arial,sans-serif;color:#4f584d;margin:0 0 16px}
 html body #catalyst-chat .chat-bottom>.chat-request{margin-bottom:24px}
 html body :is(#header,.mobile-sheet) .mega-links a.photo-link .program-name{padding-right:40px!important}
-html body :is(#header,.mobile-sheet) .mega-links a.photo-link .menu-card-description{display:block;margin-top:8px;font:400 12px/1.4 Roboto,Arial,sans-serif;color:#fff!important}
+html body :is(#header,.mobile-sheet) .mega-links a.photo-link .menu-card-description{display:block;margin-top:8px;font:400 12px/1.4 Roboto,Arial,sans-serif;color:#141414!important}
 html body :is(#header,.mobile-sheet) .mega-links a.photo-link .link-arrow{right:16px!important;bottom:16px!important;width:36px!important;height:36px!important;padding:9px!important;box-sizing:border-box;border-radius:50%;background:#141414!important;color:#fff!important;opacity:1}
 html body :is(#header,.mobile-sheet) .mega-links a.photo-link:is(:hover,:focus-visible) .link-arrow{background:#fff!important;color:#141414!important}
 html body #header .mega-links a.photo-link:is(:hover,:focus-visible) .program-name .menu-card-description,
-html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link:is(:hover,:focus-visible) .program-name .menu-card-description{color:#fff!important}
+html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link:is(:hover,:focus-visible) .program-name .menu-card-description{color:#141414!important}
 
 /* The arrow belongs to the card, not its text wrapper. */
 html body :is(#header,.mobile-sheet) .mega-links a.photo-link>.link-arrow{top:auto!important;left:auto!important;right:16px!important;bottom:16px!important;opacity:0!important;background:#ffdf4a!important;color:#141414!important;transition:opacity .2s ease}
@@ -1695,7 +1695,7 @@ html body.using-keyboard :is(.cf-close,.ti-close,.scroll-offer-close,#offers-clo
 
 html body #contact-dialog[data-external-close]>.popup-form-surface:has(.cf-catalog-body){padding:0;background:transparent;border-radius:0}
 html body #s10 .contact-qr-pair{display:flex;gap:16px;align-items:start}
-html body #s10 .contact-qr-pair .contact-folder-qr{position:static;flex-direction:column}
+html body #s10 .contact-qr-pair .contact-folder-qr{position:static;flex-direction:column;gap:0}
 @media(min-width:1101px){
  html body #s10 .contact-folder-connect{padding-right:0}
  html body #s10 .contact-qr-pair{margin-top:20px}
@@ -1714,7 +1714,7 @@ html body :is(#header,.mobile-sheet) .mega-links a.photo-link:is(:hover,:focus-v
 html body #header .mega-links a.photo-link:is(:hover,:focus-visible) .program-name,
 html body #header .mega-links a.photo-link:is(:hover,:focus-visible) .program-name *,
 html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link:is(:hover,:focus-visible) .program-name,
-html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link:is(:hover,:focus-visible) .program-name *{color:#fff!important}
+html body #mobile-site-navigation .mobile-cards .mega-links a.photo-link:is(:hover,:focus-visible) .program-name *{color:#141414!important}
 html body :is(#header,.mobile-sheet) .mega-links a.photo-link>.link-arrow,
 html body :is(#header,.mobile-sheet) .mega-links a.photo-link:is(:hover,:focus-visible)>.link-arrow{z-index:3!important;background:#fff!important;color:#141414!important;filter:none!important}
 
@@ -1834,13 +1834,10 @@ html body .mobile-sheet.mobile-navigation .mobile-quote-action{position:relative
  html body #s7.director-scroll-scene .director-photo-front-right{right:8%;left:auto;z-index:5;transform:rotate(7deg)}
 }
 
-/* Search hits share the site's round arrows and dot/bar pagination. */
+/* Search hits use the site's dot/bar pagination. */
 html body .search-hits-slider{min-width:0}
 html body .search-hits-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:16px 0}
 html body .search-hits-heading .mv-hd{margin:0}
-html body .search-hits-arrows{display:flex;gap:12px;flex:none}
-html body .search-hits-arrows button{display:grid;place-items:center;width:48px;height:48px;padding:0;border:0;border-radius:50%;background:#f3f2ed;color:#141414;cursor:pointer;box-shadow:none;transform:none}
-html body .search-hits-arrows button:hover{background:#fff;color:#141414;transform:none}
 html body .search-hits-track{position:relative;display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
 html body .search-hits-track::-webkit-scrollbar{display:none}
 html body .search-hits-track>.mv-program-card{flex:0 0 calc((100% - 32px)/3);min-width:0;max-width:none;margin:0;scroll-snap-align:start}
@@ -1866,7 +1863,7 @@ html body :is(#header,#mvSS,#catMenuV4,.mobile-sheet) :is(.menu-assistance,.cata
 @media(min-width:701px){
  html body #s10 .contact-folder-connect{padding-right:184px}
  html body #s10 .contact-qr-pair{width:160px;align-items:center;gap:16px}
- html body #s10 .contact-qr-pair .contact-folder-qr{width:100%;align-items:center;justify-self:center;gap:8px;text-align:center}
+ html body #s10 .contact-qr-pair .contact-folder-qr{width:100%;align-items:center;justify-self:center;gap:0;text-align:center}
  html body #s10 .contact-qr-pair .contact-folder-qr img{width:128px;height:128px;flex:none}
  html body #s10 .contact-folder-hours,html body #s10 .contact-folder-direct{margin-right:184px}
  html body #s10 .contact-folder-body .contact-legal-row{padding-right:184px}
@@ -1884,7 +1881,6 @@ html body :is(#header,#mvSS,#catMenuV4,.mobile-sheet) :is(.menu-assistance,.cata
  html body #s10 .contact-folder-body .contact-legal-row{padding-right:0}
 }
 
-html body .search-hits-arrows svg path{stroke-width:1.7;stroke-linecap:butt;stroke-linejoin:miter}
 
 /* Centre the five-piece scene as a whole; enlarge only the tower cutout. */
 html body .hero .collage-v2[data-slide]{transform:none;transform-origin:0 0}
@@ -1915,7 +1911,7 @@ html body .mobile-sheet .mobile-root-season .experiment-button .offer-chevron{di
 }
 
 /* Catalogue description: compact measure and quieter body text in both entry points. */
-html body #contact-dialog .cf-quiz-promise p.cf-catalog-description{width:100%;max-width:420px;font-size:14px;line-height:1.4;color:#141414;opacity:.6}
+html body #contact-dialog .cf-quiz-promise p.cf-catalog-description{width:100%;max-width:340px;font-size:14px;line-height:1.4;color:#141414;opacity:.6}
 
 @media(min-width:1101px){html body #s10 .contact-folder-copy{max-width:calc(100% - 184px)}}
 
@@ -1998,3 +1994,182 @@ html body .mobile-navigation .mobile-search-field input{background:#f3f2ed;borde
   content:"";display:block;height:env(safe-area-inset-bottom,0px);
  }
 }
+
+/* Callback reuses the existing yellow introduction and standard form surface. */
+html body #contact-dialog.cf-callback[data-external-close]>.popup-form-surface{padding:0;background:transparent;border-radius:0}
+
+/* Shared validation messages across contact forms and chat. */
+html body #contact-dialog #cf-error:not(:empty),
+html body #chat-quiz #cq-error:not(:empty),
+html body #telegram-invite #ti-form-status.is-error:not(:empty){
+ box-sizing:border-box;margin:0;padding:8px 12px;border:1px solid #a43524!important;
+ border-radius:999px!important;background:#fff!important;color:#a43524;
+ font:400 13px/1.4 Roboto,Arial,sans-serif;
+}
+html body #contact-dialog input[aria-invalid="true"],
+html body #chat-quiz input[aria-invalid="true"],
+html body #telegram-invite input[aria-invalid="true"]{background:#fff!important;outline:2px solid #a43524!important;outline-offset:0}
+
+html body #contact-dialog.cf-callback .cf-floating-field{margin-bottom:14px}
+
+/* Error feedback stays outside the form layout. */
+html body :is(#contact-dialog,#chat-quiz,#telegram-invite) form{position:relative}
+html body #contact-dialog #cf-error,
+html body #contact-dialog #cf-quiz-form .cf-quiz-contact-field #cf-error,
+html body #chat-quiz #cq-error,
+html body #telegram-invite #ti-form-status{
+ position:absolute;z-index:5;top:var(--feedback-top);left:0;right:0;box-sizing:border-box;width:auto;
+ min-height:0;margin:0!important;padding:8px 12px;pointer-events:none;
+ font:400 13px/1.4 Roboto,Arial,sans-serif;
+}
+html body #contact-dialog #cf-error:empty,
+html body #contact-dialog #cf-quiz-form .cf-quiz-contact-field #cf-error:empty,
+html body #chat-quiz #cq-error:empty,
+html body #telegram-invite #ti-form-status:empty{display:none}
+
+/* Chat follows the same action order and direct-contact separator as forms. */
+html body #catalyst-chat .cf-messengers a{background:#f3f2ed!important;border:0!important}
+html body #catalyst-chat .chat-bottom>.chat-request{margin-bottom:16px}
+html body #catalyst-chat .cf-divider{display:flex;align-items:center;gap:12px;margin:0 0 16px;color:#53574f;text-align:center;font:400 14px/1.4 Roboto,Arial,sans-serif}
+html body #catalyst-chat .cf-divider::before,
+html body #catalyst-chat .cf-divider::after{content:"";display:block!important;flex:1;height:1px;background:#d6d9d0}
+
+@media(max-width:700px){
+ html body #catalyst-chat{left:12px;right:12px;width:calc(100% - 24px);max-width:none;box-sizing:border-box}
+}
+
+html body #new-year>.portfolio-pagination{display:none}
+@media(max-width:700px){
+ html body #new-year{overflow:visible}
+ html body #new-year .ny-grid{
+  display:flex;align-items:stretch;gap:20px!important;overflow-x:auto;
+  width:100vw;max-width:none;box-sizing:border-box;
+  margin-left:calc(-1 * var(--ny-gutter,12px));margin-right:0;
+  padding:0 var(--ny-gutter,12px);scroll-padding-inline:var(--ny-gutter,12px);
+  scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:0;
+ }
+ html body #new-year .ny-grid::-webkit-scrollbar{display:none}
+ html body #new-year .ny-grid>.ny-folder{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}
+ html body #new-year>.portfolio-pagination{display:flex;--slide-progress:1}
+}
+
+html body #catalog .catalog-mobile-chevron{display:none}
+@media(max-width:700px){
+ html body #catalog .catalog-grid[data-count]{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;grid-auto-rows:auto;gap:12px!important}
+ html body #catalog .catalog-grid[data-count]>.catalog-card:not(.catalog-category-card){grid-column:auto!important;grid-row:auto!important;height:200px;min-height:200px}
+ html body #catalog .catalog-grid[data-count]>.catalog-card:not(.catalog-category-card) .catalog-card-copy{padding:12px 32px 16px 12px}
+ html body #catalog .catalog-grid[data-count]>.catalog-card:not(.catalog-category-card) h3{font-size:14px!important;line-height:1.3!important;text-wrap:wrap;overflow-wrap:anywhere}
+ html body #catalog .catalog-card:not(.catalog-category-card) .catalog-card-copy p{display:none}
+ html body #catalog .catalog-card:not(.catalog-category-card) .catalog-more svg{display:none!important}
+ html body #catalog .catalog-card:not(.catalog-category-card) .catalog-mobile-chevron{
+  display:block;position:absolute;z-index:2;inset:auto 12px 16px auto;width:18px!important;height:18px!important;
+  padding:0!important;margin:0;aspect-ratio:auto;border:0;border-radius:0!important;background:transparent!important;object-fit:contain;opacity:1;filter:brightness(0) invert(1);transform:none!important;
+ }
+ html body #catalog .catalog-grid[data-count]>.catalog-category-card,
+ html body #catalog .catalog-grid>.catalog-help{grid-column:1/-1}
+}
+
+@media(max-width:700px){
+ html body #catalog .catalog-card:not(.catalog-category-card)::before,
+ html body #catalog .catalog-card:not(.catalog-category-card):is(:hover,:focus-within)::before{
+  background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.88) 100%);opacity:1;
+ }
+}
+
+@media(max-width:700px){
+ html body #catalog-download.catalog-figma{display:flex;flex-direction:column;padding:24px 20px;gap:0}
+ html body #catalog-download .cfb-design-art{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:100%;height:auto;aspect-ratio:1.35;margin:0 0 24px}
+ html body #catalog-download>.cfb-button{position:relative;z-index:2;flex:none}
+ html body #catalog-download .cfb-green-clip::before{bottom:68px}
+ html body #catalog-download .cfb-green-clip::after{bottom:48px}
+ html body #catalog-download .cfb-arrow{bottom:285px}
+ html body #contact-dialog.cf-cost-quiz .cf-quiz-body{border-bottom-left-radius:24px!important;border-bottom-right-radius:24px!important}
+}
+
+@media(max-width:700px){
+ html body #contact-dialog.cf-cost-quiz .cf-quiz-submit-panel{border-bottom-left-radius:0;border-bottom-right-radius:0}
+}
+
+
+html body #contact-dialog .cf-catalog-body .cf-floating-field{margin-bottom:14px}
+@media(max-width:700px){
+ html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card{height:auto;min-height:216px;padding-top:52px;padding-bottom:68px}
+ html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card .category-illustration{top:auto!important;bottom:12px!important;height:132px!important}
+ html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card .category-illustration.category-idea-sticker{top:auto!important;bottom:12px!important;height:auto!important;width:32%!important}
+}
+
+@media(max-width:700px){
+ html body #catalog .catalog-grid[data-count] .catalog-card.catalog-category-card .category-illustration.category-sports-sticker{width:33%!important;height:auto!important;right:12px!important;bottom:16px!important}
+}
+
+/* The same contact-field rhythm in every shared form. */
+html body #contact-dialog .cf-form{--contact-gap:14px}
+html body #contact-dialog .cf-form .cf-channels{margin-bottom:var(--contact-gap)}
+html body #contact-dialog .cf-form .cf-floating-field{margin-bottom:var(--contact-gap)}
+
+html body #catalyst-chat .cf-divider>span{flex:1;min-width:0}
+html body #catalyst-chat .cf-divider::before,
+html body #catalyst-chat .cf-divider::after{flex:0 0 24px;min-width:24px}
+
+html body #catalyst-chat .chat-bottom>p{margin-bottom:24px}
+html body #catalyst-chat .chat-bottom>.chat-request{margin-bottom:24px}
+
+html body #catalyst-chat .chat-header>div>span{opacity:.6}
+@media(min-width:701px){html body #catalyst-chat{width:432px}}
+
+@media(max-width:700px){html body #catalyst-chat .chat-mobile-break{display:block}}
+
+@media(max-width:700px){
+ html body #catalyst-chat .chat-bottom>p{width:90%}
+}
+
+/* Text inputs and submit buttons share the same control height in every form. */
+html body #contact-dialog .cf-floating-field input:not([type=radio]):not([type=checkbox]),
+html body #telegram-invite #ti-lead-form .ti-field input,
+html body #chat-quiz .cq-contact-label input[name=contact]{
+ box-sizing:border-box;height:50px!important;min-height:50px!important;padding:20px 20px 4px!important;line-height:24px;
+}
+html body:not(#mobile-controls-exception) #contact-dialog .cf-primary[type=submit],
+html body #telegram-invite #ti-lead-form .ti-link,
+html body #chat-quiz .cq-send{box-sizing:border-box;height:50px!important;min-height:50px!important;padding-block:12px}
+html body #contact-dialog .cf-floating-field input:is(:focus,:not(:placeholder-shown),:autofill)+.cf-floating-label,
+html body #telegram-invite .ti-field input:is(:focus,:not(:placeholder-shown),:autofill)+.ti-floating-label,
+html body #chat-quiz .cq-contact-label input:is(:focus,:not(:placeholder-shown),:autofill)+.cq-floating-label{top:4px}
+html body #brief-form :is(input:not([type=checkbox]):not([type=radio]),select,button[type=submit]){box-sizing:border-box;height:50px!important;min-height:50px!important;padding-block:12px}
+
+html body #prototype-footer .newsletter-controls :is(input,button){height:50px!important;min-height:50px!important}
+
+/* Compact contact-channel controls only in the offers form. */
+html body #contact-dialog.cf-offers .cf-offer-contact .cf-channels label>span{box-sizing:border-box;height:35px;min-height:35px;padding-block:0}
+
+/* Startup: screen and presenter composition; shared card dimensions stay unchanged. */
+html body .hero .collage-v2[data-slide="5"] .team.hero-slide{left:160px;top:125px;width:420px;height:315px;transform:none;filter:none}
+html body .hero .collage-v2[data-slide="5"] .event-caption{left:68px;top:100px;z-index:5}
+html body .hero .collage-v2[data-slide="5"] .mini-folder{left:530px;top:73px}
+html body .hero .collage-v2[data-slide="5"] .figma-race-flag{left:126px;top:385px;width:88.204px;height:86.426px;transform:rotate(30deg);z-index:6}
+html body .hero .collage-v2[data-slide="5"] .figma-race-flag img{width:282.41%;height:384.29%;left:-186.73%;top:-275.53%}
+html body .hero .collage-v2[data-slide="5"] .figma-race-star{display:none}
+
+
+/* Desktop captions sit in front of the scene, as in the approved startup view. */
+@media(min-width:1101px){
+ html body .hero .collage-v2[data-slide] .event-caption{z-index:5}
+ html body .hero .collage-v2[data-slide="5"] .event-caption{left:8px;top:185px}
+}
+
+html body>.clients p>span{font-size:12px!important}
+html body .hero .collage-v2[data-slide] .hero-slide{pointer-events:none}
+html body .hero .collage-v2[data-slide] .event-caption>.event-project-link{position:absolute;inset:0;z-index:2;pointer-events:auto;border-radius:inherit}
+html body .hero .collage-v2[data-slide]{touch-action:pan-y;user-select:none}
+
+
+/* Keep the star only with the race car; trim the neighbouring sprite below pizza. */
+html body .hero .collage-v2[data-slide]:not([data-slide="0"]) .figma-race-star{display:none!important}
+html body .hero .collage-v2[data-slide="4"] .figma-race-flag{clip-path:inset(0 0 6% 0)}
+
+
+/* Search arrows remain available above phone widths. */
+html body .search-hits-arrows{display:flex;gap:12px;flex:none}
+html body .search-hits-arrows button{display:grid;place-items:center;width:48px;height:48px;padding:0;border:0;border-radius:50%;background:#f3f2ed;color:#141414;cursor:pointer;box-shadow:none;transform:none}
+html body .search-hits-arrows button:hover{background:#fff;color:#141414;transform:none;box-shadow:none}
+@media(max-width:760px){html body .search-hits-arrows{display:none!important}}

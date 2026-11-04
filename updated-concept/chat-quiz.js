@@ -51,7 +51,7 @@ window.mountCatalystChatQuiz = ({questions, answerLabels, endpoint, privacy, mes
    compose.innerHTML=`<div class="cq-options">${questions[i][1].map((a,n)=>`<button type="button" data-choice="${n}">${escape(a)}</button>`).join('')}</div>`;
    compose.querySelectorAll('[data-choice]').forEach(button=>button.onclick=()=>{state.answers.push(questions[i][1][Number(button.dataset.choice)]);next()});
   }else{
-   if(!state.handoff)state.handoff=workingHours()?'Спасибо за ответы! В ближайшие 2 минуты вам ответит менеджер. Дождитесь его сообщения в этом чате или напишите нам в Telegram или Max.':'Спасибо за ответы! Сейчас мы вне рабочего времени. Оставьте контакты — менеджер свяжется с вами в рабочее время: ежедневно с 8:00 до 22:00 мск. Или напишите нам напрямую в Telegram или Max.';
+   if(!state.handoff)state.handoff=workingHours()?'Спасибо за ответы! В ближайшие 5 минут вам ответит менеджер. Дождитесь его сообщения в этом чате или напишите нам в Telegram или Max.':'Спасибо за ответы! Сейчас мы вне рабочего времени. Оставьте контакты — менеджер свяжется с вами в рабочее время: ежедневно с 8:00 до 22:00 мск. Или напишите нам напрямую в Telegram или Max.';
    log.insertAdjacentHTML('beforeend',message(state.handoff));
    if(state.contactSent)log.insertAdjacentHTML('beforeend',message(state.contactChannel+': '+state.contacts[state.contactChannel],true)+message('Спасибо! Менеджер свяжется с вами в рабочее время — с 8:00 до 22:00 мск.'));
    else if(!workingHours()&&!state.operator)renderContacts();
@@ -91,8 +91,8 @@ window.mountCatalystChatQuiz = ({questions, answerLabels, endpoint, privacy, mes
   form.onsubmit=async e=>{
    e.preventDefault();if(state.contactSending)return;
    const value=input.value.trim(),digits=value.replace(/\D/g,'');
-   const valid=channel==='Telegram'?/^@?[a-zA-Z][\w]{4,31}$/.test(value):/^[78]\d{10}$/.test(digits);
-   if(!valid){error.textContent=channel==='Telegram'?'Укажите ник Telegram, например @username.':'Введите номер полностью: +7 (999) 123-45-67.';input.setAttribute('aria-invalid','true');input.focus();return;}
+   const valid=channel==='Telegram'?/^@?[a-zA-Z0-9_]{1,32}$/.test(value):/^[78]\d{10}$/.test(digits);
+   if(!valid){error.textContent=channel==='Telegram'?'Укажите ваш @username. Если его нет, напишите нам напрямую.':'Введите номер полностью: +7 (999) 123-45-67.';input.setAttribute('aria-invalid','true');input.focus();return;}
    if(!state.consent){error.textContent='Подтвердите согласие на обработку данных.';form.elements.consent.focus();return;}
    if(!endpoint){error.textContent='Отправка пока не подключена. Напишите нам в Telegram или Max.';return;}
    state.contacts[channel]=channel==='Telegram'?'@'+value.replace(/^@/,''):value;
