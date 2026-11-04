@@ -47,3 +47,34 @@ html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-front{to
   animation:catalog-invite-reveal .4s ease-out both;
  }
 }
+
+/* Mobile catalog invitation fits the artwork above the contact form. */
+@media(max-width:700px){
+ html body #contact-dialog.cf-catalog-banner .cf-content{display:flex;flex-direction:column;padding:16px;gap:12px}
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-art{order:-1;flex:none;width:100%;height:clamp(64px,calc(100dvh - 550px),144px);aspect-ratio:auto;margin:0;overflow:hidden}
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-back{width:60%;top:8%;right:8%}
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-front{width:60%;top:24%;left:8%}
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-body{padding:16px;margin:0;width:100%;box-sizing:border-box}
+ html body #contact-dialog.cf-catalog-banner .cf-quiz-promise{padding:0;margin:0 0 16px}
+ html body #contact-dialog.cf-catalog-banner .cf-quiz-promise h2{font-size:24px!important;margin:0 0 12px}
+ html body #contact-dialog.cf-catalog-banner .cf-quiz-promise p{margin:0}
+}
+
+@media(max-width:700px) and (max-height:650px){
+ html body #contact-dialog.cf-catalog-banner .cf-quiz-promise h2{font-size:20px!important;margin-bottom:8px}
+ html body #contact-dialog.cf-catalog-banner .cf-quiz-promise{margin-bottom:12px}
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-art img{max-height:100%;object-fit:contain}
+}
+
+/* Use the available phone height for complete, larger catalogue covers. */
+@media(max-width:700px){
+ html body #contact-dialog.cf-catalog-banner .cf-content{height:min(650px,calc(var(--popup-viewport-height,100dvh) * .92 - 48px));box-sizing:border-box}
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-body{flex:none}
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-art{flex:1 1 0;min-height:0;height:auto;overflow:visible;container-type:size}
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-back{top:12%;right:4%;width:min(76%,110cqh);height:auto;aspect-ratio:16/9;overflow:hidden;border-radius:24px!important}
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-back img{object-fit:contain;object-position:center;border-radius:24px!important}
+ html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-front{top:24%;left:4%;width:min(86%,120cqh);height:auto;aspect-ratio:16/9;max-height:none!important;object-fit:contain;border-radius:24px!important}
+}
+
+/* Separate the foreground cover from the catalogue behind it. */
+html body #contact-dialog.cf-catalog-banner .cf-catalog-art .cfb-design-front{box-shadow:0 8px 24px rgb(20 20 20 / 20%)!important}

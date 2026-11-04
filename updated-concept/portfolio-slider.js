@@ -9,6 +9,40 @@
  let activeIndex=0,elapsed=0,lastFrame=0,raf=0,visible=false,interacting=false,hovered=false,scrolling=false,settleTimer;
  function pageStep(){return (cards[1]?cards[1].offsetLeft-cards[0].offsetLeft:track.clientWidth)*(mobile.matches?1:2);}
  const loop=createLoopCarousel(track,cards);
+ // Drag with the mouse; leave touch scrolling and ordinary card clicks native.
+ let drag=null,suppressClick=false;
+ track.addEventListener('pointerdown',e=>{
+  if(e.pointerType!=='mouse'||e.button!==0||e.target.closest('button,input,select,textarea'))return;
+  suppressClick=false;
+  drag={id:e.pointerId,x:e.clientX,lastX:e.clientX,moved:false};
+ });
+ track.addEventListener('pointermove',e=>{
+  if(!drag||drag.id!==e.pointerId)return;
+  if(!drag.moved){
+   if(Math.abs(e.clientX-drag.x)<6)return;
+   drag.moved=true;suppressClick=true;
+   track.setPointerCapture(e.pointerId);
+   track.style.scrollSnapType='none';track.style.scrollBehavior='auto';
+   track.classList.add('is-dragging');
+  }
+  e.preventDefault();
+  // Relative movement also works if the loop normalizes while dragging.
+  track.scrollLeft-=e.clientX-drag.lastX;drag.lastX=e.clientX;
+ });
+ function endDrag(e){
+  if(!drag||drag.id!==e.pointerId)return;
+  const moved=drag.moved;drag=null;
+  const step=cards[1]?cards[1].offsetLeft-cards[0].offsetLeft:track.clientWidth;
+  const target=Math.round(loop.position()/step)*step;
+  track.style.scrollSnapType='';track.style.scrollBehavior='';track.classList.remove('is-dragging');
+  if(track.hasPointerCapture(e.pointerId))track.releasePointerCapture(e.pointerId);
+  if(moved){loop.move(target,reduced.matches?'instant':'smooth');setTimeout(()=>{suppressClick=false},0);}
+ }
+ window.addEventListener('pointerup',endDrag);
+ window.addEventListener('pointercancel',endDrag);
+ track.addEventListener('lostpointercapture',endDrag);
+ track.addEventListener('dragstart',e=>e.preventDefault());
+ track.addEventListener('click',e=>{if(suppressClick){e.preventDefault();e.stopImmediatePropagation();}},true);
  const pagination=document.createElement('nav');pagination.className='portfolio-pagination';pagination.setAttribute('aria-label','Выбрать проект');
  const dots=cards.map((card,i)=>{const button=document.createElement('button');button.type='button';button.setAttribute('aria-label','Проект '+(i+1)+': '+(card.querySelector('.case-client-name')?.textContent||card.querySelector('.case-client-logo')?.alt||''));button.setAttribute('aria-controls',track.id);button.innerHTML='<span aria-hidden="true"></span>';button.onclick=()=>{const step=pageStep();loop.move(i*step,reduced.matches?'instant':'smooth')};pagination.append(button);return button});
  track.after(pagination);

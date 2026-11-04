@@ -105,3 +105,14 @@ html body .mobile-sheet.mobile-navigation .menu-offer-track{
  box-sizing:border-box;width:calc(100% + 32px);margin-inline:-16px;
  padding-inline:16px;scroll-padding-inline:16px;
 }
+
+@media(hover:hover) and (pointer:fine){
+ html body .search-hits-track,html body .search-hits-track a{cursor:grab;user-select:none}
+ html body .search-hits-track.is-dragging,html body .search-hits-track.is-dragging a{cursor:grabbing}
+}
+
+/* Projects support the same mouse gesture as search hits. */
+@media(hover:hover) and (pointer:fine){
+ html body #s6 .trust-cases,html body #s6 .trust-cases a{cursor:grab;user-select:none}
+ html body #s6 .trust-cases.is-dragging,html body #s6 .trust-cases.is-dragging a{cursor:grabbing}
+}

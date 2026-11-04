@@ -428,7 +428,7 @@
     error.textContent='Отправка заявок пока не подключена. Вы можете написать нам в мессенджере.';
   }
   const chat=document.createElement('aside'); chat.id='catalyst-chat';chat.hidden=true;chat.setAttribute('aria-labelledby','chat-title');
-  chat.innerHTML=`<div class="chat-paper"><div class="chat-header"><span class="chat-avatar"><img src="assets/chat-vlad.webp" alt="Влад"><i class="chat-status" aria-hidden="true"></i></span><div><strong>Влад · Каталист</strong><span>Ежедневно, 8:00–22:00 мск</span></div><button class="cf-close" aria-label="Закрыть чат" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><div class="chat-message"><h2 id="chat-title">Помогу выбрать, что<br>подойдёт вашей команде</h2></div></div><div class="chat-bottom"><p>Ответьте на несколько вопросов о вашем мероприятии — подберу подходящие программы<span class="chat-mobile-break"></span> и рассчитаю стоимость.</p><button class="action-black chat-request" type="button" data-form="quiz">Получить расчёт</button><div class="cf-divider"><span>Или напишите мне в мессенджере — отвечу в&nbsp;течение 5 минут.</span></div>${messengerLinks()}</div>`;
+  chat.innerHTML=`<div class="chat-paper"><div class="chat-header"><span class="chat-avatar"><img src="assets/chat-vlad.webp" alt="Влад"><i class="chat-status" aria-hidden="true"></i></span><div><strong>Влад · Каталист</strong><span>Ежедневно, 8:00–22:00 мск</span></div><button class="cf-close" aria-label="Закрыть чат" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><div class="chat-message"><h2 id="chat-title">Ответьте на 5 коротких вопросов и&nbsp;получите расчёт</h2></div></div><div class="chat-bottom"><button class="action-black chat-request" type="button" data-form="quiz">Получить расчёт</button><div class="chat-messenger-note"><span>Или напишите напрямую — отвечу за 5 минут</span></div>${messengerLinks()}</div>`;
   const launcher=document.createElement('button');launcher.type='button';launcher.id='chat-launcher';launcher.setAttribute('aria-label','Открыть чат с Каталист');launcher.setAttribute('aria-controls','catalyst-chat');launcher.setAttribute('aria-expanded','false');
   launcher.innerHTML='<span class="chat-avatar"><img src="assets/chat-vlad.webp" alt="Влад" width="40" height="40"><i class="chat-status" aria-hidden="true"></i></span><span>Получить расчёт</span>';
   document.body.append(chat,launcher);
@@ -438,8 +438,26 @@
   scrollOffer.id='scroll-offer';scrollOffer.hidden=true;scrollOffer.setAttribute('aria-label','Специальное предложение');
   scrollOffer.innerHTML=`<button type="button" class="scroll-offer-open" data-form="offers" aria-haspopup="dialog"><strong>Посмотреть<br>акции</strong><svg class="offers-art" preserveAspectRatio="xMidYMin meet" viewBox="0 0 76 76" fill="none" aria-hidden="true"><path d="M24 0v20m-5 7v-7h10v7M57 0v32m-5 7v-7h10v7" stroke="#11743e" stroke-width="2"/><circle cx="24" cy="44" r="19" fill="#ffdf4a" stroke="#11743e" stroke-width="2"/><path d="M6 40q18 13 36 0M11 56q13-9 26 0" stroke="#11743e" stroke-width="2"/><circle cx="57" cy="56" r="16" fill="#e3f3e9" stroke="#11743e" stroke-width="2"/><path d="M57 44v24M45 56h24M49 48l16 16m0-16L49 64" stroke="#11743e" stroke-width="2"/></svg></button><button type="button" class="scroll-offer-close" aria-label="Скрыть карточку акции"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>`;
   document.body.append(scrollOffer);
-  const offerTimer=setTimeout(()=>{scrollOffer.hidden=false;},30000);
-  scrollOffer.querySelector('.scroll-offer-close').onclick=()=>{clearTimeout(offerTimer);scrollOffer.hidden=true;launcher.focus({preventScroll:true});};
+  let offerTriggered=false;
+  function revealOffer(){
+    if(document.hidden || document.querySelector('dialog[open], #catalyst-chat:not([hidden]), #chat-quiz:not([hidden])') || document.body.classList.contains('mobile-menu-open')){offerTimer=setTimeout(revealOffer,1000);return;}
+    scrollOffer.hidden=false;
+  }
+  function triggerOffer(){
+    if(offerTriggered)return;
+    offerTriggered=true;
+    clearTimeout(offerTimer);
+    window.removeEventListener('scroll',checkOfferScroll);
+    revealOffer();
+  }
+  function checkOfferScroll(){
+    const scrollable=document.documentElement.scrollHeight-window.innerHeight;
+    if(scrollable>0 && window.scrollY>=scrollable*.5)triggerOffer();
+  }
+  let offerTimer=setTimeout(triggerOffer,45000);
+  window.addEventListener('scroll',checkOfferScroll,{passive:true});
+  checkOfferScroll();
+  scrollOffer.querySelector('.scroll-offer-close').onclick=()=>{clearTimeout(offerTimer);window.removeEventListener('scroll',checkOfferScroll);scrollOffer.hidden=true;launcher.focus({preventScroll:true});};
 
   function updateChatHours(){
     const hour=Number(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Moscow',hour:'2-digit',hourCycle:'h23'}).format(new Date()));

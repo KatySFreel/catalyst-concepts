@@ -212,6 +212,36 @@ window.__MV_DATA__={"built": "2026-10-07", "programs": [{"url": "https://catalys
       }
       slider.querySelector('[data-hit-prev]').onclick=function(){move((active-1+positions.length)%positions.length)};
       slider.querySelector('[data-hit-next]').onclick=function(){move((active+1)%positions.length)};
+      // Mouse dragging complements native touch scrolling and the navigation buttons.
+      var drag=null,suppressClick=false;
+      track.addEventListener('pointerdown',function(e){
+        if(e.pointerType!=='mouse'||e.button!==0)return;
+        suppressClick=false;
+        drag={id:e.pointerId,x:e.clientX,left:track.scrollLeft,moved:false};
+      });
+      track.addEventListener('pointermove',function(e){
+        if(!drag||drag.id!==e.pointerId)return;
+        var dx=e.clientX-drag.x;
+        if(!drag.moved){
+          if(Math.abs(dx)<6)return;
+          drag.moved=true;suppressClick=true;
+          track.setPointerCapture(e.pointerId);
+          track.style.scrollSnapType='none';
+          track.classList.add('is-dragging');
+        }
+        e.preventDefault();track.scrollLeft=drag.left-dx;
+      });
+      function endDrag(e){
+        if(!drag||drag.id!==e.pointerId)return;
+        var moved=drag.moved;drag=null;
+        track.style.scrollSnapType='';track.classList.remove('is-dragging');
+        if(track.hasPointerCapture(e.pointerId))track.releasePointerCapture(e.pointerId);
+        if(moved){update();move(active);setTimeout(function(){suppressClick=false},0);}
+      }
+      track.addEventListener('pointerup',endDrag);
+      track.addEventListener('pointercancel',endDrag);
+      track.addEventListener('dragstart',function(e){e.preventDefault()});
+      track.addEventListener('click',function(e){if(suppressClick){e.preventDefault();e.stopImmediatePropagation();}},true);
       track.addEventListener('scroll',update,{passive:true});
       track.addEventListener('keydown',function(e){if(e.target!==track)return;if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();move((active+(e.key==='ArrowRight'?1:-1)+positions.length)%positions.length)}});
       var observer=new ResizeObserver(resize); observer.observe(track); resize();

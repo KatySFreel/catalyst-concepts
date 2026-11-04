@@ -2049,7 +2049,7 @@ html body #new-year>.portfolio-pagination{display:none}
   scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:0;
  }
  html body #new-year .ny-grid::-webkit-scrollbar{display:none}
- html body #new-year .ny-grid>.ny-folder{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}
+ html body #new-year .ny-grid>.ny-folder{flex:0 0 calc(100% - 40px);min-width:0;scroll-snap-align:start;scroll-snap-stop:always}
  html body #new-year>.portfolio-pagination{display:flex;--slide-progress:1}
 }
 
@@ -2173,3 +2173,49 @@ html body .search-hits-arrows{display:flex;gap:12px;flex:none}
 html body .search-hits-arrows button{display:grid;place-items:center;width:48px;height:48px;padding:0;border:0;border-radius:50%;background:#f3f2ed;color:#141414;cursor:pointer;box-shadow:none;transform:none}
 html body .search-hits-arrows button:hover{background:#fff;color:#141414;transform:none;box-shadow:none}
 @media(max-width:760px){html body .search-hits-arrows{display:none!important}}
+
+/* Mobile offers: raised cutouts and a permanent yellow lead card. */
+@media(max-width:700px){
+ html body #contact-dialog .cf-offer-cards{padding-top:96px;gap:96px}
+ html body #contact-dialog .cf-offer-card{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto auto;row-gap:16px;overflow:visible}
+ html body #contact-dialog.cf-offers .cf-content{background:#0aba59;padding:0;border-radius:24px 24px 0 0}
+ html body #contact-dialog .cf-offer-cards:not(:has([aria-pressed=true])) .cf-offer-card-0{background:#ffdf4a}
+ html body #contact-dialog .cf-offer-card>strong{grid-column:1;grid-row:2}
+ html body #contact-dialog .cf-offer-card>img{grid-column:1;grid-row:1;width:100%;height:180px;max-width:100%;margin:-96px 0 0;object-fit:contain;object-position:center;align-self:center}
+ html body #contact-dialog .cf-offer-card-copy{grid-column:1;grid-row:3}
+ html body #contact-dialog .cf-offer-card-select{grid-column:1;grid-row:4}
+}
+
+/* Give client marks a readable scale on phones. */
+@media(max-width:700px){
+ html body>section.clients{margin-top:30px!important;margin-bottom:0!important;padding-top:0!important}
+ html body>.clients p strong{font-size:20px}
+ html body>.clients p>span{font-size:14px!important}
+ html body>.clients .client-logos,
+ html body>.clients .logo-track{height:72px}
+ html body>.clients .client-logos img{width:150px!important;flex:0 0 150px!important;height:60px!important;max-height:60px!important}
+}
+
+@media(min-width:701px){html body #trust-numbers .portfolio-brand-wall{margin-top:16px}}
+
+/* Approved phone catalogue: photographic tickets with a separate caption. */
+@media(max-width:700px){
+ html body #catalog .catalog-grid[data-count]>.catalog-card:not(.catalog-category-card){height:auto;min-height:0;display:flex;flex-direction:column;padding:6px 6px 0;background:#f3f2ed!important;border-radius:16px!important;overflow:hidden;isolation:isolate}
+ html body #catalog .catalog-card:not(.catalog-category-card)>img{position:static!important;inset:auto;width:100%;height:auto!important;aspect-ratio:1.3;object-fit:cover;border-radius:12px!important;transform:none!important;filter:none!important}
+ html body #catalog .catalog-card:not(.catalog-category-card)::before,
+ html body #catalog .catalog-card:not(.catalog-category-card)::after{display:none!important}
+ html body #catalog .catalog-grid[data-count]>.catalog-card:not(.catalog-category-card) .catalog-card-copy{position:relative;inset:auto;display:flex;align-items:center;flex:1;min-height:56px;padding:12px 26px 12px 6px;margin-top:8px;background:transparent;color:#141414;border-top:1px dashed #c4c6bd!important;box-sizing:border-box}
+ html body #catalog .catalog-card:not(.catalog-category-card) .catalog-card-copy::before,
+ html body #catalog .catalog-card:not(.catalog-category-card) .catalog-card-copy::after{content:'';display:block;position:absolute;top:-7px;width:14px;height:14px;border-radius:50%;background:#fff}
+ html body #catalog .catalog-card:not(.catalog-category-card) .catalog-card-copy::before{left:-13px}
+ html body #catalog .catalog-card:not(.catalog-category-card) .catalog-card-copy::after{right:-13px}
+ html body #catalog .catalog-grid[data-count]>.catalog-card:not(.catalog-category-card) h3{color:#141414!important;margin:0;font-weight:700;text-shadow:none}
+ html body #catalog .catalog-card:not(.catalog-category-card) .catalog-mobile-chevron{filter:brightness(0);bottom:20px;right:12px}
+}
+
+/* Introduce the direct-contact option immediately before its buttons. */
+html body #catalyst-chat .chat-messenger-note{margin:0 0 12px;color:#53574f;font:400 14px/1.4 Roboto,Arial,sans-serif}
+
+/* Reuse the header's approved arrow to point to the main chat action. */
+html body #catalyst-chat .chat-bottom>.chat-request{position:relative;overflow:visible;margin-bottom:30px}
+html body #catalyst-chat .chat-bottom>.chat-request::before{content:""!important;display:block!important;position:absolute;pointer-events:none;top:32px;right:15px;width:80px;height:55px;background:url('assets/cta-hand-arrow.svg') center/contain no-repeat;rotate:75deg;z-index:2}
